@@ -8,7 +8,7 @@ ARTEMIS E2E, AI Code Review, khóa mốc Lab 3
 
 ## Run this task
 
-Implement ONLY phase 08 in the existing Hobby Tracker repository. Read `AGENTS.md`, `docs/implementation-roadmap.md`, the relevant original 8 references in `reference/`, and existing docs before editing. Preserve all previous completed phases.
+Implement ONLY phase 08 in the existing Hobby Tracker repository. Read `AGENTS.md`, `docs/implementation-roadmap.md`, the relevant original 7 Lab 2/Lab 3 references in `reference/`, and existing docs before editing. Preserve all previous completed phases.
 
 ### First response before touching code
 

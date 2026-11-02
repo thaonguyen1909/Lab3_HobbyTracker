@@ -1,3 +1,5 @@
+> THAM KHẢO FINAL: không thực thi trong Lab 3; cần yêu cầu riêng của người dùng. Đọc planning/final/roadmap.md và PDF Final trước khi lập kế hoạch.
+
 # CODEX PHASE 09: 09-final-core-rules
 
 ## Execution scope (from proposed roadmap, not yet implemented)

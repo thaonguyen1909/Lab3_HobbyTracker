@@ -4,13 +4,13 @@
 
 Chốt đầu vào và truy vết yêu cầu (CHỈ TÀI LIỆU)
 
-**Mục tiêu:** tránh viết code sai vì thiếu spec. **Công việc:** đọc 8 file, xác lập danh sách 15 màn hình/3 flow/7 theme/4 tab; lập ma trận `Lab2 -> Flutter route -> widget -> viewmodel -> data source -> test case`; tách rubric Lab 3 vs Final; liệt kê gaps Figma/Handoff, Cloud Storage/billing, role, auth. **Deliverables:** `docs/gap-review.md`, `docs/design-traceability.md`, `docs/open-decisions.md`, `docs/rubric-checklist.md`, draft `design/DESIGN.md`, draft `handoff/flutter-handoff.md`. **DoD:** không có màn hình hoặc recovery path bị bỏ sót; mỗi yêu cầu có nguồn; các quyết định chưa được phê duyệt có `OPEN/BLOCKED`, không coi là đã hoàn thành.
+**Mục tiêu:** tránh viết code sai vì thiếu spec. **Công việc:** đọc 7 nguồn Lab 2/Lab 3, xác lập danh sách 15 màn hình/3 flow/7 theme/4 tab; lập ma trận `Lab2 -> Flutter route -> widget -> viewmodel -> data source -> test case`; lập checklist rubric Lab 3; liệt kê gaps Figma/Handoff, Cloud Storage/billing, auth. **Deliverables:** `docs/gap-review.md`, `docs/design-traceability.md`, `docs/open-decisions.md`, `docs/rubric-checklist.md`, draft `design/DESIGN.md`, draft `handoff/flutter-handoff.md`. **DoD:** không có màn hình hoặc recovery path bị bỏ sót; mỗi yêu cầu có nguồn; các quyết định chưa được phê duyệt có `OPEN/BLOCKED`, không coi là đã hoàn thành.
 
 **Prompt Codex:** `prompts/00-audit.md`.
 
 ## Run this task
 
-Implement ONLY phase 00 in the existing Hobby Tracker repository. Read `AGENTS.md`, `docs/implementation-roadmap.md`, the relevant original 8 references in `reference/`, and existing docs before editing. Preserve all previous completed phases.
+Implement ONLY phase 00 in the existing Hobby Tracker repository. Read `AGENTS.md`, `docs/implementation-roadmap.md`, the relevant original 7 Lab 2/Lab 3 references in `reference/`, and existing docs before editing. Preserve all previous completed phases.
 
 ### First response before touching code
 

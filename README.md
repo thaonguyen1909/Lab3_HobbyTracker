@@ -4,7 +4,7 @@
 
 Hobby Tracker giúp người dùng biến sở thích thành hoạt động thường xuyên: chọn việc muốn làm, sắp xếp thời gian, tập trung luyện tập và theo dõi kết quả. Dự án phát triển từ thiết kế UI/UX của Lab 2 thành ứng dụng Android bằng Flutter, sử dụng Firebase để đăng nhập và lưu trữ dữ liệu.
 
-> **Trạng thái:** Đang chuẩn bị triển khai. Repository hiện chỉ có README; các tính năng và công nghệ bên dưới là kế hoạch, chưa được tích hợp hoặc kiểm thử.
+> **Trạng thái:** Đang chuẩn bị triển khai. Repository hiện có README, hướng dẫn AGENTS.md, roadmap và các prompt; các tính năng và công nghệ bên dưới là kế hoạch, chưa được tích hợp hoặc kiểm thử.
 
 ## Ứng dụng sẽ làm được gì?
 
@@ -52,9 +52,9 @@ Các nguyên tắc giữ từ thiết kế Lab 2:
 | **Firebase Analytics** | Ghi nhận các sự kiện sử dụng để đánh giá những luồng chức năng chính. |
 | **Firebase Crashlytics** | Theo dõi lỗi và sự cố khi ứng dụng chạy. |
 | **Firebase Remote Config** | Điều chỉnh một số tùy chọn hoạt động mà không cần phát hành lại ứng dụng. |
-| **Cloud Storage for Firebase — chờ chốt** | Phục vụ yêu cầu tải file báo cáo lên cloud của Lab 3 nếu phương án dịch vụ và chi phí được thống nhất. |
+| **Cloud Storage for Firebase — bắt buộc Lab 3** | Tải báo cáo theo UID, hiển thị tiến độ/URL, giới hạn quyền bằng Rules và cung cấp bằng chứng. Điều kiện hạ tầng/chi phí còn phải chốt; chưa có upload thì yêu cầu này chưa hoàn thành. |
 
-Phần xuất PDF sẽ tách khỏi phần tải lên cloud để vẫn có thể tạo và chia sẻ báo cáo trên thiết bị. Yêu cầu Storage cần được đối chiếu giữa Lab 3 và Final trước khi cấu hình.
+Phần xuất PDF sẽ tách khỏi phần tải lên cloud để vẫn có thể tạo và chia sẻ báo cáo trên thiết bị. Xác minh điều kiện dịch vụ trước khi cấu hình; local PDF không thay thế upload Lab 3.
 
 ### Công cụ phát triển và kiểm thử
 
@@ -65,7 +65,7 @@ Phần xuất PDF sẽ tách khỏi phần tải lên cloud để vẫn có th�
 | **Flutter DevTools + flutter analyze** | Kiểm tra lỗi mã nguồn và hỗ trợ phân tích ứng dụng. |
 | **flutter test** | Kiểm thử logic và các thành phần giao diện quan trọng. |
 | **Firebase Emulator Suite** | Kiểm thử dữ liệu và Security Rules trong môi trường phát triển. |
-| **ARTEMIS — theo roadmap, cần đối chiếu rubric** | Kiểm thử các luồng người dùng từ đầu đến cuối và thu thập bằng chứng. |
+| **Google ARTEMIS — bắt buộc Lab 3** | Kiểm thử các luồng người dùng từ đầu đến cuối và thu thập bằng chứng. |
 
 Phiên bản Flutter, Dart và các thư viện sẽ được ghi cụ thể khi khởi tạo mã nguồn và kiểm tra tính tương thích.
 
@@ -97,11 +97,9 @@ Màn hình gọi ViewModel; phần truy cập Firebase nằm trong Repository/Se
 6. Bổ sung báo cáo PDF, thông báo và các dịch vụ theo dõi ứng dụng.
 7. Kiểm thử, sửa lỗi và chuẩn bị bằng chứng nộp Lab 3.
 
-## Hướng mở rộng cho Final
+## Phạm vi triển khai hiện tại
 
-Sau khi hoàn tất Lab 3, kế hoạch đề xuất là bổ sung **Flutter Web** cho Staff/Admin, dùng chung Firestore, triển khai web bằng **Firebase Hosting** và hỗ trợ gợi ý kế hoạch sở thích bằng **Gemini qua Firebase AI Logic**. **Firebase App Check** dự kiến được dùng để tăng cường bảo vệ truy cập dịch vụ.
-
-Phân quyền Staff/Admin, bước duyệt RSVP và phạm vi AI cần được thống nhất trước khi triển khai. Các phần này thuộc giai đoạn Final, chưa nằm trong chức năng đã hoàn thành của Lab 3.
+Chỉ thực hiện Lab 3 theo phase 00–08 trong `prompts/`. Web quản trị, Staff/Admin, duyệt RSVP liên vai trò và Gemini trong app thuộc kế hoạch tham khảo tại `planning/final/roadmap.md`, chưa triển khai trong Lab 3. AI code review và ARTEMIS vẫn là yêu cầu Lab 3.
 
 ## Chạy dự án
 

@@ -2,13 +2,13 @@
 
 > Applies to this repository and all subdirectories unless a more specific `AGENTS.md` overrides part of it. **This is a working agreement, not proof that any requirement has already passed.**
 >
-> Main objective: implement the approved **Hobby Tracker Lab 2** design as a testable **PRM393 Lab 3 Flutter + Firebase Android app**, then (only when assigned) extend it into the **Final Assignment** system. Work in strictly reviewed phases.
+> Main objective: implement the approved **Hobby Tracker Lab 2** design as a testable **PRM393 Lab 3 Flutter + Firebase Android app**, The current target ends at Lab 3 phase 08. Work in strictly reviewed phases.
 
 ## 1. Mandatory startup procedure
 
 For EVERY new Codex task:
 
-1. Identify the **explicitly assigned phase** (`00`, `01`, `02`, `03`, `04`, `05`, `06`, `07A`, `07B`, `08`, `09`, `10`, `11`, `12`, `13`) and read its `prompts/<phase>-*.md`. If no phase is specified, do a **read-only audit** and ask which phase to execute. Do not assume permission for all phases.
+1. Identify the **explicitly assigned phase** (`00`, `01`, `02`, `03`, `04`, `05`, `06`, `07A`, `07B`, `08`) and read its `prompts/<phase>-*.md`. If no phase is specified, do a **read-only audit** and ask which phase to execute. Do not assume permission for all phases.
 2. Read `docs/implementation-roadmap.md`, `README.md` (if present), `docs/open-decisions.md`, `docs/design-traceability.md`, `docs/architecture.md`, and the **relevant original artifacts** in `reference/` (see §2). Locate the actual source files first; do not invent their contents.
 3. Inspect `git status --short`, current branch, relevant project structure, build scripts and existing tests. Never discard or overwrite uncommitted user changes.
 4. Before edits, state a compact plan: **goal, in-scope/out-of-scope, file changes, dependencies/blockers, acceptance checks**. Flag unresolved instructor or billing decisions.
@@ -31,9 +31,9 @@ If `reference/` or a required handoff source is missing: name the missing files;
 - `reference/PRM393 - Lab 3 Cloud-Enabled Mobile App (Firebase, Patrol, AI Code Review).pdf` — main Lab 3 task, evidence requirements and grading rubric.
 - `reference/PRM393_Lab3_Preparation_Guide_v5_ToiUu.pdf` — operational setup/checklist.
 
-### Final — only when phases 09–13 are assigned
+### Final — excluded from current execution
 
-- `reference/PRM393 - Final Assignment One Complete System on Firebase.pdf` — mobile + Flutter web admin + shared Firestore + roles + one AI feature and cross-role demonstration.
+`planning/final/` is reference material only. Do not execute its prompts, introduce Staff/Admin approval, web clients or an in-app Gemini feature during Lab 3. The Final PDF is not a required Lab 3 input.
 
 `docs/implementation-roadmap.md` and `prompts/` are **implementation proposals** derived from these sources; they do not supersede the original lecturer requirements. For conflicts: document the exact source/section, impact and proposed choices in `docs/open-decisions.md`; do **not** silently choose or weaken a requirement. Never claim Figma, `design/DESIGN.md`, `handoff/flutter-handoff.md` or instructor approval exist unless verified in this repository.
 
@@ -48,14 +48,9 @@ If `reference/` or a required handoff source is missing: name the missing files;
 | 04 | Flow 2 — schedules, Hyper Mode and history | Timer correctness, pause/resume, duration/notes, one record per finish, ordered plans and tests |
 | 05 | Flow 3 — Community | Feed/groups/activities/people/chats and relevant permissions; RSVP-to-calendar rule verified |
 | 06 | Settings, seven themes, UI/accessibility | 15 screens reviewed, responsive/empty/loading/error states, settings behavior and visual review |
-| 07A | PDF export and optional Storage adapter | Local export works; **cloud upload remains BLOCKED** until approved and actually tested |
+| 07A | PDF export and mandatory Cloud Storage upload | Local export works; **cloud upload remains BLOCKED** until approved and actually tested |
 | 07B | FCM, Analytics, Crashlytics, Remote Config | Each service works with failure handling and verifiable console/test evidence |
 | 08 | Lab 3 ARTEMIS, AI code review, submission QA | Verified test runs, reviewed findings, evidence/report; no fabricated PASS |
-| 09 | Final shared core, roles, model, Firestore rules | Deny-by-default access and allowed/denied emulator cases per role/collection |
-| 10 | Final Flutter Web admin | Four functional screens and announcement form, role rejection and deployment only with approval |
-| 11 | Final cross-role mobile/web and inbox | Authenticated end-to-end cross-role behavior, real-time update and documented tests |
-| 12 | Final Gemini-based AI support | Explicit user acceptance of AI output, data minimization, fallback, Remote Config disable |
-| 13 | Final integration testing, review, submission QA | Cross-client regression, security/ARTEMIS evidence, gap closure and artifacts |
 
 A phase is **not accepted** merely because code compiles or a UI screenshot exists. All applicable functional, error/recovery, data/security and evidence gates must be satisfied. A human must approve moving to the next phase.
 
@@ -106,23 +101,20 @@ A phase is **not accepted** merely because code compiles or a UI screenshot exis
 - Implement shared `ThemeData` / `ColorScheme` / `TextTheme` + spacing/radius tokens and reusable component states; avoid duplicating magic styles.
 - Production/user data comes from real Firestore or an explicitly approved live data source. **No fake users, hardcoded posts or demo-only mocked success in the submission build.** Fixtures are allowed only under test/emulator development paths.
 - Use explicit typed models, validation, async error handling, subscriptions lifecycle cleanup, safe cancellation and no unhandled Future errors.
-- Firestore Security Rules are **deny by default**: no open `if true`, no client-trusted role escalation, no cross-user private-data reads or writes. Final `users/{uid}.role` must not be self-editable. Test positive AND negative permissions in Emulator Suite.
-- No `Cloud Functions`, `Cloud Storage` or `App Hosting` as Final system dependencies unless the instructor explicitly revises the Final scope. `Firebase Hosting` for Flutter Web is allowed by the Final handout.
+- Firestore Security Rules are **deny by default**: no open `if true`, no client-trusted role escalation, no cross-user private-data reads or writes. Test positive AND negative permissions in Emulator Suite.
 - No undeclared billing, paid API activation, production changes, deployment, secret sharing, test crashes on normal user paths, or destructive remote operations.
 
 ## 6. Special conflicts — stop and escalate rather than guessing
 
-1. **Lab 3 vs Final file storage:** Lab 3 explicitly requests generating and cloud-uploading a file; Final excludes Cloud Storage and requires local PDF sharing plus metadata in Firestore. Current Firebase Storage eligibility/billing must be verified for the project. Implement export separately from upload; if not authorized, report upload **BLOCKED**, never PASS.
+1. **Lab 3 mandatory file upload:** Generate and upload a file to Cloud Storage with per-user permissions, progress, URL and real evidence. Current Firebase Storage eligibility/billing must be verified for the project. Implement export separately from upload; if not authorized, report upload **BLOCKED**, never PASS.
 2. **Missing formal Lab 2 deliverables:** HTML prototypes and slide decks alone do **not** prove Figma 6 pages or required handoff approval. Mark absent items as gaps and propose drafts, not fabricated artifacts.
 3. **Authentication mismatch:** HTML prototype simulates email/password; Lab 3 requires Google Sign-In. Preserve visible routes and document any real-auth adaptations.
-4. **Final cross-role workflow:** Staff/Admin roles and approval transitions require explicit authorization and secure Rule tests. Do not assume the design already approves `pending → approved` RSVP.
-5. **AI:** Treat Gemini results as untrusted suggestions; request minimal necessary user data, validate response schema and bounds, show editable preview, and require acceptance before saving. The basic hobby-creation flow must work when AI is unavailable or disabled.
 
 Document each decision/blocker in `docs/open-decisions.md` with **source, issue, impact, choice/approval needed, owner and status**. Implement independent tasks where safe; do not silently skip dependent requirements.
 
 ## 7. Mandatory verification on EVERY coding phase
 
-Run checks appropriate to the files changed and the tools actually present. Determine the Flutter working directory from the repository rather than assuming the root; in Final it may be `mobile/`, `web/`, `packages/core/`.
+Run checks appropriate to the files changed and the tools actually present. Determine the Flutter working directory from the repository rather than assuming the root.
 
 **Repository / static checks**
 
@@ -139,10 +131,10 @@ flutter test
 
 - Flutter widget/unit/integration tests for the changed feature, including success, validation and failure/retry.
 - Firebase Emulator Suite Firestore Rules tests for auth/roles/collection changes, both allowed and denied operations.
-- `flutter build apk --debug` (Android phases) and `flutter build web` (Final web phases) where toolchains are configured.
-- Real Android emulator/device checks for Google picker, FCM foreground/background, Hyper Mode timing and responsive layouts; ARTEMIS runs as required for Lab 3/Final QA.
+- `flutter build apk --debug` (Android phases) where toolchains are configured.
+- Real Android emulator/device checks for Google picker, FCM foreground/background, Hyper Mode timing and responsive layouts; ARTEMIS runs as required for Lab 3 QA.
 - Inspect console evidence for Analytics DebugView, Crashlytics, Remote Config and FCM. A log line in code is not proof the cloud service works.
-- Verify data isolation with two distinct user accounts; verify user vs staff/admin roles when Final is in scope.
+- Verify data isolation with two distinct user accounts.
 - Test offline, missing permission, empty query, network failure and duplicate submit for each relevant workflow.
 
 **No fake results**. `PASS` only if the check truly executed with passing output. Use **FAIL** if executed and failed; **BLOCKED** for an external dependency/permission decision; **NOT RUN** if not executed. Do not treat `NOT RUN` as `PASS`. If unable to execute, write the exact reason and manual steps. Keep raw logs/screenshots/traces under `evidence/<phase>/` only when actually generated. Never create placeholder screenshots or misleading test reports.
@@ -151,7 +143,7 @@ flutter test
 
 - Preserve user edits; avoid `git reset --hard`, `git clean -fd`, destructive migrations, rewriting history or force-push. Never auto-merge/push/tag/commit unless explicitly directed.
 - Do not read, log, paste or commit secrets unnecessarily. Do not put private keys, service-account JSON, Android signing keystores, `.env` contents or API tokens into Git or output. Use placeholders in docs; ensure `.gitignore` covers secrets and generated artifacts where appropriate.
-- Do not modify the original eight `reference/` inputs. Keep screenshots and artifacts traceable to the original source.
+- Do not modify the original `reference/` inputs. Keep screenshots and artifacts traceable to the original source.
 - Avoid new dependencies without a short justification and relevant version pinning. Add tests for business logic and security invariants, not only golden screenshots.
 - No unrelated refactors, features, navigation changes or UI rewrites. Prefer minimal reversible diffs and readable named functions.
 - AI code review findings must be independently evaluated: file/line, severity/category, accepted/rejected reason, remediation and test evidence. Do not auto-apply every AI suggestion without review.
@@ -162,7 +154,7 @@ flutter test
 Use this exact reporting structure in your final Codex reply:
 
 ```text
-PHASE: <00..13> | <short name>
+PHASE: <00..08> | <short name>
 STATUS: PASS / PARTIAL / FAIL / BLOCKED  (phase as a whole)
 SCOPE: <implemented and deliberately not implemented>
 CHANGED FILES: <paths; state if none>
@@ -183,3 +175,7 @@ Never say "100% complete", "verified", "deployed", "Firebase connected", "ARTEMI
 ## 10. One-line operating principle
 
 **Read the source → identify the phase → make the smallest correct change → run actual checks → report evidence → wait for human approval.**
+
+## Current scope takes precedence
+
+Only phases 00–08 are active. Read the five Lab 2 sources and two Lab 3 PDFs; locate missing sources externally if available and document their actual location. Final planning is archived under planning/final/ and must not add Lab 3 acceptance gates. Cloud Storage upload is mandatory in Lab 3; unresolved service/billing conditions mean BLOCKED, not optional or complete. Security Rules and owner/member isolation remain required for Lab 3; multi-role Staff/Admin workflows are excluded. Do not restructure into mobile/web/packages/core for Lab 3.

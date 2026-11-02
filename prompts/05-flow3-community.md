@@ -4,11 +4,11 @@
 
 Flow 3: Community dùng dữ liệu thật
 
-**Mục tiêu:** hoàn thiện Connect & Participate trước khi mở thêm vai trò. **Công việc:** Feed/Post/Like/Comments; Groups + Join/Create + Chat; Activities/Events + RSVP + optional Add to Home; People + DM; Chats + Conversation; Firestore snapshots + participant rules; validation/empty/error. **DoD:** 2 tài khoản thực có thể nhìn nội dung chia sẻ phù hợp, trao đổi tin nhắn được phân quyền, data persist; người không thuộc chat không đọc messages; RSVP một mình không thêm schedule. Ghi nhận rõ nếu dùng dữ liệu seed **chỉ trong emulator**, không hard-code data vào production.
+**Mục tiêu:** hoàn thiện Connect & Participate theo thiết kế Lab 2. **Công việc:** Feed/Post/Like/Comments; Groups + Join/Create + Chat; Activities/Events + RSVP + optional Add to Home; People + DM; Chats + Conversation; Firestore snapshots + participant rules; validation/empty/error. **DoD:** 2 tài khoản thực có thể nhìn nội dung chia sẻ phù hợp, trao đổi tin nhắn được phân quyền, data persist; người không thuộc chat không đọc messages; RSVP một mình không thêm schedule. Ghi nhận rõ nếu dùng dữ liệu seed **chỉ trong emulator**, không hard-code data vào production.
 
 ## Run this task
 
-Implement ONLY phase 05 in the existing Hobby Tracker repository. Read `AGENTS.md`, `docs/implementation-roadmap.md`, the relevant original 8 references in `reference/`, and existing docs before editing. Preserve all previous completed phases.
+Implement ONLY phase 05 in the existing Hobby Tracker repository. Read `AGENTS.md`, `docs/implementation-roadmap.md`, the relevant original 7 Lab 2/Lab 3 references in `reference/`, and existing docs before editing. Preserve all previous completed phases.
 
 ### First response before touching code
 

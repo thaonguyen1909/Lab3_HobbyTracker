@@ -1,6 +1,6 @@
 # HOBBY TRACKER — KẾ HOẠCH TRIỂN KHAI THEO ĐỢT CHO CODEX
 
-> Bản lập kế hoạch dựa trên 8 file người học cung cấp ngày 01/11/2026. Đây là kế hoạch **đề xuất** để hiện thực Lab 2 thành Lab 3 và tiếp tục Final Assignment; không phải các bước đã được triển khai hoặc được giảng viên phê duyệt.
+> Bản lập kế hoạch dựa trên bộ tài liệu người học cung cấp ngày 01/11/2026. Đây là kế hoạch **đề xuất** để hiện thực Lab 2 thành ứng dụng Android Lab 3; không phải các bước đã được triển khai hoặc được giảng viên phê duyệt.
 
 ## 1. Nguồn tham chiếu và nguyên tắc ưu tiên
 
@@ -41,14 +41,12 @@ Khi nguồn xung đột, **ghi vào `docs/open-decisions.md`, không để Codex
 ## 3. Những điểm cần xử lý trước khi Codex bắt đầu
 
 1. **Đầu vào Lab 2 chưa đầy đủ theo quy chuẩn môn:** `Specification.html` ghi rõ Figma 6 trang, `design/DESIGN.md`, `handoff/flutter-handoff.md` và Google Stitch/evidence còn thiếu hoặc chưa chứng minh. Codex có thể tạo bản handoff đề xuất từ HTML, nhưng **không tự khẳng định đã thay thế được file Figma hoặc được giảng viên phê duyệt**.
-2. **Cloud Storage bị xung đột:** PDF Lab 3 yêu cầu tạo file và upload lên Cloud Storage, trong khi PDF Final quy định **không dùng Cloud Storage** và tạo/chia sẻ PDF trên máy, metadata lưu ở Firestore. Đặc biệt, tài liệu chính thức của Firebase hiện yêu cầu **gói Blaze** để dùng Cloud Storage, dù PDF Lab 3 ghi Spark là đủ. Nên xác nhận với giảng viên/phương án chi phí; không tự động nâng gói billing. Ghi rõ trạng thái `BLOCKED` nếu chưa giải quyết. Giữ evidence Lab 3 riêng, tách lớp `ReportExportService` và `ReportUploadService` để Final có thể dùng xuất cục bộ mà không phụ thuộc Storage.
+2. **Cloud Storage bắt buộc trong Lab 3:** tạo file và upload theo UID, hiển thị progress/URL, có Rules và bằng chứng thực. Xác minh điều kiện dịch vụ/chi phí hiện hành trước cấu hình, không tự nâng billing. Chưa đủ điều kiện thì ghi BLOCKED; local PDF chưa đủ nghiệm thu. Tách ReportExportService và ReportUploadService để dễ kiểm thử.
 3. **Lab 2 có form email/password, Lab 3 bắt buộc Google Sign-In:** đề xuất hỗ trợ Google Sign-In và bảo tồn các route Login/Register/Forgot Password với xử lý auth thật khi khả thi; mọi khác biệt phải ghi traceability.
-4. **Vai trò ngoài người dùng cá nhân:** Final yêu cầu thêm Staff/Admin nhưng Lab 2 là persona một role. Đề xuất Staff quản lý sự kiện, duyệt RSVP pending; cần chốt role và khác biệt trạng thái RSVP với giảng viên (Final ghi cần thống nhất web roles).
-5. **Không dùng Cloud Functions, Cloud Storage hay App Hosting trong cấu hình Final** theo PDF Final; dùng Flutter Web + Firebase Hosting, Firestore Security Rules và App Check.
 
 ## 4. Quy chuẩn vận hành Codex ở mọi đợt
 
-- Đưa **cả 8 file gốc** vào thư mục `reference/` trong workspace của Codex trước đợt 00. Các prompt trong tài liệu này chỉ có tác dụng khi Codex thật sự nhìn thấy file.
+- Đưa **7 nguồn gốc Lab 2/Lab 3** vào thư mục `reference/` trong workspace của Codex trước đợt 00. Các prompt trong tài liệu này chỉ có tác dụng khi Codex thật sự nhìn thấy file.
 - Mỗi đợt = 1 phạm vi nhỏ/1 PR hoặc nhánh riêng, có mục tiêu, file đầu ra, test và tiêu chí hoàn tất (DoD). Không chạy đồng loạt 3–5 đợt trong một prompt.
 - Trước khi sửa: Codex phải đọc README, `docs/open-decisions.md`, `docs/design-traceability.md`, `docs/architecture.md`, trạng thái Git và các file nguồn liên quan; thông báo phần nào bị BLOCKED.
 - Không tự deploy lên production, không tăng billing, không xóa dữ liệu thật, không thay đổi quyền IAM hoặc commit secret/keystore/API key. Thao tác có tác động hạ tầng phải được người phụ trách xác nhận.
@@ -62,7 +60,7 @@ Khi nguồn xung đột, **ghi vào `docs/open-decisions.md`, không để Codex
 
 ### ĐỢT 00 — Chốt đầu vào và truy vết yêu cầu (CHỈ TÀI LIỆU)
 
-**Mục tiêu:** tránh viết code sai vì thiếu spec. **Công việc:** đọc 8 file, xác lập danh sách 15 màn hình/3 flow/7 theme/4 tab; lập ma trận `Lab2 -> Flutter route -> widget -> viewmodel -> data source -> test case`; tách rubric Lab 3 vs Final; liệt kê gaps Figma/Handoff, Cloud Storage/billing, role, auth. **Deliverables:** `docs/gap-review.md`, `docs/design-traceability.md`, `docs/open-decisions.md`, `docs/rubric-checklist.md`, draft `design/DESIGN.md`, draft `handoff/flutter-handoff.md`. **DoD:** không có màn hình hoặc recovery path bị bỏ sót; mỗi yêu cầu có nguồn; các quyết định chưa được phê duyệt có `OPEN/BLOCKED`, không coi là đã hoàn thành.
+**Mục tiêu:** tránh viết code sai vì thiếu spec. **Công việc:** đọc 7 nguồn Lab 2/Lab 3, xác lập danh sách 15 màn hình/3 flow/7 theme/4 tab; lập ma trận `Lab2 -> Flutter route -> widget -> viewmodel -> data source -> test case`; lập checklist rubric Lab 3; liệt kê gaps Figma/Handoff, Cloud Storage/billing, auth. **Deliverables:** `docs/gap-review.md`, `docs/design-traceability.md`, `docs/open-decisions.md`, `docs/rubric-checklist.md`, draft `design/DESIGN.md`, draft `handoff/flutter-handoff.md`. **DoD:** không có màn hình hoặc recovery path bị bỏ sót; mỗi yêu cầu có nguồn; các quyết định chưa được phê duyệt có `OPEN/BLOCKED`, không coi là đã hoàn thành.
 
 **Prompt Codex:** `prompts/00-audit.md`.
 
@@ -84,7 +82,7 @@ Khi nguồn xung đột, **ghi vào `docs/open-decisions.md`, không để Codex
 
 ### ĐỢT 05 — Flow 3: Community dùng dữ liệu thật
 
-**Mục tiêu:** hoàn thiện Connect & Participate trước khi mở thêm vai trò. **Công việc:** Feed/Post/Like/Comments; Groups + Join/Create + Chat; Activities/Events + RSVP + optional Add to Home; People + DM; Chats + Conversation; Firestore snapshots + participant rules; validation/empty/error. **DoD:** 2 tài khoản thực có thể nhìn nội dung chia sẻ phù hợp, trao đổi tin nhắn được phân quyền, data persist; người không thuộc chat không đọc messages; RSVP một mình không thêm schedule. Ghi nhận rõ nếu dùng dữ liệu seed **chỉ trong emulator**, không hard-code data vào production.
+**Mục tiêu:** hoàn thiện Connect & Participate theo thiết kế Lab 2. **Công việc:** Feed/Post/Like/Comments; Groups + Join/Create + Chat; Activities/Events + RSVP + optional Add to Home; People + DM; Chats + Conversation; Firestore snapshots + participant rules; validation/empty/error. **DoD:** 2 tài khoản thực có thể nhìn nội dung chia sẻ phù hợp, trao đổi tin nhắn được phân quyền, data persist; người không thuộc chat không đọc messages; RSVP một mình không thêm schedule. Ghi nhận rõ nếu dùng dữ liệu seed **chỉ trong emulator**, không hard-code data vào production.
 
 ### ĐỢT 06 — Settings, 7 themes và UI/A11y parity
 
@@ -92,7 +90,7 @@ Khi nguồn xung đột, **ghi vào `docs/open-decisions.md`, không để Codex
 
 ### ĐỢT 07A — File report và chiến lược Cloud Storage (BLOCKER PHẢI CHỐT)
 
-**Mục tiêu:** PDF export thực và đường upload theo yêu cầu Lab 3 nếu hạ tầng được duyệt. **Công việc:** `ReportExportService` dựng PDF summary từ các dữ liệu hiện tại; `ReportUploadService` abstract; nếu đã được duyệt Blaze thì Firebase Storage upload `reports/{uid}/...` + progress + URL + storage.rules + denied tests + offline error. Nếu chưa có quyết định billing, chỉ implement local export và đánh dấu Cloud Storage requirement còn thiếu, không giả evidence. **DoD:** file tương ứng số liệu màn hình; local export/share hoạt động; upload chỉ tính DONE nếu cloud upload thật + console evidence + rules tests; Final có thể tắt upload mà giữ local export.
+**Mục tiêu:** PDF export thực và đường upload theo yêu cầu Lab 3 nếu hạ tầng được duyệt. **Công việc:** `ReportExportService` dựng PDF summary từ các dữ liệu hiện tại; `ReportUploadService` abstract; sau khi xác minh điều kiện dịch vụ và được duyệt phương án hạ tầng cần thiết thì Firebase Storage upload `reports/{uid}/...` + progress + URL + storage.rules + denied tests + offline error. Nếu chưa có quyết định billing, chỉ implement local export và đánh dấu Cloud Storage requirement còn thiếu, không giả evidence. **DoD:** file tương ứng số liệu màn hình; local export/share hoạt động; upload chỉ tính DONE nếu cloud upload thật + console evidence + rules tests; Local export không thay thế upload Lab 3.
 
 ### ĐỢT 07B — FCM, Analytics, Crashlytics, Remote Config
 
@@ -102,26 +100,6 @@ Khi nguồn xung đột, **ghi vào `docs/open-decisions.md`, không để Codex
 
 **Mục tiêu:** nghiệm thu Lab 3 có evidence, không chỉ ảnh giao diện. **Công việc:** `docs/test-plan.md` ≥10 case; pytest/Google ARTEMIS (mỗi case ≥3 runs, assert kết quả nhìn thấy, test native Google picker/notification, 1 Pro exploratory 15–30 phút), traces/pass-rate/flaky report; AI code review PR ≥5 findings thuộc ≥2 loại, quyết định và ≥3 fixes ở commits riêng; report Lab 3 8–12 trang, slide 12–15, video 5–10 phút. **DoD:** test records là kết quả thực, code review có file:line/commit, README có versions, AI disclosure, links mở được; đánh tag mốc `lab3-submission` (chỉ sau kiểm tra). Không bịa kết quả/chạy test giả.
 
-### ĐỢT 09 — Final: shared core, roles, data model và rules
-
-**Mục tiêu:** mở rộng Lab 3 sang hệ thống 2 client có quyền phân tách rõ. **Công việc:** lưu tag Lab 3 trước; restructure repo thành `mobile/`, `web/`, `packages/core/` theo PDF Final, preserve history; chung model/service/Theme tokens; `users/{uid}.role` (`user`, `staff`, `admin`), bootstrap Admin bằng Console do người phụ trách, không auto-escalate; Firestore `deny by default`/shape validation/status transitions; Firebase Emulator tests allowed & denied per role per collection; App Check cho Firestore/AI, `docs/data-model.md`. **DoD:** mobile regressions green; nonstaff blocked web, tự sửa role denied; Rules tests pass, `README` mô tả quyền và admin bootstrap; không có rules `allow read, write: if true`.
-
-### ĐỢT 10 — Final: Flutter Web Admin (4 screens + form)
-
-**Mục tiêu:** web vận hành thật trên cùng Firestore. **Công việc:** Sign-in Google reject nonstaff; Management list/search/create/edit/archive **Events**; Review queue pending registrations approve/reject + reason; Dashboard ≥3 figures from queries + 1 chart; Announcement form tạo `announcements`; desktop width layout cùng tokens/Theme; analytics/remote config (Final), deploy Firebase Hosting sau khi người phụ trách duyệt. **DoD:** 4 màn + form, loading/empty/error; role rejection; sự kiện/announcement xuất hiện mobile đúng phân quyền; URL hoạt động cửa sổ ẩn danh; screenshots evidence.
-
-### ĐỢT 11 — Final: cross-role flow + inbox realtime
-
-**Mục tiêu:** chứng minh mobile ↔ staff web liên thông. **Flow đề xuất:** mobile RSVP event theo `registrations.status=pending` → staff web approve/reject và ghi reason → Firestore cập nhật realtime → mobile thấy status và inbox notification; **chỉ Add to Home nếu người dùng chủ động bấm**. Đây là **đề xuất mở rộng trạng thái** so với Lab 2, phải cập nhật Figma/traceability và xin xác nhận giảng viên. `announcements` hiển thị trong mobile inbox; không giả rằng FCM tự gửi push cho mọi thay đổi (không dùng Cloud Functions). **DoD:** test end-to-end trên deployed system 3 lần, đo latency và evidence; `docs/cross-role-flow.md` gồm actor/screen/write/rule/visible result/timing/sequence diagram.
-
-### ĐỢT 12 — Final: Gemini AI structured output (Level 2)
-
-**Mục tiêu:** AI hữu ích ngay trong một flow Lab 2, không phá workflow gốc. **Ý tưởng đề xuất:** `Beginner Starter Plan` trong Create Hobby (Flow1): nhận hobby dạng phi cá nhân + thời lượng mong muốn, Gemini tạo JSON `{summary, starterSteps[], suggestedMinutes}` → parse thành Dart model → cho user sửa/chấp nhận trước khi lưu. Firebase AI Logic (Gemini Developer API; kiểm tra model và hạn mức free tier trước khi chọn), App Check, Remote Config `ai_enabled`, `ai_model`, `ai_prompt_template`, fallback manual khi lỗi quota/network, không gửi tên/email/hình ảnh con người; `ai_request`, `ai_result_accepted`, `ai_error`. **DoD:** 3 input-output thật + 1 failure case vào `docs/ai-feature.md`, AI off từ Remote Config và Create Hobby vẫn tạo được; không có API secret trong client/hardcode; AI output luôn gắn nhãn, có xác nhận trước khi ghi.
-
-### ĐỢT 13 — Final: hardening, review và nộp bài
-
-**Mục tiêu:** đạt rubric Final, kiểm tra toàn hệ thống thay vì thêm tính năng. **Công việc:** ARTEMIS 3 runs/case (3 Lab 2 flows + mobile cross-role + AI); Security Rules test toàn bộ collection/role; web checklist 4 màn + form + roles/empty/error; cross-role live 3 runs; AI code review phần code mới ≥3 findings/decisions; `docs/test-report.md`, `docs/gap-review.md` closed; report Final 10–15 trang, slides 12–15, video 8–12 phút (mobile/web/AI/off toggle/tests); links private-window; README versions/setup/roles/accounts/evidence. **DoD:** rubric coverage không có mục chưa chứng minh được; ghi đúng `PASS / FAIL / BLOCKED / NOT RUN`; code freeze sau QA; giữ lịch sử Git nhiều đợt; không bịa ảnh/traces.
-
 ## 6. Phụ thuộc và thứ tự bắt buộc
 
 ```
@@ -130,9 +108,6 @@ Khi nguồn xung đột, **ghi vào `docs/open-decisions.md`, không để Codex
                                       -> 05 (community) -> 06 (settings/UI)
                                       -> 07A (export/storage*) + 07B (Firebase services)
                                       -> 08 (Lab 3 QA + submission tag)
-                                      -> 09 (Final roles/shared core/rules)
-                                      -> 10 (web admin) -> 11 (cross-role/inbox)
-                                      -> 12 (AI Level 2) -> 13 (Final QA/submission)
 ```
 
 `*` 07A chỉ hoàn tất Cloud Storage khi có phương án billing/ngoại lệ chính thức, không được đánh dấu đạt bằng local PDF.
@@ -149,25 +124,20 @@ Khi nguồn xung đột, **ghi vào `docs/open-decisions.md`, không để Codex
 | Lab 3 Firebase | Auth, Storage*, FCM, Analytics, Crashlytics, Remote Config; failure paths & evidence | 07A–07B |
 | Lab 3 ARTEMIS | ≥10 cases, ≥3 runs each, native+error, 1 Pro exploratory | 08 |
 | Lab 3 review | ≥5 findings, ≥2 categories, ≥3 fix commits | 08 |
-| Final RBAC | role field & deny-by-default Rules with allowed/denied tests | 09 |
-| Final Web | 4 screens + form, dashboard ≥3 figures + chart, Hosting | 10 |
-| Final integration | cross-role live 3 runs, mobile realtime inbox | 11 |
-| Final AI | Gemini structured JSON editable, App Check, Remote Config & fallback | 12 |
-| Final review | ≥3 new review findings and recorded decisions | 13 |
 
 ## 8. Những việc con người phải làm (Codex không thể giả thay)
 
 - Xác nhận Figma chính thức, `DESIGN.md`/handoff và sự chấp nhận HTML Lab 2 với giảng viên.
-- Tạo/quản lý Firebase/Google project, Google Sign-In SHA, test accounts, App Check, Billing, quyền staff/admin và secret một cách an toàn.
-- Nếu cần Cloud Storage: phê duyệt Blaze/ngân sách hoặc ngoại lệ; không tự kích hoạt chi phí.
+- Tạo/quản lý Firebase/Google project, Google Sign-In SHA, test accounts, cấu hình dịch vụ và billing và secret một cách an toàn.
+- Chốt điều kiện Cloud Storage/ngân sách hoặc ngoại lệ chính thức với giảng viên; không tự kích hoạt chi phí.
 - Cấp quyền và thiết bị Android thật/emulator, Google account picker, test notification foreground/background/terminated, ARTEMIS model API key.
-- Chụp evidence thực trong Firebase Console/DebugView/Crashlytics, đo thời gian cross-role, ghi nhận test runs, làm review và quyết định từng AI finding.
+- Chụp evidence thực trong Firebase Console/DebugView/Crashlytics, ghi nhận test runs, làm review và quyết định từng AI finding.
 - Review UI và các khác biệt với Lab2, duyệt branch/PR từng đợt, nộp report/slides/demo đúng hạn.
 
 ## 9. Mẫu lệnh giao việc cho Codex (áp dụng cùng file prompt của từng đợt)
 
 ```
-Bạn đang làm ở repository Hobby Tracker. Hãy đọc AGENTS.md, tài liệu 8 file
+Bạn đang làm ở repository Hobby Tracker. Hãy đọc AGENTS.md, 7 nguồn Lab 2/Lab 3
 trong reference/, docs/open-decisions.md và docs/design-traceability.md.
 Chỉ thực hiện ĐỢT <SỐ> trong prompts/<FILE>.md; không làm đợt sau.
 
@@ -186,6 +156,6 @@ Sau khi sửa:
 
 ---
 
-**Tên repository theo tài liệu:** giai đoạn Lab 3 dùng `PRM393_Lab03_<StudentID>`; đến Final tiếp tục lịch sử và đổi thành `PRM393_Final_<ID>` theo yêu cầu. Giữ tag/commit của mốc Lab 3 trước khi tái cấu trúc.
+**Tên repository khi nộp theo Lab 3:** `PRM393_Lab03_<StudentID>`. Tên hiện tại `Lab3_HobbyTracker` cần chốt trước nộp; chưa tự đổi tên.
 
-**Đề xuất vận hành:** làm Lab 3 xong và lưu tag/evidence trước khi triển khai Final. Chiến lược này phục vụ cả hai rubric, giảm rủi ro Codex sửa lung tung và giúp mỗi buổi kiểm tra đều có sản phẩm chạy được.
+**Phạm vi hiện tại:** chỉ phase 00–08. Kế hoạch Final ở `planning/final/roadmap.md` là tham khảo, không thuộc tiêu chí nghiệm thu Lab 3 và không được tự khởi chạy.
