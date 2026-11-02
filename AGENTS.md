@@ -8,34 +8,34 @@
 
 For EVERY new Codex task:
 
-1. Identify the **explicitly assigned phase** (`00`, `01`, `02`, `03`, `04`, `05`, `06`, `07A`, `07B`, `08`) and read its `prompts/<phase>-*.md`. If no phase is specified, do a **read-only audit** and ask which phase to execute. Do not assume permission for all phases.
-2. Read `docs/implementation-roadmap.md`, `README.md` (if present), `docs/open-decisions.md`, `docs/design-traceability.md`, `docs/architecture.md`, and the **relevant original artifacts** in `reference/` (see §2). Locate the actual source files first; do not invent their contents.
+1. Identify the **explicitly assigned phase** (`00`, `01`, `02`, `03`, `04`, `05`, `06`, `07A`, `07B`, `08`) and read its `docs/requirements/prompts/<phase>-*.md`. If no phase is specified, do a **read-only audit** and ask which phase to execute. Do not assume permission for all phases.
+2. Read `docs/implementation-roadmap.md`, `README.md` (if present), `docs/open-decisions.md`, `docs/design-traceability.md`, `docs/architecture.md`, and the **relevant original artifacts** in `docs/requirements/reference/` (see §2). Locate the actual source files first; do not invent their contents.
 3. Inspect `git status --short`, current branch, relevant project structure, build scripts and existing tests. Never discard or overwrite uncommitted user changes.
 4. Before edits, state a compact plan: **goal, in-scope/out-of-scope, file changes, dependencies/blockers, acceptance checks**. Flag unresolved instructor or billing decisions.
 5. Implement **only the assigned phase**. Validate it, provide evidence, and **stop**. Do not auto-start the next phase, deploy, tag, merge, or push.
 
-If `reference/` or a required handoff source is missing: name the missing files; for **phase 00**, document the gaps using available files; for later phases, do not invent design decisions or mark source-dependent work as complete. Continue only with clearly independent, safe work.
+If `docs/requirements/reference/` or a required handoff source is missing: name the missing files; for **phase 00**, document the gaps using available files; for later phases, do not invent design decisions or mark source-dependent work as complete. Continue only with clearly independent, safe work.
 
 ## 2. Reference sources and precedence
 
 ### Lab 2 — what the app must look like and do
 
-- `reference/Specification.html` — screen matrix, IA, three flows, invariants, design tokens, known limitations and unapproved gaps.
-- `reference/Prototype.html` — runnable **offline browser** interaction reference; sample/local data is NOT a production backend.
-- `reference/DesignArchive.html` — visual reference and snapshots, not an application runtime.
-- `reference/HobbyTracker_Design_Journey_12_Slides.pptx`
-- `reference/HobbyTracker_Design_Journey_Rebuilt_V3.pptx` — design rationale and evolution. The nine interviews were **AI-simulated**, not a real user study.
+- `docs/requirements/reference/Specification.html` — screen matrix, IA, three flows, invariants, design tokens, known limitations and unapproved gaps.
+- `docs/requirements/reference/Prototype.html` — runnable **offline browser** interaction reference; sample/local data is NOT a production backend.
+- `docs/requirements/reference/DesignArchive.html` — visual reference and snapshots, not an application runtime.
+- `docs/requirements/reference/HobbyTracker_Design_Journey_12_Slides.pptx`
+- `docs/requirements/reference/HobbyTracker_Design_Journey_Rebuilt_V3.pptx` — design rationale and evolution. The nine interviews were **AI-simulated**, not a real user study.
 
 ### Lab 3 — implementation obligations
 
-- `reference/PRM393 - Lab 3 Cloud-Enabled Mobile App (Firebase, Patrol, AI Code Review).pdf` — main Lab 3 task, evidence requirements and grading rubric.
-- `reference/PRM393_Lab3_Preparation_Guide_v5_ToiUu.pdf` — operational setup/checklist.
+- `docs/requirements/reference/PRM393 - Lab 3 Cloud-Enabled Mobile App (Firebase, Patrol, AI Code Review).pdf` — main Lab 3 task, evidence requirements and grading rubric.
+- `docs/requirements/reference/PRM393_Lab3_Preparation_Guide_v5_ToiUu.pdf` — operational setup/checklist.
 
 ### Final — excluded from current execution
 
-`planning/final/` is reference material only. Do not execute its prompts, introduce Staff/Admin approval, web clients or an in-app Gemini feature during Lab 3. The Final PDF is not a required Lab 3 input.
+`docs/requirements/planning/final/` is reference material only. Do not execute its prompts, introduce Staff/Admin approval, web clients or an in-app Gemini feature during Lab 3. The Final PDF is not a required Lab 3 input.
 
-`docs/implementation-roadmap.md` and `prompts/` are **implementation proposals** derived from these sources; they do not supersede the original lecturer requirements. For conflicts: document the exact source/section, impact and proposed choices in `docs/open-decisions.md`; do **not** silently choose or weaken a requirement. Never claim Figma, `design/DESIGN.md`, `handoff/flutter-handoff.md` or instructor approval exist unless verified in this repository.
+`docs/implementation-roadmap.md` and `docs/requirements/prompts/` are **implementation proposals** derived from these sources; they do not supersede the original lecturer requirements. For conflicts: document the exact source/section, impact and proposed choices in `docs/open-decisions.md`; do **not** silently choose or weaken a requirement. Never claim Figma, `docs/design/DESIGN.md`, `docs/design/handoff/flutter-handoff.md` or instructor approval exist unless verified in this repository.
 
 ## 3. Phase boundaries and approval gates
 
@@ -50,7 +50,7 @@ If `reference/` or a required handoff source is missing: name the missing files;
 | 06 | Settings, seven themes, UI/accessibility | 15 screens reviewed, responsive/empty/loading/error states, settings behavior and visual review |
 | 07A | PDF export and mandatory Cloud Storage upload | Local export works; **cloud upload remains BLOCKED** until approved and actually tested |
 | 07B | FCM, Analytics, Crashlytics, Remote Config | Each service works with failure handling and verifiable console/test evidence |
-| 08 | Lab 3 ARTEMIS, AI code review, submission QA | Verified test runs, reviewed findings, evidence/report; no fabricated PASS |
+| 08 | Lab 3 ARTEMIS, AI code review, submission QA | Verified test runs, reviewed findings, docs/evidence/report; no fabricated PASS |
 
 A phase is **not accepted** merely because code compiles or a UI screenshot exists. All applicable functional, error/recovery, data/security and evidence gates must be satisfied. A human must approve moving to the next phase.
 
@@ -137,13 +137,13 @@ flutter test
 - Verify data isolation with two distinct user accounts.
 - Test offline, missing permission, empty query, network failure and duplicate submit for each relevant workflow.
 
-**No fake results**. `PASS` only if the check truly executed with passing output. Use **FAIL** if executed and failed; **BLOCKED** for an external dependency/permission decision; **NOT RUN** if not executed. Do not treat `NOT RUN` as `PASS`. If unable to execute, write the exact reason and manual steps. Keep raw logs/screenshots/traces under `evidence/<phase>/` only when actually generated. Never create placeholder screenshots or misleading test reports.
+**No fake results**. `PASS` only if the check truly executed with passing output. Use **FAIL** if executed and failed; **BLOCKED** for an external dependency/permission decision; **NOT RUN** if not executed. Do not treat `NOT RUN` as `PASS`. If unable to execute, write the exact reason and manual steps. Keep raw logs/screenshots/traces under `docs/evidence/<phase>/` only when actually generated. Never create placeholder screenshots or misleading test reports.
 
 ## 8. Security, repository hygiene and change control
 
 - Preserve user edits; avoid `git reset --hard`, `git clean -fd`, destructive migrations, rewriting history or force-push. Never auto-merge/push/tag/commit unless explicitly directed.
 - Do not read, log, paste or commit secrets unnecessarily. Do not put private keys, service-account JSON, Android signing keystores, `.env` contents or API tokens into Git or output. Use placeholders in docs; ensure `.gitignore` covers secrets and generated artifacts where appropriate.
-- Do not modify the original `reference/` inputs. Keep screenshots and artifacts traceable to the original source.
+- Do not modify the original `docs/requirements/reference/` inputs. Keep screenshots and artifacts traceable to the original source.
 - Avoid new dependencies without a short justification and relevant version pinning. Add tests for business logic and security invariants, not only golden screenshots.
 - No unrelated refactors, features, navigation changes or UI rewrites. Prefer minimal reversible diffs and readable named functions.
 - AI code review findings must be independently evaluated: file/line, severity/category, accepted/rejected reason, remediation and test evidence. Do not auto-apply every AI suggestion without review.
@@ -178,4 +178,13 @@ Never say "100% complete", "verified", "deployed", "Firebase connected", "ARTEMI
 
 ## Current scope takes precedence
 
-Only phases 00–08 are active. Read the five Lab 2 sources and two Lab 3 PDFs; locate missing sources externally if available and document their actual location. Final planning is archived under planning/final/ and must not add Lab 3 acceptance gates. Cloud Storage upload is mandatory in Lab 3; unresolved service/billing conditions mean BLOCKED, not optional or complete. Security Rules and owner/member isolation remain required for Lab 3; multi-role Staff/Admin workflows are excluded. Do not restructure into mobile/web/packages/core for Lab 3.
+Only phases 00–08 are active. Read the five Lab 2 sources and two Lab 3 PDFs; locate missing sources externally if available and document their actual location. Final planning is archived under docs/requirements/planning/final/ and must not add Lab 3 acceptance gates. Cloud Storage upload is mandatory in Lab 3; unresolved service/billing conditions mean BLOCKED, not optional or complete. Security Rules and owner/member isolation remain required for Lab 3; multi-role Staff/Admin workflows are excluded. Do not restructure into mobile/web/packages/core for Lab 3.
+
+## User scope override — 03/11/2026
+
+The user explicitly requests all Lab3 phases 00–08 in one implementation pass, without per-phase approval pauses. Continue independent work across phase boundaries. Keep evidence-based acceptance and BLOCKED statuses for unavailable Firebase/Figma/Android/ARTEMIS/lecturer inputs. This does not authorize billing, cloud deployment, public publishing, merging or inventing evidence. `docs/full-implementation-report.md` is authoritative over historical phase notes.
+
+
+## User scope override — live Figma UI, 03/11/2026
+
+Update the entire existing Flutter app UI using live file 5JiJtLyXN6DEpC1LycQPBb as visual target. Preserve MVVM/Riverpod and Firebase behavior. Do not convert simulated prototype behavior into production. Record remaining functional/visual differences honestly in docs/figma-ui-report.md.

@@ -1,0 +1,45 @@
+00:00 +0: loading /workspace/scratch/01f41143f560/full/HobbyTracker/test/firebase_auth_service_test.dart
+00:00 +0: /workspace/scratch/01f41143f560/full/HobbyTracker/test/firebase_auth_service_test.dart: (setUpAll)
+00:00 +0: /workspace/scratch/01f41143f560/full/HobbyTracker/test/firebase_auth_service_test.dart: Google cancellation never creates Firebase session
+00:00 +1: /workspace/scratch/01f41143f560/full/HobbyTracker/test/firebase_auth_service_test.dart: platform cancellation is translated to AuthCancelled
+00:00 +2: /workspace/scratch/01f41143f560/full/HobbyTracker/test/firebase_auth_service_test.dart: missing Google ID token blocks Firebase credential sign in
+00:00 +3: /workspace/scratch/01f41143f560/full/HobbyTracker/test/firebase_auth_service_test.dart: Google tokens are passed to Firebase credential sign in
+00:00 +4: /workspace/scratch/01f41143f560/full/HobbyTracker/test/firebase_auth_service_test.dart: provider conflict is exposed for controlled recovery
+00:00 +5: /workspace/scratch/01f41143f560/full/HobbyTracker/test/firebase_auth_service_test.dart: email is trimmed while password is preserved
+00:00 +6: /workspace/scratch/01f41143f560/full/HobbyTracker/test/firebase_auth_service_test.dart: network errors become visible domain failures
+00:00 +7: /workspace/scratch/01f41143f560/full/HobbyTracker/test/firebase_auth_service_test.dart: Firebase session is cleared even when Google cleanup fails
+00:00 +8: /workspace/scratch/01f41143f560/full/HobbyTracker/test/firebase_auth_service_test.dart: Google linking requires current account and same email
+00:00 +9: /workspace/scratch/01f41143f560/full/HobbyTracker/test/firebase_auth_service_test.dart: registration rejects invalid display name before creating account
+00:00 +10: /workspace/scratch/01f41143f560/full/HobbyTracker/test/firebase_auth_service_test.dart: registration persists requested name; existing profile=false retains role
+00:00 +11: /workspace/scratch/01f41143f560/full/HobbyTracker/test/firebase_auth_service_test.dart: registration persists requested name; existing profile=true retains role
+00:00 +12: /workspace/scratch/01f41143f560/full/HobbyTracker/test/firebase_auth_service_test.dart: bootstrap does not overwrite an existing profile
+00:00 +13: /workspace/scratch/01f41143f560/full/HobbyTracker/test/firebase_auth_service_test.dart: (tearDownAll)
+00:04 +13: /workspace/scratch/01f41143f560/full/HobbyTracker/test/router_test.dart: Unauthenticated deep link always redirects to Login
+00:04 +14: /workspace/scratch/01f41143f560/full/HobbyTracker/test/router_test.dart: Unauthenticated deep link always redirects to Login
+00:04 +15: /workspace/scratch/01f41143f560/full/HobbyTracker/test/router_test.dart: Unauthenticated deep link always redirects to Login
+00:05 +16: /workspace/scratch/01f41143f560/full/HobbyTracker/test/router_test.dart: Unauthenticated deep link always redirects to Login
+00:05 +17: /workspace/scratch/01f41143f560/full/HobbyTracker/test/router_test.dart: Unauthenticated deep link always redirects to Login
+00:05 +18: /workspace/scratch/01f41143f560/full/HobbyTracker/test/router_test.dart: Unauthenticated deep link always redirects to Login
+00:05 +19: /workspace/scratch/01f41143f560/full/HobbyTracker/test/router_test.dart: Unauthenticated deep link always redirects to Login
+00:05 +20: /workspace/scratch/01f41143f560/full/HobbyTracker/test/router_test.dart: Unauthenticated deep link always redirects to Login
+00:05 +21: /workspace/scratch/01f41143f560/full/HobbyTracker/test/router_test.dart: Unauthenticated deep link always redirects to Login
+00:05 +22: /workspace/scratch/01f41143f560/full/HobbyTracker/test/router_test.dart: Unauthenticated deep link always redirects to Login
+00:05 +23: /workspace/scratch/01f41143f560/full/HobbyTracker/test/router_test.dart: Unauthenticated deep link always redirects to Login
+00:05 +24: /workspace/scratch/01f41143f560/full/HobbyTracker/test/router_test.dart: Unauthenticated deep link always redirects to Login
+00:05 +25: /workspace/scratch/01f41143f560/full/HobbyTracker/test/phase01_visual_foundation_test.dart: Four navigation destinations fit both phone widths
+00:05 +26: /workspace/scratch/01f41143f560/full/HobbyTracker/test/phase01_visual_foundation_test.dart: Four navigation destinations fit both phone widths
+00:06 +27: /workspace/scratch/01f41143f560/full/HobbyTracker/test/phase01_visual_foundation_test.dart: Four navigation destinations fit both phone widths
+00:06 +28: /workspace/scratch/01f41143f560/full/HobbyTracker/test/phase01_visual_foundation_test.dart: Four navigation destinations fit both phone widths
+00:06 +29: /workspace/scratch/01f41143f560/full/HobbyTracker/test/router_test.dart: Signed-in account opens Home and switches 4 tabs
+00:06 +30: /workspace/scratch/01f41143f560/full/HobbyTracker/test/router_test.dart: Signed-in account opens Home and switches 4 tabs
+00:06 +31: /workspace/scratch/01f41143f560/full/HobbyTracker/test/phase01_visual_foundation_test.dart: Password visibility does not destroy draft or validation error
+00:06 +32: /workspace/scratch/01f41143f560/full/HobbyTracker/test/router_test.dart: Sign out requires confirmation, then returns to Login
+00:06 +33: /workspace/scratch/01f41143f560/full/HobbyTracker/test/router_test.dart: Sign out requires confirmation, then returns to Login
+00:06 +34: /workspace/scratch/01f41143f560/full/HobbyTracker/test/router_test.dart: Sign out requires confirmation, then returns to Login
+00:07 +35: /workspace/scratch/01f41143f560/full/HobbyTracker/test/router_test.dart: Google cancellation is visible and does not open a protected route
+00:07 +36: /workspace/scratch/01f41143f560/full/HobbyTracker/test/router_test.dart: Register rejects mismatched password before calling service
+00:07 +37: /workspace/scratch/01f41143f560/full/HobbyTracker/test/router_test.dart: Forgot password calls service and confirms request
+00:07 +38: /workspace/scratch/01f41143f560/full/HobbyTracker/test/router_test.dart: Firestore profile failure shows retry gate instead of Home
+00:07 +39: /workspace/scratch/01f41143f560/full/HobbyTracker/test/router_test.dart: Register validates name and submits draft at 360.0dp
+00:08 +40: /workspace/scratch/01f41143f560/full/HobbyTracker/test/router_test.dart: Register validates name and submits draft at 412.0dp
+00:09 +41: All tests passed!

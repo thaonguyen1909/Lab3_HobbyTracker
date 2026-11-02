@@ -1,3 +1,5 @@
+> **Cập nhật Work 03/11/2026 (ưu tiên hơn ghi chú lịch sử bên dưới):** Phase02 PARTIAL; `flutter analyze` đạt, 41 unit/widget tests và 9 local Firestore Rules tests đạt. Android/Firebase thật/Figma parity chưa có evidence; Phase03 NOT STARTED. Chi tiết tại [Phase02 report](phase-02-report.md) và [manual acceptance](phase-02-manual-acceptance.md). Những dòng “NOT RUN/missing SDK/source only” cũ bên dưới mô tả thời điểm viết, không thay kết quả lần này.
+
 # Kế hoạch acceptance ban đầu — phase 00
 
 DRAFT: xác định coverage để triển khai, chưa phải pytest suite hoặc báo cáo chạy test. Phase08 phải hoàn thiện hướng dẫn ARTEMIS, fixtures và assertions theo SDK/commit đã pin.
@@ -32,6 +34,6 @@ Mỗi case bắt đầu từ precondition độc lập, dùng account test; khô
 
 ## Bằng chứng cần lưu sau khi chạy
 
-`evidence/<phase>/`: command, device/OS/tool versions, run ID/trace, ảnh/replay thật, kết quả actual vs expected, giải thích failed/skipped/flaky. Không tạo file ảnh giả. Test fixtures chỉ emulator/test; submission build dùng nguồn dữ liệu thật. Các case composite nên tách thành pytest functions ngắn, vẫn trace về ID gốc.
+`docs/evidence/<phase>/`: command, device/OS/tool versions, run ID/trace, ảnh/replay thật, kết quả actual vs expected, giải thích failed/skipped/flaky. Không tạo file ảnh giả. Test fixtures chỉ emulator/test; submission build dùng nguồn dữ liệu thật. Các case composite nên tách thành pytest functions ngắn, vẫn trace về ID gốc.
 
-Console evidence phải cùng Firebase project ID với cấu hình app. ARTEMIS Flash cho regression, Pro cho exploratory; pin commit, Python≥3.12/uv/ADB theo PDF. Mọi unit/widget/Rules tests và ARTEMIS hiện chưa chạy vì chưa có code/config.
+Console evidence phải cùng Firebase project ID với cấu hình app. ARTEMIS Flash cho regression, Pro cho exploratory; pin commit, Python≥3.12/uv/ADB theo PDF. Phase 02 widget/fake auth tests và Firestore Rules emulator tests đã được viết nhưng CHƯA CHẠY vì môi trường thiếu Flutter/Firebase. ARTEMIS chưa triển khai (Phase 08).

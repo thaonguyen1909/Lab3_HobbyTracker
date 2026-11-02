@@ -1,0 +1,23 @@
+Computing fixes in HobbyTracker...
+Applying fixes...
+
+lib/features/practice/screens/practice_screens.dart
+  curly_braces_in_flow_control_structures - 1 fix
+
+lib/firebase/firebase_device_services.dart
+  curly_braces_in_flow_control_structures - 2 fixes
+
+lib/firebase/firestore_hobby_repository.dart
+  curly_braces_in_flow_control_structures - 4 fixes
+
+lib/firebase/notification_background.dart
+  curly_braces_in_flow_control_structures - 1 fix
+
+lib/viewmodels/hyper_view_model.dart
+  curly_braces_in_flow_control_structures - 2 fixes
+  empty_constructor_bodies - 1 fix
+
+test/support/fakes.dart
+  curly_braces_in_flow_control_structures - 4 fixes
+
+15 fixes made in 6 files.

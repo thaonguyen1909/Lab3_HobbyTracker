@@ -1,0 +1,9 @@
+Formatted lib\features\community\screens\community_screens.dart
+Formatted lib\features\practice\screens\practice_screens.dart
+Formatted lib\l10n\language_controller.dart
+Formatted lib\l10n\messages.dart
+Formatted lib\services\local_reminders.dart
+Formatted lib\services\pdf_report_exporter.dart
+Formatted lib\viewmodels\runtime_controller.dart
+Formatted lib\widgets\feature_widgets.dart
+Formatted 48 files (8 changed) in 0.28 seconds.

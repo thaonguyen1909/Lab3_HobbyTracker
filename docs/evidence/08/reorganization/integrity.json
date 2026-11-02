@@ -1,0 +1,35 @@
+{
+  "moved_files": 239,
+  "missing": [],
+  "protected_files": 221,
+  "protected_changed": [],
+  "runtime_source_files": 433,
+  "runtime_source_changed": [],
+  "updated_doc_paths": [
+    "docs/requirements/prompts/00-audit.md",
+    "docs/requirements/prompts/01-shell-theme.md",
+    "docs/requirements/prompts/02-auth-firebase.md",
+    "docs/requirements/prompts/03-flow1-hobbies.md",
+    "docs/requirements/prompts/04-flow2-calendar-hyper.md",
+    "docs/requirements/prompts/05-flow3-community.md",
+    "docs/requirements/prompts/06-settings-ui-a11y.md",
+    "docs/requirements/prompts/07a-report-storage.md",
+    "docs/requirements/prompts/07b-firebase-observability.md",
+    "docs/requirements/prompts/08-lab3-qa.md",
+    "docs/design/DESIGN.md",
+    "docs/design/handoff/flutter-handoff.md"
+  ],
+  "python_scripts_syntax_pass": [
+    "scripts/verify_phase00.py",
+    "scripts/verify_phase01_design.py",
+    "scripts/verify_phase01_static.py",
+    "scripts/verify_phase02_static.py"
+  ],
+  "directory_link_fixes": [],
+  "remaining_link_failures": [
+    {
+      "file": "docs/README.md",
+      "target": "repository-layout-report.md"
+    }
+  ]
+}

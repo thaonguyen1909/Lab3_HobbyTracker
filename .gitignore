@@ -1,0 +1,34 @@
+# Flutter/Dart
+.dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+.packages
+.pub-cache/
+.pub/
+/build/
+/coverage/
+*.iml
+.idea/
+.vscode/
+# Android local settings and secrets
+android/local.properties
+android/key.properties
+*.jks
+*.keystore
+**/google-services.json
+**/GoogleService-Info.plist
+.env
+.env.*
+# Generated platform artifacts, not secrets: do commit android/ after bootstrap.
+
+# Firebase emulator / Node test dependencies
+**/node_modules/
+*-debug.log
+.firebase/
+
+# Kotlin build cache
+/android/.kotlin/
+
+# Generated Android distribution packages
+*.apk
+*.aab

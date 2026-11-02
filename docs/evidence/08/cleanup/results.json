@@ -1,0 +1,226 @@
+{
+  "reclaimed_bytes": 2384576210,
+  "reclaimed_GiB": 2.22,
+  "removed_files": 4623,
+  "apk_sha256_unchanged": true,
+  "orphan_source_deleted": "lib/core/state/load_state.dart",
+  "retained_reason": "Bulk PowerShell deletion rejected by automatic approval review; used flutter clean instead. Node modules are required by Firebase tests; Gradle cache, iml/log and empty directories retained.",
+  "targets": [
+    {
+      "path": "build/5813e7bd3879594e08147816ffe90232.cache.dill.track.dill",
+      "files": 1,
+      "bytes": 78123312,
+      "status": "REMOVED"
+    },
+    {
+      "path": "build/a5d9b01f92c88c73e1ee1448d6a77b50",
+      "files": 3,
+      "bytes": 255,
+      "status": "REMOVED"
+    },
+    {
+      "path": "build/cloud_firestore",
+      "files": 339,
+      "bytes": 2554811,
+      "status": "REMOVED"
+    },
+    {
+      "path": "build/firebase_analytics",
+      "files": 60,
+      "bytes": 231032,
+      "status": "REMOVED"
+    },
+    {
+      "path": "build/firebase_auth",
+      "files": 480,
+      "bytes": 3265689,
+      "status": "REMOVED"
+    },
+    {
+      "path": "build/firebase_core",
+      "files": 111,
+      "bytes": 558381,
+      "status": "REMOVED"
+    },
+    {
+      "path": "build/firebase_crashlytics",
+      "files": 80,
+      "bytes": 306761,
+      "status": "REMOVED"
+    },
+    {
+      "path": "build/firebase_messaging",
+      "files": 154,
+      "bytes": 823527,
+      "status": "REMOVED"
+    },
+    {
+      "path": "build/firebase_remote_config",
+      "files": 49,
+      "bytes": 218540,
+      "status": "REMOVED"
+    },
+    {
+      "path": "build/firebase_storage",
+      "files": 197,
+      "bytes": 1221761,
+      "status": "REMOVED"
+    },
+    {
+      "path": "build/flutter_local_notifications",
+      "files": 171,
+      "bytes": 1283163,
+      "status": "REMOVED"
+    },
+    {
+      "path": "build/google_sign_in_android",
+      "files": 116,
+      "bytes": 625683,
+      "status": "REMOVED"
+    },
+    {
+      "path": "build/jni",
+      "files": 133,
+      "bytes": 3707323,
+      "status": "REMOVED"
+    },
+    {
+      "path": "build/native_assets",
+      "files": 1,
+      "bytes": 45,
+      "status": "REMOVED"
+    },
+    {
+      "path": "build/printing",
+      "files": 74,
+      "bytes": 375124,
+      "status": "REMOVED"
+    },
+    {
+      "path": "build/reports",
+      "files": 1,
+      "bytes": 165726,
+      "status": "REMOVED"
+    },
+    {
+      "path": "build/shared_preferences_android",
+      "files": 512,
+      "bytes": 3922785,
+      "status": "REMOVED"
+    },
+    {
+      "path": "build/test_cache",
+      "files": 1,
+      "bytes": 73428096,
+      "status": "REMOVED"
+    },
+    {
+      "path": "build/unit_test_assets",
+      "files": 269,
+      "bytes": 3598649,
+      "status": "REMOVED"
+    },
+    {
+      "path": "build/url_launcher_android",
+      "files": 187,
+      "bytes": 992435,
+      "status": "REMOVED"
+    },
+    {
+      "path": "build/app/crashlytics",
+      "files": 1,
+      "bytes": 32,
+      "status": "REMOVED"
+    },
+    {
+      "path": "build/app/deeplink.json",
+      "files": 1,
+      "bytes": 440,
+      "status": "REMOVED"
+    },
+    {
+      "path": "build/app/generated",
+      "files": 2,
+      "bytes": 1287,
+      "status": "REMOVED"
+    },
+    {
+      "path": "build/app/gmpAppId",
+      "files": 1,
+      "bytes": 45,
+      "status": "REMOVED"
+    },
+    {
+      "path": "build/app/intermediates",
+      "files": 1497,
+      "bytes": 1769702171,
+      "status": "REMOVED"
+    },
+    {
+      "path": "build/app/kotlin",
+      "files": 91,
+      "bytes": 439657,
+      "status": "REMOVED"
+    },
+    {
+      "path": "build/app/tmp",
+      "files": 3,
+      "bytes": 60491,
+      "status": "REMOVED"
+    },
+    {
+      "path": "build/app/outputs/apk",
+      "files": 2,
+      "bytes": 223593739,
+      "status": "REMOVED"
+    },
+    {
+      "path": "build/app/outputs/logs",
+      "files": 1,
+      "bytes": 210092,
+      "status": "REMOVED"
+    },
+    {
+      "path": ".dart_tool/flutter_build",
+      "files": 39,
+      "bytes": 158776919,
+      "status": "REMOVED"
+    },
+    {
+      "path": ".dart_tool/hooks_runner",
+      "files": 46,
+      "bytes": 56388239,
+      "status": "REMOVED"
+    },
+    {
+      "path": "android/.gradle",
+      "files": 16,
+      "bytes": 7796378,
+      "status": "RETAINED"
+    },
+    {
+      "path": "android/.kotlin",
+      "files": 0,
+      "bytes": 0,
+      "status": "RETAINED"
+    },
+    {
+      "path": "firebase/node_modules",
+      "files": 7885,
+      "bytes": 101320846,
+      "status": "RETAINED"
+    },
+    {
+      "path": "firestore-debug.log",
+      "files": 1,
+      "bytes": 234634,
+      "status": "RETAINED"
+    },
+    {
+      "path": "android/hobbytracker_android.iml",
+      "files": 1,
+      "bytes": 1601,
+      "status": "RETAINED"
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+[
+  {
+    "path": "android/gradlew",
+    "exists": true,
+    "sha256": "ec56c02543666d92d9ac5ae7fcc48f88ce4de0deb8b7f9b39928ca46f68c1b2b"
+  },
+  {
+    "path": "android/gradlew.bat",
+    "exists": true,
+    "sha256": "c13c6e91b9a517783976de213d46398c661ea9e17651376d7301e839eaedcc62"
+  },
+  {
+    "path": "android/gradle/wrapper/gradle-wrapper.jar",
+    "exists": true,
+    "sha256": "16caeaf66d57a0d1d2087fef6a97efa62de8da69afa5b908f40db35afc4342da"
+  },
+  {
+    "path": "android/gradle/wrapper/gradle-wrapper.properties",
+    "exists": true,
+    "sha256": "b690d26223576fe4e63889fad9a00df81945cb870b9476cc5a563152a1a88a74"
+  }
+]

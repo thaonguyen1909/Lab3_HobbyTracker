@@ -1,0 +1,62 @@
+[
+  {
+    "path": "lib/viewmodels/hyper_view_model.dart",
+    "sha256": "e3ea28bf2dc984d035c7d3bc78c6bf59649d03041136d2d9f37ef367362fbf4e"
+  },
+  {
+    "path": "lib/features/shell/screens/app_shell.dart",
+    "sha256": "186aae270edd6a0d25be6b4b745bcb39dab11b44dca8f46cc7baf4f4cc54c4e1"
+  },
+  {
+    "path": "lib/services/local_owner_store.dart",
+    "sha256": "40f2e13b6f18ea537794a79d575bfd6ef060d6c1cf1f65e8ff7d44348bbca836"
+  },
+  {
+    "path": "lib/features/settings/screens/settings_screens.dart",
+    "sha256": "16f78fa968e04edbee09cae060ebfb9ec0e9c7c78ff81b481000b1018cf9b67b"
+  },
+  {
+    "path": "lib/features/practice/screens/practice_screens.dart",
+    "sha256": "fe050434c8a6ac2f1f025933558b97983e90f2165fc0b4d1c46ea714ec87d718"
+  },
+  {
+    "path": "lib/features/community/screens/community_screens.dart",
+    "sha256": "04fad3a02bd53472262e0aedfb641daf39f09cba02bd79617427caccd1fcae76"
+  },
+  {
+    "path": "lib/widgets/feature_widgets.dart",
+    "sha256": "768275d114c9110e3700f8c16e23a9c904733e2c7fff835bbd86e14f5bcb136c"
+  },
+  {
+    "path": "lib/widgets/app_navigation_bar.dart",
+    "sha256": "7e36ac1798e199cfd9b5509a1b3925b21f6694173491e213c38c1f452e19d3dc"
+  },
+  {
+    "path": "test/regression_fixes_test.dart",
+    "sha256": "58da78ffefcb36937d83fa010ccf73434dadc42066c6f1d6f7b1d7f79d33dec3"
+  },
+  {
+    "path": "README.md",
+    "sha256": "12a58423185ee212306f61f1128b0b24a1ac38abdb001708a1d8fff234300a90"
+  },
+  {
+    "path": "docs/full-implementation-report.md",
+    "sha256": "1a4fd641c3363cdf6c9efd43827b0c636fbbd0e0518889eb8f6cfd6a513c331b"
+  },
+  {
+    "path": "docs/figma-ui-report.md",
+    "sha256": "d9356a6be6045cc17b86cd79efdeddb9846ed97c1df3a2326bcc2c0f1b03c666"
+  },
+  {
+    "path": "docs/design-traceability.md",
+    "sha256": "19879bf52db298a75ea44ae9057096807566907ff30e92b53e2cebbd05d99064"
+  },
+  {
+    "path": "docs/open-decisions.md",
+    "sha256": "53141a91022e1aa5d53b6d81646d72d5cb53d91f70ea85c4557d63f73b25a027"
+  },
+  {
+    "path": "docs/bugfix-report.md",
+    "sha256": "6cdbe0329a1eb01a6bd3d3ea5568ab44792a354a48bb42b10c020fffdeecce10"
+  }
+]

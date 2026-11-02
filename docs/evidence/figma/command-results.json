@@ -1,0 +1,48 @@
+[
+  {
+    "command": [
+      "/tmp/hobby-flutter-sdk/bin/flutter",
+      "analyze",
+      "--no-pub"
+    ],
+    "exit_code": 0,
+    "log": "evidence/figma/analyze.log"
+  },
+  {
+    "command": [
+      "/tmp/hobby-flutter-sdk/bin/flutter",
+      "test",
+      "--no-pub",
+      "--reporter",
+      "expanded"
+    ],
+    "exit_code": 0,
+    "log": "evidence/figma/tests-final.log"
+  },
+  {
+    "command": [
+      "/tmp/hobby-flutter-sdk/bin/flutter",
+      "test",
+      "--no-pub",
+      "--update-goldens",
+      "--dart-define=CAPTURE_FIGMA=true",
+      "--reporter",
+      "expanded",
+      "test/figma_ui_review_test.dart"
+    ],
+    "exit_code": 0,
+    "log": "evidence/figma/visual-tests.log"
+  },
+  {
+    "command": [
+      "/tmp/hobby-flutter-sdk/bin/dart",
+      "format",
+      "--output=none",
+      "--set-exit-if-changed",
+      "lib",
+      "test"
+    ],
+    "exit_code": 0,
+    "log": "evidence/figma/format-check.log"
+  }
+]

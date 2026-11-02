@@ -1,0 +1,156 @@
+{
+  "check_date": "2026-11-03",
+  "scope": "Phase00 document/static only; no app built, no Figma live verification",
+  "checks": [
+    {
+      "check": "Seven historic source files match their declared original hashes",
+      "result": "FAIL",
+      "detail": {
+        "matched": 4,
+        "total": 7,
+        "mismatch_files": [
+          "Specification.html",
+          "Prototype.html",
+          "DesignArchive.html"
+        ],
+        "note": "This checks historical expected values, NOT inaccessible original Windows paths"
+      }
+    },
+    {
+      "check": "Seven source bytes match original uploaded ZIP baseline",
+      "result": "PASS",
+      "detail": {
+        "baseline_zip_sha256": "f87257431ff4696a560a4116f4827a1a0ed5b8021614359dfc2986d1de304a11",
+        "files_compared": 7,
+        "scope": "Original user ZIP content only, not unavailable source locations"
+      }
+    },
+    {
+      "check": "15 route mappings and 15 handoff entries",
+      "result": "PASS",
+      "detail": {
+        "screen_ids": [
+          "S01",
+          "S02",
+          "S03",
+          "S04",
+          "S05",
+          "S06",
+          "S07",
+          "S08",
+          "S09",
+          "S10",
+          "S11",
+          "S12",
+          "S13",
+          "S14",
+          "S15"
+        ],
+        "handoff_ids": [
+          "S01",
+          "S02",
+          "S03",
+          "S04",
+          "S05",
+          "S06",
+          "S07",
+          "S08",
+          "S09",
+          "S10",
+          "S11",
+          "S12",
+          "S13",
+          "S14",
+          "S15"
+        ]
+      }
+    },
+    {
+      "check": "3 flow mappings, 10 component families, 7 theme plans",
+      "result": "PASS",
+      "detail": {
+        "flows": [
+          "F01",
+          "F02",
+          "F03"
+        ],
+        "components": [
+          "C01",
+          "C02",
+          "C03",
+          "C04",
+          "C05",
+          "C06",
+          "C07",
+          "C08",
+          "C09",
+          "C10"
+        ],
+        "themes": [
+          "Light",
+          "Dark",
+          "Energetic",
+          "Cyber",
+          "Art",
+          "Sad",
+          "Rainy Day"
+        ]
+      }
+    },
+    {
+      "check": "23 unique test cases, all explicitly NOT RUN",
+      "result": "PASS",
+      "detail": {
+        "test_count": 23,
+        "not_run_rows": 23
+      }
+    },
+    {
+      "check": "20 rubric rows, planning only",
+      "result": "PASS",
+      "detail": {
+        "rubric_count": 20,
+        "points_claim": "Weights in document; no earned score claimed"
+      }
+    },
+    {
+      "check": "Local Markdown link paths exist",
+      "result": "PASS",
+      "detail": {
+        "checked": 31,
+        "broken": []
+      }
+    },
+    {
+      "check": "Final assignment PDF present for future Final work",
+      "result": "PASS",
+      "detail": {
+        "file": "PRM393 - Final Assignment One Complete System on Firebase.pdf",
+        "source": "direct conversation attachment",
+        "scope": "reference only; Final implementation not started"
+      }
+    },
+    {
+      "check": "Figma audit from 2026-11-02 retained (NOT independently rerun)",
+      "result": "NOT REVERIFIED",
+      "detail": {
+        "historical_pages": 6,
+        "historical_zero_reaction_on_all_pages": true,
+        "2026-11-03_access": "BLOCKED: Figma reports missing Editor access",
+        "status": "historical observation, not current Figma acceptance"
+      }
+    },
+    {
+      "check": "Flutter/Firebase/ARTEMIS runtime",
+      "result": "NOT RUN",
+      "detail": "No pubspec.yaml / lib or app for executing; no real device/project evidence"
+    }
+  ],
+  "phase_status": "PARTIAL / REVIEW READY",
+  "manual_blockers": [
+    "D05/G12: verify three source HTML files or approved provenance change",
+    "D01: Figma access, 3 prototype flows/recovery, lecturer approval",
+    "Detailed handoff/design review"
+  ],
+  "note": "Former 2026-11-02 PASS snapshot retained separately; verified coverage does not certify runtime behavior or original source authenticity"
+}

@@ -1,0 +1,73 @@
+{
+  "check_date": "2026-11-03",
+  "method": "SHA-256 + byte length from currently packaged files against historical expected manifest; original Windows paths are unavailable",
+  "expected_count": 7,
+  "matches": 4,
+  "mismatches": 3,
+  "status": "FAIL",
+  "files": [
+    {
+      "file": "Specification.html",
+      "expected_sha256": "664c229272a643b699df7d1d9d3bae3164bf329421f310a0352a4f511c2526b3",
+      "expected_bytes": 37227,
+      "actual_sha256": "9d934065794020f139fd34e43581fdaa87eaf3bf84091ed6bb5fa0742aaf13dc",
+      "actual_bytes": 37146,
+      "status": "MISMATCH",
+      "provenance_verified_against_original_path": false
+    },
+    {
+      "file": "Prototype.html",
+      "expected_sha256": "25ae683be47438c6ad0fe418c67f671b04860b1a834f43068bedbb33ce373a42",
+      "expected_bytes": 82357,
+      "actual_sha256": "931beb55b4a6df60a058cc1068232601ccf9442db8991c947b36e652cfa0bdb0",
+      "actual_bytes": 82129,
+      "status": "MISMATCH",
+      "provenance_verified_against_original_path": false
+    },
+    {
+      "file": "DesignArchive.html",
+      "expected_sha256": "0cf760350ce41ffbd953ef5b6aac5926561a76259e0757cbae82b0d7f14021e6",
+      "expected_bytes": 975953,
+      "actual_sha256": "f9e88d6b929530ef63c53e613eb655e29eaf7ffd2169eaffa9b908e74a5fbb2d",
+      "actual_bytes": 975930,
+      "status": "MISMATCH",
+      "provenance_verified_against_original_path": false
+    },
+    {
+      "file": "HobbyTracker_Design_Journey_12_Slides.pptx",
+      "expected_sha256": "2edbc592b51c49b8893078efc8bde6d6f15afc1609a1a158eef8c176f110ace2",
+      "expected_bytes": 1385044,
+      "actual_sha256": "2edbc592b51c49b8893078efc8bde6d6f15afc1609a1a158eef8c176f110ace2",
+      "actual_bytes": 1385044,
+      "status": "MATCH",
+      "provenance_verified_against_original_path": false
+    },
+    {
+      "file": "HobbyTracker_Design_Journey_Rebuilt_V3.pptx",
+      "expected_sha256": "b9d070c4a8029098cfbb40d24ea3295d46fa2044094413883a68b5f787276631",
+      "expected_bytes": 2433655,
+      "actual_sha256": "b9d070c4a8029098cfbb40d24ea3295d46fa2044094413883a68b5f787276631",
+      "actual_bytes": 2433655,
+      "status": "MATCH",
+      "provenance_verified_against_original_path": false
+    },
+    {
+      "file": "PRM393 - Lab 3 Cloud-Enabled Mobile App (Firebase, Patrol, AI Code Review).pdf",
+      "expected_sha256": "f09c673fdab44786f4e81eab45e10244b4b4f347b69f8201f5b066f078dc0bdd",
+      "expected_bytes": 671397,
+      "actual_sha256": "f09c673fdab44786f4e81eab45e10244b4b4f347b69f8201f5b066f078dc0bdd",
+      "actual_bytes": 671397,
+      "status": "MATCH",
+      "provenance_verified_against_original_path": false
+    },
+    {
+      "file": "PRM393_Lab3_Preparation_Guide_v5_ToiUu.pdf",
+      "expected_sha256": "9e019002d34c888e650f3e5991892cbce1a0ea5b3d741692fdc83aa1cfb6cb1e",
+      "expected_bytes": 540689,
+      "actual_sha256": "9e019002d34c888e650f3e5991892cbce1a0ea5b3d741692fdc83aa1cfb6cb1e",
+      "actual_bytes": 540689,
+      "status": "MATCH",
+      "provenance_verified_against_original_path": false
+    }
+  ]
+}

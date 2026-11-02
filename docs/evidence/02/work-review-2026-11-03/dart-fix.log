@@ -1,0 +1,28 @@
+Computing fixes in HobbyTracker...
+Applying fixes...
+
+lib/app/router/app_router.dart
+  curly_braces_in_flow_control_structures - 2 fixes
+
+lib/features/auth/screens/auth_screens.dart
+  curly_braces_in_flow_control_structures - 1 fix
+
+lib/features/auth/screens/auth_settings_panel.dart
+  curly_braces_in_flow_control_structures - 1 fix
+
+lib/firebase/firebase_auth_service.dart
+  curly_braces_in_flow_control_structures - 2 fixes
+
+lib/main.dart
+  prefer_const_constructors - 1 fix
+
+test/phase01_visual_foundation_test.dart
+  prefer_const_constructors - 1 fix
+
+test/router_test.dart
+  curly_braces_in_flow_control_structures - 1 fix
+
+test/widget_components_test.dart
+  prefer_const_constructors - 1 fix
+
+10 fixes made in 8 files.

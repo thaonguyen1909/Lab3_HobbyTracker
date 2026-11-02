@@ -1,3 +1,5 @@
+> **Cập nhật Work 03/11/2026 (ưu tiên hơn ghi chú lịch sử bên dưới):** Phase02 PARTIAL; `flutter analyze` đạt, 41 unit/widget tests và 9 local Firestore Rules tests đạt. Android/Firebase thật/Figma parity chưa có evidence; Phase03 NOT STARTED. Chi tiết tại [Phase02 report](phase-02-report.md) và [manual acceptance](phase-02-manual-acceptance.md). Những dòng “NOT RUN/missing SDK/source only” cũ bên dưới mô tả thời điểm viết, không thay kết quả lần này.
+
 # HOBBY TRACKER — KẾ HOẠCH TRIỂN KHAI THEO ĐỢT CHO CODEX
 
 > Bản lập kế hoạch dựa trên bộ tài liệu người học cung cấp ngày 01/11/2026. Đây là kế hoạch **đề xuất** để hiện thực Lab 2 thành ứng dụng Android Lab 3; không phải các bước đã được triển khai hoặc được giảng viên phê duyệt.
@@ -40,13 +42,13 @@ Khi nguồn xung đột, **ghi vào `docs/open-decisions.md`, không để Codex
 
 ## 3. Những điểm cần xử lý trước khi Codex bắt đầu
 
-1. **Đầu vào Lab 2 cần review:** đã gom 7 nguồn vào reference/, đọc 6 trang Figma trực tiếp và soạn draft design/DESIGN.md cùng handoff/flutter-handoff.md. Figma hiện có 0 reaction/flow start; baseline, formal prerequisite và handoff còn chờ nhóm/giảng viên xác nhận. Xem docs/figma-html-comparison.md, docs/gap-review.md và docs/phase-00-review.md; không dùng ghi chú cũ “Figma 3 trang” trong Specification để mô tả hiện trạng mới.
+1. **Đầu vào Lab 2 cần review:** đã gom 7 nguồn Lab2/Lab3 vào docs/requirements/reference/; kiểm lại 03/11 thấy 3 HTML lệch manifest lịch sử (D05/G12), đã lưu actual hashes trong evidence; đọc 6 trang Figma theo evidence **02/11** nhưng truy cập cập nhật 03/11 bị chặn quyền Editor. Figma snapshot cũ có 0 reaction/flow start; baseline, formal prerequisite và handoff còn chờ nhóm/giảng viên xác nhận. Xem docs/figma-html-comparison.md, docs/gap-review.md và docs/phase-00-review.md; không dùng ghi chú cũ “Figma 3 trang” trong Specification để mô tả hiện trạng mới.
 2. **Cloud Storage bắt buộc trong Lab 3:** tạo file và upload theo UID, hiển thị progress/URL, có Rules và bằng chứng thực. Xác minh điều kiện dịch vụ/chi phí hiện hành trước cấu hình, không tự nâng billing. Chưa đủ điều kiện thì ghi BLOCKED; local PDF chưa đủ nghiệm thu. Tách ReportExportService và ReportUploadService để dễ kiểm thử.
 3. **Lab 2 có form email/password, Lab 3 bắt buộc Google Sign-In:** đề xuất hỗ trợ Google Sign-In và bảo tồn các route Login/Register/Forgot Password với xử lý auth thật khi khả thi; mọi khác biệt phải ghi traceability.
 
 ## 4. Quy chuẩn vận hành Codex ở mọi đợt
 
-- Đưa **7 nguồn gốc Lab 2/Lab 3** vào thư mục `reference/` trong workspace của Codex trước đợt 00. Các prompt trong tài liệu này chỉ có tác dụng khi Codex thật sự nhìn thấy file.
+- Đưa **7 nguồn gốc Lab 2/Lab 3** vào thư mục `docs/requirements/reference/` trong workspace của Codex trước đợt 00. Các prompt trong tài liệu này chỉ có tác dụng khi Codex thật sự nhìn thấy file.
 - Mỗi đợt = 1 phạm vi nhỏ/1 PR hoặc nhánh riêng, có mục tiêu, file đầu ra, test và tiêu chí hoàn tất (DoD). Không chạy đồng loạt 3–5 đợt trong một prompt.
 - Trước khi sửa: Codex phải đọc README, `docs/open-decisions.md`, `docs/design-traceability.md`, `docs/architecture.md`, trạng thái Git và các file nguồn liên quan; thông báo phần nào bị BLOCKED.
 - Không tự deploy lên production, không tăng billing, không xóa dữ liệu thật, không thay đổi quyền IAM hoặc commit secret/keystore/API key. Thao tác có tác động hạ tầng phải được người phụ trách xác nhận.
@@ -60,9 +62,9 @@ Khi nguồn xung đột, **ghi vào `docs/open-decisions.md`, không để Codex
 
 ### ĐỢT 00 — Chốt đầu vào và truy vết yêu cầu (CHỈ TÀI LIỆU)
 
-**Mục tiêu:** tránh viết code sai vì thiếu spec. **Công việc:** đọc 7 nguồn Lab 2/Lab 3, xác lập danh sách 15 màn hình/3 flow/7 theme/4 tab; lập ma trận `Lab2 -> Flutter route -> widget -> viewmodel -> data source -> test case`; lập checklist rubric Lab 3; liệt kê gaps Figma/Handoff, Cloud Storage/billing, auth. **Deliverables:** `docs/gap-review.md`, `docs/design-traceability.md`, `docs/open-decisions.md`, `docs/rubric-checklist.md`, draft `design/DESIGN.md`, draft `handoff/flutter-handoff.md`. **DoD:** không có màn hình hoặc recovery path bị bỏ sót; mỗi yêu cầu có nguồn; các quyết định chưa được phê duyệt có `OPEN/BLOCKED`, không coi là đã hoàn thành.
+**Mục tiêu:** tránh viết code sai vì thiếu spec. **Công việc:** đọc 7 nguồn Lab 2/Lab 3, xác lập danh sách 15 màn hình/3 flow/7 theme/4 tab; lập ma trận `Lab2 -> Flutter route -> widget -> viewmodel -> data source -> test case`; lập checklist rubric Lab 3; liệt kê gaps Figma/Handoff, Cloud Storage/billing, auth. **Deliverables:** `docs/gap-review.md`, `docs/design-traceability.md`, `docs/open-decisions.md`, `docs/rubric-checklist.md`, draft `docs/design/DESIGN.md`, draft `docs/design/handoff/flutter-handoff.md`. **DoD:** không có màn hình hoặc recovery path bị bỏ sót; mỗi yêu cầu có nguồn; các quyết định chưa được phê duyệt có `OPEN/BLOCKED`, không coi là đã hoàn thành.
 
-**Prompt Codex:** `prompts/00-audit.md`.
+**Prompt Codex:** `docs/requirements/prompts/00-audit.md`.
 
 ### ĐỢT 01 — Flutter shell, navigation và design system
 
@@ -132,14 +134,14 @@ Khi nguồn xung đột, **ghi vào `docs/open-decisions.md`, không để Codex
 - Chốt điều kiện Cloud Storage/ngân sách hoặc ngoại lệ chính thức với giảng viên; không tự kích hoạt chi phí.
 - Cấp quyền và thiết bị Android thật/emulator, Google account picker, test notification foreground/background/terminated, ARTEMIS model API key.
 - Chụp evidence thực trong Firebase Console/DebugView/Crashlytics, ghi nhận test runs, làm review và quyết định từng AI finding.
-- Review UI và các khác biệt với Lab2, duyệt branch/PR từng đợt, nộp report/slides/demo đúng hạn.
+- Review UI và các khác biệt với Lab2, duyệt branch/PR từng đợt, nộp docs/submission/reports/slides/demo đúng hạn.
 
 ## 9. Mẫu lệnh giao việc cho Codex (áp dụng cùng file prompt của từng đợt)
 
 ```
 Bạn đang làm ở repository Hobby Tracker. Hãy đọc AGENTS.md, 7 nguồn Lab 2/Lab 3
-trong reference/, docs/open-decisions.md và docs/design-traceability.md.
-Chỉ thực hiện ĐỢT <SỐ> trong prompts/<FILE>.md; không làm đợt sau.
+trong docs/requirements/reference/, docs/open-decisions.md và docs/design-traceability.md.
+Chỉ thực hiện ĐỢT <SỐ> trong docs/requirements/prompts/<FILE>.md; không làm đợt sau.
 
 Trước khi sửa code:
 1. Kiểm tra hiện trạng repo, branch, test commands và blockers.
@@ -158,4 +160,8 @@ Sau khi sửa:
 
 **Tên repository khi nộp theo Lab 3:** `PRM393_Lab03_<StudentID>`. Tên hiện tại `Lab3_HobbyTracker` cần chốt trước nộp; chưa tự đổi tên.
 
-**Phạm vi hiện tại:** chỉ phase 00–08. Kế hoạch Final ở `planning/final/roadmap.md` là tham khảo, không thuộc tiêu chí nghiệm thu Lab 3 và không được tự khởi chạy.
+**Phạm vi hiện tại:** chỉ phase 00–08. Kế hoạch Final ở `docs/requirements/planning/final/roadmap.md` là tham khảo, không thuộc tiêu chí nghiệm thu Lab 3 và không được tự khởi chạy.
+
+## Phase 01 progress note — 03/11/2026
+
+Phase01 Dart source for shell/navigation/theme/widgets and test scripts has been written as a bounded deliverable, but remains **IN PROGRESS — NOT ACCEPTED** until Flutter analyze/test + Android UI review and approval are evidenced. Phase00 is still PARTIAL. The accepted source baseline is `docs/phase-01-report.md`; no Phase02 services have been started.

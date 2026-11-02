@@ -1,13 +1,13 @@
 # Checklist rubric Lab 3
 
-Nguồn chính: PDF Lab 3 mục 3–11, đặc biệt bảng điểm tr.12–15 (bản 18 trang trong reference/). Preparation Guide bổ sung checklist vận hành. Điểm là trọng số đề bài, không phải điểm tự chấm. Tất cả tính năng/evidence dưới đây PLANNED, chưa đạt; phase00 chỉ lập coverage.
+Nguồn chính: PDF Lab 3 mục 3–11, đặc biệt bảng điểm tr.12–15 (bản 18 trang trong docs/requirements/reference/). Preparation Guide bổ sung checklist vận hành. Điểm là trọng số đề bài, không phải điểm tự chấm. Tất cả tính năng/evidence dưới đây PLANNED, chưa đạt; phase00 chỉ lập coverage.
 
 | ID | Tiêu chí | Điểm | Nguồn PDF | Điều kiện đạt | Phase | Bằng chứng cần có | Hiện trạng |
 |---|---|---|---|---|---|---|---|
 | R01 | Flows/navigation | 1.0 | Mục 3,10; tr.2–3,12 | 15 màn/3 flow + recovery, Back, sign-in/profile | 02–06 | TC01–TC12, TC22; video từng flow | PLANNED / NOT RUN |
 | R02 | Data/content | 0.75 | Mục 3,10; tr.3,12 | Firestore thật, không sample; file khớp dữ liệu hiển thị | 03–07A | TC03–TC10, TC14; Console/data screenshots | PLANNED / NOT RUN |
 | R03 | States/error | 0.75 | Mục 3,10; tr.3,13 | Mọi data screen loading/empty/error/retry; service failures không crash | 02–07B | TC01–TC22; evidence offline/deny/empty | PLANNED / NOT RUN |
-| R04 | Authentication | 0.25 | Mục 6; tr.6 | Google, auth routing, signout clears private data, cancel message | 02 | TC01,TC02,TC11; Authentication Users | PLANNED / NOT RUN |
+| R04 | Authentication | 0.25 | Mục 6; tr.6 | Google, auth routing, signout clears private data, cancel message | 02 | TC01,TC02,TC11; Authentication Users | SOURCE IMPLEMENTED / FIREBASE RUNTIME NOT RUN |
 | R05 | Cloud Storage | 0.25 | Mục 6; tr.6 | Generate/upload theo UID, progress, URL, private Rules | 07A | TC14; storage.rules, file list, denied tests | PLANNED / NOT RUN |
 | R06 | Cloud Messaging | 0.5 | Mục 6; tr.7 | 3 app states, permission Android13+, inbox, deep link | 07B | TC15; Console message + ảnh 3 states | PLANNED / NOT RUN |
 | R07 | Analytics | 0.5 | Mục 6; tr.7,16–17 | ≥7 events, trigger/params/types/question/flow, UID, no PII | 07B | analytics-plan.md + TC21 DebugView từng event | PLANNED / NOT RUN |
@@ -22,10 +22,10 @@ Nguồn chính: PDF Lab 3 mục 3–11, đặc biệt bảng điểm tr.12–15 
 | R16 | E2E evidence | 0.5 | Mục 7; tr.9,14 | Trace/screenshot mọi run,pass rate/time,flaky explanations | 08 | Raw logs/results table; không claim chưa chạy | PLANNED / NOT RUN |
 | R17 | AI review decisions | 0.25 | Mục 8; tr.10,15 | ≥5 findings file:line,≥2 kinds,accept/modify/reject lý do,AI disclosure | 08 | docs/code-review.md, saved tool output | PLANNED / NOT RUN |
 | R18 | Review fixes | 0.25 | Mục 8; tr.10,15 | ≥3 accepted fixes,commit riêng linked finding | 08 | 3 commit IDs thật; chưa tạo trong phase00 | PLANNED / NOT RUN |
-| R19 | Slides | 1.0 | Mục 9; tr.11–12,15 | 12–15 slides PDF, các chủ đề bắt buộc, evidence từng claim | 08 | slides/Lab03_<StudentID>_slides.pdf | PLANNED / NOT RUN |
+| R19 | Slides | 1.0 | Mục 9; tr.11–12,15 | 12–15 slides PDF, các chủ đề bắt buộc, evidence từng claim | 08 | docs/submission/slides/Lab03_<StudentID>_slides.pdf | PLANNED / NOT RUN |
 | R20 | Video | 1.0 | Mục 9; tr.12,15 | 5–10 phút live,flows/errors/export-upload/FCM/RC/crash/test/review fix | 08 | README video link hoạt động | PLANNED / NOT RUN |
 
-Tổng: functional 2.5 + Firebase 2.0 + architecture 0.75 + UI/UX 0.75 + tests 1.5 + review 0.5 + slides/video 2.0 = 10.
+Tổng: functional 2.5 + Firebase 2.0 + architecture 0.75 + UI/UX 0.75 + tests 1.5 + review 0.5 + docs/submission/slides/video 2.0 = 10.
 
 ## Điều kiện nộp bắt buộc không có điểm riêng
 

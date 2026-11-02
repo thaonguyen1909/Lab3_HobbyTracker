@@ -1,0 +1,7 @@
+Resolving dependencies...
+Downloading packages...
+  uuid 4.5.1 (4.5.3 available)
+Got dependencies!
+1 package has newer versions incompatible with dependency constraints.
+Try `flutter pub outdated` for more information.
+Upgrading analysis_options.yaml to exclude build and platform directories.

@@ -1,0 +1,14 @@
+00:00 +0: loading /workspace/scratch/01f41143f560/full/HobbyTracker/test/figma_ui_review_test.dart
+lib/widgets/async_states.dart:40:21: Error: Not a constant expression.
+    this.iconName = iconName,
+                    ^^^^^^^^
+00:00 +0 -1: loading /workspace/scratch/01f41143f560/full/HobbyTracker/test/figma_ui_review_test.dart [E]
+  Failed to load "/workspace/scratch/01f41143f560/full/HobbyTracker/test/figma_ui_review_test.dart":
+  Compilation failed for testPath=/workspace/scratch/01f41143f560/full/HobbyTracker/test/figma_ui_review_test.dart: lib/widgets/async_states.dart:40:21: Error: Not a constant expression.
+      this.iconName = iconName,
+                      ^^^^^^^^
+  .
+00:00 +0 -1: Some tests failed.
+
+Failing tests:
+  /workspace/scratch/01f41143f560/full/HobbyTracker/test/figma_ui_review_test.dart: loading /workspace/scratch/01f41143f560/full/HobbyTracker/test/figma_ui_review_test.dart
