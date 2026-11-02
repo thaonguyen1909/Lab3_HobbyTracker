@@ -4,7 +4,7 @@
 
 Hobby Tracker giúp người dùng biến sở thích thành hoạt động thường xuyên: chọn việc muốn làm, sắp xếp thời gian, tập trung luyện tập và theo dõi kết quả. Dự án phát triển từ thiết kế UI/UX của Lab 2 thành ứng dụng Android bằng Flutter, sử dụng Firebase để đăng nhập và lưu trữ dữ liệu.
 
-> **Trạng thái:** Đang chuẩn bị triển khai. Repository hiện có README, hướng dẫn AGENTS.md, roadmap và các prompt; các tính năng và công nghệ bên dưới là kế hoạch, chưa được tích hợp hoặc kiểm thử.
+> **Trạng thái:** Đang chuẩn bị triển khai. Repository hiện có bộ nguồn tham chiếu, tài liệu audit phase 00, hướng dẫn AGENTS.md, roadmap và các prompt; các tính năng và công nghệ bên dưới là kế hoạch, chưa được tích hợp hoặc kiểm thử.
 
 ## Ứng dụng sẽ làm được gì?
 
@@ -104,3 +104,17 @@ Chỉ thực hiện Lab 3 theo phase 00–08 trong `prompts/`. Web quản trị,
 ## Chạy dự án
 
 Chưa có mã nguồn Flutter nên hiện chưa có bước cài đặt hoặc chạy ứng dụng. Hướng dẫn thiết lập, phiên bản công cụ và lệnh kiểm thử sẽ được bổ sung khi khởi tạo app.
+
+## Bộ tài liệu phase 00
+
+Trạng thái: đã soạn draft và đối chiếu nguồn; người dùng đã duyệt baseline Figma/HTML và Google + email/password thật (D03/D06). Các mục review còn lại xem open-decisions; chưa triển khai Flutter.
+
+- [Tổng hợp để review phase00](docs/phase-00-review.md)
+- [Nguồn và link Figma](reference/README.md)
+- [Đối chiếu Figma ↔ HTML](docs/figma-html-comparison.md)
+- [Truy vết màn hình/flow/component](docs/design-traceability.md)
+- [Gap review](docs/gap-review.md) · [Quyết định còn mở](docs/open-decisions.md)
+- [Checklist rubric](docs/rubric-checklist.md) · [Kế hoạch test](docs/test-plan.md)
+- [Design system](design/DESIGN.md) · [Flutter handoff](handoff/flutter-handoff.md)
+
+AI disclosure: Codex hỗ trợ audit nguồn và soạn tài liệu phase00; nguồn Lab2 ghi rõ các cuộc phỏng vấn mô phỏng bằng AI. Chưa có kết quả kiểm thử ứng dụng để công bố.

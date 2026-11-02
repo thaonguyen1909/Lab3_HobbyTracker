@@ -4,7 +4,7 @@
 
 Firebase foundation, Auth và route guards
 
-**Mục tiêu:** người dùng thực đăng nhập và dữ liệu tách theo UID. **Công việc:** Firebase project/FlutterFire CLI setup dưới hướng dẫn người phụ trách; Google Sign-In (required), auth-state routing, sign-out, cancel/no-network/retry; xử lý Login/Register/Forgot từ Lab2 và ghi sai khác nếu có; `users/{uid}` profile và Firestore Rules tối thiểu, DI auth service, separate demo account. **DoD:** signed-out không truy cập app; login thành công tới Home; signout xác nhận ở Settings; cancel không crash; không lưu password trong Firestore. **Lưu ý:** giảng viên có thể yêu cầu demo profile, nhưng profile nằm trong Settings theo Lab2.
+**Mục tiêu:** người dùng thực đăng nhập và dữ liệu tách theo UID. **Công việc:** Firebase project/FlutterFire CLI setup dưới hướng dẫn người phụ trách; Google Sign-In (required), auth-state routing, sign-out, cancel/no-network/retry; Google và email/password thật đã được người dùng duyệt tại D03: Login hỗ trợ cả hai, Register tạo tài khoản thật, Forgot gửi reset thật; xử lý cùng email/hai provider bằng quy trình conflict/linking có xác thực, không tự gộp hoặc nhân đôi hồ sơ; ghi design traceability; `users/{uid}` profile và Firestore Rules tối thiểu, DI auth service, separate demo account. **DoD:** signed-out không truy cập app; login thành công tới Home; signout xác nhận ở Settings; cancel không crash; không lưu password trong Firestore. **Lưu ý:** giảng viên có thể yêu cầu demo profile, nhưng profile nằm trong Settings theo Lab2.
 
 ## Run this task
 

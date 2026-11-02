@@ -40,7 +40,7 @@ Khi nguồn xung đột, **ghi vào `docs/open-decisions.md`, không để Codex
 
 ## 3. Những điểm cần xử lý trước khi Codex bắt đầu
 
-1. **Đầu vào Lab 2 chưa đầy đủ theo quy chuẩn môn:** `Specification.html` ghi rõ Figma 6 trang, `design/DESIGN.md`, `handoff/flutter-handoff.md` và Google Stitch/evidence còn thiếu hoặc chưa chứng minh. Codex có thể tạo bản handoff đề xuất từ HTML, nhưng **không tự khẳng định đã thay thế được file Figma hoặc được giảng viên phê duyệt**.
+1. **Đầu vào Lab 2 cần review:** đã gom 7 nguồn vào reference/, đọc 6 trang Figma trực tiếp và soạn draft design/DESIGN.md cùng handoff/flutter-handoff.md. Figma hiện có 0 reaction/flow start; baseline, formal prerequisite và handoff còn chờ nhóm/giảng viên xác nhận. Xem docs/figma-html-comparison.md, docs/gap-review.md và docs/phase-00-review.md; không dùng ghi chú cũ “Figma 3 trang” trong Specification để mô tả hiện trạng mới.
 2. **Cloud Storage bắt buộc trong Lab 3:** tạo file và upload theo UID, hiển thị progress/URL, có Rules và bằng chứng thực. Xác minh điều kiện dịch vụ/chi phí hiện hành trước cấu hình, không tự nâng billing. Chưa đủ điều kiện thì ghi BLOCKED; local PDF chưa đủ nghiệm thu. Tách ReportExportService và ReportUploadService để dễ kiểm thử.
 3. **Lab 2 có form email/password, Lab 3 bắt buộc Google Sign-In:** đề xuất hỗ trợ Google Sign-In và bảo tồn các route Login/Register/Forgot Password với xử lý auth thật khi khả thi; mọi khác biệt phải ghi traceability.
 

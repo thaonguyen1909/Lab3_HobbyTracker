@@ -1,0 +1,108 @@
+{
+  "date": "2026-11-02",
+  "fileKey": "5JiJtLyXN6DEpC1LycQPBb",
+  "method": "Read-only Figma Plugin API: page.findAll(), reactions and flowStartingPoints; no prototype play-through.",
+  "pages": [
+    {
+      "page": {
+        "id": "0:1",
+        "name": "01 · Tổng"
+      },
+      "frames": [
+        {
+          "id": "4:2",
+          "name": "Reusable UI components",
+          "type": "FRAME"
+        },
+        {
+          "id": "13:2",
+          "name": "Hobby Tracker · Tổng / All screens",
+          "type": "FRAME"
+        }
+      ],
+      "flowStartingPoints": [],
+      "reactionNodeCount": 0,
+      "reactions": []
+    },
+    {
+      "page": {
+        "id": "3:2",
+        "name": "02 · Authentication"
+      },
+      "frames": [
+        {
+          "id": "7:2",
+          "name": "Board / Authentication",
+          "type": "FRAME"
+        }
+      ],
+      "flowStartingPoints": [],
+      "reactionNodeCount": 0,
+      "reactions": []
+    },
+    {
+      "page": {
+        "id": "3:3",
+        "name": "03 · Home + Hyper"
+      },
+      "frames": [
+        {
+          "id": "9:38",
+          "name": "Board / Home + Hyper",
+          "type": "FRAME"
+        }
+      ],
+      "flowStartingPoints": [],
+      "reactionNodeCount": 0,
+      "reactions": []
+    },
+    {
+      "page": {
+        "id": "3:4",
+        "name": "04 · My Hobbies"
+      },
+      "frames": [
+        {
+          "id": "9:226",
+          "name": "Board / My Hobbies",
+          "type": "FRAME"
+        }
+      ],
+      "flowStartingPoints": [],
+      "reactionNodeCount": 0,
+      "reactions": []
+    },
+    {
+      "page": {
+        "id": "3:5",
+        "name": "05 · Community"
+      },
+      "frames": [
+        {
+          "id": "9:508",
+          "name": "Board / Community",
+          "type": "FRAME"
+        }
+      ],
+      "flowStartingPoints": [],
+      "reactionNodeCount": 0,
+      "reactions": []
+    },
+    {
+      "page": {
+        "id": "3:6",
+        "name": "06 · Settings"
+      },
+      "frames": [
+        {
+          "id": "9:1108",
+          "name": "Board / Settings",
+          "type": "FRAME"
+        }
+      ],
+      "flowStartingPoints": [],
+      "reactionNodeCount": 0,
+      "reactions": []
+    }
+  ]
+}
