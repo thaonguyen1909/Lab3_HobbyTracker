@@ -1,0 +1,35 @@
+{
+  "checkedAt": "2026-11-04T15:39:46.532Z",
+  "projectId": "hobbytracker-6ace6",
+  "readOnly": true,
+  "rulesMatchLocal": true,
+  "localRulesSha256": "94d53af42fc2ff775671e4b12c412af3b78904985634e7fa36190f4db2a3b315",
+  "indexes": [
+    {
+      "collectionGroup": "moments",
+      "queryScope": "COLLECTION",
+      "state": "READY"
+    },
+    {
+      "collectionGroup": "momentOutbox",
+      "queryScope": "COLLECTION",
+      "state": "READY"
+    },
+    {
+      "collectionGroup": "moments",
+      "queryScope": "COLLECTION_GROUP",
+      "state": "READY"
+    },
+    {
+      "collectionGroup": "momentUploads",
+      "queryScope": "COLLECTION_GROUP",
+      "state": "READY"
+    },
+    {
+      "collectionGroup": "momentOutbox",
+      "queryScope": "COLLECTION",
+      "state": "READY"
+    }
+  ],
+  "inboxExpiryIndexState": "READY"
+}

@@ -586,8 +586,12 @@ class HobbyDetailScreen extends ConsumerWidget {
               title: 'Upcoming sessions',
               action: HobbyButton(
                 label: '+ Schedule',
-                onPressed: () =>
-                    showEditor(context, PlanEditor(initialHobby: hobby.id)),
+                onPressed: () => showEditor(
+                  context,
+                  PlanEditor(initialHobby: hobby.id),
+                  showClose: false,
+                  dismissible: false,
+                ),
               ),
               child: AsyncPanel(
                 value: ref.watch(plansProvider),

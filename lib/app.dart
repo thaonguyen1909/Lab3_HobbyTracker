@@ -10,6 +10,8 @@ import 'theme/hobby_theme.dart';
 import 'viewmodels/data_providers.dart';
 import 'viewmodels/feature_actions.dart';
 import 'viewmodels/runtime_controller.dart';
+import 'firebase/firebase_runtime.dart';
+import 'features/community/screens/moments/moment_alert_overlay.dart';
 
 class HobbyTrackerApp extends ConsumerStatefulWidget {
   const HobbyTrackerApp({super.key});
@@ -92,7 +94,13 @@ class _HobbyTrackerAppState extends ConsumerState<HobbyTrackerApp> {
       title: 'Hobby Tracker',
       builder: (context, child) => language.loading
           ? const Scaffold(body: Center(child: CircularProgressIndicator()))
-          : child!,
+          : ref.watch(firebaseRuntimeConfigProvider).emulators
+          ? Banner(
+              message: 'LOCAL EMULATORS',
+              location: BannerLocation.topEnd,
+              child: MomentAlertOverlay(child: child!),
+            )
+          : MomentAlertOverlay(child: child!),
       locale: Locale(language.code),
       supportedLocales: AppStrings.supportedLocales,
       localizationsDelegates: const [

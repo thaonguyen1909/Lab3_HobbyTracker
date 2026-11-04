@@ -1,0 +1,15 @@
+hobbytracker-moments-backend@ D:\Ki-8\PRM393\project\Lab3\Lab3_HobbyTracker\functions
+├─┬ firebase-admin@14.5.0
+│ └─┬ @google-cloud/firestore@9.4.0
+│   ├─┬ @google-cloud/firestore-api@0.2.0
+│   │ └─┬ google-gax@5.0.8
+│   │   ├── @grpc/grpc-js@1.14.7 deduped
+│   │   └─┬ rimraf@5.0.10
+│   │     └─┬ glob@10.5.0
+│   │       └── minimatch@9.0.9
+│   └─┬ google-gax@6.16.0
+│     └── @grpc/grpc-js@1.14.7 deduped
+└─┬ firebase@12.19.0
+  └─┬ @firebase/firestore@4.17.2
+    └── @grpc/grpc-js@1.14.7 overridden
+

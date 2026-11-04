@@ -19,6 +19,7 @@ class HobbyTextField extends StatefulWidget {
     this.keyboardType,
     this.textInputAction,
     this.maxLines = 1,
+    this.maxLength,
   });
 
   final String label;
@@ -31,6 +32,7 @@ class HobbyTextField extends StatefulWidget {
   final TextInputType? keyboardType;
   final TextInputAction? textInputAction;
   final int maxLines;
+  final int? maxLength;
 
   @override
   State<HobbyTextField> createState() => _HobbyTextFieldState();
@@ -62,9 +64,11 @@ class _HobbyTextFieldState extends State<HobbyTextField> {
           keyboardType: widget.keyboardType,
           textInputAction: widget.textInputAction,
           maxLines: widget.obscureText ? 1 : widget.maxLines,
+          maxLength: widget.maxLength,
           style: theme.textTheme.bodyMedium,
           onChanged: widget.onChanged,
           decoration: InputDecoration(
+            counterText: widget.maxLength == null ? null : '',
             hintText: widget.hintText == null
                 ? null
                 : context.tr(widget.hintText!),

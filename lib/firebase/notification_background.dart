@@ -4,6 +4,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import '../models/hobby_data.dart';
 import '../services/local_owner_store.dart';
+import 'moment_background.dart';
 
 bool allowedNotificationPath(String path) =>
     const [
@@ -13,10 +14,17 @@ bool allowedNotificationPath(String path) =>
       '/community/chats',
       '/settings/notifications',
     ].contains(path) ||
+    RegExp(
+      r'^/community/groups/[A-Za-z0-9_-]{1,128}/moments/[A-Za-z0-9_-]{1,128}$',
+    ).hasMatch(path) ||
     RegExp(r'^/community/chat/[A-Za-z0-9._~-]+$').hasMatch(path);
 
 @pragma('vm:entry-point')
 Future<void> firebaseBackgroundMessage(RemoteMessage message) async {
+  if (message.data['kind'] == 'moment') {
+    await enqueueMomentNotification(message.data);
+    return;
+  }
   await Firebase.initializeApp();
   final store = LocalOwnerStore();
   final uid = await store.prefs.getString('active_owner');

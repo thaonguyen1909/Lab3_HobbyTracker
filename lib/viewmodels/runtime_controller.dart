@@ -7,6 +7,8 @@ import '../services/app_services.dart';
 import '../app/router/app_router.dart';
 import 'data_providers.dart';
 import 'auth_view_model.dart';
+import 'hyper_view_model.dart';
+import '../models/moment_alert.dart';
 
 class RuntimeController {
   RuntimeController(this.device, this.navigate) {
@@ -61,6 +63,8 @@ class RuntimeController {
 final runtimeControllerProvider = Provider<RuntimeController>((ref) {
   String? pendingOpen;
   void openWhenReady(String path) {
+    // A moment stays in its inbox while practice is running; never navigate away.
+    if (isMomentRoute(path) && ref.read(hyperProvider).running) return;
     final session = ref.read(authSessionProvider);
     if (!session.isLoading &&
         !session.hasError &&
@@ -84,6 +88,7 @@ final runtimeControllerProvider = Provider<RuntimeController>((ref) {
       } else if (pendingOpen != null) {
         final path = pendingOpen!;
         pendingOpen = null;
+        if (isMomentRoute(path) && ref.read(hyperProvider).running) return;
         ref.read(appRouterProvider).go(path);
       }
     }

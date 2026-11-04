@@ -1,5 +1,9 @@
 # Hobby Tracker
 
+**Lập lịch tập trung mới:** chọn nhanh sở thích, tự điền tên, thời lượng 15p/30p/1 giờ/2 giờ hoặc tùy chỉnh; lặp hằng ngày/tuần có ngày kết thúc. [Thiết kế và kết quả kiểm tra](docs/quick-schedule-update.md).
+
+**Khoảnh khắc — kiến trúc mới 04/11/2026:** Firebase Auth/Firestore/FCM + backend Node.js riêng + Cloudinary. Thử qua USB theo [hướng dẫn hiện hành](docs/moments-cloudinary-run.md); trạng thái triển khai tại [báo cáo retest](docs/moments-retest-report.md). Các báo cáo Storage/Functions cũ là lịch sử.
+
 Ứng dụng Android Flutter + Firebase cho PRM393 Lab 3. Kiến trúc MVVM/Riverpod, hỗ trợ English/Tiếng Việt và 7 giao diện màu.
 
 ## Source và tài liệu
@@ -63,6 +67,12 @@ Dùng Java 21 cho bộ emulator đã pin. Lệnh trên chạy project `demo-`, k
 - Chưa nghiệm thu đầy đủ hai tài khoản cloud, delivered notifications, Storage upload/billing, Console evidence, ARTEMIS và Figma parity. Không coi code/test fixtures là bằng chứng cloud thành công.
 
 [Báo cáo tích hợp](docs/full-implementation-report.md) · [Anh/Việt](docs/localization-report.md) · [Checklist còn thiếu](docs/full-manual-checklist.md).
+
+## Mở rộng Khoảnh khắc 3 giờ
+
+Đã có source đăng/xem ảnh theo nhóm, popup/inbox, Android notification worker và cleanup có retry. Bước 4 chạy đạt 145 test Flutter và 87 test backend/Rules/CLI trên local, analyze sạch, APK debug build được. Chưa deploy backend hoặc nghiệm thu push/ba giờ trên hai điện thoại thật.
+
+[Báo cáo bước 4](docs/moments-cleanup-step4-report.md) · [Chạy local](docs/moments-local-run.md) · [Demo và nghiệm thu](docs/moments-demo-acceptance.md).
 
 ## Đưa lên GitHub
 

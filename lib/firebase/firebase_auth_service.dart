@@ -13,10 +13,12 @@ class FirebaseAuthService implements AuthService {
     required FirebaseFirestore db,
     required GoogleSignIn google,
     this.onBeforeSignOut,
+    this.localOnly = false,
   }) : _auth = auth,
        _db = db,
        _google = google;
   final Future<void> Function(String?)? onBeforeSignOut;
+  final bool localOnly;
   final FirebaseAuth _auth;
   final FirebaseFirestore _db;
   final GoogleSignIn _google;
@@ -63,6 +65,11 @@ class FirebaseAuthService implements AuthService {
 
   @override
   Future<void> signInWithGoogle() => _guard(() async {
+    if (localOnly) {
+      throw const AuthFailure(
+        'Use an Emulator email/password account in local mode.',
+      );
+    }
     final account = await _google.signIn();
     if (account == null) throw const AuthCancelled();
     final tokens = await account.authentication;
@@ -116,6 +123,11 @@ class FirebaseAuthService implements AuthService {
 
   @override
   Future<void> linkGoogleToCurrentAccount() => _guard(() async {
+    if (localOnly) {
+      throw const AuthFailure(
+        'Use an Emulator email/password account in local mode.',
+      );
+    }
     final current = _auth.currentUser;
     if (current == null) {
       throw const AuthFailure('Bạn cần đăng nhập trước khi liên kết Google.');

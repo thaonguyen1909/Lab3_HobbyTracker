@@ -1,0 +1,538 @@
+
+> build
+> tsc
+
+i  emulators: Starting emulators: auth, functions, firestore, storage
+i  emulators: Detected demo project ID "demo-hobbytracker-moments", emulated services will use a demo configuration and attempts to access non-emulated services for this project will fail.
+i  firestore: Firestore Emulator logging to firestore-debug.log
++  firestore: Firestore Emulator was started in standard edition.
++  firestore: Firestore Emulator UI websocket is running on 9150.
+i  functions: Watching "D:\Ki-8\PRM393\project\Lab3\Lab3_HobbyTracker\functions" for Cloud Functions...
++  functions: Using node@22 from host.
+Serving at port 8494
+
++  functions: Loaded functions definitions from source: beginGroupMomentUpload, getGroupMoment, getGroupMomentImage, listGroupMoments, publishGroupMoment, retractGroupMoment.
++  functions[asia-southeast1-beginGroupMomentUpload]: http function initialized (http://127.0.0.1:5001/demo-hobbytracker-moments/asia-southeast1/beginGroupMomentUpload).
++  functions[asia-southeast1-getGroupMoment]: http function initialized (http://127.0.0.1:5001/demo-hobbytracker-moments/asia-southeast1/getGroupMoment).
++  functions[asia-southeast1-getGroupMomentImage]: http function initialized (http://127.0.0.1:5001/demo-hobbytracker-moments/asia-southeast1/getGroupMomentImage).
++  functions[asia-southeast1-listGroupMoments]: http function initialized (http://127.0.0.1:5001/demo-hobbytracker-moments/asia-southeast1/listGroupMoments).
++  functions[asia-southeast1-publishGroupMoment]: http function initialized (http://127.0.0.1:5001/demo-hobbytracker-moments/asia-southeast1/publishGroupMoment).
++  functions[asia-southeast1-retractGroupMoment]: http function initialized (http://127.0.0.1:5001/demo-hobbytracker-moments/asia-southeast1/retractGroupMoment).
+i  Running script: npm.cmd --prefix functions run test:emulators
+
+> test:emulators
+> npm --prefix ../firebase run test:all && npm run test:integration
+
+
+> test:all
+> node --test tests/firestore.rules.test.mjs tests/full.rules.test.mjs tests/storage.rules.test.mjs
+
+TAP version 13
+# Subtest: owner can create and read own profile
+ok 1 - owner can create and read own profile
+  ---
+  duration_ms: 3068.3996
+  type: 'test'
+  ...
+# [2026-11-04T07:54:27.808Z]  @firebase/firestore: Firestore (11.6.0): GrpcConnection RPC 'Write' stream 0x86cfd349 error. Code: 7 Message: 7 PERMISSION_DENIED: 
+# false for 'create' @ L45, false for 'create' @ L174, false for 'update' @ L47, false for 'update' @ L174
+# Subtest: anonymous cannot read or write profile
+ok 2 - anonymous cannot read or write profile
+  ---
+  duration_ms: 174.4553
+  type: 'test'
+  ...
+# [2026-11-04T07:54:27.934Z]  @firebase/firestore: Firestore (11.6.0): GrpcConnection RPC 'Write' stream 0x86cfd34c error. Code: 7 Message: 7 PERMISSION_DENIED: 
+# false for 'create' @ L45, false for 'create' @ L174, false for 'update' @ L47, false for 'update' @ L174
+# Subtest: other account cannot read or overwrite profile
+ok 3 - other account cannot read or overwrite profile
+  ---
+  duration_ms: 124.3057
+  type: 'test'
+  ...
+# [2026-11-04T07:54:28.045Z]  @firebase/firestore: Firestore (11.6.0): GrpcConnection RPC 'Write' stream 0x86cfd34e error. Code: 7 Message: 7 PERMISSION_DENIED: 
+# evaluation error at L47:21 for 'update' @ L47, false for 'update' @ L174, false for 'update' @ L47, false for 'update' @ L174
+# [2026-11-04T07:54:28.070Z]  @firebase/firestore: Firestore (11.6.0): GrpcConnection RPC 'Write' stream 0x86cfd34f error. Code: 7 Message: 7 PERMISSION_DENIED: 
+# evaluation error at L45:21 for 'create' @ L45, false for 'create' @ L174, evaluation error at L47:21 for 'update' @ L47, false for 'update' @ L174, false for 'update' @ L47, false for 'update' @ L174
+# [2026-11-04T07:54:28.086Z]  @firebase/firestore: Firestore (11.6.0): GrpcConnection RPC 'Write' stream 0x86cfd350 error. Code: 7 Message: 7 PERMISSION_DENIED: 
+# false for 'create' @ L174, false for 'update' @ L174
+# Subtest: owner cannot give self admin role or delete/create other records
+ok 4 - owner cannot give self admin role or delete/create other records
+  ---
+  duration_ms: 152.4227
+  type: 'test'
+  ...
+# [2026-11-04T07:54:28.185Z]  @firebase/firestore: Firestore (11.6.0): GrpcConnection RPC 'Write' stream 0x86cfd352 error. Code: 7 Message: 7 PERMISSION_DENIED: 
+# evaluation error at L47:21 for 'update' @ L47, false for 'update' @ L174, false for 'update' @ L47, false for 'update' @ L174
+# [2026-11-04T07:54:28.206Z]  @firebase/firestore: Firestore (11.6.0): GrpcConnection RPC 'Write' stream 0x86cfd353 error. Code: 7 Message: 7 PERMISSION_DENIED: 
+# evaluation error at L47:21 for 'update' @ L47, false for 'update' @ L174, false for 'update' @ L47, false for 'update' @ L174
+# Subtest: owner may update display name only
+ok 5 - owner may update display name only
+  ---
+  duration_ms: 119.7309
+  type: 'test'
+  ...
+# [2026-11-04T07:54:28.313Z]  @firebase/firestore: Firestore (11.6.0): GrpcConnection RPC 'Write' stream 0x86cfd356 error. Code: 7 Message: 7 PERMISSION_DENIED: 
+# false for 'delete' @ L44, false for 'delete' @ L174
+# [2026-11-04T07:54:28.368Z]  @firebase/firestore: Firestore (11.6.0): GrpcConnection RPC 'Write' stream 0x86cfd357 error. Code: 7 Message: 7 PERMISSION_DENIED: 
+# false for 'create' @ L174, false for 'update' @ L174
+# Subtest: list, delete and nested collections denied
+ok 6 - list, delete and nested collections denied
+  ---
+  duration_ms: 162.4416
+  type: 'test'
+  ...
+# [2026-11-04T07:54:28.435Z]  @firebase/firestore: Firestore (11.6.0): GrpcConnection RPC 'Write' stream 0x86cfd359 error. Code: 7 Message: 7 PERMISSION_DENIED: 
+# false for 'update' @ L47, false for 'update' @ L174
+# [2026-11-04T07:54:28.446Z]  @firebase/firestore: Firestore (11.6.0): GrpcConnection RPC 'Write' stream 0x86cfd35a error. Code: 7 Message: 7 PERMISSION_DENIED: 
+# false for 'delete' @ L44, false for 'delete' @ L174
+# Subtest: other account cannot update or delete owner profile
+ok 7 - other account cannot update or delete owner profile
+  ---
+  duration_ms: 76.7772
+  type: 'test'
+  ...
+# [2026-11-04T07:54:28.536Z]  @firebase/firestore: Firestore (11.6.0): GrpcConnection RPC 'Write' stream 0x86cfd35c error. Code: 7 Message: 7 PERMISSION_DENIED: 
+# evaluation error at L45:21 for 'create' @ L45, false for 'create' @ L174, evaluation error at L47:21 for 'update' @ L47, false for 'update' @ L174, false for 'create' @ L45, false for 'create' @ L174
+# [2026-11-04T07:54:28.569Z]  @firebase/firestore: Firestore (11.6.0): GrpcConnection RPC 'Write' stream 0x86cfd35d error. Code: 7 Message: 7 PERMISSION_DENIED: 
+# evaluation error at L45:21 for 'create' @ L45, false for 'create' @ L174, evaluation error at L47:21 for 'update' @ L47, false for 'update' @ L174, false for 'create' @ L45, false for 'create' @ L174
+# [2026-11-04T07:54:28.597Z]  @firebase/firestore: Firestore (11.6.0): GrpcConnection RPC 'Write' stream 0x86cfd35e error. Code: 7 Message: 7 PERMISSION_DENIED: 
+# evaluation error at L45:21 for 'create' @ L45, false for 'create' @ L174, evaluation error at L47:21 for 'update' @ L47, false for 'update' @ L174, false for 'create' @ L45, false for 'create' @ L174
+# [2026-11-04T07:54:28.626Z]  @firebase/firestore: Firestore (11.6.0): GrpcConnection RPC 'Write' stream 0x86cfd35f error. Code: 7 Message: 7 PERMISSION_DENIED: 
+# evaluation error at L45:21 for 'create' @ L45, false for 'create' @ L174, evaluation error at L47:21 for 'update' @ L47, false for 'update' @ L174, false for 'create' @ L45, false for 'create' @ L174
+# [2026-11-04T07:54:28.648Z]  @firebase/firestore: Firestore (11.6.0): GrpcConnection RPC 'Write' stream 0x86cfd360 error. Code: 7 Message: 7 PERMISSION_DENIED: 
+# evaluation error at L45:21 for 'create' @ L45, false for 'create' @ L174, evaluation error at L47:21 for 'update' @ L47, false for 'update' @ L174, false for 'create' @ L45, false for 'create' @ L174
+# [2026-11-04T07:54:28.675Z]  @firebase/firestore: Firestore (11.6.0): GrpcConnection RPC 'Write' stream 0x86cfd361 error. Code: 7 Message: 7 PERMISSION_DENIED: 
+# evaluation error at L45:21 for 'create' @ L45, false for 'create' @ L174, evaluation error at L47:21 for 'update' @ L47, false for 'update' @ L174, false for 'create' @ L45, false for 'create' @ L174
+# [2026-11-04T07:54:28.711Z]  @firebase/firestore: Firestore (11.6.0): GrpcConnection RPC 'Write' stream 0x86cfd362 error. Code: 7 Message: 7 PERMISSION_DENIED: 
+# false for 'create' @ L45, false for 'create' @ L174, evaluation error at L47:21 for 'update' @ L47, false for 'update' @ L174, false for 'create' @ L45, false for 'create' @ L174
+# [2026-11-04T07:54:28.727Z]  @firebase/firestore: Firestore (11.6.0): GrpcConnection RPC 'Write' stream 0x86cfd363 error. Code: 7 Message: 7 PERMISSION_DENIED: 
+# false for 'create' @ L45, false for 'create' @ L174, evaluation error at L47:21 for 'update' @ L47, false for 'update' @ L174, false for 'create' @ L45, false for 'create' @ L174
+# Subtest: create validates schema, role, name and server time
+ok 8 - create validates schema, role, name and server time
+  ---
+  duration_ms: 281.0579
+  type: 'test'
+  ...
+# [2026-11-04T07:54:28.791Z]  @firebase/firestore: Firestore (11.6.0): GrpcConnection RPC 'Write' stream 0x86cfd365 error. Code: 7 Message: 7 PERMISSION_DENIED: 
+# evaluation error at L47:21 for 'update' @ L47, false for 'update' @ L174, false for 'update' @ L47, false for 'update' @ L174
+# [2026-11-04T07:54:28.803Z]  @firebase/firestore: Firestore (11.6.0): GrpcConnection RPC 'Write' stream 0x86cfd366 error. Code: 7 Message: 7 PERMISSION_DENIED: 
+# evaluation error at L47:21 for 'update' @ L47, false for 'update' @ L174, false for 'update' @ L47, false for 'update' @ L174
+# [2026-11-04T07:54:28.819Z]  @firebase/firestore: Firestore (11.6.0): GrpcConnection RPC 'Write' stream 0x86cfd367 error. Code: 7 Message: 7 PERMISSION_DENIED: 
+# evaluation error at L47:21 for 'update' @ L47, false for 'update' @ L174, false for 'update' @ L47, false for 'update' @ L174
+# [2026-11-04T07:54:28.841Z]  @firebase/firestore: Firestore (11.6.0): GrpcConnection RPC 'Write' stream 0x86cfd368 error. Code: 7 Message: 7 PERMISSION_DENIED: 
+# evaluation error at L47:21 for 'update' @ L47, false for 'update' @ L174, false for 'update' @ L47, false for 'update' @ L174
+# Subtest: update rejects invalid display names
+ok 9 - update rejects invalid display names
+  ---
+  duration_ms: 113.8027
+  type: 'test'
+  ...
+# [2026-11-04T07:54:27.772Z]  @firebase/firestore: Firestore (11.6.0): GrpcConnection RPC 'Write' stream 0x8f200387 error. Code: 7 Message: 7 PERMISSION_DENIED: 
+# evaluation error at L51:22 for 'create' @ L51, false for 'create' @ L174, evaluation error at L52:22 for 'update' @ L52, false for 'update' @ L174, Null value error. for 'create' @ L51, false for 'create' @ L174
+# Subtest: custom hobby and canonical name claim must be atomic
+ok 10 - custom hobby and canonical name claim must be atomic
+  ---
+  duration_ms: 3187.8192
+  type: 'test'
+  ...
+# [2026-11-04T07:54:27.989Z]  @firebase/firestore: Firestore (11.6.0): GrpcConnection RPC 'Write' stream 0x8f20038a error. Code: 7 Message: 7 PERMISSION_DENIED: 
+# evaluation error at L51:22 for 'create' @ L51, false for 'create' @ L174, evaluation error at L52:22 for 'update' @ L52, false for 'update' @ L174, evaluation error at L59:29 for 'create' @ L59, false for 'create' @ L174, evaluation error at L59:29 for 'update' @ L59, false for 'update' @ L174, false for 'create' @ L51, false for 'create' @ L174, false for 'update' @ L59, false for 'update' @ L174
+# [2026-11-04T07:54:28.030Z]  @firebase/firestore: Firestore (11.6.0): GrpcConnection RPC 'Write' stream 0x8f20038b error. Code: 7 Message: 7 PERMISSION_DENIED: 
+# evaluation error at L51:22 for 'create' @ L51, false for 'create' @ L174, evaluation error at L52:22 for 'update' @ L52, false for 'update' @ L174, evaluation error at L59:29 for 'create' @ L59, false for 'create' @ L174, evaluation error at L59:29 for 'update' @ L59, false for 'update' @ L174, false for 'create' @ L51, false for 'create' @ L174
+# Subtest: same normalized hobby name cannot be claimed by another document
+ok 11 - same normalized hobby name cannot be claimed by another document
+  ---
+  duration_ms: 255.2802
+  type: 'test'
+  ...
+# Subtest: rename releases old claim and preserves unrelated plans/history
+ok 12 - rename releases old claim and preserves unrelated plans/history
+  ---
+  duration_ms: 274.4758
+  type: 'test'
+  ...
+# [2026-11-04T07:54:28.472Z]  @firebase/firestore: Firestore (11.6.0): GrpcConnection RPC 'Write' stream 0x8f200390 error. Code: 7 Message: 7 PERMISSION_DENIED: 
+# evaluation error at L52:22 for 'update' @ L52, false for 'update' @ L174, false for 'update' @ L52, false for 'update' @ L174
+# [2026-11-04T07:54:28.542Z]  @firebase/firestore: Firestore (11.6.0): GrpcConnection RPC 'Write' stream 0x8f200391 error. Code: 7 Message: 7 PERMISSION_DENIED: 
+# evaluation error at L66:22 for 'create' @ L66, false for 'create' @ L174, evaluation error at L67:22 for 'update' @ L67, false for 'update' @ L174, false for 'create' @ L66, false for 'create' @ L174
+# Subtest: logical removal requires releasing name; new schedules denied and history retained
+ok 13 - logical removal requires releasing name; new schedules denied and history retained
+  ---
+  duration_ms: 257.822
+  type: 'test'
+  ...
+# [2026-11-04T07:54:28.752Z]  @firebase/firestore: Firestore (11.6.0): GrpcConnection RPC 'Write' stream 0x8f200395 error. Code: 7 Message: 7 PERMISSION_DENIED: 
+# false for 'create' @ L51, false for 'create' @ L174, false for 'update' @ L52, false for 'update' @ L174
+# Subtest: cross-user hobbies is private
+ok 14 - cross-user hobbies is private
+  ---
+  duration_ms: 189.644
+  type: 'test'
+  ...
+# [2026-11-04T07:54:28.903Z]  @firebase/firestore: Firestore (11.6.0): GrpcConnection RPC 'Write' stream 0x8f200398 error. Code: 7 Message: 7 PERMISSION_DENIED: 
+# false for 'create' @ L59, false for 'create' @ L174, false for 'update' @ L59, false for 'update' @ L174
+# Subtest: cross-user hobbyNames is private
+ok 15 - cross-user hobbyNames is private
+  ---
+  duration_ms: 151.3842
+  type: 'test'
+  ...
+# [2026-11-04T07:54:29.030Z]  @firebase/firestore: Firestore (11.6.0): GrpcConnection RPC 'Write' stream 0x8f20039b error. Code: 7 Message: 7 PERMISSION_DENIED: 
+# false for 'create' @ L66, false for 'create' @ L174, false for 'update' @ L67, false for 'update' @ L174
+# Subtest: cross-user plans is private
+ok 16 - cross-user plans is private
+  ---
+  duration_ms: 126.3541
+  type: 'test'
+  ...
+# [2026-11-04T07:54:29.175Z]  @firebase/firestore: Firestore (11.6.0): GrpcConnection RPC 'Write' stream 0x8f20039e error. Code: 7 Message: 7 PERMISSION_DENIED: 
+# false for 'create' @ L72, false for 'create' @ L174, false for 'update' @ L78, false for 'update' @ L174
+# Subtest: cross-user history is private
+ok 17 - cross-user history is private
+  ---
+  duration_ms: 145.6879
+  type: 'test'
+  ...
+# [2026-11-04T07:54:29.279Z]  @firebase/firestore: Firestore (11.6.0): GrpcConnection RPC 'Write' stream 0x8f2003a1 error. Code: 7 Message: 7 PERMISSION_DENIED: 
+# false for 'create' @ L82, false for 'create' @ L174, false for 'update' @ L82, false for 'update' @ L174
+# Subtest: cross-user settings is private
+ok 18 - cross-user settings is private
+  ---
+  duration_ms: 103.0872
+  type: 'test'
+  ...
+# [2026-11-04T07:54:29.420Z]  @firebase/firestore: Firestore (11.6.0): GrpcConnection RPC 'Write' stream 0x8f2003a4 error. Code: 7 Message: 7 PERMISSION_DENIED: 
+# false for 'create' @ L87, false for 'create' @ L174, false for 'update' @ L87, false for 'update' @ L174
+# Subtest: cross-user rsvps is private
+ok 19 - cross-user rsvps is private
+  ---
+  duration_ms: 140.4313
+  type: 'test'
+  ...
+# [2026-11-04T07:54:29.544Z]  @firebase/firestore: Firestore (11.6.0): GrpcConnection RPC 'Write' stream 0x8f2003a7 error. Code: 7 Message: 7 PERMISSION_DENIED: 
+# false for 'create' @ L92, false for 'create' @ L174, false for 'update' @ L92, false for 'update' @ L174
+# Subtest: cross-user groupLinks is private
+ok 20 - cross-user groupLinks is private
+  ---
+  duration_ms: 124.3406
+  type: 'test'
+  ...
+# [2026-11-04T07:54:29.656Z]  @firebase/firestore: Firestore (11.6.0): GrpcConnection RPC 'Write' stream 0x8f2003aa error. Code: 7 Message: 7 PERMISSION_DENIED: 
+# false for 'create' @ L98, false for 'create' @ L174, false for 'update' @ L98, false for 'update' @ L174
+# Subtest: cross-user devices is private
+ok 21 - cross-user devices is private
+  ---
+  duration_ms: 111.6708
+  type: 'test'
+  ...
+# [2026-11-04T07:54:29.761Z]  @firebase/firestore: Firestore (11.6.0): GrpcConnection RPC 'Write' stream 0x8f2003ac error. Code: 7 Message: 7 PERMISSION_DENIED: 
+# false for 'create' @ L66, false for 'create' @ L174, false for 'update' @ L67, false for 'update' @ L174
+# [2026-11-04T07:54:29.776Z]  @firebase/firestore: Firestore (11.6.0): GrpcConnection RPC 'Write' stream 0x8f2003ad error. Code: 7 Message: 7 PERMISSION_DENIED: 
+# evaluation error at L67:22 for 'update' @ L67, false for 'update' @ L174, Null value error. for 'update' @ L67, false for 'update' @ L174
+# Subtest: both Interested and Active may schedule; invalid duration and fake done denied
+ok 22 - both Interested and Active may schedule; invalid duration and fake done denied
+  ---
+  duration_ms: 120.0734
+  type: 'test'
+  ...
+# [2026-11-04T07:54:29.946Z]  @firebase/firestore: Firestore (11.6.0): GrpcConnection RPC 'Write' stream 0x8f2003af error. Code: 7 Message: 7 PERMISSION_DENIED: 
+# false for 'update' @ L78, false for 'update' @ L174
+# [2026-11-04T07:54:29.963Z]  @firebase/firestore: Firestore (11.6.0): GrpcConnection RPC 'Write' stream 0x8f2003b5 error. Code: 7 Message: 7 PERMISSION_DENIED: 
+# false for 'delete' @ L78, false for 'delete' @ L174
+# Subtest: Finish transaction creates one immutable record and completes matching plan
+ok 23 - Finish transaction creates one immutable record and completes matching plan
+  ---
+  duration_ms: 187.1394
+  type: 'test'
+  ...
+# [2026-11-04T07:54:30.043Z]  @firebase/firestore: Firestore (11.6.0): GrpcConnection RPC 'Write' stream 0x8f2003b7 error. Code: 7 Message: 7 PERMISSION_DENIED: 
+# evaluation error at L72:22 for 'create' @ L72, false for 'create' @ L174, false for 'update' @ L78, false for 'update' @ L174, false for 'create' @ L72, false for 'create' @ L174
+# [2026-11-04T07:54:30.054Z]  @firebase/firestore: Firestore (11.6.0): GrpcConnection RPC 'Write' stream 0x8f2003b8 error. Code: 7 Message: 7 PERMISSION_DENIED: 
+# evaluation error at L72:22 for 'create' @ L72, false for 'create' @ L174, false for 'update' @ L78, false for 'update' @ L174, false for 'create' @ L72, false for 'create' @ L174
+# [2026-11-04T07:54:30.076Z]  @firebase/firestore: Firestore (11.6.0): GrpcConnection RPC 'Write' stream 0x8f2003b9 error. Code: 7 Message: 7 PERMISSION_DENIED: 
+# evaluation error at L72:22 for 'create' @ L72, false for 'create' @ L174, false for 'update' @ L78, false for 'update' @ L174, false for 'create' @ L72, false for 'create' @ L174
+# [2026-11-04T07:54:30.085Z]  @firebase/firestore: Firestore (11.6.0): GrpcConnection RPC 'Write' stream 0x8f2003ba error. Code: 7 Message: 7 PERMISSION_DENIED: 
+# false for 'create' @ L72, false for 'create' @ L174, false for 'update' @ L78, false for 'update' @ L174
+# [2026-11-04T07:54:30.099Z]  @firebase/firestore: Firestore (11.6.0): GrpcConnection RPC 'Write' stream 0x8f2003bb error. Code: 7 Message: 7 PERMISSION_DENIED: 
+# evaluation error at L72:22 for 'create' @ L72, false for 'create' @ L174, false for 'update' @ L78, false for 'update' @ L174, Null value error. for 'create' @ L72, false for 'create' @ L174
+# [2026-11-04T07:54:30.109Z]  @firebase/firestore: Firestore (11.6.0): GrpcConnection RPC 'Write' stream 0x8f2003bc error. Code: 7 Message: 7 PERMISSION_DENIED: 
+# evaluation error at L72:22 for 'create' @ L72, false for 'create' @ L174, false for 'update' @ L78, false for 'update' @ L174, false for 'create' @ L72, false for 'create' @ L174
+# Subtest: history rejects forged snapshots, invalid duration, client time and unlinked plan
+ok 24 - history rejects forged snapshots, invalid duration, client time and unlinked plan
+  ---
+  duration_ms: 145.6483
+  type: 'test'
+  ...
+# [2026-11-04T07:54:30.187Z]  @firebase/firestore: Firestore (11.6.0): GrpcConnection RPC 'Write' stream 0x8f2003be error. Code: 7 Message: 7 PERMISSION_DENIED: 
+# false for 'create' @ L82, false for 'create' @ L174, false for 'update' @ L82, false for 'update' @ L174
+# [2026-11-04T07:54:30.247Z]  @firebase/firestore: Firestore (11.6.0): GrpcConnection RPC 'Write' stream 0x8f2003c1 error. Code: 7 Message: 7 PERMISSION_DENIED: 
+# false for 'update' @ L108, false for 'update' @ L174
+# Subtest: preferences and public projection validate shapes and privacy query
+ok 25 - preferences and public projection validate shapes and privacy query
+  ---
+  duration_ms: 221.093
+  type: 'test'
+  ...
+# [2026-11-04T07:54:30.457Z]  @firebase/firestore: Firestore (11.6.0): GrpcConnection RPC 'Write' stream 0x8f2003c7 error. Code: 7 Message: 7 PERMISSION_DENIED: 
+# evaluation error at L116:21 for 'create' @ L116, false for 'create' @ L174, false for 'update' @ L119, false for 'update' @ L174, false for 'create' @ L116, false for 'create' @ L174
+# [2026-11-04T07:54:30.465Z]  @firebase/firestore: Firestore (11.6.0): GrpcConnection RPC 'Write' stream 0x8f2003c5 error. Code: 7 Message: 7 PERMISSION_DENIED: 
+# evaluation error at L116:21 for 'create' @ L116, false for 'create' @ L174, false for 'update' @ L119, false for 'update' @ L174, false for 'create' @ L116, false for 'create' @ L174
+# Subtest: posts use real author and schema; anonymous/impersonation denied
+ok 26 - posts use real author and schema; anonymous/impersonation denied
+  ---
+  duration_ms: 169.4579
+  type: 'test'
+  ...
+# [2026-11-04T07:54:30.583Z]  @firebase/firestore: Firestore (11.6.0): GrpcConnection RPC 'Write' stream 0x8f2003cb error. Code: 7 Message: 7 PERMISSION_DENIED: 
+# false for 'create' @ L122, false for 'create' @ L174, false for 'update' @ L122, false for 'update' @ L174
+# [2026-11-04T07:54:30.613Z]  @firebase/firestore: Firestore (11.6.0): GrpcConnection RPC 'Write' stream 0x8f2003cc error. Code: 7 Message: 7 PERMISSION_DENIED: 
+# evaluation error at L127:22 for 'create' @ L127, false for 'create' @ L174, false for 'update' @ L129, false for 'update' @ L174, false for 'create' @ L127, false for 'create' @ L174
+# [2026-11-04T07:54:30.621Z]  @firebase/firestore: Firestore (11.6.0): GrpcConnection RPC 'Write' stream 0x8f2003ca error. Code: 7 Message: 7 PERMISSION_DENIED: 
+# evaluation error at L127:22 for 'create' @ L127, false for 'create' @ L174, false for 'update' @ L129, false for 'update' @ L174, false for 'create' @ L127, false for 'create' @ L174
+# Subtest: likes and comments permit self; impersonation and oversized input denied
+ok 27 - likes and comments permit self; impersonation and oversized input denied
+  ---
+  duration_ms: 121.3086
+  type: 'test'
+  ...
+# [2026-11-04T07:54:30.744Z]  @firebase/firestore: Firestore (11.6.0): GrpcConnection RPC 'Write' stream 0x8f2003d0 error. Code: 7 Message: 7 PERMISSION_DENIED: 
+# evaluation error at L152:21 for 'create' @ L152, false for 'create' @ L174, false for 'update' @ L153, false for 'update' @ L174, false for 'create' @ L152, false for 'create' @ L174
+# [2026-11-04T07:54:30.788Z]  @firebase/firestore: Firestore (11.6.0): GrpcConnection RPC 'Write' stream 0x8f2003d1 error. Code: 7 Message: 7 PERMISSION_DENIED: 
+# evaluation error at L152:21 for 'create' @ L152, false for 'create' @ L174, false for 'update' @ L153, false for 'update' @ L174, false for 'create' @ L152, false for 'create' @ L174
+# Subtest: group creator/member/link atomic, non-members denied chat; join enables chat
+ok 28 - group creator/member/link atomic, non-members denied chat; join enables chat
+  ---
+  duration_ms: 166.2973
+  type: 'test'
+  ...
+# [2026-11-04T07:54:30.867Z]  @firebase/firestore: Firestore (11.6.0): GrpcConnection RPC 'Write' stream 0x8f2003d3 error. Code: 7 Message: 7 PERMISSION_DENIED: 
+# evaluation error at L164:21 for 'create' @ L164, false for 'create' @ L174, false for 'update' @ L167, false for 'update' @ L174, false for 'create' @ L164, false for 'create' @ L174
+# [2026-11-04T07:54:30.880Z]  @firebase/firestore: Firestore (11.6.0): GrpcConnection RPC 'Write' stream 0x8f2003d4 error. Code: 7 Message: 7 PERMISSION_DENIED: 
+# false for 'update' @ L167, false for 'update' @ L174
+# [2026-11-04T07:54:30.979Z]  @firebase/firestore: Firestore (11.6.0): GrpcConnection RPC 'Write' stream 0x8f2003d8 error. Code: 7 Message: 7 PERMISSION_DENIED: 
+# evaluation error at L170:22 for 'create' @ L170, false for 'create' @ L174, false for 'update' @ L171, false for 'update' @ L174, false for 'create' @ L170, false for 'create' @ L174
+# [2026-11-04T07:54:31.017Z]  @firebase/firestore: Firestore (11.6.0): GrpcConnection RPC 'Write' stream 0x8f2003d7 error. Code: 7 Message: 7 PERMISSION_DENIED: 
+# evaluation error at L170:22 for 'create' @ L170, false for 'create' @ L174, false for 'update' @ L171, false for 'update' @ L174, false for 'create' @ L170, false for 'create' @ L174
+# Subtest: DM participants immutable, opt-in enforced, outside account denied
+ok 29 - DM participants immutable, opt-in enforced, outside account denied
+  ---
+  duration_ms: 243.2821
+  type: 'test'
+  ...
+# [2026-11-04T07:54:31.114Z]  @firebase/firestore: Firestore (11.6.0): GrpcConnection RPC 'Write' stream 0x8f2003dc error. Code: 7 Message: 7 PERMISSION_DENIED: 
+# evaluation error at L66:22 for 'create' @ L66, false for 'create' @ L174, evaluation error at L67:22 for 'update' @ L67, false for 'update' @ L174, Null value error. for 'create' @ L66, false for 'create' @ L174
+# [2026-11-04T07:54:31.176Z]  @firebase/firestore: Firestore (11.6.0): GrpcConnection RPC 'Write' stream 0x8f2003dd error. Code: 7 Message: 7 PERMISSION_DENIED: 
+# false for 'create' @ L66, false for 'create' @ L174, false for 'update' @ L67, false for 'update' @ L174
+# Subtest: RSVP alone adds no calendar entry; explicit Add to Home requires RSVP
+ok 30 - RSVP alone adds no calendar entry; explicit Add to Home requires RSVP
+  ---
+  duration_ms: 172.9299
+  type: 'test'
+  ...
+# [2026-11-04T07:54:31.288Z]  @firebase/firestore: Firestore (11.6.0): GrpcConnection RPC 'Write' stream 0x8f2003e2 error. Code: 7 Message: 7 PERMISSION_DENIED: 
+# evaluation error at L157:21 for 'create' @ L157, false for 'create' @ L174, false for 'update' @ L159, false for 'update' @ L174, false for 'create' @ L157, false for 'create' @ L174
+# [2026-11-04T07:54:31.294Z]  @firebase/firestore: Firestore (11.6.0): GrpcConnection RPC 'Write' stream 0x8f2003e1 error. Code: 7 Message: 7 PERMISSION_DENIED: 
+# evaluation error at L157:21 for 'create' @ L157, false for 'create' @ L174, false for 'update' @ L159, false for 'update' @ L174, false for 'create' @ L157, false for 'create' @ L174
+# [2026-11-04T07:54:31.333Z]  @firebase/firestore: Firestore (11.6.0): GrpcConnection RPC 'Write' stream 0x8f2003e3 error. Code: 7 Message: 7 PERMISSION_DENIED: 
+# false for 'create' @ L174, false for 'update' @ L174
+# Subtest: events and device tokens validate owner and types; unknown paths denied
+ok 31 - events and device tokens validate owner and types; unknown paths denied
+  ---
+  duration_ms: 128.4509
+  type: 'test'
+  ...
+# Subtest: owner uploads PDF, reads own bytes and deletes own report
+ok 32 - owner uploads PDF, reads own bytes and deletes own report
+  ---
+  duration_ms: 400.3381
+  type: 'test'
+  ...
+# Subtest: other user and anonymous cannot read or write report
+ok 33 - other user and anonymous cannot read or write report
+  ---
+  duration_ms: 111.3916
+  type: 'test'
+  ...
+# Subtest: wrong type, extension, zero bytes and files over 10MB denied
+ok 34 - wrong type, extension, zero bytes and files over 10MB denied
+  ---
+  duration_ms: 234.1342
+  type: 'test'
+  ...
+# Subtest: unknown storage folders are closed
+ok 35 - unknown storage folders are closed
+  ---
+  duration_ms: 42.214
+  type: 'test'
+  ...
+1..35
+# tests 35
+# suites 0
+# pass 35
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 7452.3786
+
+> test:integration
+> node --test --test-concurrency=1 test/integration.test.mjs
+
+TAP version 13
+# Subtest: A uploads and publishes; member B reads photo/thumbnail; outsider C and anonymous are denied
+ok 1 - A uploads and publishes; member B reads photo/thumbnail; outsider C and anonymous are denied
+  ---
+  duration_ms: 1788.2256
+  type: 'test'
+  ...
+# Subtest: begin and publish retries are stable, owner-bound and never extend the three-hour expiry
+ok 2 - begin and publish retries are stable, owner-bound and never extend the three-hour expiry
+  ---
+  duration_ms: 338.0275
+  type: 'test'
+  ...
+# [2026-11-04T07:54:35.817Z]  @firebase/firestore: Firestore (12.19.0): GrpcConnection RPC 'Write' stream 0x128a0970 error. Code: 7 Message: 7 PERMISSION_DENIED: 
+# false for 'create' @ L141, false for 'create' @ L174, false for 'update' @ L141, false for 'update' @ L174
+# [2026-11-04T07:54:35.844Z]  @firebase/firestore: Firestore (12.19.0): GrpcConnection RPC 'Write' stream 0x128a0971 error. Code: 7 Message: 7 PERMISSION_DENIED: 
+# false for 'update' @ L141, false for 'update' @ L174
+# [2026-11-04T07:54:35.967Z]  @firebase/firestore: Firestore (12.19.0): GrpcConnection RPC 'Write' stream 0x128a0975 error. Code: 7 Message: 7 PERMISSION_DENIED: 
+# false for 'update' @ L102, false for 'update' @ L174
+# Subtest: clients cannot forge published records, edit timestamps, access quotas or read another upload session
+ok 3 - clients cannot forge published records, edit timestamps, access quotas or read another upload session
+  ---
+  duration_ms: 412.0149
+  type: 'test'
+  ...
+# Subtest: expiry blocks backend reads, Firestore and Storage even while the media object still exists
+ok 4 - expiry blocks backend reads, Firestore and Storage even while the media object still exists
+  ---
+  duration_ms: 364.1845
+  type: 'test'
+  ...
+# Subtest: removed group membership denies metadata and all new image reads
+ok 5 - removed group membership denies metadata and all new image reads
+  ---
+  duration_ms: 281.9645
+  type: 'test'
+  ...
+# Subtest: image request rechecks expiry after downloading bytes
+ok 6 - image request rechecks expiry after downloading bytes
+  ---
+  duration_ms: 248.4161
+  type: 'test'
+  ...
+# Subtest: image request rechecks membership after downloading bytes
+ok 7 - image request rechecks membership after downloading bytes
+  ---
+  duration_ms: 264.2497
+  type: 'test'
+  ...
+!  com.google.firebase.rules.runtime.common.EvaluationException: Error: storage.rules line [6], column [17]. Null value error.
+# Subtest: staging requires its owner, a live session, size/type checks and immutable upload bytes
+ok 8 - staging requires its owner, a live session, size/type checks and immutable upload bytes
+  ---
+  duration_ms: 345.6152
+  type: 'test'
+  ...
+# Subtest: expired and processing upload sessions reject new source uploads
+ok 9 - expired and processing upload sessions reject new source uploads
+  ---
+  duration_ms: 146.6369
+  type: 'test'
+  ...
+# Subtest: invalid image bytes never produce a published moment; retry is bounded
+ok 10 - invalid image bytes never produce a published moment; retry is bounded
+  ---
+  duration_ms: 221.4691
+  type: 'test'
+  ...
+# Subtest: source missing, archived hobby, non-member and anonymous fail without publishing
+ok 11 - source missing, archived hobby, non-member and anonymous fail without publishing
+  ---
+  duration_ms: 215.37
+  type: 'test'
+  ...
+# Subtest: only author retracts; failed physical deletion does not restore read permission
+ok 12 - only author retracts; failed physical deletion does not restore read permission
+  ---
+  duration_ms: 340.9594
+  type: 'test'
+  ...
+# Subtest: media has no public download token; list, replacement, stale generations and deletes are denied
+ok 13 - media has no public download token; list, replacement, stale generations and deletes are denied
+  ---
+  duration_ms: 347.5231
+  type: 'test'
+  ...
+# Subtest: pagination is stable for tied expiration times and does not duplicate rows
+ok 14 - pagination is stable for tied expiration times and does not duplicate rows
+  ---
+  duration_ms: 592.341
+  type: 'test'
+  ...
+# Subtest: source download token is never copied into the published JPEG and source is removed
+ok 15 - source download token is never copied into the published JPEG and source is removed
+  ---
+  duration_ms: 225.4584
+  type: 'test'
+  ...
+# Subtest: processing lease blocks concurrent publication; rate limit bounds new uploads
+ok 16 - processing lease blocks concurrent publication; rate limit bounds new uploads
+  ---
+  duration_ms: 127.2883
+  type: 'test'
+  ...
+i  functions: Beginning execution of "asia-southeast1-beginGroupMomentUpload"
+>  {"verifications":{"app":"MISSING","auth":"MISSING"},"logging.googleapis.com/labels":{"firebase-log-type":"callable-request-verification"},"severity":"DEBUG","message":"Callable request verification passed"}
+i  functions: Finished "asia-southeast1-beginGroupMomentUpload" in 122.6644ms
+i  functions: Beginning execution of "asia-southeast1-beginGroupMomentUpload"
+>  {"verifications":{"app":"MISSING","auth":"VALID"},"logging.googleapis.com/labels":{"firebase-log-type":"callable-request-verification"},"severity":"DEBUG","message":"Callable request verification passed"}
+i  functions: Finished "asia-southeast1-beginGroupMomentUpload" in 4.8272ms
+i  functions: Beginning execution of "asia-southeast1-beginGroupMomentUpload"
+>  {"verifications":{"app":"MISSING","auth":"VALID"},"logging.googleapis.com/labels":{"firebase-log-type":"callable-request-verification"},"severity":"DEBUG","message":"Callable request verification passed"}
+i  functions: Finished "asia-southeast1-beginGroupMomentUpload" in 192.1256ms
+i  functions: Beginning execution of "asia-southeast1-publishGroupMoment"
+>  {"verifications":{"app":"MISSING","auth":"VALID"},"logging.googleapis.com/labels":{"firebase-log-type":"callable-request-verification"},"severity":"DEBUG","message":"Callable request verification passed"}
+i  functions: Finished "asia-southeast1-publishGroupMoment" in 418.206ms
+i  functions: Beginning execution of "asia-southeast1-listGroupMoments"
+>  {"verifications":{"app":"MISSING","auth":"VALID"},"logging.googleapis.com/labels":{"firebase-log-type":"callable-request-verification"},"severity":"DEBUG","message":"Callable request verification passed"}
+i  functions: Finished "asia-southeast1-listGroupMoments" in 304.9453ms
+i  functions: Beginning execution of "asia-southeast1-getGroupMoment"
+>  {"verifications":{"app":"MISSING","auth":"VALID"},"logging.googleapis.com/labels":{"firebase-log-type":"callable-request-verification"},"severity":"DEBUG","message":"Callable request verification passed"}
+i  functions: Finished "asia-southeast1-getGroupMoment" in 294.9188ms
+i  functions: Beginning execution of "asia-southeast1-getGroupMomentImage"
+>  {"verifications":{"app":"MISSING","auth":"VALID"},"logging.googleapis.com/labels":{"firebase-log-type":"callable-request-verification"},"severity":"DEBUG","message":"Callable request verification passed"}
+i  functions: Finished "asia-southeast1-getGroupMomentImage" in 482.4358ms
+i  functions: Beginning execution of "asia-southeast1-retractGroupMoment"
+>  {"verifications":{"app":"MISSING","auth":"VALID"},"logging.googleapis.com/labels":{"firebase-log-type":"callable-request-verification"},"severity":"DEBUG","message":"Callable request verification passed"}
+i  functions: Finished "asia-southeast1-retractGroupMoment" in 324.728ms
+i  functions: Beginning execution of "asia-southeast1-getGroupMoment"
+>  {"verifications":{"app":"MISSING","auth":"VALID"},"logging.googleapis.com/labels":{"firebase-log-type":"callable-request-verification"},"severity":"DEBUG","message":"Callable request verification passed"}
+i  functions: Finished "asia-southeast1-getGroupMoment" in 32.7948ms
+# Subtest: real callable HTTP validates auth and uploads through emulated Auth/Functions/Storage/Firestore
+ok 17 - real callable HTTP validates auth and uploads through emulated Auth/Functions/Storage/Firestore
+  ---
+  duration_ms: 34217.1251
+  type: 'test'
+  ...
+1..17
+# tests 17
+# suites 0
+# pass 17
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 42024.1697
++  Script exited successfully (code 0)
+i  emulators: Shutting down emulators.
+i  functions: Stopping Functions Emulator
+i  firestore: Stopping Firestore Emulator
+!  Firestore Emulator has exited upon receiving signal: SIGINT
+i  auth: Stopping Authentication Emulator
+i  storage: Stopping Storage Emulator
+i  eventarc: Stopping Eventarc Emulator
+i  tasks: Stopping Cloud Tasks Emulator
+i  hub: Stopping emulator hub
+i  logging: Stopping Logging Emulator

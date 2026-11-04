@@ -7,6 +7,7 @@ abstract class HobbyRepository {
   Future<void> removeHobby(String uid, Hobby hobby);
   Stream<List<PracticePlan>> plans(String uid);
   Future<void> savePlan(String uid, PracticePlan plan);
+  Future<void> createPlans(String uid, List<PracticePlan> plans);
   Future<void> deletePlan(String uid, String id);
   Stream<List<PracticeRecord>> history(String uid);
   Future<void> finish(String uid, PracticeRecord record);

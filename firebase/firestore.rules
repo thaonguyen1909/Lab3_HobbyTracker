@@ -25,7 +25,7 @@ service cloud.firestore {
   function validPlan(uid,pid,d) {
    return keys(d,['hobbyId','title','startsAt','minutes','done','eventId','completionId'])
     && text(d.hobbyId,1,128) && activeHobby(uid,d.hobbyId) && text(d.title,1,70)
-    && d.startsAt is timestamp && d.minutes in [15,30,45,60,90,120] && d.done is bool
+    && d.startsAt is timestamp && d.minutes is int && d.minutes>=1 && d.minutes<=1440 && d.done is bool
     && text(d.eventId,0,128) && text(d.completionId,0,128)
     && (d.eventId=='' || (pid=='event_'+d.eventId && exists(/databases/$(database)/documents/events/$(d.eventId))
       && getAfter(/databases/$(database)/documents/users/$(uid)/rsvps/$(d.eventId)).data.going==true))
@@ -80,6 +80,9 @@ service cloud.firestore {
    match /settings/{id} {
     allow read: if owner(uid);
     allow create,update: if owner(uid) && id=='preferences' && validPreferences(request.resource.data);
+    allow create,update: if owner(uid) && id=='momentNotifications'
+      && keys(request.resource.data,['enabled','previewOnLockScreen'])
+      && request.resource.data.enabled is bool && request.resource.data.previewOnLockScreen is bool;
     allow delete: if false;
    }
    match /rsvps/{eid} {
@@ -96,6 +99,22 @@ service cloud.firestore {
    match /devices/{id} {
     allow read,delete: if owner(uid);
     allow create,update: if owner(uid) && keys(request.resource.data,['token','updatedAt']) && text(request.resource.data.token,1,4096) && request.resource.data.updatedAt==request.time;
+   }
+   match /momentUploads/{id} {
+    allow read: if owner(uid);
+    allow write: if false;
+   }
+   match /momentGroupSettings/{gid} {
+    allow read: if owner(uid);
+    allow create,update: if owner(uid) && member(gid) && keys(request.resource.data,['muted']) && request.resource.data.muted is bool;
+    allow delete: if owner(uid);
+   }
+   match /momentInbox/{eventId} {
+    allow read: if owner(uid);
+    allow create: if false;
+    allow update: if owner(uid) && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['read'])
+      && request.resource.data.read is bool;
+    allow delete: if owner(uid);
    }
   }
   match /profiles/{uid} {
@@ -131,6 +150,11 @@ service cloud.firestore {
     && text(request.resource.data.name,3,60) && text(request.resource.data.topic,0,50) && text(request.resource.data.description,0,300) && request.resource.data.createdAt==request.time
     && existsAfter(/databases/$(database)/documents/groups/$(gid)/members/$(request.auth.uid));
    allow update,delete: if false;
+   match /moments/{mid} {
+    allow get: if member(gid) && resource.data.status=='ready' && resource.data.expiresAt>request.time;
+    // Lists are served by the authenticated backend; Rules are not query filters.
+    allow list,write: if false;
+   }
    match /members/{uid} {
     allow read: if owner(uid) || member(gid);
     allow create,update: if owner(uid) && keys(request.resource.data,['uid','joinedAt']) && request.resource.data.uid==uid && request.resource.data.joinedAt==request.time

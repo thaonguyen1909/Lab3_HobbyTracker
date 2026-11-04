@@ -1,0 +1,62 @@
+
+> test
+> node --test test/unit.test.mjs
+
+TAP version 13
+# Subtest: requires verified auth context and rejects path injection
+ok 1 - requires verified auth context and rejects path injection
+  ---
+  duration_ms: 3.321
+  type: 'test'
+  ...
+# Subtest: request shape prevents spoofed authors, lifetimes and arbitrary file paths
+ok 2 - request shape prevents spoofed authors, lifetimes and arbitrary file paths
+  ---
+  duration_ms: 0.411
+  type: 'test'
+  ...
+# Subtest: caption counts Unicode characters, not UTF-16 code units
+ok 3 - caption counts Unicode characters, not UTF-16 code units
+  ---
+  duration_ms: 0.2248
+  type: 'test'
+  ...
+# Subtest: request IDs are stable within an owner and distinct across accounts
+ok 4 - request IDs are stable within an owner and distinct across accounts
+  ---
+  duration_ms: 1.2808
+  type: 'test'
+  ...
+# Subtest: pagination bounds and cursor are validated
+ok 5 - pagination bounds and cursor are validated
+  ---
+  duration_ms: 0.418
+  type: 'test'
+  ...
+# Subtest: valid image is resized and EXIF/GPS removed from photo and thumbnail
+ok 6 - valid image is resized and EXIF/GPS removed from photo and thumbnail
+  ---
+  duration_ms: 139.1472
+  type: 'test'
+  ...
+# Subtest: fake images, oversized payloads and unsupported formats are rejected
+ok 7 - fake images, oversized payloads and unsupported formats are rejected
+  ---
+  duration_ms: 3.0973
+  type: 'test'
+  ...
+# Subtest: decompressed image pixel limit prevents tiny compressed image bombs
+ok 8 - decompressed image pixel limit prevents tiny compressed image bombs
+  ---
+  duration_ms: 70.792
+  type: 'test'
+  ...
+1..8
+# tests 8
+# suites 0
+# pass 8
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 4414.4054

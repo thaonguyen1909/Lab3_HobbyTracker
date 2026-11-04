@@ -6,6 +6,10 @@ import '../../features/shell/screens/app_shell.dart';
 import '../../features/hobbies/screens/hobbies_screens.dart';
 import '../../features/practice/screens/practice_screens.dart';
 import '../../features/community/screens/community_screens.dart';
+import '../../features/community/screens/moments/moments_screen.dart';
+import '../../features/community/screens/moments/moment_composer_screen.dart';
+import '../../features/community/screens/moments/moment_viewer_screen.dart';
+import '../../features/community/screens/moments/moment_alerts_screen.dart';
 import '../../features/settings/screens/settings_screens.dart';
 import '../../theme/tokens.dart';
 
@@ -102,6 +106,32 @@ final appRouterProvider = Provider<GoRouter>((ref) {
               GoRoute(
                 path: RoutePaths.groups,
                 builder: (context, state) => const GroupsScreen(),
+                routes: [
+                  GoRoute(
+                    path: ':groupId/moments/:momentId',
+                    builder: (context, state) => MomentViewerScreen(
+                      groupId: state.pathParameters['groupId']!,
+                      momentId: state.pathParameters['momentId']!,
+                    ),
+                  ),
+                ],
+              ),
+              GoRoute(
+                path: RoutePaths.moments,
+                builder: (context, state) =>
+                    MomentsScreen(groupId: state.uri.queryParameters['group']),
+                routes: [
+                  GoRoute(
+                    path: 'alerts',
+                    builder: (context, state) => const MomentAlertsScreen(),
+                  ),
+                  GoRoute(
+                    path: 'create',
+                    builder: (context, state) => MomentComposerScreen(
+                      groupId: state.uri.queryParameters['group'] ?? '',
+                    ),
+                  ),
+                ],
               ),
               GoRoute(
                 path: RoutePaths.activities,

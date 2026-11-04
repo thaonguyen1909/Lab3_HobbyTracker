@@ -4,6 +4,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import '../../../models/hobby_data.dart';
+import '../../../models/schedule_draft.dart';
+import 'schedule_editor.dart';
+export 'schedule_editor.dart' show PlanEditor;
 import '../../../viewmodels/data_providers.dart';
 import '../../../viewmodels/feature_actions.dart';
 import '../../../viewmodels/hyper_view_model.dart';
@@ -75,7 +78,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
           action: HobbyButton(
             key: const ValueKey('add-schedule'),
             label: '+ Schedule',
-            onPressed: () => showEditor(context, PlanEditor(initialDay: day)),
+            onPressed: () => _openSchedule(),
           ),
           child: AsyncPanel(
             value: ref.watch(hobbiesProvider),
@@ -104,6 +107,36 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
                       );
               },
             ),
+          ),
+        ),
+        Padding(
+          padding: const EdgeInsets.only(bottom: 16),
+          child: Wrap(
+            spacing: 8,
+            runSpacing: 8,
+            children: [
+              ActionChip(
+                avatar: const Icon(Icons.add, size: 18),
+                label: const AppText('30m today'),
+                onPressed: () => _openSchedule(today: true),
+              ),
+              ActionChip(
+                avatar: const Icon(Icons.access_time, size: 18),
+                label: const AppText('2 hours tonight'),
+                onPressed: () =>
+                    _openSchedule(today: true, tonight: true, minutes: 120),
+              ),
+              ActionChip(
+                avatar: const Icon(Icons.repeat, size: 18),
+                label: const AppText('Repeat weekly'),
+                onPressed: () => _openSchedule(repeat: ScheduleRepeat.weekly),
+              ),
+              ActionChip(
+                avatar: const Icon(Icons.tune, size: 18),
+                label: const AppText('Custom schedule'),
+                onPressed: () => _openSchedule(),
+              ),
+            ],
           ),
         ),
         Section(
@@ -156,6 +189,31 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
       ],
     ),
   );
+  void _openSchedule({
+    bool today = false,
+    bool tonight = false,
+    int minutes = 30,
+    ScheduleRepeat repeat = ScheduleRepeat.none,
+  }) {
+    final now = DateTime.now();
+    if (today) setState(() => day = now);
+    showEditor(
+      context,
+      PlanEditor(
+        initialDay: day,
+        initialMinutes: minutes,
+        initialRepeat: repeat,
+        initialTime: tonight
+            ? (now.hour >= 20
+                  ? TimeOfDay.fromDateTime(now)
+                  : const TimeOfDay(hour: 20, minute: 0))
+            : null,
+      ),
+      showClose: false,
+      dismissible: false,
+    );
+  }
+
   Widget _weekButton(String label, String asset, int delta) => SizedBox(
     width: 47,
     height: 48,
@@ -271,148 +329,6 @@ class PlanTile extends ConsumerWidget {
       ),
     ),
   );
-}
-
-class PlanEditor extends ConsumerStatefulWidget {
-  const PlanEditor({super.key, this.initialHobby, this.initialDay});
-  final String? initialHobby;
-  final DateTime? initialDay;
-  @override
-  ConsumerState<PlanEditor> createState() => _PlanEditorState();
-}
-
-class _PlanEditorState extends ConsumerState<PlanEditor> {
-  final title = TextEditingController();
-  late String? hobbyId = widget.initialHobby;
-  late DateTime date = widget.initialDay ?? DateTime.now();
-  TimeOfDay? time;
-  int minutes = 30;
-  @override
-  void dispose() {
-    title.dispose();
-    super.dispose();
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    final action = ref.watch(featureActionsProvider);
-    return AsyncPanel(
-      value: ref.watch(hobbiesProvider),
-      retry: () => ref.invalidate(hobbiesProvider),
-      builder: (hobbies) {
-        if (hobbies.isEmpty) {
-          return EmptyState(
-            title: 'Tạo sở thích trước',
-            description: 'Active và Interested đều có thể lên lịch.',
-            actionLabel: 'Tạo sở thích',
-            onAction: () => showEditor(context, const HobbyEditor()),
-          );
-        }
-        return Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            AppText('Thêm lịch', style: Theme.of(context).textTheme.titleLarge),
-            const SizedBox(height: AppSpacing.md),
-            DropdownButtonFormField<String>(
-              initialValue: hobbyId,
-              decoration: InputDecoration(labelText: context.tr('Sở thích')),
-              items: [
-                for (final h in hobbies)
-                  DropdownMenuItem(value: h.id, child: Text(h.name)),
-              ],
-              onChanged: action.busy
-                  ? null
-                  : (v) => setState(() => hobbyId = v),
-            ),
-            const SizedBox(height: AppSpacing.sm),
-            HobbyTextField(
-              key: const ValueKey('plan-title'),
-              label: 'Tên buổi luyện tập',
-              controller: title,
-              enabled: !action.busy,
-            ),
-            const SizedBox(height: AppSpacing.sm),
-            HobbyButton(
-              label: 'Ngày: ${date.day}/${date.month}/${date.year}',
-              variant: HobbyButtonVariant.outline,
-              onPressed: action.busy
-                  ? null
-                  : () async {
-                      final d = await showDatePicker(
-                        context: context,
-                        initialDate: date,
-                        firstDate: DateTime(2020),
-                        lastDate: DateTime(2100),
-                      );
-                      if (d != null && mounted) setState(() => date = d);
-                    },
-            ),
-            const SizedBox(height: AppSpacing.xs),
-            HobbyButton(
-              label: time == null
-                  ? 'Chọn giờ'
-                  : 'Giờ: ${time!.format(context)}',
-              variant: HobbyButtonVariant.outline,
-              onPressed: action.busy
-                  ? null
-                  : () async {
-                      final t = await showTimePicker(
-                        context: context,
-                        initialTime: time ?? TimeOfDay.now(),
-                      );
-                      if (t != null && mounted) setState(() => time = t);
-                    },
-            ),
-            const SizedBox(height: AppSpacing.sm),
-            DropdownButtonFormField<int>(
-              initialValue: minutes,
-              decoration: InputDecoration(labelText: context.tr('Thời lượng')),
-              items: [
-                for (final m in [15, 30, 45, 60, 90, 120])
-                  DropdownMenuItem(value: m, child: AppText('$m phút')),
-              ],
-              onChanged: action.busy
-                  ? null
-                  : (m) => setState(() => minutes = m!),
-            ),
-            if (action.error != null)
-              AppText(
-                action.error!,
-                style: TextStyle(color: Theme.of(context).colorScheme.error),
-              ),
-            const SizedBox(height: AppSpacing.md),
-            HobbyButton(
-              key: const ValueKey('save-schedule'),
-              label: 'Lưu lịch',
-              isLoading: action.busy,
-              onPressed: action.busy
-                  ? null
-                  : () async {
-                      final ok = await ref
-                          .read(featureActionsProvider.notifier)
-                          .plan(
-                            hobbyId: hobbyId,
-                            title: title.text,
-                            startsAt: time == null
-                                ? null
-                                : DateTime(
-                                    date.year,
-                                    date.month,
-                                    date.day,
-                                    time!.hour,
-                                    time!.minute,
-                                  ),
-                            minutes: minutes,
-                          );
-                      if (ok && context.mounted) Navigator.pop(context);
-                    },
-            ),
-          ],
-        );
-      },
-    );
-  }
 }
 
 class HyperScreen extends ConsumerStatefulWidget {

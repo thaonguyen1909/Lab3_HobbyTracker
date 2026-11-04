@@ -14,8 +14,29 @@ int stableNotificationId(String key) {
   return hash;
 }
 
+int reminderNotificationId(String key) =>
+    stableNotificationId(key) & 0x0fffffff;
+bool isReminderPayload(String? raw) {
+  if (raw == null) return false;
+  try {
+    final value = jsonDecode(raw);
+    return value is Map &&
+        value['uid'] is String &&
+        value['path'] == '/home' &&
+        value['kind'] != 'moment';
+  } on FormatException {
+    return false;
+  }
+}
+
 class LocalReminders {
-  final plugin = FlutterLocalNotificationsPlugin();
+  LocalReminders({
+    SharedPreferencesAsync? preferences,
+    FlutterLocalNotificationsPlugin? plugin,
+  }) : preferences = preferences ?? SharedPreferencesAsync(),
+       plugin = plugin ?? FlutterLocalNotificationsPlugin();
+  final FlutterLocalNotificationsPlugin plugin;
+  final SharedPreferencesAsync preferences;
   bool _ready = false;
   Future<void> init(void Function(String?) onOpen) async {
     if (_ready) return;
@@ -30,7 +51,7 @@ class LocalReminders {
   }
 
   Future<void> clear() async {
-    if (_ready) await plugin.cancelAll();
+    await plugin.cancelAll();
   }
 
   Future<void> sync(
@@ -40,7 +61,9 @@ class LocalReminders {
     AppPreferences p,
   ) async {
     if (!_ready) return;
-    await plugin.cancelAll();
+    for (final reminder in await plugin.pendingNotificationRequests()) {
+      if (isReminderPayload(reminder.payload)) await plugin.cancel(reminder.id);
+    }
     final android = plugin
         .resolvePlatformSpecificImplementation<
           AndroidFlutterLocalNotificationsPlugin
@@ -48,8 +71,7 @@ class LocalReminders {
     if (await android?.areNotificationsEnabled() != true) {
       return;
     }
-    final language =
-        await SharedPreferencesAsync().getString('app_language') ?? 'en';
+    final language = await preferences.getString('app_language') ?? 'en';
     final strings = AppStrings(language);
     final details = NotificationDetails(
       android: AndroidNotificationDetails(
@@ -67,7 +89,7 @@ class LocalReminders {
         final at = plan.startsAt.subtract(Duration(minutes: p.leadMinutes));
         if (!at.isAfter(DateTime.now())) continue;
         await plugin.zonedSchedule(
-          stableNotificationId('$uid:${plan.id}'),
+          reminderNotificationId('$uid:${plan.id}'),
           strings.text('Đến giờ luyện tập'),
           plan.title,
           tz.TZDateTime.from(at.toUtc(), tz.UTC),
@@ -87,7 +109,7 @@ class LocalReminders {
       );
       final minutes = records.fold<int>(0, (n, r) => n + r.elapsedMs) ~/ 60000;
       await plugin.zonedSchedule(
-        stableNotificationId('$uid:weekly'),
+        reminderNotificationId('$uid:weekly'),
         strings.text('Một tuần cùng sở thích'),
         strings.text(
           '$minutes phút luyện tập đã được ghi nhận trong tuần này.',

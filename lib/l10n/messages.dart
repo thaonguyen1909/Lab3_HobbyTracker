@@ -1,5 +1,298 @@
 // App-owned UI copy. User content is never sent to a translation service.
 const localizedMessages = <String, List<String>>{
+  'Schedule focus time': ['Schedule focus time', 'Lên lịch tập trung'],
+  'Practice {0}': ['Practice {0}', 'Luyện {0}'],
+  'Other': ['Other', 'Khác'],
+  'Clear session name': ['Clear session name', 'Xóa tên buổi tập'],
+  '15m': ['15m', '15p'],
+  '30m': ['30m', '30p'],
+  '1 hour': ['1 hour', '1 giờ'],
+  '2 hours': ['2 hours', '2 giờ'],
+  'Custom': ['Custom', 'Tùy chỉnh'],
+  'Custom duration': ['Custom duration', 'Tùy chỉnh thời lượng'],
+  'Minutes': ['Minutes', 'Số phút'],
+  'Apply': ['Apply', 'Áp dụng'],
+  '1–1440 minutes (up to 24 hours)': [
+    '1–1440 minutes (up to 24 hours)',
+    '1–1.440 phút (tối đa 24 giờ)',
+  ],
+  'Enter a whole number from 1 to 1440.': [
+    'Enter a whole number from 1 to 1440.',
+    'Nhập số phút nguyên từ 1 đến 1.440.',
+  ],
+  'Choose a preset or customize the duration': [
+    'Choose a preset or customize the duration',
+    'Chọn nhanh hoặc tùy chỉnh thời lượng',
+  ],
+  'Repeat (optional)': ['Repeat (optional)', 'Lặp lại (tùy chọn)'],
+  'Does not repeat': ['Does not repeat', 'Không lặp'],
+  'Every day': ['Every day', 'Hằng ngày'],
+  'Every week': ['Every week', 'Hằng tuần'],
+  'Until': ['Until', 'Đến ngày'],
+  '{0} sessions · each can be managed separately': [
+    '{0} sessions · each can be managed separately',
+    '{0} buổi · quản lý riêng từng buổi',
+  ],
+  '✓ Create schedule': ['✓ Create schedule', '✓ Tạo lịch'],
+  '30m today': ['30m today', '+ 30p hôm nay'],
+  '2 hours tonight': ['2 hours tonight', '+ 2 giờ tối nay'],
+  'Repeat weekly': ['Repeat weekly', 'Lặp hằng tuần'],
+  'Custom schedule': ['Custom schedule', 'Tùy chỉnh'],
+  'Enter a session name and a duration from 1 to 1440 minutes.': [
+    'Enter a session name and a duration from 1 to 1440 minutes.',
+    'Nhập tên buổi tập và thời lượng từ 1 đến 1.440 phút.',
+  ],
+  'Choose an end date on or after the session date.': [
+    'Choose an end date on or after the session date.',
+    'Chọn ngày kết thúc từ ngày bắt đầu trở đi.',
+  ],
+  'Choose a shorter repeat range (maximum 100 sessions).': [
+    'Choose a shorter repeat range (maximum 100 sessions).',
+    'Chọn khoảng lặp ngắn hơn (tối đa 100 buổi).',
+  ],
+  'This schedule changed. Close the form and try again.': [
+    'This schedule changed. Close the form and try again.',
+    'Lịch này đã thay đổi. Hãy đóng biểu mẫu và thử lại.',
+  ],
+  'Moments service is not configured. Please contact the app team.': [
+    'Moments service is not configured. Please contact the app team.',
+    'Chưa cấu hình dịch vụ Khoảnh khắc. Hãy cập nhật cấu hình kết nối và mở lại ứng dụng.',
+  ],
+  'New group moment': ['New group moment', 'Khoảnh khắc mới trong nhóm'],
+  'Dismiss': ['Dismiss', 'Đóng'],
+  'Moment notifications': ['Moment notifications', 'Thông báo khoảnh khắc'],
+  'Moment alerts': ['Moment alerts', 'Nhận thông báo khoảnh khắc'],
+  'Show photos on lock screen': [
+    'Show photos on lock screen',
+    'Hiện ảnh trên màn hình khóa',
+  ],
+  'Android lock screen settings also apply.': [
+    'Android lock screen settings also apply.',
+    'Cài đặt màn hình khóa của Android cũng được áp dụng.',
+  ],
+  'Allow Android notifications': [
+    'Allow Android notifications',
+    'Cho phép thông báo Android',
+  ],
+  'Enable moment alerts to see photos shared by your groups. You can still browse moments when alerts are off.': [
+    'Enable moment alerts to see photos shared by your groups. You can still browse moments when alerts are off.',
+    'Bật thông báo để nhận ảnh do thành viên nhóm chia sẻ. Bạn vẫn xem được danh sách khoảnh khắc khi tắt thông báo.',
+  ],
+  'Could not save moment notification settings. Please retry.': [
+    'Could not save moment notification settings. Please retry.',
+    'Chưa lưu được cài đặt thông báo khoảnh khắc. Hãy thử lại.',
+  ],
+  'Muted groups': ['Muted groups', 'Tắt thông báo theo nhóm'],
+  'Moment inbox': ['Moment inbox', 'Hộp thư khoảnh khắc'],
+  'Finish or pause Hyper Mode before opening a moment.': [
+    'Finish or pause Hyper Mode before opening a moment.',
+    'Hoàn tất hoặc tạm dừng Hyper Mode trước khi mở khoảnh khắc.',
+  ],
+  'No moment alerts yet.': [
+    'No moment alerts yet.',
+    'Chưa có thông báo khoảnh khắc.',
+  ],
+  'Group moment': ['Group moment', 'Khoảnh khắc trong nhóm'],
+  'Open to check availability.': [
+    'Open to check availability.',
+    'Mở để kiểm tra khoảnh khắc còn khả dụng.',
+  ],
+  'New moments in your inbox': [
+    'New moments in your inbox',
+    'Có khoảnh khắc mới trong hộp thư',
+  ],
+  'Moments are waiting in your inbox.': [
+    'Moments are waiting in your inbox.',
+    'Có khoảnh khắc đang chờ trong hộp thư.',
+  ],
+  "Moments": ["Moments", "Khoảnh khắc"],
+  "Moment": ["Moment", "Khoảnh khắc"],
+  "Share a moment": ["Share a moment", "Chia sẻ khoảnh khắc"],
+  "Open group moments": ["Open group moments", "Xem khoảnh khắc nhóm"],
+  "Share a photo with your group. Moments last for 3 hours.": [
+    "Share a photo with your group. Moments last for 3 hours.",
+    "Chia sẻ ảnh với nhóm của bạn. Khoảnh khắc tồn tại trong 3 giờ.",
+  ],
+  "Moments last for 3 hours. Share what you are practicing.": [
+    "Moments last for 3 hours. Share what you are practicing.",
+    "Khoảnh khắc tồn tại trong 3 giờ. Chia sẻ hoạt động bạn đang luyện tập.",
+  ],
+  "Group": ["Group", "Nhóm"],
+  "Sharing with this group": [
+    "Sharing with this group",
+    "Chia sẻ với nhóm này",
+  ],
+  "Only group members can view this photo for 3 hours.": [
+    "Only group members can view this photo for 3 hours.",
+    "Chỉ thành viên nhóm được xem ảnh này trong 3 giờ.",
+  ],
+  "Take photo": ["Take photo", "Chụp ảnh"],
+  "Choose photo": ["Choose photo", "Chọn ảnh"],
+  "Caption (optional)": ["Caption (optional)", "Chú thích (không bắt buộc)"],
+  "Post moment": ["Post moment", "Đăng khoảnh khắc"],
+  "Retry posting": ["Retry posting", "Thử đăng lại"],
+  "Opening photos…": ["Opening photos…", "Đang mở ảnh…"],
+  "Processing and posting…": ["Processing and posting…", "Đang xử lý và đăng…"],
+  "Uploading: {0}%": ["Uploading: {0}%", "Đang tải ảnh: {0}%"],
+  "Cancel upload": ["Cancel upload", "Hủy tải ảnh"],
+  "Upload cancelled. Your draft is kept.": [
+    "Upload cancelled. Your draft is kept.",
+    "Đã hủy tải ảnh. Bản nháp của bạn được giữ lại.",
+  ],
+  "Photo shared with this group": [
+    "Photo shared with this group",
+    "Ảnh được chia sẻ với nhóm này",
+  ],
+  "Cannot display this photo. Choose another photo or retry.": [
+    "Cannot display this photo. Choose another photo or retry.",
+    "Không thể hiển thị ảnh. Hãy chọn ảnh khác hoặc thử lại.",
+  ],
+  "Choose an image smaller than 5 MB.": [
+    "Choose an image smaller than 5 MB.",
+    "Hãy chọn ảnh nhỏ hơn 5 MB.",
+  ],
+  "Choose a JPEG, PNG or WebP photo.": [
+    "Choose a JPEG, PNG or WebP photo.",
+    "Hãy chọn ảnh JPEG, PNG hoặc WebP.",
+  ],
+  "Cannot open photos or camera. Check permission in Android Settings.": [
+    "Cannot open photos or camera. Check permission in Android Settings.",
+    "Không thể mở ảnh hoặc máy ảnh. Hãy kiểm tra quyền trong Cài đặt Android.",
+  ],
+  "The photo could not be recovered. Choose it again.": [
+    "The photo could not be recovered. Choose it again.",
+    "Không thể khôi phục ảnh. Hãy chọn lại ảnh.",
+  ],
+  "Your account changed. Please try again.": [
+    "Your account changed. Please try again.",
+    "Tài khoản đã thay đổi. Vui lòng thử lại.",
+  ],
+  "Your account changed. Please sign in again.": [
+    "Your account changed. Please sign in again.",
+    "Tài khoản đã thay đổi. Vui lòng đăng nhập lại.",
+  ],
+  "Choose a group, a hobby and a photo before posting.": [
+    "Choose a group, a hobby and a photo before posting.",
+    "Hãy chọn nhóm, sở thích và ảnh trước khi đăng.",
+  ],
+  "Caption must be at most 160 characters.": [
+    "Caption must be at most 160 characters.",
+    "Chú thích tối đa 160 ký tự.",
+  ],
+  "Could not save the draft on this device. Keep this screen open and retry.": [
+    "Could not save the draft on this device. Keep this screen open and retry.",
+    "Không thể lưu bản nháp trên thiết bị. Hãy giữ màn hình này mở và thử lại.",
+  ],
+  "Could not upload the photo. Your draft is kept.": [
+    "Could not upload the photo. Your draft is kept.",
+    "Không thể tải ảnh. Bản nháp được giữ lại.",
+  ],
+  "The upload session is unavailable. Choose Post moment again to start a new upload.": [
+    "The upload session is unavailable. Choose Post moment again to start a new upload.",
+    "Phiên tải ảnh không còn khả dụng. Bấm đăng lại để tạo phiên mới.",
+  ],
+  "The upload session is invalid. Please try again.": [
+    "The upload session is invalid. Please try again.",
+    "Phiên tải ảnh không hợp lệ. Vui lòng thử lại.",
+  ],
+  "Posting may have finished. Retry to check before changing this draft.": [
+    "Posting may have finished. Retry to check before changing this draft.",
+    "Ảnh có thể đã đăng thành công. Hãy thử lại để kiểm tra trước khi sửa bản nháp.",
+  ],
+  "Could not connect to moments. Please try again.": [
+    "Could not connect to moments. Please try again.",
+    "Không kết nối được khoảnh khắc. Vui lòng thử lại.",
+  ],
+  "Moments are not available yet. Please try again later.": [
+    "Moments are not available yet. Please try again later.",
+    "Tính năng khoảnh khắc chưa sẵn sàng. Vui lòng thử lại sau.",
+  ],
+  "You no longer have access to this group.": [
+    "You no longer have access to this group.",
+    "Bạn không còn quyền truy cập nhóm này.",
+  ],
+  "Too many requests. Please wait before trying again.": [
+    "Too many requests. Please wait before trying again.",
+    "Có quá nhiều yêu cầu. Hãy chờ trước khi thử lại.",
+  ],
+  "The request timed out. Your draft is kept. Try again.": [
+    "The request timed out. Your draft is kept. Try again.",
+    "Yêu cầu hết thời gian chờ. Bản nháp được giữ lại. Hãy thử lại.",
+  ],
+  "This photo is being processed. Please try again shortly.": [
+    "This photo is being processed. Please try again shortly.",
+    "Ảnh đang được xử lý. Hãy thử lại sau ít giây.",
+  ],
+  "This upload cannot be completed. Check your group and hobby, then try again.": [
+    "This upload cannot be completed. Check your group and hobby, then try again.",
+    "Không thể hoàn tất tải ảnh. Hãy kiểm tra nhóm và sở thích rồi thử lại.",
+  ],
+  "The photo or caption is invalid. Please check and try again.": [
+    "The photo or caption is invalid. Please check and try again.",
+    "Ảnh hoặc chú thích không hợp lệ. Hãy kiểm tra và thử lại.",
+  ],
+  "The moment service returned an invalid response.": [
+    "The moment service returned an invalid response.",
+    "Dịch vụ khoảnh khắc trả về dữ liệu không hợp lệ.",
+  ],
+  "Join a group to share moments": [
+    "Join a group to share moments",
+    "Tham gia nhóm để chia sẻ khoảnh khắc",
+  ],
+  "Only members of the selected group can view its moments.": [
+    "Only members of the selected group can view its moments.",
+    "Chỉ thành viên của nhóm được chọn mới xem được khoảnh khắc của nhóm.",
+  ],
+  "Find groups": ["Find groups", "Tìm nhóm"],
+  "Could not load your groups.": [
+    "Could not load your groups.",
+    "Không tải được danh sách nhóm của bạn.",
+  ],
+  "Refresh moments": ["Refresh moments", "Tải lại khoảnh khắc"],
+  "No live moments yet": ["No live moments yet", "Chưa có khoảnh khắc còn hạn"],
+  "Share the first photo with your group. It will disappear after 3 hours.": [
+    "Share the first photo with your group. It will disappear after 3 hours.",
+    "Chia sẻ ảnh đầu tiên với nhóm. Ảnh sẽ biến mất sau 3 giờ.",
+  ],
+  "Load more moments": ["Load more moments", "Tải thêm khoảnh khắc"],
+  "View moment": ["View moment", "Xem khoảnh khắc"],
+  "Retry photo": ["Retry photo", "Tải lại ảnh"],
+  "Rechecking moments…": [
+    "Rechecking moments…",
+    "Đang kiểm tra lại khoảnh khắc…",
+  ],
+  "Moment expired": ["Moment expired", "Khoảnh khắc đã hết hạn"],
+  "Time left: {0}": ["Time left: {0}", "Thời gian còn lại: {0}"],
+  "This moment has expired or is no longer available.": [
+    "This moment has expired or is no longer available.",
+    "Khoảnh khắc đã hết hạn hoặc không còn khả dụng.",
+  ],
+  "Remove this moment?": ["Remove this moment?", "Xóa khoảnh khắc này?"],
+  "Group members will no longer be able to open this photo.": [
+    "Group members will no longer be able to open this photo.",
+    "Thành viên nhóm sẽ không thể mở ảnh này nữa.",
+  ],
+  "Remove moment": ["Remove moment", "Xóa khoảnh khắc"],
+  "Create a hobby before sharing": [
+    "Create a hobby before sharing",
+    "Tạo sở thích trước khi chia sẻ",
+  ],
+  "Your moment must be linked to a hobby from your collection.": [
+    "Your moment must be linked to a hobby from your collection.",
+    "Khoảnh khắc cần gắn với một sở thích trong bộ sưu tập của bạn.",
+  ],
+  "Use an Emulator email/password account in local mode.": [
+    "Use an Emulator email/password account in local mode.",
+    "Hãy dùng tài khoản email/mật khẩu của Emulator trong chế độ local.",
+  ],
+  "Push services are unavailable in local emulator mode.": [
+    "Push services are unavailable in local emulator mode.",
+    "Dịch vụ push không khả dụng trong chế độ Emulator local.",
+  ],
+  "Crash reporting is disabled in local emulator mode.": [
+    "Crash reporting is disabled in local emulator mode.",
+    "Báo cáo crash được tắt trong chế độ Emulator local.",
+  ],
   "Home": ["Home", "Trang chủ"],
   "Trang chủ": ["Home", "Trang chủ"],
   "Community": ["Community", "Cộng đồng"],

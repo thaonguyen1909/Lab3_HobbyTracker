@@ -25,6 +25,23 @@ beforeEach(async()=>{await env.clearFirestore();await env.withSecurityRulesDisab
 });});
 after(async()=>{await env?.cleanup();});
 
+test('custom schedule duration supports integer minutes through 24 hours; bounds/type stay enforced',async()=>{
+ const d=db('alice');
+ for(const minutes of [1,75,90,120,150,1440]) await assertSucceeds(setDoc(doc(d,`users/alice/plans/custom${minutes}`),plan('h1',{minutes})));
+ for(const [i,minutes] of [-1,0,1441,75.5,'75'].entries()) await assertFails(setDoc(doc(d,`users/alice/plans/invalid${i}`),plan('h1',{minutes})));
+});
+test('100 materialized repeat sessions commit atomically with owner permissions',async()=>{
+ const d=db('alice'), batch=writeBatch(d);
+ for(let i=0;i<100;i++) batch.set(doc(d,`users/alice/plans/repeat${i}`),plan('h1',{startsAt:Timestamp.fromDate(new Date(2027,0,i+1,20)),minutes:150}));
+ await assertSucceeds(batch.commit());
+ assert.equal((await getDocs(collection(d,'users/alice/plans'))).size,100);
+ const bad=writeBatch(d);
+ bad.set(doc(d,'users/alice/plans/good'),plan('h1',{minutes:75}));
+ bad.set(doc(d,'users/bob/plans/forged'),plan('h1',{minutes:75}));
+ await assertFails(bad.commit());
+ assert.equal((await getDoc(doc(d,'users/alice/plans/good'))).exists(),false);
+});
+
 test('custom hobby and canonical name claim must be atomic',async()=>{
  const d=db(),b=writeBatch(d);b.set(doc(d,'users/alice/hobbies/h2'),hobby('Chess'));b.set(doc(d,'users/alice/hobbyNames/chess'),{hobbyId:'h2'});await assertSucceeds(b.commit());
  await assertSucceeds(getDocs(collection(d,'users/alice/hobbies')));

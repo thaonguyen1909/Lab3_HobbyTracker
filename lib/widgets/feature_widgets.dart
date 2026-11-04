@@ -245,37 +245,44 @@ Future<bool> confirmAction(
       ),
     ) ??
     false;
-Future<void> showEditor(BuildContext context, Widget child) =>
-    showModalBottomSheet<void>(
-      context: context,
-      isScrollControlled: true,
-      useRootNavigator: true,
-      useSafeArea: true,
-      builder: (c) => Padding(
-        padding: EdgeInsets.only(bottom: MediaQuery.viewInsetsOf(c).bottom),
-        child: SingleChildScrollView(
-          padding: const EdgeInsets.all(AppSpacing.page),
-          child: Stack(
-            children: [
-              Padding(padding: const EdgeInsets.only(top: 4), child: child),
-              Positioned(
-                top: 0,
-                right: 0,
-                child: IconButton.filledTonal(
-                  tooltip: context.tr('Close'),
-                  onPressed: () => Navigator.pop(c),
-                  icon: const Icon(Icons.close),
-                  style: IconButton.styleFrom(
-                    backgroundColor: context.hobbyPalette.soft,
-                    foregroundColor: Theme.of(context).colorScheme.primary,
-                  ),
+Future<void> showEditor(
+  BuildContext context,
+  Widget child, {
+  bool showClose = true,
+  bool dismissible = true,
+}) => showModalBottomSheet<void>(
+  context: context,
+  isScrollControlled: true,
+  isDismissible: dismissible,
+  enableDrag: dismissible,
+  useRootNavigator: true,
+  useSafeArea: true,
+  builder: (c) => Padding(
+    padding: EdgeInsets.only(bottom: MediaQuery.viewInsetsOf(c).bottom),
+    child: SingleChildScrollView(
+      padding: const EdgeInsets.all(AppSpacing.page),
+      child: Stack(
+        children: [
+          Padding(padding: const EdgeInsets.only(top: 4), child: child),
+          if (showClose)
+            Positioned(
+              top: 0,
+              right: 0,
+              child: IconButton.filledTonal(
+                tooltip: context.tr('Close'),
+                onPressed: () => Navigator.pop(c),
+                icon: const Icon(Icons.close),
+                style: IconButton.styleFrom(
+                  backgroundColor: context.hobbyPalette.soft,
+                  foregroundColor: Theme.of(context).colorScheme.primary,
                 ),
               ),
-            ],
-          ),
-        ),
+            ),
+        ],
       ),
-    );
+    ),
+  ),
+);
 String dateLabel(DateTime value, BuildContext context) => DateFormat.yMd(
   AppStrings.of(context).languageCode,
 ).add_Hm().format(value.toLocal());

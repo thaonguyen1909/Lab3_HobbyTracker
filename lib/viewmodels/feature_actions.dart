@@ -2,6 +2,7 @@ import 'dart:typed_data';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:uuid/uuid.dart';
 import '../models/hobby_data.dart';
+import '../models/schedule_draft.dart';
 import '../services/app_services.dart';
 import '../services/device_services.dart';
 import '../services/hobby_repository.dart';
@@ -130,21 +131,34 @@ class FeatureActions extends StateNotifier<FeatureActionState> {
     required String title,
     required DateTime? startsAt,
     required int minutes,
+    String? requestId,
+    ScheduleRepeat repeat = ScheduleRepeat.none,
+    DateTime? until,
   }) => run(
     () async {
       if (hobbyId == null || startsAt == null) {
         throw const DataFailure('Hãy chọn sở thích, ngày và giờ.');
       }
-      await repository.savePlan(
-        owner,
-        PracticePlan(
-          id: id ?? uuid.v4(),
-          hobbyId: hobbyId,
-          title: title.trim(),
-          startsAt: startsAt,
-          minutes: minutes,
-        ),
-      );
+      final seed = requestId ?? id ?? uuid.v4();
+      final dates = scheduleOccurrences(startsAt, repeat, until);
+      final plans = [
+        for (var i = 0; i < dates.length; i++)
+          PracticePlan(
+            id: id != null && repeat == ScheduleRepeat.none ? id : '${seed}_$i',
+            hobbyId: hobbyId,
+            title: title.trim(),
+            startsAt: dates[i],
+            minutes: minutes,
+          ),
+      ];
+      for (final plan in plans) {
+        validatePracticePlan(plan);
+      }
+      if (id != null && repeat == ScheduleRepeat.none) {
+        await repository.savePlan(owner, plans.single);
+      } else {
+        await repository.createPlans(owner, plans);
+      }
     },
     event: 'create_schedule',
     success: 'Đã lưu lịch.',

@@ -16,6 +16,9 @@ import '../models/hobby_data.dart';
 import '../services/device_services.dart';
 import '../services/local_owner_store.dart';
 import 'notification_background.dart';
+import 'package:workmanager/workmanager.dart';
+import '../models/moment_alert.dart';
+import '../services/moment_local_notifications.dart';
 
 class FirebaseDeviceServices implements DeviceServices {
   FirebaseDeviceServices({
@@ -26,6 +29,7 @@ class FirebaseDeviceServices implements DeviceServices {
     required this.config,
     required this.messaging,
     required this.local,
+    this.localOnly = false,
   });
   final FirebaseAuth auth;
   final FirebaseFirestore db;
@@ -34,6 +38,7 @@ class FirebaseDeviceServices implements DeviceServices {
   final FirebaseRemoteConfig config;
   final FirebaseMessaging messaging;
   final LocalOwnerStore local;
+  final bool localOnly;
   final _diagnostics = StreamController<String>.broadcast();
   final _opens = StreamController<String>.broadcast();
   final _subscriptions = <StreamSubscription<dynamic>>[];
@@ -66,20 +71,24 @@ class FirebaseDeviceServices implements DeviceServices {
   }
 
   @override
-  Future<void> event(String name, Map<String, Object> parameters) =>
-      safe(() => analytics.logEvent(name: name, parameters: parameters));
+  Future<void> event(String name, Map<String, Object> parameters) => localOnly
+      ? Future.value()
+      : safe(() => analytics.logEvent(name: name, parameters: parameters));
   @override
-  Future<void> screen(String name) =>
-      safe(() => analytics.logScreenView(screenName: name));
+  Future<void> screen(String name) => localOnly
+      ? Future.value()
+      : safe(() => analytics.logScreenView(screenName: name));
   @override
   Future<void> recordError(
     Object error,
     StackTrace stack, {
     String reason = 'handled',
     bool fatal = false,
-  }) => safe(
-    () => crashes.recordError(error, stack, reason: reason, fatal: fatal),
-  );
+  }) => localOnly
+      ? Future.value()
+      : safe(
+          () => crashes.recordError(error, stack, reason: reason, fatal: fatal),
+        );
   @override
   Future<void> setOwner(String? uid) async {
     if (_ownerInitialized && _uid == uid) return;
@@ -93,20 +102,32 @@ class FirebaseDeviceServices implements DeviceServices {
     _initialPath = null;
     await _draftWork.catchError((Object _) {});
     await _reminderWork.catchError((Object _) {});
-    if (previous != null && previous != uid) await local.clearOwner(previous);
+    if (previous != null && previous != uid) {
+      await safe(() => Workmanager().cancelByTag('moment:$previous'));
+      await safe(() => MomentLocalNotifications(local).clear(previous));
+      await local.clearOwner(previous);
+    }
     await local.setOwner(uid);
-    await safe(() => analytics.setUserId(id: uid));
-    await safe(() => crashes.setUserIdentifier(uid ?? ''));
-    await safe(() => crashes.setCustomKey('app_scope', 'lab3'));
+    if (!localOnly) {
+      await safe(() => analytics.setUserId(id: uid));
+      await safe(() => crashes.setUserIdentifier(uid ?? ''));
+      await safe(() => crashes.setCustomKey('app_scope', 'lab3'));
+    }
     if (uid == null) {
       await safe(_reminders.clear);
       return;
     }
+    await safe(() async {
+      await MomentLocalNotifications(local).prune(uid);
+    });
     await safe(
       () => _reminders.init((payload) {
         if (payload == null) return;
         try {
           final data = jsonDecode(payload) as Json;
+          if (data['kind'] == 'moment' && MomentAlert.parse(data) == null) {
+            return;
+          }
           if (data['uid'] == _uid &&
               allowedNotificationPath(data['path'] as String)) {
             _opens.add(data['path'] as String);
@@ -114,6 +135,20 @@ class FirebaseDeviceServices implements DeviceServices {
         } catch (_) {}
       }),
     );
+    await safe(() async {
+      final launch = await _reminders.plugin.getNotificationAppLaunchDetails();
+      final raw = launch?.notificationResponse?.payload;
+      if (launch?.didNotificationLaunchApp == true && raw != null) {
+        final data = jsonDecode(raw) as Json;
+        if (data['uid'] == uid &&
+            _uid == uid &&
+            allowedNotificationPath(data['path'] as String) &&
+            (data['kind'] != 'moment' || MomentAlert.parse(data) != null)) {
+          _initialPath = data['path'] as String;
+        }
+      }
+    });
+    if (localOnly) return;
     _subscriptions.add(
       FirebaseMessaging.onMessage.listen((m) {
         unawaited(_receive(uid, m, false));
@@ -142,6 +177,9 @@ class FirebaseDeviceServices implements DeviceServices {
     bool initial = false,
   }) async {
     try {
+      if (m.data['kind'] == 'moment') {
+        return; // Dedicated moment controller verifies it.
+      }
       if (_uid != uid || m.data['ownerId'] != uid) return;
       final kind = m.data['kind'];
       if ((kind == 'message' && !_preferences.messages) ||
@@ -191,14 +229,16 @@ class FirebaseDeviceServices implements DeviceServices {
   @override
   Future<void> endSession(String? uid) async {
     if (uid != null) {
-      await safe(() async {
-        final token = await messaging.getToken();
-        if (token != null) {
-          final id = base64Url.encode(utf8.encode(token)).replaceAll('=', '');
-          await db.doc('users/$uid/devices/$id').delete();
-        }
-        await messaging.deleteToken();
-      });
+      if (!localOnly) {
+        await safe(() async {
+          final token = await messaging.getToken();
+          if (token != null) {
+            final id = base64Url.encode(utf8.encode(token)).replaceAll('=', '');
+            await db.doc('users/$uid/devices/$id').delete();
+          }
+          await messaging.deleteToken();
+        });
+      }
       await local.clearOwner(uid);
     }
     await setOwner(null);
@@ -206,6 +246,7 @@ class FirebaseDeviceServices implements DeviceServices {
 
   @override
   Future<RuntimeFlags> flags() async {
+    if (localOnly) return const RuntimeFlags();
     try {
       await config.setDefaults({'community_enabled': true, 'feed_limit': 25});
       await config.setConfigSettings(
@@ -230,6 +271,11 @@ class FirebaseDeviceServices implements DeviceServices {
 
   @override
   Future<String> requestNotifications(String uid) async {
+    if (localOnly) {
+      throw const DataFailure(
+        'Push services are unavailable in local emulator mode.',
+      );
+    }
     if (auth.currentUser?.uid != uid) {
       throw const DataFailure('Phiên đăng nhập đã thay đổi.');
     }
@@ -289,6 +335,12 @@ class FirebaseDeviceServices implements DeviceServices {
     _reminderWork = _reminderWork
         .then((_) async {
           if (_uid != uid) return;
+          if (_preferences.groups && !preferences.groups) {
+            await safe(() => MomentLocalNotifications(local).clear(uid));
+            if (!localOnly) {
+              await safe(() => Workmanager().cancelByTag('moment:$uid'));
+            }
+          }
           _preferences = preferences;
           await local.prefs.setString(
             '${local.prefix(uid)}notification_preferences',
@@ -337,6 +389,11 @@ class FirebaseDeviceServices implements DeviceServices {
 
   @override
   Future<void> crashTest() async {
+    if (localOnly) {
+      throw const DataFailure(
+        'Crash reporting is disabled in local emulator mode.',
+      );
+    }
     if (!kDebugMode || !const bool.fromEnvironment('ENABLE_CRASH_TEST')) {
       throw const DataFailure(
         'Test crash chỉ bật trong debug bằng ENABLE_CRASH_TEST=true.',

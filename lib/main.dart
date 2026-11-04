@@ -4,7 +4,6 @@ import 'l10n/app_strings.dart';
 import 'dart:async';
 import 'dart:ui';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -20,6 +19,11 @@ import 'services/local_owner_store.dart';
 import 'services/app_services.dart';
 import 'theme/hobby_theme.dart';
 import 'theme/tokens.dart';
+import 'firebase/firebase_runtime.dart';
+import 'firebase/firebase_moment_alert_repository.dart';
+import 'firebase/moment_background.dart';
+import 'services/moment_alert_providers.dart';
+import 'package:workmanager/workmanager.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -27,20 +31,28 @@ Future<void> main() async {
     // Android-only Phase 02: flutterfire configure installs Android's
     // google-services.json / Gradle configuration for native default app.
     // Do not put invented project IDs or credentials into this repository.
-    await Firebase.initializeApp();
-    // No on-disk owner data remains across sign-out/account switching.
-    FirebaseFirestore.instance.settings = const Settings(
-      persistenceEnabled: false,
+    const runtime = FirebaseRuntimeConfig.fromEnvironment;
+    final firebaseApp = await initializeHobbyFirebase(runtime);
+    await FirebaseAnalytics.instance.setAnalyticsCollectionEnabled(
+      !runtime.emulators,
     );
-    FirebaseMessaging.onBackgroundMessage(firebaseBackgroundMessage);
+    await FirebaseCrashlytics.instance.setCrashlyticsCollectionEnabled(
+      !runtime.emulators,
+    );
+    await FirebaseMessaging.instance.setAutoInitEnabled(!runtime.emulators);
+    if (!runtime.emulators) {
+      await Workmanager().initialize(momentWorkerDispatcher);
+      FirebaseMessaging.onBackgroundMessage(firebaseBackgroundMessage);
+    }
     final device = FirebaseDeviceServices(
-      auth: FirebaseAuth.instance,
-      db: FirebaseFirestore.instance,
+      auth: FirebaseAuth.instanceFor(app: firebaseApp),
+      db: FirebaseFirestore.instanceFor(app: firebaseApp),
       analytics: FirebaseAnalytics.instance,
       crashes: FirebaseCrashlytics.instance,
       config: FirebaseRemoteConfig.instance,
       messaging: FirebaseMessaging.instance,
       local: LocalOwnerStore(),
+      localOnly: runtime.emulators,
     );
     FlutterError.onError = (details) {
       FlutterError.presentError(details);
@@ -61,7 +73,21 @@ Future<void> main() async {
     };
     runApp(
       ProviderScope(
-        overrides: [deviceServicesProvider.overrideWithValue(device)],
+        overrides: [
+          deviceServicesProvider.overrideWithValue(device),
+          firebaseAppProvider.overrideWithValue(firebaseApp),
+          firebaseRuntimeConfigProvider.overrideWithValue(runtime),
+          momentAlertRepositoryProvider.overrideWithValue(
+            FirebaseMomentAlertRepository(
+              FirebaseFirestore.instanceFor(app: firebaseApp),
+              FirebaseAuth.instanceFor(app: firebaseApp),
+            ),
+          ),
+          if (!runtime.emulators)
+            momentPushProvider.overrideWithValue(
+              FirebaseMessaging.onMessage.map((message) => message.data),
+            ),
+        ],
         child: const HobbyTrackerApp(),
       ),
     );

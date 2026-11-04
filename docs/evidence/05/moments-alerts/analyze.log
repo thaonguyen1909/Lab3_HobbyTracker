@@ -1,0 +1,10 @@
+Analyzing Lab3_HobbyTracker...                                  
+
+   info - Statements in an if should be enclosed in a block. Try wrapping the statement in a block - lib\firebase\firebase_device_services.dart:338:15 - curly_braces_in_flow_control_structures
+   info - Statements in an if should be enclosed in a block. Try wrapping the statement in a block - lib\services\moment_alert_providers.dart:81:13 - curly_braces_in_flow_control_structures
+   info - Statements in an if should be enclosed in a block. Try wrapping the statement in a block - lib\services\moment_alert_providers.dart:107:13 - curly_braces_in_flow_control_structures
+   info - Statements in an if should be enclosed in a block. Try wrapping the statement in a block - test\moment_alert_controller_test.dart:254:15 - curly_braces_in_flow_control_structures
+   info - Statements in an if should be enclosed in a block. Try wrapping the statement in a block - test\moment_alert_controller_test.dart:256:15 - curly_braces_in_flow_control_structures
+   info - Statements in an if should be enclosed in a block. Try wrapping the statement in a block - test\moment_alert_controller_test.dart:275:15 - curly_braces_in_flow_control_structures
+
+6 issues found. (ran in 51.5s)

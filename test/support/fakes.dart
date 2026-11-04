@@ -2,6 +2,7 @@ import 'package:hobby_tracker/l10n/language_controller.dart';
 import 'dart:async';
 import 'dart:typed_data';
 import 'package:hobby_tracker/models/hobby_data.dart';
+import 'package:hobby_tracker/models/schedule_draft.dart';
 import 'package:hobby_tracker/services/hobby_repository.dart';
 import 'package:hobby_tracker/services/device_services.dart';
 
@@ -78,6 +79,27 @@ class TestRepository implements HobbyRepository {
     beforeWrite();
     if (plan.title.isEmpty) throw const DataFailure('Nhập tên buổi tập.');
     planData.putIfAbsent(uid, () => {})[plan.id] = plan;
+    emit();
+  }
+
+  @override
+  Future<void> createPlans(String uid, List<PracticePlan> plans) async {
+    beforeWrite();
+    final existing = planData[uid] ?? {};
+    for (final plan in plans) {
+      validatePracticePlan(plan);
+      if (existing[plan.id] != null &&
+          !sameScheduleContent(existing[plan.id]!, plan)) {
+        throw const DataFailure(
+          'This schedule changed. Close the form and try again.',
+        );
+      }
+    }
+    final next = {...existing};
+    for (final plan in plans) {
+      next.putIfAbsent(plan.id, () => plan);
+    }
+    planData[uid] = next;
     emit();
   }
 

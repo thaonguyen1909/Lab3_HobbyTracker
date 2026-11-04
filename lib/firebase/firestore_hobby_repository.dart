@@ -3,6 +3,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:uuid/uuid.dart';
 import '../models/hobby_data.dart';
+import '../models/schedule_draft.dart';
 import '../services/hobby_repository.dart';
 
 class FirestoreHobbyRepository implements HobbyRepository {
@@ -183,12 +184,55 @@ class FirestoreHobbyRepository implements HobbyRepository {
   @override
   Future<void> savePlan(String uid, PracticePlan plan) => guard(() async {
     owner(uid);
-    if (plan.title.trim().isEmpty ||
-        plan.title.trim().runes.length > 70 ||
-        ![15, 30, 45, 60, 90, 120].contains(plan.minutes)) {
-      throw const DataFailure('Nhập tên lịch và thời lượng hợp lệ.');
-    }
+    validatePracticePlan(plan);
     await own(uid, 'plans').doc(plan.id).set(encode(plan.toJson()));
+  });
+  @override
+  Future<void> createPlans(
+    String uid,
+    List<PracticePlan> plans,
+  ) => guard(() async {
+    owner(uid);
+    if (plans.isEmpty ||
+        plans.length > maxScheduleOccurrences ||
+        plans.map((p) => p.id).toSet().length != plans.length) {
+      throw const DataFailure(
+        'Choose a shorter repeat range (maximum 100 sessions).',
+      );
+    }
+    for (final plan in plans) {
+      validatePracticePlan(plan);
+    }
+    final collection = own(uid, 'plans');
+    await db.runTransaction<void>((tx) async {
+      owner(uid);
+      final existing = <DocumentSnapshot<Json>>[];
+      for (final plan in plans) {
+        existing.add(await tx.get(collection.doc(plan.id)));
+      }
+      // All reads precede writes. Retrying a lost acknowledgement never resets a completed session.
+      for (var i = 0; i < plans.length; i++) {
+        final plan = plans[i], old = existing[i];
+        if (old.exists) {
+          final data = decode(old.data()!);
+          final previous = PracticePlan(
+            id: old.id,
+            hobbyId: data['hobbyId'] as String,
+            title: data['title'] as String,
+            startsAt: data['startsAt'] as DateTime,
+            minutes: data['minutes'] as int,
+            eventId: data['eventId'] as String,
+          );
+          if (!sameScheduleContent(previous, plan)) {
+            throw const DataFailure(
+              'This schedule changed. Close the form and try again.',
+            );
+          }
+        } else {
+          tx.set(collection.doc(plan.id), encode(plan.toJson()));
+        }
+      }
+    });
   });
   @override
   Future<void> deletePlan(String uid, String id) =>

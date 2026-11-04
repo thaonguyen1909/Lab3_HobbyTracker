@@ -25,6 +25,7 @@ android/key.properties
 **/node_modules/
 *-debug.log
 .firebase/
+/functions/lib/
 
 # Kotlin build cache
 /android/.kotlin/
@@ -32,3 +33,6 @@ android/key.properties
 # Generated Android distribution packages
 *.apk
 *.aab
+/android/hs_err_pid*.log
+/deployment-artifacts/
+/secrets/

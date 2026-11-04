@@ -137,3 +137,35 @@ User explicitly requests a Language category and consistent English or Vietnames
 ## Repository organization — 03/11/2026
 
 User requests separating app code from supplied requirements/documents for GitHub. Materials moved under docs/ according to docs/repository-layout-report.md; original reference inputs and raw evidence hashes unchanged. No screen, flow, theme, authentication, language behavior or Firebase schema change.
+
+## Moments backend step 1 — 04/11/2026
+
+User authorizes the first backend step of the lecturer-requested three-hour activity photos. This adds group-scoped media and APIs, not a fifth tab or a change to original three flows. No new Flutter screen is implemented yet. Backend serves authenticated bytes rather than direct Storage download URLs after an emulator regression reproduced token generation; details and limitations in [backend contract](../functions/README.md). Existing requirements/reference files remain unchanged.
+
+## Moments Flutter step 2 — 04/11/2026
+
+User explicitly authorizes step 2 in chat. Community Feed and joined group cards link to Moments; new list, photo composer and private viewer reuse FeaturePage, existing button/card/theme tokens and English/Vietnamese display strings. Bottom navigation remains Home / Community / My Hobbies / Settings. Camera/gallery, progress/retry, server expiry countdown and author retract implement the new group-photo flow.
+
+These screens are a proposed extension of the existing design: no new matching Figma frames or lecturer visual acceptance are claimed. Widget checks cover 360/412dp in both languages and the composer at 200% text. Device picker/visual review and two-account acceptance are still pending. Popup/notification presentation is outside this step. See [step 2 report](moments-ui-step2-report.md).
+
+## Moments alerts step 3 — 04/11/2026
+
+User requests step 3. Added nonmodal group-photo banner (six seconds maximum), a noninteractive pending label during Hyper, a link from Moments to notification settings/reference inbox, opt-in/mute and lockscreen preference. Four bottom tabs and the three original flows remain. New app-owned text has English/Vietnamese entries; user names/content are not translated. New UI has no dedicated approved Figma frames; visual acceptance and native notification behavior remain pending. Widget tests exercise 360/412dp × en/vi and 200% settings text. See [step 3 report](moments-alerts-step3-report.md).
+
+## Moments step 4 — 04/11/2026
+
+User authorizes cleanup and demo/regression preparation. No new screen or layout changes. Expired reference inbox entries are now removed by cleanup, notification timing/UID checks hardened, and local seen/index records have bounded housekeeping retention. Original references and four-tab/three-flow design remain unchanged. Functional tests are not new Figma or lecturer visual approval; native/cloud acceptance remains pending. See [step 4 report](moments-cleanup-step4-report.md).
+
+## Moments cloud step 5 — 04/11/2026
+
+User authorizes the existing Firebase project rollout without a plan change. No app UI/behavior source changed. Added read-only preflight and package exclusions for test/emulator scripts. Actual billing/bucket prerequisites block cloud deployment; this is not teacher/device/cloud acceptance. See [step 5 report](moments-cloud-step5-report.md).
+
+## Khoảnh khắc Cloudinary + API riêng — 04/11/2026
+
+User-approved migration replaces the production transport/storage and worker hosting only. Existing four-tab navigation, photo picker/composer/list/viewer and three-hour server expiry remain. New missing-config message has Vietnamese/English copy; no separate approved Figma frame is claimed. Foreground and background thumbnails share the same API URL; legacy debug emulator adapter remains for regression. No UI redesign, friendship, Admin/web/AI expansion or lecturer visual acceptance. See [run guide](moments-cloudinary-run.md) and [implementation report](moments-cloudinary-report.md).
+
+## Lên lịch tập trung theo ảnh trước/sau — 04/11/2026
+
+Người dùng yêu cầu thay form lập lịch theo ảnh đề xuất mới của team sau góp ý giảng viên. Ảnh nguồn được giữ nguyên tại docs/design/quick-schedule-proposal.png; không sửa reference HTML/PDF hoặc tự nhận live Figma đã đổi. Áp dụng Home + Hobby Detail scheduling sheet: hobby tiles từ dữ liệu thật và Khác, tên tự điền/sửa được, ngày/giờ cạnh nhau, presets 15/30/60/120 phút và custom, repeat tùy chọn, CTA Tạo lịch. Người dùng xác nhận daily/weekly with end date bằng câu trả lời trong chat. Home có shortcuts mở form điền sẵn.
+
+Quyết định triển khai để review: custom 1–1440 phút, tối đa 100 buổi/lần, end inclusive/default 28 ngày; các buổi là plan độc lập, không whole-series editing. Đây không phải giới hạn trong PDF/ảnh gốc. Bốn tab, ba flow, RSVP chủ động, timer actual active time và quyền owner giữ nguyên. Render 360/412dp en/vi và 200% text đã kiểm tra; user/native visual acceptance còn pending. Xem quick-schedule-update.md và evidence/04/quick-schedule/.

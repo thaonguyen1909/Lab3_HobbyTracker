@@ -147,6 +147,29 @@ class _FeedScreenState extends ConsumerState<FeedScreen> {
     child: Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
+        HobbyCard(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              AppText(
+                'Moments',
+                style: Theme.of(context).textTheme.titleMedium,
+              ),
+              const SizedBox(height: 8),
+              const AppText(
+                'Share a photo with your group. Moments last for 3 hours.',
+              ),
+              const SizedBox(height: 12),
+              HobbyButton(
+                label: 'Open group moments',
+                icon: Icons.photo_camera_outlined,
+                variant: HobbyButtonVariant.outline,
+                onPressed: () => context.push(RoutePaths.moments),
+              ),
+            ],
+          ),
+        ),
+        const SizedBox(height: 16),
         HobbyButton(
           label: '+ Write a post',
           variant: HobbyButtonVariant.secondary,
@@ -594,6 +617,16 @@ class GroupsScreen extends ConsumerWidget {
                                 const SizedBox(height: 12),
                                 Text(g.text('description')),
                                 const SizedBox(height: AppSpacing.sm),
+                                if (joined.any((j) => j.id == g.id)) ...[
+                                  HobbyButton(
+                                    label: 'Open group moments',
+                                    variant: HobbyButtonVariant.outline,
+                                    onPressed: () => context.push(
+                                      RoutePaths.momentsForGroup(g.id),
+                                    ),
+                                  ),
+                                  const SizedBox(height: AppSpacing.sm),
+                                ],
                                 HobbyButton(
                                   label: joined.any((j) => j.id == g.id)
                                       ? 'Open group chat'
