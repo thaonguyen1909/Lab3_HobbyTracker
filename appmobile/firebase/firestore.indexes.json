@@ -1,0 +1,24 @@
+{
+  "indexes": [{
+    "collectionGroup": "moments",
+    "queryScope": "COLLECTION",
+    "fields": [
+      {"fieldPath": "status", "order": "ASCENDING"},
+      {"fieldPath": "expiresAt", "order": "ASCENDING"}
+    ]
+  }, {
+    "collectionGroup": "momentOutbox", "queryScope": "COLLECTION",
+    "fields": [{"fieldPath": "done", "order": "ASCENDING"}, {"fieldPath": "nextAttemptAt", "order": "ASCENDING"}]
+  }, {
+    "collectionGroup": "moments", "queryScope": "COLLECTION_GROUP",
+    "fields": [{"fieldPath": "cleanupPending", "order": "ASCENDING"}, {"fieldPath": "cleanupAfter", "order": "ASCENDING"}]
+  }, {
+    "collectionGroup": "momentUploads", "queryScope": "COLLECTION_GROUP",
+    "fields": [{"fieldPath": "cleanupPending", "order": "ASCENDING"}, {"fieldPath": "cleanupAfter", "order": "ASCENDING"}]
+  }, {
+    "collectionGroup": "momentOutbox", "queryScope": "COLLECTION",
+    "fields": [{"fieldPath": "cleanupPending", "order": "ASCENDING"}, {"fieldPath": "cleanupAfter", "order": "ASCENDING"}]
+  }],
+  "fieldOverrides": [{"collectionGroup": "momentInbox", "fieldPath": "expiresAt",
+    "indexes": [{"order": "ASCENDING", "queryScope": "COLLECTION_GROUP"}]}]
+}

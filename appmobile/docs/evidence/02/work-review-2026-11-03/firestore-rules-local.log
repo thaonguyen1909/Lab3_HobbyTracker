@@ -1,0 +1,95 @@
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.
+
+> test:rules
+> node --test tests/firestore.rules.test.mjs
+
+✖ owner can create and read own profile (0.55175ms)
+✖ anonymous cannot read or write profile (0.074432ms)
+✖ other account cannot read or overwrite profile (0.058788ms)
+✖ owner cannot give self admin role or delete/create other records (0.051428ms)
+ℹ tests 4
+ℹ suites 0
+ℹ pass 0
+ℹ fail 4
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 310.259778
+
+✖ failing tests:
+
+test at tests/firestore.rules.test.mjs:24:1
+✖ owner can create and read own profile (0.55175ms)
+  Error: ENOENT: no such file or directory, open 'firebase/firestore.rules'
+      at Object.readFileSync (node:fs:483:20)
+      at TestContext.<anonymous> (file:///workspace/scratch/01f41143f560/handoff/Project/Lab3_HobbyTracker-main/firebase/tests/firestore.rules.test.mjs:12:28)
+      at TestHook.runInAsyncScope (node:async_hooks:227:14)
+      at TestHook.run (node:internal/test_runner/test:1402:25)
+      at TestHook.run (node:internal/test_runner/test:1757:18)
+      at TestHook.run (node:internal/util:581:20)
+      at Test.createHook (node:internal/test_runner/test:1117:33)
+      at node:internal/test_runner/harness:426:12
+      at file:///workspace/scratch/01f41143f560/handoff/Project/Lab3_HobbyTracker-main/firebase/tests/firestore.rules.test.mjs:9:1
+      at ModuleJob.run (node:internal/modules/esm/module_job:561:25) {
+    errno: -2,
+    code: 'ENOENT',
+    syscall: 'open',
+    path: 'firebase/firestore.rules'
+  }
+
+test at tests/firestore.rules.test.mjs:33:1
+✖ anonymous cannot read or write profile (0.074432ms)
+  Error: ENOENT: no such file or directory, open 'firebase/firestore.rules'
+      at Object.readFileSync (node:fs:483:20)
+      at TestContext.<anonymous> (file:///workspace/scratch/01f41143f560/handoff/Project/Lab3_HobbyTracker-main/firebase/tests/firestore.rules.test.mjs:12:28)
+      at TestHook.runInAsyncScope (node:async_hooks:227:14)
+      at TestHook.run (node:internal/test_runner/test:1402:25)
+      at TestHook.run (node:internal/test_runner/test:1757:18)
+      at TestHook.run (node:internal/util:581:20)
+      at Test.createHook (node:internal/test_runner/test:1117:33)
+      at node:internal/test_runner/harness:426:12
+      at file:///workspace/scratch/01f41143f560/handoff/Project/Lab3_HobbyTracker-main/firebase/tests/firestore.rules.test.mjs:9:1
+      at ModuleJob.run (node:internal/modules/esm/module_job:561:25) {
+    errno: -2,
+    code: 'ENOENT',
+    syscall: 'open',
+    path: 'firebase/firestore.rules'
+  }
+
+test at tests/firestore.rules.test.mjs:41:1
+✖ other account cannot read or overwrite profile (0.058788ms)
+  Error: ENOENT: no such file or directory, open 'firebase/firestore.rules'
+      at Object.readFileSync (node:fs:483:20)
+      at TestContext.<anonymous> (file:///workspace/scratch/01f41143f560/handoff/Project/Lab3_HobbyTracker-main/firebase/tests/firestore.rules.test.mjs:12:28)
+      at TestHook.runInAsyncScope (node:async_hooks:227:14)
+      at TestHook.run (node:internal/test_runner/test:1402:25)
+      at TestHook.run (node:internal/test_runner/test:1757:18)
+      at TestHook.run (node:internal/util:581:20)
+      at Test.createHook (node:internal/test_runner/test:1117:33)
+      at node:internal/test_runner/harness:426:12
+      at file:///workspace/scratch/01f41143f560/handoff/Project/Lab3_HobbyTracker-main/firebase/tests/firestore.rules.test.mjs:9:1
+      at ModuleJob.run (node:internal/modules/esm/module_job:561:25) {
+    errno: -2,
+    code: 'ENOENT',
+    syscall: 'open',
+    path: 'firebase/firestore.rules'
+  }
+
+test at tests/firestore.rules.test.mjs:49:1
+✖ owner cannot give self admin role or delete/create other records (0.051428ms)
+  Error: ENOENT: no such file or directory, open 'firebase/firestore.rules'
+      at Object.readFileSync (node:fs:483:20)
+      at TestContext.<anonymous> (file:///workspace/scratch/01f41143f560/handoff/Project/Lab3_HobbyTracker-main/firebase/tests/firestore.rules.test.mjs:12:28)
+      at TestHook.runInAsyncScope (node:async_hooks:227:14)
+      at TestHook.run (node:internal/test_runner/test:1402:25)
+      at TestHook.run (node:internal/test_runner/test:1757:18)
+      at TestHook.run (node:internal/util:581:20)
+      at Test.createHook (node:internal/test_runner/test:1117:33)
+      at node:internal/test_runner/harness:426:12
+      at file:///workspace/scratch/01f41143f560/handoff/Project/Lab3_HobbyTracker-main/firebase/tests/firestore.rules.test.mjs:9:1
+      at ModuleJob.run (node:internal/modules/esm/module_job:561:25) {
+    errno: -2,
+    code: 'ENOENT',
+    syscall: 'open',
+    path: 'firebase/firestore.rules'
+  }

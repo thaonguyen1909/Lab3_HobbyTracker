@@ -1,0 +1,5 @@
+2026-11-06, Asia/Saigon — user-reported manual result.
+After installation of release 0.3.2 (5), the user answered:
+"Đã kết nối và phát nhạc được"
+This confirms the user's Spotify connection/playback check on that APK,
+not a full regression result for unrelated features or other devices.

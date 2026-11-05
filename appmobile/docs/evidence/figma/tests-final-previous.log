@@ -1,0 +1,90 @@
+00:00 +0: loading /workspace/scratch/01f41143f560/full/HobbyTracker/test/full_viewmodels_test.dart
+lib/widgets/async_states.dart:40:21: Error: Not a constant expression.
+    this.iconName = iconName,
+                    ^^^^^^^^
+00:00 +0: /workspace/scratch/01f41143f560/full/HobbyTracker/test/full_viewmodels_test.dart: custom hobby validation rejects missing name/priority and invalid paths
+00:00 +1: /workspace/scratch/01f41143f560/full/HobbyTracker/test/full_viewmodels_test.dart: duplicate draft error leaves first hobby intact and allows recovery
+00:00 +2: /workspace/scratch/01f41143f560/full/HobbyTracker/test/full_viewmodels_test.dart: both priority values retain plans and history
+00:00 +3: /workspace/scratch/01f41143f560/full/HobbyTracker/test/full_viewmodels_test.dart: timer counts only running time and reset retains notes
+00:00 +4: /workspace/scratch/01f41143f560/full/HobbyTracker/test/full_viewmodels_test.dart: Finish writes one record and marks matching plan done
+00:00 +5: /workspace/scratch/01f41143f560/full/HobbyTracker/test/full_viewmodels_test.dart: failed Finish preserves session ID, time and notes for idempotent retry
+00:00 +6: /workspace/scratch/01f41143f560/full/HobbyTracker/test/full_viewmodels_test.dart: restored draft is paused and cannot be overwritten while storage loads
+00:00 +7: /workspace/scratch/01f41143f560/full/HobbyTracker/test/full_viewmodels_test.dart: changing hobby requires explicit discard of an unfinished draft
+00:00 +8: /workspace/scratch/01f41143f560/full/HobbyTracker/test/full_viewmodels_test.dart: oversized notes rejected before any record is written
+00:00 +9: /workspace/scratch/01f41143f560/full/HobbyTracker/test/full_viewmodels_test.dart: background policy pauses only when preference is enabled
+00:00 +10: /workspace/scratch/01f41143f560/full/HobbyTracker/test/full_viewmodels_test.dart: daily plans filter archived/missing hobbies and sort chronologically
+00:00 +11: /workspace/scratch/01f41143f560/full/HobbyTracker/test/full_viewmodels_test.dart: RSVP does not create a plan; Add to Home is explicit and idempotent
+00:00 +12: /workspace/scratch/01f41143f560/full/HobbyTracker/test/full_viewmodels_test.dart: message retry reuses draft ID and failed text is available to caller
+00:00 +13: /workspace/scratch/01f41143f560/full/HobbyTracker/test/full_viewmodels_test.dart: notification deep links reject arbitrary URLs and unrelated routes
+00:00 +14: /workspace/scratch/01f41143f560/full/HobbyTracker/test/full_viewmodels_test.dart: PDF exporter creates real bytes including multi-page Vietnamese notes
+00:00 +15: /workspace/scratch/01f41143f560/full/HobbyTracker/test/full_viewmodels_test.dart: export does not imply cloud upload; receipt appears only after upload
+00:00 +16: /workspace/scratch/01f41143f560/full/HobbyTracker/test/full_viewmodels_test.dart: telemetry action parameters never include display names or e-mail
+00:00 +17 -1: loading /workspace/scratch/01f41143f560/full/HobbyTracker/test/full_ui_test.dart [E]
+  Failed to load "/workspace/scratch/01f41143f560/full/HobbyTracker/test/full_ui_test.dart":
+  Compilation failed for testPath=/workspace/scratch/01f41143f560/full/HobbyTracker/test/full_ui_test.dart: lib/widgets/async_states.dart:40:21: Error: Not a constant expression.
+      this.iconName = iconName,
+                      ^^^^^^^^
+  .
+lib/widgets/async_states.dart:40:21: Error: Not a constant expression.
+    this.iconName = iconName,
+                    ^^^^^^^^
+00:02 +17 -1: /workspace/scratch/01f41143f560/full/HobbyTracker/test/firebase_auth_service_test.dart: (setUpAll)
+00:02 +17 -1: /workspace/scratch/01f41143f560/full/HobbyTracker/test/firebase_auth_service_test.dart: Google cancellation never creates Firebase session
+00:02 +18 -1: /workspace/scratch/01f41143f560/full/HobbyTracker/test/firebase_auth_service_test.dart: platform cancellation is translated to AuthCancelled
+00:02 +19 -1: /workspace/scratch/01f41143f560/full/HobbyTracker/test/firebase_auth_service_test.dart: missing Google ID token blocks Firebase credential sign in
+00:02 +20 -1: /workspace/scratch/01f41143f560/full/HobbyTracker/test/firebase_auth_service_test.dart: Google tokens are passed to Firebase credential sign in
+00:02 +21 -1: /workspace/scratch/01f41143f560/full/HobbyTracker/test/firebase_auth_service_test.dart: provider conflict is exposed for controlled recovery
+00:02 +22 -1: /workspace/scratch/01f41143f560/full/HobbyTracker/test/firebase_auth_service_test.dart: email is trimmed while password is preserved
+00:02 +23 -1: /workspace/scratch/01f41143f560/full/HobbyTracker/test/firebase_auth_service_test.dart: network errors become visible domain failures
+00:02 +24 -1: /workspace/scratch/01f41143f560/full/HobbyTracker/test/firebase_auth_service_test.dart: Firebase session is cleared even when Google cleanup fails
+00:02 +25 -1: /workspace/scratch/01f41143f560/full/HobbyTracker/test/firebase_auth_service_test.dart: Google linking requires current account and same email
+00:02 +26 -1: /workspace/scratch/01f41143f560/full/HobbyTracker/test/firebase_auth_service_test.dart: registration rejects invalid display name before creating account
+00:02 +27 -1: /workspace/scratch/01f41143f560/full/HobbyTracker/test/firebase_auth_service_test.dart: registration persists requested name; existing profile=false retains role
+00:02 +28 -1: /workspace/scratch/01f41143f560/full/HobbyTracker/test/firebase_auth_service_test.dart: registration persists requested name; existing profile=true retains role
+00:02 +29 -1: /workspace/scratch/01f41143f560/full/HobbyTracker/test/firebase_auth_service_test.dart: bootstrap does not overwrite an existing profile
+00:02 +30 -1: /workspace/scratch/01f41143f560/full/HobbyTracker/test/firebase_auth_service_test.dart: (tearDownAll)
+00:02 +30 -2: loading /workspace/scratch/01f41143f560/full/HobbyTracker/test/router_test.dart [E]
+  Failed to load "/workspace/scratch/01f41143f560/full/HobbyTracker/test/router_test.dart":
+  Compilation failed for testPath=/workspace/scratch/01f41143f560/full/HobbyTracker/test/router_test.dart: lib/widgets/async_states.dart:40:21: Error: Not a constant expression.
+      this.iconName = iconName,
+                      ^^^^^^^^
+  .
+lib/widgets/async_states.dart:40:21: Error: Not a constant expression.
+    this.iconName = iconName,
+                    ^^^^^^^^
+00:04 +30 -3: loading /workspace/scratch/01f41143f560/full/HobbyTracker/test/widget_components_test.dart [E]
+  Failed to load "/workspace/scratch/01f41143f560/full/HobbyTracker/test/widget_components_test.dart":
+  Compilation failed for testPath=/workspace/scratch/01f41143f560/full/HobbyTracker/test/widget_components_test.dart: lib/widgets/async_states.dart:40:21: Error: Not a constant expression.
+      this.iconName = iconName,
+                      ^^^^^^^^
+  .
+00:04 +30 -3: /workspace/scratch/01f41143f560/full/HobbyTracker/test/theme_test.dart: Light theme follows the live Figma token baseline
+00:04 +31 -3: /workspace/scratch/01f41143f560/full/HobbyTracker/test/theme_test.dart: Seven named theme variants exist; full parity belongs to Phase 06
+lib/widgets/async_states.dart:40:21: Error: Not a constant expression.
+    this.iconName = iconName,
+                    ^^^^^^^^
+00:09 +32 -3: /workspace/scratch/01f41143f560/full/HobbyTracker/test/auth_view_model_test.dart: double submit calls service once while action is pending
+00:09 +33 -3: /workspace/scratch/01f41143f560/full/HobbyTracker/test/auth_view_model_test.dart: cancel is nonfatal; network/conflict errors can be retried
+00:09 +34 -3: /workspace/scratch/01f41143f560/full/HobbyTracker/test/auth_view_model_test.dart: completed action after provider disposal does not write state
+00:09 +35 -3: /workspace/scratch/01f41143f560/full/HobbyTracker/test/auth_view_model_test.dart: sign-out is not blocked by pending profile; stale result ignored
+00:09 +36 -3: /workspace/scratch/01f41143f560/full/HobbyTracker/test/auth_view_model_test.dart: switching accounts discards old profile error
+00:09 +37 -3: /workspace/scratch/01f41143f560/full/HobbyTracker/test/auth_view_model_test.dart: profile failure blocks session; invalidation retries same identity
+00:09 +38 -3: /workspace/scratch/01f41143f560/full/HobbyTracker/test/phase01_visual_foundation_test.dart: Light surface, typography and radius tokens match live Figma baseline
+00:09 +39 -3: /workspace/scratch/01f41143f560/full/HobbyTracker/test/phase01_visual_foundation_test.dart: Four navigation destinations fit both phone widths
+00:09 +39 -4: loading /workspace/scratch/01f41143f560/full/HobbyTracker/test/figma_ui_review_test.dart [E]
+  Failed to load "/workspace/scratch/01f41143f560/full/HobbyTracker/test/figma_ui_review_test.dart":
+  Compilation failed for testPath=/workspace/scratch/01f41143f560/full/HobbyTracker/test/figma_ui_review_test.dart: lib/widgets/async_states.dart:40:21: Error: Not a constant expression.
+      this.iconName = iconName,
+                      ^^^^^^^^
+  .
+00:10 +40 -4: /workspace/scratch/01f41143f560/full/HobbyTracker/test/phase01_visual_foundation_test.dart: Branded app bar, card and controls remain present at 360dp
+00:10 +41 -4: /workspace/scratch/01f41143f560/full/HobbyTracker/test/phase01_visual_foundation_test.dart: Password visibility does not destroy draft or validation error
+00:10 +42 -4: /workspace/scratch/01f41143f560/full/HobbyTracker/test/phase01_visual_foundation_test.dart: All four button variants and disabled loading are rendered
+00:10 +43 -4: /workspace/scratch/01f41143f560/full/HobbyTracker/test/phase01_visual_foundation_test.dart: Dialog cannot confirm while saving
+00:10 +44 -4: Some tests failed.
+
+Failing tests:
+  /workspace/scratch/01f41143f560/full/HobbyTracker/test/figma_ui_review_test.dart: loading /workspace/scratch/01f41143f560/full/HobbyTracker/test/figma_ui_review_test.dart
+  /workspace/scratch/01f41143f560/full/HobbyTracker/test/full_ui_test.dart: loading /workspace/scratch/01f41143f560/full/HobbyTracker/test/full_ui_test.dart
+  /workspace/scratch/01f41143f560/full/HobbyTracker/test/router_test.dart: loading /workspace/scratch/01f41143f560/full/HobbyTracker/test/router_test.dart
+  /workspace/scratch/01f41143f560/full/HobbyTracker/test/widget_components_test.dart: loading /workspace/scratch/01f41143f560/full/HobbyTracker/test/widget_components_test.dart

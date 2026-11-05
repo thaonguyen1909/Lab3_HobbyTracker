@@ -1,0 +1,7 @@
+{
+  "Snapshot": "android-live-language-page.xml",
+  "EnglishLanguagePage": true,
+  "EnglishChoice": true,
+  "VietnameseChoice": true,
+  "Note": "Live XML captured after the user navigated to the language page; relaunch Vietnamese Home was observed in the tool screenshot."
+}

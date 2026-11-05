@@ -1,0 +1,182 @@
+[
+  {
+    "path": "README.md",
+    "sha256": "3ef0d2d2032185cc4e7ec98c09147b3e29de66a9e92588f70d5d5bdd82934fc8"
+  },
+  {
+    "path": "docs/architecture.md",
+    "sha256": "de46727e5d303c485afe93c77278410e98bfe40b305c1536dcd1d1212348f99b"
+  },
+  {
+    "path": "docs/design-traceability.md",
+    "sha256": "b8b0cb043ee6caa3a537aaf79661e294fe68b980efae2047b1620f4a0dc927da"
+  },
+  {
+    "path": "docs/figma-ui-report.md",
+    "sha256": "732f23d935d79d11f612692d00cb21eabc66eb3d617b0621614483fc5b13899c"
+  },
+  {
+    "path": "docs/full-implementation-report.md",
+    "sha256": "d0d996efeb179c08989bd0e1241e1f5a9282eff8d1500c39ff3278ec473dace6"
+  },
+  {
+    "path": "docs/localization-report.md",
+    "sha256": "125483bd681ec9774c83ce814328866ebe2e040750b3648ba360def7227995a9"
+  },
+  {
+    "path": "docs/open-decisions.md",
+    "sha256": "bbc28a18e85d51c6f589bb556cf5446c71fe81fe569f5baff614ce12445aba84"
+  },
+  {
+    "path": "lib/app.dart",
+    "sha256": "c9bb5ba4ebc6544f552b4141c148e7ab050c2e18d328d91f04459b00b1647ae5"
+  },
+  {
+    "path": "lib/app/router/app_router.dart",
+    "sha256": "de3599f3c529f5dc0dacb5ba4b3a5bde8bfd6cbd760eba3c026adc66eba06e40"
+  },
+  {
+    "path": "lib/app/router/route_paths.dart",
+    "sha256": "3457489576cabc1218c69f5c98688b1b6fb4ae627339bb8cb38274a398533235"
+  },
+  {
+    "path": "lib/features/auth/screens/auth_gates.dart",
+    "sha256": "85fa963d90ca5aa31b59708986796c97d4dac9622c93dcf5cbbd6c58a2fb450f"
+  },
+  {
+    "path": "lib/features/auth/screens/auth_screens.dart",
+    "sha256": "320c40b15aa4101259c67fd5a29612165c715b3c2323947c4c2abed4605a9b43"
+  },
+  {
+    "path": "lib/features/auth/screens/auth_settings_panel.dart",
+    "sha256": "fd35fbefc9fd0156bf5fc6018024865337ddd9a3fa4f4dc25449e5f9388d1e49"
+  },
+  {
+    "path": "lib/features/community/screens/community_screens.dart",
+    "sha256": "3fd919d6deee0f1e0c751a541c6c94f09aeaf66691a5113072c5d22a29ca9b6f"
+  },
+  {
+    "path": "lib/features/hobbies/screens/hobbies_screens.dart",
+    "sha256": "a681d1f063a8edc2e8e5fc5ef5b72010232bb0bb84eab3c0f28372a557e923f5"
+  },
+  {
+    "path": "lib/features/practice/screens/practice_screens.dart",
+    "sha256": "31a9139d2804349581ac8324aa8a02028d848a1110397e5848e1810515a9ef6a"
+  },
+  {
+    "path": "lib/features/settings/screens/settings_screens.dart",
+    "sha256": "5216b81d0bcf73f713e04dfe5b7bb8a2ce4abd9cf9bc438b7914c4523bf8e013"
+  },
+  {
+    "path": "lib/firebase/firebase_device_services.dart",
+    "sha256": "07a5d9e23e1198ce5ce570d392961c3316fd1805b7ff64c962f1f6ceff37c01a"
+  },
+  {
+    "path": "lib/firebase/notification_background.dart",
+    "sha256": "c2c0a10903bb4f794e988ba2481b77cddeaaf1b01d1d002376536d3549eee408"
+  },
+  {
+    "path": "lib/l10n/app_strings.dart",
+    "sha256": "acd6a647d169becf131d324403061f089fbb7e2baf6b2a885b0e3fc88b57c393"
+  },
+  {
+    "path": "lib/l10n/language_controller.dart",
+    "sha256": "638a2c2df6dd527c7f6ce070891d75d8a1d557b24667f04dbfab6bd10b2d1202"
+  },
+  {
+    "path": "lib/l10n/messages.dart",
+    "sha256": "7ace20e3324b3d10b2fef04a0b1c4cdb5f9be8411a163a8da1150fb5282f4f37"
+  },
+  {
+    "path": "lib/main.dart",
+    "sha256": "23ac2269bbd86ca8c71dca1d258c52b8fde5961f56c44a3bedb6f3ee2f19a42e"
+  },
+  {
+    "path": "lib/services/app_services.dart",
+    "sha256": "ccc41a881e29839ffa05298f86c8f5333965c580de81ecb94c8ca05b349ccc66"
+  },
+  {
+    "path": "lib/services/local_reminders.dart",
+    "sha256": "e7301f9c1089d48ad0b60552af4bcb79dfd0704888cd8722382c93cd4ce49219"
+  },
+  {
+    "path": "lib/services/pdf_report_exporter.dart",
+    "sha256": "fd463b7f9d976ba5974b91b9f4b9e5833ce61ccaf28522fade07c1ac1047976e"
+  },
+  {
+    "path": "lib/viewmodels/runtime_controller.dart",
+    "sha256": "08c2273bdc4edfe790c07195a63e50499fe434ae589994ad52049ad1f8b0d973"
+  },
+  {
+    "path": "lib/widgets/app_navigation_bar.dart",
+    "sha256": "516de1d0f7e6d6be87057fdc51fe33f07513eb6c7f574eb59d9a857bc97b6645"
+  },
+  {
+    "path": "lib/widgets/async_states.dart",
+    "sha256": "30bcf2d23ab9c21d0d0571fdec578dd4f9b2f76d5797b134176dc46e08db9393"
+  },
+  {
+    "path": "lib/widgets/design_widgets.dart",
+    "sha256": "68528401a5d313c55abb8b4dcc58c41c582489cc1a50aa7b092b38ef312a0964"
+  },
+  {
+    "path": "lib/widgets/feature_widgets.dart",
+    "sha256": "95aacbedeaeb66ba0a67703ad7fccfe74dbe64627fdcde703fe684638bada3d9"
+  },
+  {
+    "path": "lib/widgets/hobby_app_bar.dart",
+    "sha256": "15c6dc1bfa5d04dd9afd72f496b5b27148f1ba4e88c21ea48a13576952d646a7"
+  },
+  {
+    "path": "lib/widgets/hobby_button.dart",
+    "sha256": "d37e821277664ddf4f11abad851e391b34ae604b6df8341d1737d1305a6a756e"
+  },
+  {
+    "path": "lib/widgets/hobby_card.dart",
+    "sha256": "4529dd2ab965676112df3fb62e9a6a06e53f88bb335f27dda96b9c60e83adf7d"
+  },
+  {
+    "path": "lib/widgets/hobby_checkbox.dart",
+    "sha256": "49ece639603f27c8a5e9998d000043f3922bb250e6d54ddb8709b7b1415cf44a"
+  },
+  {
+    "path": "lib/widgets/hobby_dialog.dart",
+    "sha256": "f9eca8ed884db03f9df5d9aa77d9e6071bef190acabf432f334741ff45ef1845"
+  },
+  {
+    "path": "lib/widgets/hobby_text_field.dart",
+    "sha256": "8257d16c5589c20f4600f6e7d23804d5a00fc400f92fd90658b2f1862c9b7a5c"
+  },
+  {
+    "path": "pubspec.lock",
+    "sha256": "a4851f941b1e80ac9ac7f8c55ef036dff325fd107d32c8722b582ecffa99a8ed"
+  },
+  {
+    "path": "pubspec.yaml",
+    "sha256": "f7877ec34770edd961875457922a6a949d9c875651f0dee7ed63942f029ba9fe"
+  },
+  {
+    "path": "test/full_ui_test.dart",
+    "sha256": "cc5f5be088f6613a471c8c7f5f081b35582e9679ff912708eef4d96f5773c8a3"
+  },
+  {
+    "path": "test/localization_test.dart",
+    "sha256": "7f105474da74c573d4ef484788ed21679b04d987ebe321ab4d5e96f8b0196342"
+  },
+  {
+    "path": "test/phase01_visual_foundation_test.dart",
+    "sha256": "6784515f192c0b5c326a2c2b26e064c8eb4401b7af6d41282300612b8c6a74c7"
+  },
+  {
+    "path": "test/router_test.dart",
+    "sha256": "0f9ff4575edb53bf7bd7a1f847b123b9388a4e8deeb71844ea29db43adf68918"
+  },
+  {
+    "path": "test/support/fakes.dart",
+    "sha256": "8a7f93c80ec0eeb9708d1eeca8c2551caff57e9b6bb8cce8ba64d74389ba724d"
+  },
+  {
+    "path": "test/widget_components_test.dart",
+    "sha256": "6879413dbf3d86819f37ddccf9b83a09b4c201d62a573696e1e011cf492ef633"
+  }
+]

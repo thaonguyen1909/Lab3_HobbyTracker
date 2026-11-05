@@ -1,0 +1,2 @@
+com.spotify.android.appremote.internal.ReleaseSpotifyLocator:
+    public void <init>()

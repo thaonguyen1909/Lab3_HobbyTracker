@@ -1,0 +1,32 @@
+[
+  {
+    "script": "scripts/verify_phase00.py",
+    "target": "docs/requirements/reference/source-manifest.json",
+    "exists": true
+  },
+  {
+    "script": "scripts/verify_phase00.py",
+    "target": "docs/design/handoff/flutter-handoff.md",
+    "exists": true
+  },
+  {
+    "script": "scripts/verify_phase00.py",
+    "target": "docs/design/DESIGN.md",
+    "exists": true
+  },
+  {
+    "script": "scripts/verify_phase01_design.py",
+    "target": "docs/requirements/reference/Prototype.html",
+    "exists": true
+  },
+  {
+    "script": "scripts/verify_phase01_design.py",
+    "target": "docs/requirements/reference/Prototype.html",
+    "exists": true
+  },
+  {
+    "script": "scripts/verify_phase01_design.py",
+    "target": "docs/design/DESIGN.md",
+    "exists": true
+  }
+]

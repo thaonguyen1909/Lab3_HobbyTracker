@@ -1,0 +1,12 @@
+00:00 +0: loading D:/Ki-8/PRM393/project/Lab3/Lab3_HobbyTracker/test/moment_retention_test.dart
+00:00 +0: (setUpAll)
+00:00 +0: prunes expired owner markers and notices, preserving live markers, other UID, Hyper and preferences
+00:00 +1: legacy markers migrate conservatively and expire on a later pass
+00:00 +2: failed OS cancellation preserves notice index for retry
+00:00 +3: garbage collection ignores non-owner and never cancels a reminder ID
+00:00 +4: remembered marker has bounded lifetime and account switch cannot recreate old owner data
+00:00 +5: legacy migration cannot resurrect a cleared owner prefix
+00:00 +6: late account switch during permission lookup prevents notification display
+00:00 +7: elapsed permission lookup cannot display a notification after its remaining lifetime
+00:00 +8: (tearDownAll)
+00:00 +8: All tests passed!

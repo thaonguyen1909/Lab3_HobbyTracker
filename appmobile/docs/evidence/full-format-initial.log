@@ -1,0 +1,25 @@
+Formatted lib/app.dart
+Formatted lib/app/router/app_router.dart
+Formatted lib/features/community/screens/community_screens.dart
+Formatted lib/features/hobbies/screens/hobbies_screens.dart
+Formatted lib/features/practice/screens/practice_screens.dart
+Formatted lib/features/settings/screens/settings_screens.dart
+Formatted lib/firebase/firebase_device_services.dart
+Formatted lib/firebase/firebase_report_uploader.dart
+Formatted lib/firebase/firestore_hobby_repository.dart
+Formatted lib/firebase/notification_background.dart
+Formatted lib/main.dart
+Formatted lib/models/hobby_data.dart
+Formatted lib/services/app_services.dart
+Formatted lib/services/device_services.dart
+Formatted lib/services/hobby_repository.dart
+Formatted lib/services/local_owner_store.dart
+Formatted lib/services/pdf_report_exporter.dart
+Formatted lib/theme/hobby_theme.dart
+Formatted lib/theme/tokens.dart
+Formatted lib/viewmodels/data_providers.dart
+Formatted lib/viewmodels/feature_actions.dart
+Formatted lib/viewmodels/hyper_view_model.dart
+Formatted lib/viewmodels/runtime_controller.dart
+Formatted lib/widgets/feature_widgets.dart
+Formatted 47 files (24 changed) in 0.24 seconds.

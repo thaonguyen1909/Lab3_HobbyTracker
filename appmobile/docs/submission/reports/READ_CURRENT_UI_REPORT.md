@@ -1,0 +1,1 @@
+The PDF in this folder documents the earlier integrated build. For the current Figma UI update and remaining gaps, read ../docs/figma-ui-report.md. Its previous Figma access/blocker statements are historical.

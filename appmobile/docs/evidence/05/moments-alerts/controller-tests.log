@@ -1,0 +1,14 @@
+00:00 +0: loading D:/Ki-8/PRM393/project/Lab3/Lab3_HobbyTracker/test/moment_alert_controller_test.dart
+00:00 +0: verifies membership/media then deduplicates stream and push for one event
+00:00 +1: Hyper defers all reads and drains only after practice is paused
+00:00 +2: disabled/global groups/muted notifications never load an image
+00:00 +3: server preference denial and removed membership suppress popup
+00:00 +4: account switch during image IO discards bytes and never remembers old event
+00:00 +5: mute while loading prevents late image display
+00:00 +6: expiry during IO prevents popup and image retention
+00:00 +7: background clears image and resume rechecks deferred work
+00:00 +8: popup disappears at expiry before its normal six-second duration
+00:00 +9: own post/read event/invalid IDs never become a popup
+00:00 +10: moment and reminder IDs use disjoint namespaces, legacy reminder detection is narrow
+00:00 +11: calendar sync cancels only reminder payloads and preserves moment notifications
+00:00 +12: All tests passed!

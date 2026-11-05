@@ -1,0 +1,24 @@
+00:00 +0: loading D:/Ki-8/PRM393/project/Lab3/Lab3_HobbyTracker/test/moment_http_transport_test.dart
+00:00 +0: D:/Ki-8/PRM393/project/Lab3/Lab3_HobbyTracker/test/moment_http_transport_test.dart: API URL requires HTTPS outside debug and rejects credentials/query
+00:00 +1: D:/Ki-8/PRM393/project/Lab3/Lab3_HobbyTracker/test/moment_http_transport_test.dart: request sends ID token and receives data envelope
+00:00 +2: D:/Ki-8/PRM393/project/Lab3/Lab3_HobbyTracker/test/moment_http_transport_test.dart: binary upload uses API rather than direct Firebase/Cloudinary URL
+00:00 +3: D:/Ki-8/PRM393/project/Lab3/Lab3_HobbyTracker/test/moment_http_transport_test.dart: backend error codes reach caller
+00:00 +4: D:/Ki-8/PRM393/project/Lab3/Lab3_HobbyTracker/test/moment_http_transport_test.dart: owner change during ID token refresh prevents any request
+00:00 +5: D:/Ki-8/PRM393/project/Lab3/Lab3_HobbyTracker/test/moment_http_transport_test.dart: pre-cancelled upload makes no request
+00:00 +6: D:/Ki-8/PRM393/project/Lab3/Lab3_HobbyTracker/test/moment_view_models_test.dart: expired server session is distinct from an ambiguous transport timeout
+00:00 +7: D:/Ki-8/PRM393/project/Lab3/Lab3_HobbyTracker/test/moment_view_models_test.dart: definitively expired session keeps photo and starts a fresh request on retry
+00:00 +8: D:/Ki-8/PRM393/project/Lab3/Lab3_HobbyTracker/test/moment_view_models_test.dart: validates required photo/hobby and Unicode caption before network access
+00:00 +9: D:/Ki-8/PRM393/project/Lab3/Lab3_HobbyTracker/test/moment_view_models_test.dart: picker cancellation and permission failure keep selected photo, text and request
+00:00 +10: D:/Ki-8/PRM393/project/Lab3/Lab3_HobbyTracker/test/moment_view_models_test.dart: upload acknowledgement lost: retry publishes existing source without overwrite
+00:00 +11: D:/Ki-8/PRM393/project/Lab3/Lab3_HobbyTracker/test/moment_view_models_test.dart: lost publish acknowledgement locks edits and retries same ID without extending expiry
+00:00 +12: D:/Ki-8/PRM393/project/Lab3/Lab3_HobbyTracker/test/moment_view_models_test.dart: double submit only starts one upload; cancelling retains draft for a retry
+00:00 +13: D:/Ki-8/PRM393/project/Lab3/Lab3_HobbyTracker/test/moment_view_models_test.dart: disposed composer ignores late publish completion and cancels upload
+00:00 +14: D:/Ki-8/PRM393/project/Lab3/Lab3_HobbyTracker/test/moment_view_models_test.dart: draft restore remains scoped to owner and group; image-picker recovery is explicit
+00:00 +15: D:/Ki-8/PRM393/project/Lab3/Lab3_HobbyTracker/test/moment_view_models_test.dart: local persisted drafts cannot cross UID or return after owner switches
+00:00 +16: D:/Ki-8/PRM393/project/Lab3/Lab3_HobbyTracker/test/moment_view_models_test.dart: server clock never moves back when an older response arrives
+00:00 +17: D:/Ki-8/PRM393/project/Lab3/Lab3_HobbyTracker/test/moment_view_models_test.dart: list removes expired records and merges pages without duplicate IDs
+00:00 +18: D:/Ki-8/PRM393/project/Lab3/Lab3_HobbyTracker/test/moment_view_models_test.dart: viewer clears bytes exactly on expiry
+00:00 +19: D:/Ki-8/PRM393/project/Lab3/Lab3_HobbyTracker/test/moment_view_models_test.dart: expiry or suspension during image IO never exposes a stale response
+00:00 +20: D:/Ki-8/PRM393/project/Lab3/Lab3_HobbyTracker/test/moment_view_models_test.dart: removed membership clears previously loaded image when rechecking
+00:00 +21: D:/Ki-8/PRM393/project/Lab3/Lab3_HobbyTracker/test/moment_view_models_test.dart: emulator mode rejects release and external hosts, accepts ADB loopback
+00:00 +22: All tests passed!

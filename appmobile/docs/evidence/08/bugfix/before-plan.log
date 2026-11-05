@@ -1,0 +1,19 @@
+00:00 +0: loading C:/Users/Lenovo/AppData/Local/Temp/hobby_tracker_readonly_audit_test.dart
+00:00 +0: audit: selecting another plan for same hobby must update plan id
+00:00 +0 -1: audit: selecting another plan for same hobby must update plan id [E]
+  Expected: 'plan-B'
+    Actual: 'plan-A'
+     Which: is different.
+            Expected: plan-B
+              Actual: plan-A
+                           ^
+             Differ at offset 5
+  
+  package:matcher                                                       expect
+  package:flutter_test/src/widget_tester.dart 473:18                    expect
+  ..\..\AppData\Local\Temp\hobby_tracker_readonly_audit_test.dart 15:5  main.<fn>
+  
+00:00 +0 -1: Some tests failed.
+
+Failing tests:
+  C:/Users/Lenovo/AppData/Local/Temp/hobby_tracker_readonly_audit_test.dart: audit: selecting another plan for same hobby must update plan id

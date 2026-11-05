@@ -1,0 +1,6 @@
+{
+  "lib/models/hobby_data.dart": "78b77c0c78ccebaded70e0d0fad7cbf183320c3b51dea10d063e4461aaa46202",
+  "lib/firebase/firebase_device_services.dart": "898770987a4734c272e63eec8ef7722b2eeba21bc762f2aa4f7ed64302358382",
+  "lib/viewmodels/data_providers.dart": "df2f6c49468be1a52e90e470201b64f7ba6aaf4e113481e433ae5cd4ebb6cc96",
+  "lib/features/shell/screens/app_shell.dart": "b16b10b9d0a081af1aafbbe94eb77c1b2bdcc64e797f3ac95017991c52d3eeb9"
+}

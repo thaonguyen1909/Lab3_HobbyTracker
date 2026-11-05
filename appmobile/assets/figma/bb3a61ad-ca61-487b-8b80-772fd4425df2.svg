@@ -1,0 +1,9 @@
+<svg preserveAspectRatio="none" overflow="visible" style="display: block;" width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Theme motif/Cyber" opacity="0.22">
+<path id="Vector" d="M19 7H25C31.6274 7 37 12.3726 37 19V25C37 31.6274 31.6274 37 25 37H19C12.3726 37 7 31.6274 7 25V19C7 12.3726 12.3726 7 19 7Z" stroke-width="6" stroke="#00DFD5"/>
+<path id="Vector_2" d="M75 7H81C87.6274 7 93 12.3726 93 19V25C93 31.6274 87.6274 37 81 37H75C68.3726 37 63 31.6274 63 25V19C63 12.3726 68.3726 7 75 7Z" stroke-width="6" stroke="#00DFD5"/>
+<path id="Vector_3" d="M19 63H25C31.6274 63 37 68.3726 37 75V81C37 87.6274 31.6274 93 25 93H19C12.3726 93 7 87.6274 7 81V75C7 68.3726 12.3726 63 19 63Z" stroke-width="6" stroke="#00DFD5"/>
+<path id="Vector_4" d="M75 63H81C87.6274 63 93 68.3726 93 75V81C93 87.6274 87.6274 93 81 93H75C68.3726 93 63 87.6274 63 81V75C63 68.3726 68.3726 63 75 63Z" stroke-width="6" stroke="#00DFD5"/>
+<path id="Vector_5" d="M37 22H63M22 37V63M78 37V63M37 78H63" stroke-width="6" stroke="#00DFD5"/>
+</g>
+</svg>

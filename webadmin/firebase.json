@@ -1,0 +1,6 @@
+{
+  "functions": [{"source": "functions", "codebase": "hobby-admin", "runtime": "nodejs22"}],
+  "firestore": {"rules": "integration/firebase/firestore.rules", "indexes": "integration/firebase/firestore.indexes.json"},
+  "storage": {"rules": "integration/firebase/storage.rules"},
+  "emulators": {"auth": {"port": 9099}, "firestore": {"port": 8080}, "functions": {"port": 5001}, "ui": {"enabled": false}, "singleProjectMode": true}
+}

@@ -1,0 +1,2 @@
+
+Note: --no-index returns 1 for differing source trees; no whitespace diagnostics were emitted.

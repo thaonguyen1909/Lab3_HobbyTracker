@@ -1,0 +1,79 @@
+Hobby Tracker Admin — 06/11/2026 (UTC+7)
+
+Command: Firebase Auth + Firestore Emulator, demo-hobby-admin
+node --test --test-concurrency=1 functions/test/*.test.mjs
+
+✔  firestore: Firestore Emulator UI websocket is running on 9150.
+✔ owner can create and read own profile (2189.282165ms)
+✔ anonymous cannot read or write profile (140.527097ms)
+✔ other account cannot read or overwrite profile (93.392125ms)
+✔ owner cannot give self admin role or delete/create other records (128.185868ms)
+✔ owner may update display name only (110.588941ms)
+✔ list, delete and nested collections denied (129.994431ms)
+✔ other account cannot update or delete owner profile (68.859783ms)
+✔ create validates schema, role, name and server time (238.899172ms)
+✔ update rejects invalid display names (102.207815ms)
+✔ custom hobby and canonical name claim must be atomic (596.105072ms)
+✔ same normalized hobby name cannot be claimed by another document (132.438733ms)
+✔ rename releases old claim and preserves unrelated plans/history (189.431644ms)
+✔ logical removal requires releasing name; new schedules denied and history retained (161.219231ms)
+✔ cross-user hobbies is private (109.452322ms)
+✔ cross-user hobbyNames is private (91.146509ms)
+✔ cross-user plans is private (106.632935ms)
+✔ cross-user history is private (119.109595ms)
+✔ cross-user settings is private (106.41476ms)
+✔ cross-user rsvps is private (82.841134ms)
+✔ cross-user groupLinks is private (91.448054ms)
+✔ cross-user devices is private (89.410806ms)
+✔ both Interested and Active may schedule; invalid duration and fake done denied (135.00594ms)
+✔ Finish transaction creates one immutable record and completes matching plan (190.39727ms)
+✔ history rejects forged snapshots, invalid duration, client time and unlinked plan (187.874221ms)
+✔ preferences and public projection validate shapes and privacy query (211.417105ms)
+✔ posts use real author and schema; anonymous/impersonation denied (173.344773ms)
+✔ likes and comments permit self; impersonation and oversized input denied (173.401208ms)
+✔ group creator/member/link atomic, non-members denied chat; join enables chat (177.843173ms)
+✔ DM participants immutable, opt-in enforced, outside account denied (244.797779ms)
+✔ RSVP alone adds no calendar entry; explicit Add to Home requires RSVP (242.797124ms)
+✔ events and device tokens validate owner and types; unknown paths denied (208.843178ms)
+✔ Role policies: denied unknown roles and non-admin permission escalation (0.884404ms)
+✔ No self demotion or last Super Admin removal (0.394685ms)
+✔ Unknown writes and invalid inputs rejected (1.659883ms)
+✔ Optimistic concurrency rejects stale writes (0.166672ms)
+✔ Evidence only follows approved report target paths (0.451952ms)
+✔ Privacy default and audit redaction (0.811874ms)
+✔ Notification opt-in is explicit per category (0.177117ms)
+✔ CSV formula injection escaped (0.242185ms)
+✔ Invalid publication dates rejected (0.34469ms)
+✔ Frontend and API policy files stay identical (9.069068ms)
+✔ API rejects missing credentials and ordinary mobile users (492.045304ms)
+✔ API checks origin, role and action independently of UI (66.787258ms)
+✔ Revoked staff record immediately denies an existing token (20.654903ms)
+✔ Hide and restore a post updates the exact mobile collection with audit (110.592245ms)
+✔ Draft events stay private; publish/cancel never creates personal plans or RSVP (129.801217ms)
+✔ Config has validation, atomic audit and stale-version protection (95.70388ms)
+✔ Reports enforce target path; private context needs elevated role and reason (92.272652ms)
+✔ A Super Admin cannot remove their own role (47.103327ms)
+✔ FCM campaign respects opt-in and never sends a campaign twice (147.061187ms)
+✔ Client cannot self-promote, read admin records or bypass API with admin claims (113.773082ms)
+✔ Config read is signed in; drafts and support internal notes are private (49.081304ms)
+✔ Hidden post subcollections stop being readable (43.295829ms)
+✔ Posting restrictions block writes but preserve reading and own hobbies (87.854263ms)
+✔ Disabled or revoked identity cannot use original mobile Firestore paths (56.84269ms)
+✔ Locked group blocks joining and sending while members retain read access (53.271855ms)
+✔ Mobile reports and support tickets reach admin collections; internal notes stay private (80.630196ms)
+✔ Comment moderation archives and restores only the selected comment (87.36872ms)
+✔ Exports follow selected IDs beyond the first page and redact private notes (21.584815ms)
+ℹ tests 59
+ℹ suites 0
+ℹ pass 59
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 9807.70635
+
+TypeScript: tsc --noEmit passed.
+Production build: PASS — final Vinext / Workers source built successfully before publication packaging.
+Browser QA: dashboard, UID filter, user detail, local-demo account lock + audit, 7 themes, Firebase setup modal, 390px mobile and 1024px tablet iframe (sidebar 76px).
+FCM: mocked in integration tests; real Android delivery not tested.
+Cloud Firebase, Google popup, Storage URL signing, Flutter bridge analyze/tests and APK build: NOT VERIFIED.
