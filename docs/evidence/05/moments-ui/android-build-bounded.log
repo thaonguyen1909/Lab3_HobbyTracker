@@ -1,8 +1,0 @@
-Running Gradle task 'assembleDebug'...                          
-Warning: SDK processing. This version only understands SDK XML versions up to 3 but an SDK XML file of version 4 was encountered. This can happen if you use versions of Android Studio and the command-line tools that were released at different times.
-warning: [options] source value 8 is obsolete and will be removed in a future release
-warning: [options] target value 8 is obsolete and will be removed in a future release
-warning: [options] To suppress warnings about obsolete options, use -Xlint:-options.
-3 warnings
-Running Gradle task 'assembleDebug'...                            337.4s
-√ Built build\app\outputs\flutter-apk\app-debug.apk

@@ -1,9 +1,0 @@
-{
-  "date": "2026-11-03",
-  "fileKey": "5JiJtLyXN6DEpC1LycQPBb",
-  "operation": "create_session",
-  "status": "BLOCKED",
-  "error": "No edit access; owner must share file with connected Figma account as editor.",
-  "debug_uuid": "8f3ad3fa-28d7-48a8-91cf-f29e560f95ba",
-  "figma_mutations": false
-}

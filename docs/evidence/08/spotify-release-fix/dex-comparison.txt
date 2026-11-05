@@ -1,3 +1,0 @@
-Spotify ReleaseSpotifyLocator public no-arg constructor in final DEX:
-0.3.1 (4): 0
-0.3.2 (5): 1

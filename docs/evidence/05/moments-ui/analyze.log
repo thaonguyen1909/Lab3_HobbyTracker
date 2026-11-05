@@ -1,8 +1,0 @@
-Analyzing Lab3_HobbyTracker...                                  
-
-   info - Statements in an if should be enclosed in a block. Try wrapping the statement in a block - test\support\moment_fakes.dart:108:9 - curly_braces_in_flow_control_structures
-   info - Statements in an if should be enclosed in a block. Try wrapping the statement in a block - test\support\moment_fakes.dart:117:7 - curly_braces_in_flow_control_structures
-   info - Statements in an if should be enclosed in a block. Try wrapping the statement in a block - test\support\moment_fakes.dart:136:7 - curly_braces_in_flow_control_structures
-   info - Statements in an if should be enclosed in a block. Try wrapping the statement in a block - test\support\moment_fakes.dart:182:7 - curly_braces_in_flow_control_structures
-
-4 issues found. (ran in 26.2s)

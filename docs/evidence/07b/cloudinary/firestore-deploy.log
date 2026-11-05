@@ -1,7 +1,0 @@
-
-=== Deploying to 'hobbytracker-6ace6'...
-
-i  deploying firestore
-i  firestore: ensuring required API firestore.googleapis.com is enabled...
-
-Error: Request to https://serviceusage.googleapis.com/v1/projects/hobbytracker-6ace6/services/firestore.googleapis.com had HTTP Error: 403, Caller does not have required permission to use project hobbytracker-6ace6. Grant the caller the roles/serviceusage.serviceUsageConsumer role, or a custom role with the serviceusage.services.use permission, by visiting https://console.developers.google.com/iam-admin/iam?project=hobbytracker-6ace6 and then retry. Propagation of the new permission may take a few minutes.

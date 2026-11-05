@@ -1,8 +1,0 @@
-Analyzing HobbyTracker...                                       
-
-   info - Statements in an if should be enclosed in a block. Try wrapping the statement in a block - lib\l10n\language_controller.dart:40:9 - curly_braces_in_flow_control_structures
-   info - Statements in an if should be enclosed in a block. Try wrapping the statement in a block - lib\l10n\language_controller.dart:48:7 - curly_braces_in_flow_control_structures
-   info - Statements in an if should be enclosed in a block. Try wrapping the statement in a block - lib\l10n\language_controller.dart:58:9 - curly_braces_in_flow_control_structures
-warning - Duplicate import. Try removing all but one import of the library - lib\widgets\hobby_card.dart:2:8 - duplicate_import
-
-4 issues found. (ran in 7.3s)

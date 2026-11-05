@@ -1,8 +1,0 @@
-00:00 +0: loading C:/Users/Lenovo/Downloads/HobbyTracker/test/navigation_feedback_test.dart
-00:00 +0: (setUpAll)
-00:00 +0: all six Settings saves keep route and only bootstrap account once
-00:01 +1: same-account metadata keeps every feature page; changed UID still rechecks gate
-00:02 +2: metadata refresh preserves unsaved profile and provider metadata updates
-00:02 +3: success can be dismissed and does not reappear on another page or theme rebuild
-00:03 +4: (tearDownAll)
-00:03 +4: All tests passed!

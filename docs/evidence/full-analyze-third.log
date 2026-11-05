@@ -1,7 +1,0 @@
-Analyzing HobbyTracker...                                       
-
-   info • 'groupValue' is deprecated and shouldn't be used. Use a RadioGroup ancestor to manage group value instead. This feature was deprecated after v3.32.0-0.0.pre. Try replacing the use of the deprecated member with the replacement • lib/features/settings/screens/settings_screens.dart:242:15 • deprecated_member_use
-   info • 'onChanged' is deprecated and shouldn't be used. Use RadioGroup to handle value change instead. This feature was deprecated after v3.32.0-0.0.pre. Try replacing the use of the deprecated member with the replacement • lib/features/settings/screens/settings_screens.dart:243:15 • deprecated_member_use
-   info • Statements in an if should be enclosed in a block. Try wrapping the statement in a block • lib/services/local_reminders.dart:22:18 • curly_braces_in_flow_control_structures
-
-3 issues found. (ran in 3.9s)

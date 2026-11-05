@@ -1,6 +1,0 @@
-{
-  "command": "python3 -m py_compile e2e_test/test_critical_flows.py",
-  "exit_code": 0,
-  "stdout": "",
-  "stderr": ""
-}
