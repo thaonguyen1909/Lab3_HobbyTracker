@@ -1,6 +1,6 @@
 # Spotify trong Hyper Mode
 
-[Báo cáo triển khai và bằng chứng kiểm thử](spotify-implementation-report.md). APK debug mới đã build; OAuth/phát nhạc thật cần thử khi kết nối lại điện thoại.
+[Báo cáo triển khai ban đầu](spotify-implementation-report.md). **Cập nhật 06/11/2026:** APK release 0.3.2 đã sửa R8 loại constructor Spotify locator; có log kết nối thật và người dùng xác nhận phát nhạc được. Xem [báo cáo sửa release](spotify-release-fix.md). Các kết quả còn pending trong báo cáo ban đầu là ghi nhận lịch sử.
 
 Người dùng yêu cầu tích hợp Spotify, cung cấp Client ID và xác nhận Premium. Đây là mở rộng Flow 2 được người dùng chấp thuận trong chat 05/11/2026; Lab 2 gốc chỉ quy định shortcut. Chưa có bằng chứng giảng viên nghiệm thu tính năng này.
 

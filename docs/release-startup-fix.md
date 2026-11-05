@@ -1,5 +1,10 @@
 # Sửa APK release 0.3.0 — 06/11/2026
 
+**Artifact mới nhất:** APK 0.3.2 thay 0.3.1 để sửa thêm Spotify locator;
+0.3.1 đã xóa khỏi thư mục phân phối sau khi test thành công bản mới. Kết quả
+0.3.1 bên dưới là lịch sử sửa Firebase; xem [Spotify release fix](spotify-release-fix.md)
+để lấy đường dẫn APK hiện tại.
+
 Phạm vi: sửa đóng gói Android release cho APK test nhóm; giữ nguyên giao diện,
 Firebase project, backend Render và dữ liệu người dùng. Không thay IAM, billing,
 Rules hoặc bật FCM. Đây là kiểm tra phát hành thuộc phase 08, không nghiệm thu

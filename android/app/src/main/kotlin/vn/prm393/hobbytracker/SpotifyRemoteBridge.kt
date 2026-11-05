@@ -2,9 +2,11 @@ package vn.prm393.hobbytracker
 
 import android.app.Activity
 import android.content.pm.PackageManager
+import android.util.Log
 import com.spotify.android.appremote.api.ConnectionParams
 import com.spotify.android.appremote.api.Connector
 import com.spotify.android.appremote.api.SpotifyAppRemote
+import com.spotify.android.appremote.api.error.UserNotAuthorizedException
 import com.spotify.protocol.client.Subscription
 import com.spotify.protocol.types.PlayerState
 import io.flutter.plugin.common.BinaryMessenger
@@ -87,6 +89,7 @@ class SpotifyRemoteBridge(private val activity: Activity, messenger: BinaryMesse
                         return
                     }
                     remote = appRemote
+                    Log.i("HobbySpotify", "App Remote connected")
                     val stream = appRemote.playerApi.subscribeToPlayerState(); subscription = stream
                     stream.setEventCallback { state -> if (attempt == generation && owner == uid) emitState(state) }
                     stream.setErrorCallback { if (attempt == generation && owner == uid) disconnect() }
@@ -94,7 +97,10 @@ class SpotifyRemoteBridge(private val activity: Activity, messenger: BinaryMesse
                 }
                 override fun onFailure(error: Throwable) {
                     if (attempt != generation || owner != uid) return
-                    val code = if (error.javaClass.simpleName == "UserNotAuthorizedException") "not-authorized" else "connection-failed"
+                    // Class names can be obfuscated in release; use a typed check.
+                    val code = if (error is UserNotAuthorizedException) "not-authorized" else "connection-failed"
+                    // Never log exception messages/stack traces: SDK errors may contain OAuth data.
+                    Log.w("HobbySpotify", "App Remote connection failed: type=${error.javaClass.name}; code=$code")
                     pending?.error(code, "Could not connect to Spotify.", null); pending = null
                     emitConnection(false)
                 }

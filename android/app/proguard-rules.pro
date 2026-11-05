@@ -6,6 +6,12 @@
 -dontwarn com.fasterxml.jackson.databind.ser.std.StdSerializer
 -dontwarn com.spotify.base.annotations.NotNull
 
+# App Remote 0.8.0 loads this provider with Class.forName/getConstructor.
+# Its consumer rule keeps the class but not its constructor in R8 full mode.
+-keep class com.spotify.android.appremote.internal.ReleaseSpotifyLocator {
+    public <init>();
+}
+
 # Firebase discovers registrars by class name from AndroidManifest metadata and
 # calls their no-arg constructors reflectively. Keep that reflective entry point
 # in R8 full mode; otherwise startup reports NoSuchMethodException for registrars.
