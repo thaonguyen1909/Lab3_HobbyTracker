@@ -1,0 +1,32 @@
+# Free demo only. No paid database, disk, worker or cron resource.
+# Add firebase-admin.json in Render Secret Files before the first successful deploy.
+services:
+  - type: web
+    name: hobbytracker-moments-demo
+    runtime: node
+    plan: free
+    region: singapore
+    rootDir: functions
+    autoDeployTrigger: "off"
+    buildCommand: npm ci --include=dev && npm run build
+    startCommand: node lib/server.js
+    healthCheckPath: /health
+    envVars:
+      - key: NODE_VERSION
+        value: 22.23.4
+      - key: NODE_ENV
+        value: production
+      - key: GOOGLE_CLOUD_PROJECT
+        value: hobbytracker-6ace6
+      - key: GOOGLE_APPLICATION_CREDENTIALS
+        value: /etc/secrets/firebase-admin.json
+      - key: MOMENTS_BIND
+        value: 0.0.0.0
+      - key: MOMENTS_ENABLE_FCM
+        value: "false"
+      - key: CLOUDINARY_CLOUD_NAME
+        sync: false
+      - key: CLOUDINARY_API_KEY
+        sync: false
+      - key: CLOUDINARY_API_SECRET
+        sync: false

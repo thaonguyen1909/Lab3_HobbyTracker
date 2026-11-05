@@ -78,6 +78,7 @@ A phase is **not accepted** merely because code compiles or a UI screenshot exis
 - No hobby? Offer a route to create one. Same-day schedules sorted by start time.
 - Timer counts actual active time, not paused time; a single Finish writes **one** activity record with duration and notes. Do not overwrite unrelated records or history.
 - Spotify/YouTube are **external shortcuts**, not OAuth integrations or in-app music players.
+  - User override, 05/11/2026: explicitly requested Spotify integration with supplied public Client ID, Premium and personal playlist/link selection. Spotify App Remote + Web API PKCE is authorized inside Hyper Mode. Preserve the external shortcuts, independent timer and four tabs. See `docs/spotify-setup.md`; no Client Secret, persistent tokens, billing change or claim of lecturer acceptance.
 
 ### Flow 3 — Connect / Participate
 

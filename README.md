@@ -70,11 +70,17 @@ Dùng Java 21 cho bộ emulator đã pin. Lệnh trên chạy project `demo-`, k
 
 ## Mở rộng Khoảnh khắc 3 giờ
 
+Đưa Khoảnh khắc lên Internet để dùng Wi-Fi/4G, không cần backend PC/USB: [Render Free demo — cấu hình, secret và nghiệm thu](docs/moments-render-free.md). Cấu hình đã chuẩn bị không đồng nghĩa service đã Live; có giới hạn sleep/cold-start của gói Free.
+
+Cập nhật 05/11/2026: Render service đã Live, APK HTTPS đã cài; người dùng xác nhận đăng/xem khi rút USB thành công, backend PC đã dừng. [Trạng thái triển khai thực tế](docs/moments-render-report.md). Free vẫn có sleep/cold-start; FCM/retention còn gate riêng.
+
 Đã có source đăng/xem ảnh theo nhóm, popup/inbox, Android notification worker và cleanup có retry. Bước 4 chạy đạt 145 test Flutter và 87 test backend/Rules/CLI trên local, analyze sạch, APK debug build được. Chưa deploy backend hoặc nghiệm thu push/ba giờ trên hai điện thoại thật.
 
 [Báo cáo bước 4](docs/moments-cleanup-step4-report.md) · [Chạy local](docs/moments-local-run.md) · [Demo và nghiệm thu](docs/moments-demo-acceptance.md).
 
 ## Đưa lên GitHub
+
+Spotify mở rộng trong Hyper Mode: kết nối tài khoản, chọn playlist cá nhân/dán link và điều khiển ứng dụng Spotify trên Android. Phải build lại và hoàn tất Dashboard/cấp quyền trên điện thoại. [Cấu hình và checklist Spotify](docs/spotify-setup.md).
 
 Có thể quản lý toàn bộ thư mục này trong một repository: source ở các thư mục chuẩn, tài liệu gói gọn trong `docs/`. Giữ `pubspec.lock`, Gradle wrapper và các file cấu hình source trong Git.
 

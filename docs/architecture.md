@@ -1,5 +1,9 @@
 # Kiến trúc Khoảnh khắc được chốt 04/11/2026
 
+Hosting demo được người dùng chọn 05/11/2026: Render Free Native Node 22, một Web Service, HTTPS ở proxy, Firebase/Cloudinary giữ nguyên. `render.yaml` chỉ chứa cấu hình/placeholder; secret nằm trong Environment/Secret Files. Code hỗ trợ `MOMENTS_PORT` → `PORT` → 8787, local vẫn loopback mặc định. Free sleep làm ngừng worker khi idle; chưa mặc định coi là always-on production. Trạng thái deploy/kiểm tra thật: [moments-render-free.md](moments-render-free.md).
+
+Spotify extension (05/11): Hyper Mode panel → Riverpod SpotifyController → owner-scoped SpotifySession → AppAuth PKCE/Web API + Method/EventChannel → official Android App Remote → installed Spotify app. Không đi qua Firebase backend. Tokens memory-only; preference namespaced Firebase UID/Spotify ID; owner/generation guards chặn kết quả async cũ. Chi tiết tại [spotify-setup.md](spotify-setup.md). Người dùng yêu cầu ngoại lệ đối với shortcut-only baseline; chưa nghiệm thu âm thanh/OAuth thật.
+
 Firebase Auth/Firestore/FCM + Node.js standalone (functions/src/server.ts) + Cloudinary authenticated assets. Flutter dùng MOMENTS_API_URL cho cả foreground và background thumbnails; không gọi Functions hay upload Firebase Storage trong đường production Khoảnh khắc. Legacy USE_FIREBASE_EMULATORS vẫn dùng adapter cũ để hồi quy. Chưa deploy hosting hoặc Rules/indexes mới, chưa thử credentials/provider thật. Chi tiết và vận hành: [moments-cloudinary-run.md](moments-cloudinary-run.md). Phần mô tả Storage/Functions trước đây bên dưới là lịch sử cho tính năng này; các flow khác không thay đổi.
 
 # Architecture — integrated Lab3 source

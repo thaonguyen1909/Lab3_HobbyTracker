@@ -6,6 +6,7 @@ import 'package:go_router/go_router.dart';
 import '../../../models/hobby_data.dart';
 import '../../../models/schedule_draft.dart';
 import 'schedule_editor.dart';
+import 'spotify_panel.dart';
 export 'schedule_editor.dart' show PlanEditor;
 import '../../../viewmodels/data_providers.dart';
 import '../../../viewmodels/feature_actions.dart';
@@ -683,6 +684,8 @@ class _HyperScreenState extends ConsumerState<HyperScreen>
                     ),
                   ],
                 ),
+                const SizedBox(height: 28),
+                const SpotifyPanel(),
                 const SizedBox(height: 28),
                 AppText(
                   'Session notes',

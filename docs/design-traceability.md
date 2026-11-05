@@ -2,6 +2,14 @@
 
 # Truy vết thiết kế — phase 00
 
+## Render Free hosting demo — 05/11/2026
+
+Người dùng chốt đưa Khoảnh khắc lên Render Free. Không đổi giao diện, nhóm/thành viên, xác thực, expiry hoặc bốn tab; chỉ thay nơi chạy Node API và giá trị MOMENTS_API_URL lúc build sau khi có domain thật. Sleep/cold-start và late physical cleanup được chấp nhận cho demo, không phải thay đổi nguồn requirement/giảng viên nghiệm thu. Xem [hướng dẫn Render](moments-render-free.md).
+
+## Spotify extension — 05/11/2026
+
+Người dùng chấp thuận tích hợp playlist tự chọn trong chat. Hyper Mode thêm panel Spotify, playlist picker và dialog dán link; giữ shortcut ngoài và không thêm bottom tab/screen độc lập. Không có Figma frame mới được xác minh hoặc lecturer visual approval. Theme/copy en/vi dùng component chung; nhạc không tự điều khiển timer. Đây là ngoại lệ được user yêu cầu đối với invariant external-shortcut của baseline, không sửa HTML/PDF gốc. Xem [setup và giới hạn](spotify-setup.md).
+
 Ngày đối chiếu: 02/11/2026. Trạng thái: DRAFT FOR REVIEW; mọi route/widget/ViewModel là đề xuất, chưa có code. Không dùng bảng này làm bằng chứng app đã chạy.
 
 Nguồn: [Specification](requirements/reference/Specification.html#screens) mục 03–08, [Prototype](requirements/reference/Prototype.html), [DesignArchive](requirements/reference/DesignArchive.html), Figma và PDF Lab 3 mục 3–7. Bằng chứng đọc Figma: [cấu trúc](evidence/00/figma-structure.json), [node inventory](evidence/00/figma-node-inventory.json).

@@ -16,6 +16,7 @@ android {
     }
 
     defaultConfig {
+        manifestPlaceholders["appAuthRedirectScheme"] = "vn.prm393.hobbytracker"
         // TODO: Specify your own unique Application ID (https://developer.android.com/studio/build/application-id.html).
         applicationId = "vn.prm393.hobbytracker"
         // You can update the following values to match your application needs.
@@ -50,6 +51,10 @@ flutter {
 }
 
 
-dependencies { coreLibraryDesugaring("com.android.tools:desugar_jdk_libs:2.1.4") }
+dependencies {
+    coreLibraryDesugaring("com.android.tools:desugar_jdk_libs:2.1.4")
+    implementation(files("libs/spotify-app-remote-release-0.8.0.aar"))
+    implementation("com.google.code.gson:gson:2.13.2")
+}
 
 if (file("google-services.json").exists()) { apply(plugin = "com.google.gms.google-services"); apply(plugin = "com.google.firebase.crashlytics") }

@@ -24,7 +24,7 @@ const cleanup = new MomentCleanup(db, media);
 const handler = momentsHttp(service, token => getAuth().verifyIdToken(token, true));
 const server = createServer((request, response) => { void handler(request, response); });
 server.requestTimeout = 120_000; server.headersTimeout = 10_000; server.keepAliveTimeout = 5_000;
-const port = Number(process.env.MOMENTS_PORT ?? 8787);
+const port = Number(process.env.MOMENTS_PORT ?? process.env.PORT ?? 8787);
 if (!Number.isInteger(port) || port < 1024 || port > 65535) throw new Error('Invalid MOMENTS_PORT.');
 const host = process.env.MOMENTS_BIND ?? '127.0.0.1';
 if (!['127.0.0.1', '0.0.0.0'].includes(host)) throw new Error('Invalid MOMENTS_BIND.');

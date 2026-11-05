@@ -1,5 +1,132 @@
 // App-owned UI copy. User content is never sent to a translation service.
 const localizedMessages = <String, List<String>>{
+  'Choose your music while you focus. Playback uses the Spotify app.': [
+    'Choose your music while you focus. Playback uses the Spotify app.',
+    'Chọn nhạc khi tập trung. Nhạc được phát qua ứng dụng Spotify.',
+  ],
+  'Spotify playback is available on Android.': [
+    'Spotify playback is available on Android.',
+    'Điều khiển Spotify được hỗ trợ trên Android.',
+  ],
+  'Connecting Spotify…': ['Connecting Spotify…', 'Đang kết nối Spotify…'],
+  'Connect Spotify': ['Connect Spotify', 'Kết nối Spotify'],
+  'Select a playlist to start playing.': [
+    'Select a playlist to start playing.',
+    'Chọn playlist để bắt đầu phát nhạc.',
+  ],
+  'Playback controls will reconnect when you use them.': [
+    'Playback controls will reconnect when you use them.',
+    'Kết nối lại khi bạn sử dụng nút điều khiển nhạc.',
+  ],
+  'Previous track': ['Previous track', 'Bài trước'],
+  'Resume music': ['Resume music', 'Tiếp tục phát nhạc'],
+  'Pause music': ['Pause music', 'Tạm dừng nhạc'],
+  'Next track': ['Next track', 'Bài tiếp theo'],
+  'My Spotify playlists': ['My Spotify playlists', 'Playlist Spotify của tôi'],
+  'Paste playlist link': ['Paste playlist link', 'Dán link playlist'],
+  'Play again': ['Play again', 'Phát lại'],
+  'Disconnect Spotify': ['Disconnect Spotify', 'Ngắt kết nối Spotify'],
+  'Music and the practice timer have separate controls.': [
+    'Music and the practice timer have separate controls.',
+    'Nhạc và đồng hồ luyện tập được điều khiển riêng.',
+  ],
+  'Choose an owned or followed playlist, or paste a full playlist link from Spotify.': [
+    'Choose an owned or followed playlist, or paste a full playlist link from Spotify.',
+    'Chọn playlist của bạn hoặc đang theo dõi, hoặc dán link playlist đầy đủ từ Spotify.',
+  ],
+  'Loading playlists…': ['Loading playlists…', 'Đang tải playlist…'],
+  'No playlists yet. Create or follow one in Spotify, or paste a link.': [
+    'No playlists yet. Create or follow one in Spotify, or paste a link.',
+    'Chưa có playlist. Hãy tạo hoặc theo dõi playlist trong Spotify, hoặc dán link.',
+  ],
+  'Refresh playlists': ['Refresh playlists', 'Tải lại playlist'],
+  'Spotify playlist link': ['Spotify playlist link', 'Link playlist Spotify'],
+  'Play playlist': ['Play playlist', 'Phát playlist'],
+  'Paste a full Spotify playlist link or playlist URI.': [
+    'Paste a full Spotify playlist link or playlist URI.',
+    'Dán link playlist Spotify đầy đủ hoặc URI của playlist.',
+  ],
+  'Playlist from link': ['Playlist from link', 'Playlist từ link'],
+  'Your account changed. Connect Spotify again.': [
+    'Your account changed. Connect Spotify again.',
+    'Tài khoản đã thay đổi. Hãy kết nối lại Spotify.',
+  ],
+  'Install Spotify and sign in, then try again.': [
+    'Install Spotify and sign in, then try again.',
+    'Cài Spotify và đăng nhập, sau đó thử lại.',
+  ],
+  'Connect Spotify first.': [
+    'Connect Spotify first.',
+    'Hãy kết nối Spotify trước.',
+  ],
+  'Spotify session expired. Connect again.': [
+    'Spotify session expired. Connect again.',
+    'Phiên Spotify đã hết hạn. Hãy kết nối lại.',
+  ],
+  'Unsupported playback control.': [
+    'Unsupported playback control.',
+    'Thao tác điều khiển nhạc không được hỗ trợ.',
+  ],
+  'Spotify connection was cancelled.': [
+    'Spotify connection was cancelled.',
+    'Đã hủy kết nối Spotify.',
+  ],
+  'Spotify authorization failed. Check the redirect URI and allowed users.': [
+    'Spotify authorization failed. Check the redirect URI and allowed users.',
+    'Cấp quyền Spotify thất bại. Kiểm tra redirect URI và danh sách người dùng được phép.',
+  ],
+  'Spotify denied access. Check playlist permissions and the app user allowlist.': [
+    'Spotify denied access. Check playlist permissions and the app user allowlist.',
+    'Spotify từ chối truy cập. Kiểm tra quyền playlist và danh sách người dùng được phép của app.',
+  ],
+  'Spotify is busy. Wait a moment and try again.': [
+    'Spotify is busy. Wait a moment and try again.',
+    'Spotify đang bận. Chờ một lát rồi thử lại.',
+  ],
+  'Could not load Spotify playlists. Try again.': [
+    'Could not load Spotify playlists. Try again.',
+    'Không tải được playlist Spotify. Hãy thử lại.',
+  ],
+  'Could not load Spotify playlists. Check your connection and retry.': [
+    'Could not load Spotify playlists. Check your connection and retry.',
+    'Không tải được playlist Spotify. Kiểm tra mạng rồi thử lại.',
+  ],
+  'Could not read your Spotify account. Connect again.': [
+    'Could not read your Spotify account. Connect again.',
+    'Không đọc được tài khoản Spotify. Hãy kết nối lại.',
+  ],
+  'Spotify took too long. Return to the app and reconnect.': [
+    'Spotify took too long. Return to the app and reconnect.',
+    'Spotify phản hồi quá lâu. Quay lại app và kết nối lại.',
+  ],
+  'Reconnect Spotify to use playback controls.': [
+    'Reconnect Spotify to use playback controls.',
+    'Kết nối lại Spotify để điều khiển nhạc.',
+  ],
+  'Allow Hobby Tracker to control Spotify, then reconnect.': [
+    'Allow Hobby Tracker to control Spotify, then reconnect.',
+    'Cho phép Hobby Tracker điều khiển Spotify, sau đó kết nối lại.',
+  ],
+  'Return to the app and reconnect Spotify.': [
+    'Return to the app and reconnect Spotify.',
+    'Quay lại app và kết nối lại Spotify.',
+  ],
+  'Spotify could not play this item. Check your Premium account and playlist access.': [
+    'Spotify could not play this item. Check your Premium account and playlist access.',
+    'Spotify không phát được nội dung này. Kiểm tra tài khoản Premium và quyền truy cập playlist.',
+  ],
+  'Could not connect to Spotify. Check the Android package, SHA-1 and redirect URI.': [
+    'Could not connect to Spotify. Check the Android package, SHA-1 and redirect URI.',
+    'Không kết nối được Spotify. Kiểm tra Android package, SHA-1 và redirect URI.',
+  ],
+  'Rebuild the Android app to enable Spotify.': [
+    'Rebuild the Android app to enable Spotify.',
+    'Build lại app Android để bật Spotify.',
+  ],
+  'Could not connect to Spotify. Try again.': [
+    'Could not connect to Spotify. Try again.',
+    'Không kết nối được Spotify. Hãy thử lại.',
+  ],
   'Schedule focus time': ['Schedule focus time', 'Lên lịch tập trung'],
   'Practice {0}': ['Practice {0}', 'Luyện {0}'],
   'Other': ['Other', 'Khác'],

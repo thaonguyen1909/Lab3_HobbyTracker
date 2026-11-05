@@ -2,6 +2,18 @@
 
 # Quyết định và đầu vào còn mở — Lab 3
 
+## Render Free demo — 05/11/2026
+
+Kết quả thực: service Free `hobbytracker-moments-demo.onrender.com` đã Live tại source ef708a7; health 200 và thiếu token 401. APK HTTPS đã cài, backend PC dừng, người dùng xác nhận đăng/xem khi rút USB thành công. Không cần owner action IAM cho hosting này. FCM/background/cold-start/ba giờ vẫn chưa nghiệm thu; không nâng phase tổng thể thành PASS. Chi tiết tại [báo cáo Render](moments-render-report.md).
+
+Người dùng xác nhận Spotify đã hoạt động, rồi yêu cầu hosting Khoảnh khắc không cần USB; chọn “Render Free để demo trước, chưa trả phí”. Cho phép chuẩn bị/deploy Web Service Free với Firebase/Cloudinary hiện tại, không đổi billing hay tạo paid worker/cron/database. Chấp nhận sleep/cold start và background jobs tạm dừng; API expiry vẫn được kiểm tra khi có request, không hứa physical cleanup đúng ba giờ. Owner: người dùng/team. Cấu hình/secret/login/deploy/URL HTTPS và test không USB được ghi riêng tại [hướng dẫn Render](moments-render-free.md); file cấu hình không chứng minh deploy thành công.
+
+## Spotify extension — 05/11/2026
+
+Người dùng xác nhận Spotify đã kết nối/phát playlist thành công sau khi lưu lại cấu hình Dashboard. Đây là xác nhận từ người dùng, không thay kết quả formal ARTEMIS/visual/two-account review còn mở.
+
+Nguồn: người dùng yêu cầu tích hợp Spotify/Premium, playlist tự chọn và cấu hình trước; cung cấp Client ID công khai và xác nhận thêm Android package/redirect trong Dashboard. Quyết định này cho phép mở rộng shortcut ở Flow 2 thành opt-in App Remote + Web API/PKCE; không sửa tài liệu gốc hoặc nhận là requirement đã được giảng viên duyệt. Không cần Client Secret hoặc thay Firebase/billing. Token chỉ trong bộ nhớ, lưu lựa chọn theo Firebase UID + Spotify user ID. Account trên browser/Spotify cần giống nhau; caller không thể đối chiếu bằng App Remote. Nghiệm thu OAuth/âm thanh/two-account trên điện thoại còn mở, owner: người dùng/team. Xem [setup](spotify-setup.md).
+
 Bản gốc 02/11/2026; audit đối chiếu lại 03/11/2026: D05 được mở lại do 3 HTML mismatch. OPEN/PROPOSED không phải phê duyệt. Chủ sở hữu là vai trò cần nhóm phân công, chưa tự suy ra tên thành viên.
 
 | ID | Nguồn / vấn đề | Đề xuất và ảnh hưởng | Người chốt | Hạn cần chốt | Trạng thái |
