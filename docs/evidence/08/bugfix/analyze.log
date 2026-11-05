@@ -1,0 +1,5 @@
+Analyzing HobbyTracker...                                       
+
+warning - Unused import: 'package:hobby_tracker/viewmodels/data_providers.dart'. Try removing the import directive - test\regression_fixes_test.dart:11:8 - unused_import
+
+1 issue found. (ran in 11.9s)

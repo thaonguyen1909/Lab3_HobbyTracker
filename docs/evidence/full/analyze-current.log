@@ -1,0 +1,21 @@
+Analyzing HobbyTracker...                                       
+
+   info • Statements in an if should be enclosed in a block. Try wrapping the statement in a block • lib/features/practice/screens/practice_screens.dart:473:13 • curly_braces_in_flow_control_structures
+   info • Statements in an if should be enclosed in a block. Try wrapping the statement in a block • lib/firebase/firebase_device_services.dart:111:13 • curly_braces_in_flow_control_structures
+   info • Statements in an if should be enclosed in a block. Try wrapping the statement in a block • lib/firebase/firebase_device_services.dart:148:9 • curly_braces_in_flow_control_structures
+   info • Statements in an if should be enclosed in a block. Try wrapping the statement in a block • lib/firebase/firestore_hobby_repository.dart:345:7 • curly_braces_in_flow_control_structures
+   info • Statements in an if should be enclosed in a block. Try wrapping the statement in a block • lib/firebase/firestore_hobby_repository.dart:353:11 • curly_braces_in_flow_control_structures
+   info • Statements in an if should be enclosed in a block. Try wrapping the statement in a block • lib/firebase/firestore_hobby_repository.dart:544:7 • curly_braces_in_flow_control_structures
+   info • Statements in an if should be enclosed in a block. Try wrapping the statement in a block • lib/firebase/firestore_hobby_repository.dart:553:11 • curly_braces_in_flow_control_structures
+   info • Statements in an if should be enclosed in a block. Try wrapping the statement in a block • lib/firebase/notification_background.dart:33:5 • curly_braces_in_flow_control_structures
+   info • Statements in an if should be enclosed in a block. Try wrapping the statement in a block • lib/services/local_reminders.dart:57:7 • curly_braces_in_flow_control_structures
+   info • Empty constructor bodies should be written using a ';' rather than '{}'. Try replacing the constructor body with ';' • lib/viewmodels/hyper_view_model.dart:86:34 • empty_constructor_bodies
+   info • Statements in an if should be enclosed in a block. Try wrapping the statement in a block • lib/viewmodels/hyper_view_model.dart:128:9 • curly_braces_in_flow_control_structures
+   info • Statements in an if should be enclosed in a block. Try wrapping the statement in a block • lib/viewmodels/hyper_view_model.dart:166:7 • curly_braces_in_flow_control_structures
+   info • The import of 'package:flutter/services.dart' is unnecessary because all of the used elements are also provided by the import of 'package:flutter/material.dart'. Try removing the import directive • test/full_ui_test.dart:2:8 • unnecessary_import
+   info • Statements in an if should be enclosed in a block. Try wrapping the statement in a block • test/support/fakes.dart:54:7 • curly_braces_in_flow_control_structures
+   info • Statements in an if should be enclosed in a block. Try wrapping the statement in a block • test/support/fakes.dart:94:7 • curly_braces_in_flow_control_structures
+   info • Statements in an if should be enclosed in a block. Try wrapping the statement in a block • test/support/fakes.dart:234:7 • curly_braces_in_flow_control_structures
+   info • Statements in an if should be enclosed in a block. Try wrapping the statement in a block • test/support/fakes.dart:289:7 • curly_braces_in_flow_control_structures
+
+17 issues found. (ran in 2.4s)

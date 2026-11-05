@@ -1,0 +1,194 @@
+const imgIconLeaf = "assets/figma/6ac8e1ed-8562-4173-b816-9b9b08e89bdb.svg";
+const imgThemeMotifLight = "assets/figma/89e10461-6f69-499c-8d28-1b959ccc3ebd.svg";
+const imgIconEye = "assets/figma/f8a0f329-720d-4f09-ae49-4243965ac721.svg";
+
+type ButtonOutlineProps = {
+  className?: string;
+  label?: string;
+};
+
+function ButtonOutline({ className, label = "Button" }: ButtonOutlineProps) {
+  return (
+    <div className={className || "bg-[var(--hobby-paper,white)] border border-[var(--hobby-line,#d8e9df)] border-solid content-stretch flex h-[48px] items-center justify-center px-[var(--space-16,16px)] relative rounded-[var(--radius-12,12px)] w-[370px]"} data-node-id="4:9" data-name="Button/outline">
+      <p className="[word-break:break-word] font-['Inter:Bold'] font-bold leading-[16px] not-italic relative shrink-0 text-[12px] text-[color:var(--hobby-primary,#087f72)] whitespace-nowrap" data-node-id="4:10">
+        {label}
+      </p>
+    </div>
+  );
+}
+
+type ButtonSecondaryProps = {
+  className?: string;
+  label?: string;
+};
+
+function ButtonSecondary({ className, label = "Button" }: ButtonSecondaryProps) {
+  return (
+    <div className={className || "bg-[var(--hobby-soft,#e7f5ed)] border border-[var(--hobby-line,#d8e9df)] border-solid content-stretch flex h-[48px] items-center justify-center px-[var(--space-16,16px)] relative rounded-[var(--radius-12,12px)] w-[370px]"} data-node-id="4:7" data-name="Button/secondary">
+      <p className="[word-break:break-word] font-['Inter:Bold'] font-bold leading-[16px] not-italic relative shrink-0 text-[12px] text-[color:var(--hobby-primary,#087f72)] whitespace-nowrap" data-node-id="4:8">
+        {label}
+      </p>
+    </div>
+  );
+}
+
+type ButtonPrimaryProps = {
+  className?: string;
+  label?: string;
+};
+
+function ButtonPrimary({ className, label = "Button" }: ButtonPrimaryProps) {
+  return (
+    <div className={className || "bg-[var(--hobby-primary,#087f72)] content-stretch flex h-[48px] items-center justify-center px-[var(--space-16,16px)] relative rounded-[var(--radius-12,12px)] w-[370px]"} data-node-id="4:5" data-name="Button/primary">
+      <p className="[word-break:break-word] font-['Inter:Bold'] font-bold leading-[16px] not-italic relative shrink-0 text-[12px] text-[color:var(--hobby-on,white)] whitespace-nowrap" data-node-id="4:6">
+        {label}
+      </p>
+    </div>
+  );
+}
+
+type InputProps = {
+  className?: string;
+  value?: string;
+};
+
+function Input({ className, value = "Your text" }: InputProps) {
+  return (
+    <div className={className || "bg-[var(--hobby-paper,white)] border border-[var(--hobby-line,#d8e9df)] border-solid content-stretch flex h-[48px] items-center pl-[var(--space-12,12px)] pr-[12px] relative rounded-[var(--radius-12,12px)] w-[370px]"} data-node-id="4:13" data-name="Input">
+      <p className="[word-break:break-word] flex-[1_0_0] font-['Inter:Regular'] font-normal leading-[20px] min-w-px not-italic relative text-[13px] text-[color:var(--hobby-muted,#4f6f63)]" data-node-id="4:14">
+        {value}
+      </p>
+    </div>
+  );
+}
+
+function HeaderAuth({ className }: { className?: string }) {
+  return (
+    <div className={className || "bg-[var(--hobby-bg,#f7faf7)] content-stretch flex gap-[var(--space-8,8px)] h-[70px] items-center px-[var(--space-20,20px)] relative w-[410px]"} data-node-id="4:15" data-name="Header/Auth">
+      <div className="bg-[var(--hobby-primary,#087f72)] content-stretch flex gap-[var(--space-0,0px)] items-center justify-center p-[var(--space-0,0px)] relative rounded-[var(--radius-8,8px)] shrink-0 size-[32px]" data-node-id="4:16" data-name="Brand mark">
+        <div className="relative shrink-0 size-[22px]" data-node-id="4:17" data-name="Icon/leaf">
+          <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgIconLeaf} />
+        </div>
+      </div>
+      <p className="[word-break:break-word] font-['Inter:Bold'] font-bold leading-[25px] not-italic relative shrink-0 text-[24px] text-[color:var(--hobby-ink,#213d36)] whitespace-nowrap" data-node-id="4:20">
+        hobby
+      </p>
+      <p className="[word-break:break-word] font-['Inter:Bold'] font-bold leading-[25px] not-italic relative shrink-0 text-[20px] text-[color:var(--hobby-primary,#087f72)] w-[10px]" data-node-id="4:21">
+        ·
+      </p>
+      <div className="flex-[1_0_0] h-px min-w-px relative" data-node-id="8:2" data-name="Header flexible space" />
+      <p className="[word-break:break-word] font-['Inter:Bold'] font-bold leading-[14px] not-italic relative shrink-0 text-[9px] text-[color:var(--hobby-muted,#4f6f63)] whitespace-nowrap" data-node-id="4:22">
+        GROW AT YOUR OWN PACE
+      </p>
+    </div>
+  );
+}
+
+function ScreenSignIn({ className }: { className?: string }) {
+  return (
+    <div className={className || "bg-[var(--hobby-bg,#f7faf7)] border-4 border-[var(--hobby-line,#d8e9df)] border-solid h-[930px] overflow-clip relative rounded-[var(--radius-28,28px)] w-[410px]"} data-node-id="7:8" data-name="Screen/Sign In">
+      <HeaderAuth className="absolute bg-[var(--hobby-bg,#f7faf7)] content-stretch flex gap-[var(--space-8,8px)] h-[70px] items-center left-[-4px] px-[var(--space-20,20px)] top-[-4px] w-[410px]" />
+      <div className="absolute content-stretch flex flex-col gap-[var(--space-16,16px)] items-start left-[16px] p-[var(--space-0,0px)] top-[96px] w-[370px]" data-node-id="7:17" data-name="Screen content">
+        <div className="bg-[var(--hobby-hero,#c5eadc)] border border-[var(--hobby-line,#d8e9df)] border-solid content-stretch flex flex-col gap-[var(--space-12,12px)] h-[166px] items-start min-h-[166px] p-[var(--space-16,16px)] relative rounded-[var(--radius-21,21px)] shrink-0 w-[370px]" data-node-id="7:18" data-name="Hero">
+          <p className="[word-break:break-word] font-['Inter:Bold'] font-bold leading-[14px] not-italic relative shrink-0 text-[10px] text-[color:var(--hobby-primary,#087f72)] tracking-[1.2px] whitespace-nowrap" data-node-id="7:19">
+            YOUR SPACE TO GROW
+          </p>
+          <div className="[word-break:break-word] font-['Inter:Bold'] font-bold leading-[0] not-italic relative shrink-0 text-[27px] text-[color:var(--hobby-ink,#213d36)] w-[300px]" data-node-id="7:20">
+            <p className="leading-[29px] mb-0">Make time for</p>
+            <p className="leading-[29px]">what you love.</p>
+          </div>
+          <p className="[word-break:break-word] font-['Inter:Regular'] font-normal leading-[17px] not-italic relative shrink-0 text-[12px] text-[color:var(--hobby-muted,#4f6f63)] w-[300px]" data-node-id="7:21">
+            A little progress goes a long way.
+          </p>
+          <div className="absolute left-[262px] size-[100px] top-[21px]" data-node-id="7:22" data-name="Theme motif/Light">
+            <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgThemeMotifLight} />
+          </div>
+        </div>
+        <div className="h-[4px] relative shrink-0 w-px" data-node-id="7:24" data-name="Spacer" />
+        <p className="[word-break:break-word] font-['Inter:Bold'] font-bold leading-[14px] not-italic relative shrink-0 text-[10px] text-[color:var(--hobby-primary,#087f72)] whitespace-nowrap" data-node-id="7:25">
+          WELCOME BACK
+        </p>
+        <p className="[word-break:break-word] font-['Inter:Bold'] font-bold leading-[34px] not-italic relative shrink-0 text-[28px] text-[color:var(--hobby-ink,#213d36)] whitespace-nowrap" data-node-id="7:26">
+          Sign in
+        </p>
+        <div className="content-stretch flex flex-col gap-[var(--space-8,8px)] items-start p-[var(--space-0,0px)] relative shrink-0 w-[370px]" data-node-id="7:27" data-name="Field: Email address">
+          <p className="[word-break:break-word] font-['Inter:Semi_Bold'] font-semibold leading-[17px] not-italic relative shrink-0 text-[12px] text-[color:var(--hobby-ink,#213d36)] whitespace-nowrap" data-node-id="7:28">
+            Email address
+          </p>
+          <Input className="bg-[var(--hobby-paper,white)] border border-[var(--hobby-line,#d8e9df)] border-solid content-stretch flex h-[48px] items-center pl-[var(--space-12,12px)] pr-[12px] relative rounded-[var(--radius-12,12px)] shrink-0 w-[370px]" value="you@example.com" />
+        </div>
+        <div className="content-stretch flex flex-col gap-[var(--space-8,8px)] items-start p-[var(--space-0,0px)] relative shrink-0 w-[370px]" data-node-id="7:31" data-name="Field: Password">
+          <p className="[word-break:break-word] font-['Inter:Semi_Bold'] font-semibold leading-[17px] not-italic relative shrink-0 text-[12px] text-[color:var(--hobby-ink,#213d36)] whitespace-nowrap" data-node-id="7:32">
+            Password
+          </p>
+          <Input className="bg-[var(--hobby-paper,white)] border border-[var(--hobby-line,#d8e9df)] border-solid content-stretch flex h-[56px] items-center pl-[var(--space-12,12px)] pr-[12px] relative rounded-[var(--radius-12,12px)] shrink-0 w-[370px]" value="" />
+          <div className="absolute left-[338px] size-[17px] top-[44.5px]" data-node-id="7:35" data-name="Icon/eye">
+            <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgIconEye} />
+          </div>
+        </div>
+        <div className="[word-break:break-word] content-stretch flex gap-[var(--space-0,0px)] h-[26px] items-start leading-[17px] not-italic p-[var(--space-0,0px)] relative shrink-0 text-[12px] w-[370px]" data-node-id="7:38" data-name="Account help">
+          <p className="flex-[1_0_0] font-['Inter:Regular'] font-normal min-w-px relative text-[color:var(--hobby-muted,#4f6f63)]" data-node-id="7:39">{`Demo: any valid email & 6+ characters`}</p>
+          <p className="font-['Inter:Semi_Bold'] font-semibold relative shrink-0 text-[color:var(--hobby-primary,#087f72)] whitespace-nowrap" data-node-id="7:40">
+            Forgot?
+          </p>
+        </div>
+        <ButtonPrimary className="bg-[var(--hobby-primary,#087f72)] content-stretch flex h-[48px] items-center justify-center px-[var(--space-16,16px)] relative rounded-[var(--radius-12,12px)] shrink-0 w-[370px]" label="Sign In  ›" />
+        <div className="content-stretch flex gap-[var(--space-8,8px)] h-[48px] items-center p-[var(--space-0,0px)] relative shrink-0 w-[370px]" data-node-id="7:43" data-name="Registration link">
+          <p className="[word-break:break-word] flex-[1_0_0] font-['Inter:Regular'] font-normal leading-[17px] min-w-px not-italic relative text-[12px] text-[color:var(--hobby-muted,#4f6f63)]" data-node-id="7:44">
+            New to hobby?
+          </p>
+          <ButtonSecondary className="bg-[var(--hobby-soft,#e7f5ed)] border border-[var(--hobby-line,#d8e9df)] border-solid content-stretch flex h-[48px] items-center justify-center px-[var(--space-16,16px)] relative rounded-[var(--radius-12,12px)] shrink-0 w-[125px]" label="Create account" />
+        </div>
+        <ButtonOutline className="bg-[var(--hobby-paper,white)] border border-[var(--hobby-line,#d8e9df)] border-solid content-stretch flex h-[48px] items-center justify-center px-[var(--space-16,16px)] relative rounded-[var(--radius-12,12px)] shrink-0 w-[370px]" label="Try Demo Account" />
+        <p className="[word-break:break-word] font-['Inter:Regular'] font-normal leading-[17px] not-italic relative shrink-0 text-[12px] text-[color:var(--hobby-muted,#4f6f63)] w-[370px]" data-node-id="7:49">
+          This prototype simulates authentication. No password is stored or sent.
+        </p>
+      </div>
+    </div>
+  );
+}
+
+export default function ScreenSignIn1() {
+  return <ScreenSignIn className="bg-[var(--hobby-bg,#f7faf7)] border-4 border-[var(--hobby-line,#d8e9df)] border-solid overflow-clip relative rounded-[var(--radius-28,28px)] size-full" />;
+}
+SUPER CRITICAL: The generated React+Tailwind code MUST be converted to match the target project's technology stack and styling system.
+1. Analyze the target codebase to identify: technology stack, styling approach, component patterns, and design tokens
+2. Convert React syntax to the target framework/library
+3. Transform all Tailwind classes to the target styling system while preserving exact visual design
+4. Follow the project's existing patterns and conventions
+DO NOT install any Tailwind as a dependency unless the user instructs you to do so.
+
+Node ids have been added to the code as data attributes, e.g. `data-node-id="1:2"`.
+These styles are contained in the design: Hobby/Small: Font(family: "Inter", style: Regular, size: 12, weight: 400, lineHeight: 17, letterSpacing: 0), Hobby/Micro: Font(family: "Inter", style: Bold, size: 10, weight: 700, lineHeight: 14, letterSpacing: 0), Hobby/Title: Font(family: "Inter", style: Bold, size: 28, weight: 700, lineHeight: 34, letterSpacing: 0), Hobby/Label: Font(family: "Inter", style: Semi Bold, size: 12, weight: 600, lineHeight: 17, letterSpacing: 0).
+Component descriptions: The following components have usage descriptions or documentation links defined in Figma. These descriptions provide important context about the intended usage, best practices, and any constraints for each component. Follow these guidelines when implementing or using these components.
+
+## Screen/Sign In
+**Node ID:** 7:8
+
+Editable reconstruction from DesignArchive.html · Sign In. Text, controls, icons and layout are native Figma layers.
+
+## Header/Auth
+**Node ID:** 4:15
+
+Shared Hobby Tracker header, authentication state.
+
+## Input
+**Node ID:** 4:13
+
+Single-line input or multiline field. Value is editable through the instance property.
+
+## Button/primary
+**Node ID:** 4:5
+
+Hobby Tracker primary action. Editable label; resize width to suit context.
+
+## Button/secondary
+**Node ID:** 4:7
+
+Hobby Tracker secondary action. Editable label; resize width to suit context.
+
+## Button/outline
+**Node ID:** 4:9
+
+Hobby Tracker outline action. Editable label; resize width to suit context.
+The generated code contains image and SVG URL constants, e.g. const image = 'assets/figma/550e8400-e29b-41d4-a716-446655440000.png'. These URLs are temporary download sources and expire after 7 days. Download each asset into the project with curl -L, then replace its URL in the generated code with a reference to the downloaded asset. Never use the temporary URLs as runtime image sources.

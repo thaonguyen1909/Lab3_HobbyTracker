@@ -1,0 +1,172 @@
+const imgIconHome = "assets/figma/fc0fdb95-44f0-46af-baf3-b42398bada71.svg";
+const imgIconLeaf = "assets/figma/5b82e78a-5840-4937-b14d-825c8e574eb5.svg";
+const imgIconHeart = "assets/figma/d00db9bc-1b1d-4660-8d87-94b401753f39.svg";
+const imgIconSettings = "assets/figma/0af63e47-dc4e-4b9b-8eee-55a46b18a27d.svg";
+const imgIconLeaf1 = "assets/figma/16303490-c438-4d21-bd0d-3abad85c79d7.svg";
+const imgIconLeaf2 = "assets/figma/a44af9ac-35a4-4fdc-8f48-261b3c302f46.svg";
+
+function NavMyHobbies({ className }: { className?: string }) {
+  return (
+    <div className={className || "bg-[var(--hobby-paper,white)] content-stretch flex h-[76px] items-center justify-between py-[var(--space-8,8px)] relative w-[410px]"} data-node-id="4:81" data-name="Nav/My Hobbies">
+      <div className="content-stretch flex flex-col gap-[var(--space-8,8px)] h-[60px] items-center p-[var(--space-0,0px)] relative shrink-0 w-[102px]" data-node-id="4:82" data-name="Nav: Home">
+        <div className="content-stretch flex gap-[var(--space-0,0px)] h-[32px] items-center justify-center p-[var(--space-0,0px)] relative rounded-[var(--radius-12,12px)] shrink-0 w-[46px]" data-node-id="4:83" data-name="Icon surface">
+          <div className="relative shrink-0 size-[19px]" data-node-id="4:84" data-name="Icon/home">
+            <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgIconHome} />
+          </div>
+        </div>
+        <p className="[word-break:break-word] font-['Inter:Bold'] font-bold leading-[14px] not-italic relative shrink-0 text-[9px] text-[color:var(--hobby-muted,#4f6f63)] whitespace-nowrap" data-node-id="4:87">
+          Home
+        </p>
+      </div>
+      <div className="content-stretch flex flex-col gap-[var(--space-8,8px)] h-[60px] items-center p-[var(--space-0,0px)] relative shrink-0 w-[102px]" data-node-id="4:88" data-name="Nav: Community">
+        <div className="content-stretch flex gap-[var(--space-0,0px)] h-[32px] items-center justify-center p-[var(--space-0,0px)] relative rounded-[var(--radius-12,12px)] shrink-0 w-[46px]" data-node-id="4:89" data-name="Icon surface">
+          <div className="relative shrink-0 size-[19px]" data-node-id="4:90" data-name="Icon/leaf">
+            <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgIconLeaf} />
+          </div>
+        </div>
+        <p className="[word-break:break-word] font-['Inter:Bold'] font-bold leading-[14px] not-italic relative shrink-0 text-[9px] text-[color:var(--hobby-muted,#4f6f63)] whitespace-nowrap" data-node-id="4:93">
+          Community
+        </p>
+      </div>
+      <div className="content-stretch flex flex-col gap-[var(--space-8,8px)] h-[60px] items-center p-[var(--space-0,0px)] relative shrink-0 w-[102px]" data-node-id="4:94" data-name="Nav: My Hobbies">
+        <div className="bg-[var(--hobby-soft,#e7f5ed)] content-stretch flex gap-[var(--space-0,0px)] h-[32px] items-center justify-center p-[var(--space-0,0px)] relative rounded-[var(--radius-12,12px)] shrink-0 w-[46px]" data-node-id="4:95" data-name="Icon surface">
+          <div className="relative shrink-0 size-[19px]" data-node-id="4:96" data-name="Icon/heart">
+            <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgIconHeart} />
+          </div>
+        </div>
+        <p className="[word-break:break-word] font-['Inter:Bold'] font-bold leading-[14px] not-italic relative shrink-0 text-[9px] text-[color:var(--hobby-primary,#087f72)] whitespace-nowrap" data-node-id="4:98">
+          My Hobbies
+        </p>
+      </div>
+      <div className="content-stretch flex flex-col gap-[var(--space-8,8px)] h-[60px] items-center p-[var(--space-0,0px)] relative shrink-0 w-[102px]" data-node-id="4:99" data-name="Nav: Settings">
+        <div className="content-stretch flex gap-[var(--space-0,0px)] h-[32px] items-center justify-center p-[var(--space-0,0px)] relative rounded-[var(--radius-12,12px)] shrink-0 w-[46px]" data-node-id="4:100" data-name="Icon surface">
+          <div className="relative shrink-0 size-[19px]" data-node-id="4:101" data-name="Icon/settings">
+            <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgIconSettings} />
+          </div>
+        </div>
+        <p className="[word-break:break-word] font-['Inter:Bold'] font-bold leading-[14px] not-italic relative shrink-0 text-[9px] text-[color:var(--hobby-muted,#4f6f63)] whitespace-nowrap" data-node-id="4:104">
+          Settings
+        </p>
+      </div>
+    </div>
+  );
+}
+
+type ButtonPrimaryProps = {
+  className?: string;
+  label?: string;
+};
+
+function ButtonPrimary({ className, label = "Button" }: ButtonPrimaryProps) {
+  return (
+    <div className={className || "bg-[var(--hobby-primary,#087f72)] content-stretch flex h-[48px] items-center justify-center px-[var(--space-16,16px)] relative rounded-[var(--radius-12,12px)] w-[370px]"} data-node-id="4:5" data-name="Button/primary">
+      <p className="[word-break:break-word] font-['Inter:Bold'] font-bold leading-[16px] not-italic relative shrink-0 text-[12px] text-[color:var(--hobby-on,white)] whitespace-nowrap" data-node-id="4:6">
+        {label}
+      </p>
+    </div>
+  );
+}
+
+function HeaderApp({ className }: { className?: string }) {
+  return (
+    <div className={className || "bg-[var(--hobby-bg,#f7faf7)] content-stretch flex gap-[var(--space-8,8px)] h-[70px] items-center px-[var(--space-20,20px)] relative w-[410px]"} data-node-id="4:23" data-name="Header/App">
+      <div className="bg-[var(--hobby-primary,#087f72)] content-stretch flex gap-[var(--space-0,0px)] items-center justify-center p-[var(--space-0,0px)] relative rounded-[var(--radius-8,8px)] shrink-0 size-[32px]" data-node-id="4:24" data-name="Brand mark">
+        <div className="relative shrink-0 size-[22px]" data-node-id="4:25" data-name="Icon/leaf">
+          <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgIconLeaf1} />
+        </div>
+      </div>
+      <p className="[word-break:break-word] font-['Inter:Bold'] font-bold leading-[25px] not-italic relative shrink-0 text-[24px] text-[color:var(--hobby-ink,#213d36)] whitespace-nowrap" data-node-id="4:28">
+        hobby
+      </p>
+      <p className="[word-break:break-word] font-['Inter:Bold'] font-bold leading-[25px] not-italic relative shrink-0 text-[20px] text-[color:var(--hobby-primary,#087f72)] w-[10px]" data-node-id="4:29">
+        ·
+      </p>
+      <div className="flex-[1_0_0] h-px min-w-px relative" data-node-id="8:3" data-name="Header flexible space" />
+      <p className="[word-break:break-word] font-['Inter:Bold'] font-bold leading-[14px] not-italic relative shrink-0 text-[10px] text-[color:var(--hobby-muted,#4f6f63)] whitespace-nowrap" data-node-id="4:30">
+        Hobby Explorer
+      </p>
+      <div className="bg-[var(--hobby-soft,#e7f5ed)] content-stretch flex gap-[var(--space-0,0px)] items-center justify-center p-[var(--space-0,0px)] relative rounded-[var(--radius-99,99px)] shrink-0 size-[34px]" data-node-id="4:31" data-name="Avatar/H">
+        <p className="[word-break:break-word] font-['Inter:Semi_Bold'] font-semibold leading-[17px] not-italic relative shrink-0 text-[12px] text-[color:var(--hobby-primary,#087f72)] whitespace-nowrap" data-node-id="4:32">
+          H
+        </p>
+      </div>
+    </div>
+  );
+}
+
+function ScreenMyHobbies({ className }: { className?: string }) {
+  return (
+    <div className={className || "bg-[var(--hobby-bg,#f7faf7)] border-4 border-[var(--hobby-line,#d8e9df)] border-solid h-[930px] overflow-clip relative rounded-[var(--radius-28,28px)] w-[410px]"} data-node-id="9:232" data-name="Screen/My Hobbies">
+      <HeaderApp className="absolute bg-[var(--hobby-bg,#f7faf7)] content-stretch flex gap-[var(--space-8,8px)] h-[70px] items-center left-[-4px] px-[var(--space-20,20px)] top-[-4px] w-[410px]" />
+      <div className="absolute h-[744px] left-[16px] overflow-x-clip overflow-y-auto top-[96px] w-[370px]" data-node-id="11:186" data-name="Scroll viewport">
+        <div className="absolute content-stretch flex flex-col gap-[var(--space-16,16px)] items-start left-0 p-[var(--space-0,0px)] top-0 w-[370px]" data-node-id="9:244" data-name="Screen content">
+          <p className="[word-break:break-word] font-['Inter:Bold'] font-bold leading-[14px] not-italic relative shrink-0 text-[10px] text-[color:var(--hobby-primary,#087f72)] whitespace-nowrap" data-node-id="9:269">
+            MADE BY YOU
+          </p>
+          <div className="content-stretch flex gap-[var(--space-8,8px)] h-[48px] items-center p-[var(--space-0,0px)] relative shrink-0 w-[370px]" data-node-id="9:270" data-name="Section: My Hobbies">
+            <p className="[word-break:break-word] flex-[1_0_0] font-['Inter:Bold'] font-bold leading-[25px] min-w-px not-italic relative text-[17px] text-[color:var(--hobby-ink,#213d36)]" data-node-id="9:271">
+              My Hobbies
+            </p>
+            <ButtonPrimary className="bg-[var(--hobby-primary,#087f72)] content-stretch flex h-[48px] items-center justify-center px-[var(--space-16,16px)] relative rounded-[var(--radius-12,12px)] shrink-0 w-[96px]" label="＋ Create" />
+          </div>
+          <div className="[word-break:break-word] bg-[var(--hobby-soft,#e7f5ed)] border border-[var(--hobby-line,#d8e9df)] border-solid content-stretch flex flex-col gap-[var(--space-4,4px)] h-[79px] items-start leading-[17px] not-italic p-[var(--space-12,12px)] relative rounded-[var(--radius-12,12px)] shrink-0 text-[12px] w-[370px]" data-node-id="9:274" data-name="Notice: Your collection, your choice">
+            <p className="font-['Inter:Semi_Bold'] font-semibold relative shrink-0 text-[color:var(--hobby-ink,#213d36)] whitespace-nowrap" data-node-id="9:275">
+              Your collection, your choice
+            </p>
+            <p className="font-['Inter:Regular'] font-normal relative shrink-0 text-[color:var(--hobby-muted,#4f6f63)] w-[346px]" data-node-id="9:276">
+              Create any hobby you want. Active and Interested are priority levels—not restrictions.
+            </p>
+          </div>
+          <div className="bg-[var(--hobby-paper,white)] border border-[var(--hobby-line,#d8e9df)] border-solid content-stretch flex flex-col gap-[var(--space-12,12px)] h-[174px] items-center p-[var(--space-16,16px)] relative rounded-[var(--radius-16,16px)] shrink-0 w-[370px]" data-node-id="9:277" data-name="Empty: Your canvas is empty">
+            <div className="relative shrink-0 size-[24px]" data-node-id="9:278" data-name="Icon/leaf">
+              <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgIconLeaf2} />
+            </div>
+            <p className="[word-break:break-word] font-['Inter:Semi_Bold'] font-semibold leading-[17px] not-italic relative shrink-0 text-[12px] text-[color:var(--hobby-ink,#213d36)] text-center w-[338px]" data-node-id="9:281">
+              Your canvas is empty
+            </p>
+            <p className="[word-break:break-word] font-['Inter:Regular'] font-normal leading-[17px] not-italic relative shrink-0 text-[12px] text-[color:var(--hobby-muted,#4f6f63)] text-center w-[338px]" data-node-id="9:282">
+              Give your first hobby a name, an icon, color and priority.
+            </p>
+            <ButtonPrimary className="bg-[var(--hobby-primary,#087f72)] content-stretch flex h-[48px] items-center justify-center px-[var(--space-16,16px)] relative rounded-[var(--radius-12,12px)] shrink-0 w-[220px]" label="Create first hobby" />
+          </div>
+        </div>
+      </div>
+      <NavMyHobbies className="absolute bg-[var(--hobby-paper,white)] content-stretch flex h-[76px] items-center justify-between left-[-4px] py-[var(--space-8,8px)] top-[850px] w-[410px]" />
+    </div>
+  );
+}
+
+export default function ScreenMyHobbies1() {
+  return <ScreenMyHobbies className="bg-[var(--hobby-bg,#f7faf7)] border-4 border-[var(--hobby-line,#d8e9df)] border-solid overflow-clip relative rounded-[var(--radius-28,28px)] size-full" />;
+}
+SUPER CRITICAL: The generated React+Tailwind code MUST be converted to match the target project's technology stack and styling system.
+1. Analyze the target codebase to identify: technology stack, styling approach, component patterns, and design tokens
+2. Convert React syntax to the target framework/library
+3. Transform all Tailwind classes to the target styling system while preserving exact visual design
+4. Follow the project's existing patterns and conventions
+DO NOT install any Tailwind as a dependency unless the user instructs you to do so.
+
+Node ids have been added to the code as data attributes, e.g. `data-node-id="1:2"`.
+These styles are contained in the design: Hobby/Micro: Font(family: "Inter", style: Bold, size: 10, weight: 700, lineHeight: 14, letterSpacing: 0), Hobby/Label: Font(family: "Inter", style: Semi Bold, size: 12, weight: 600, lineHeight: 17, letterSpacing: 0), Hobby/Small: Font(family: "Inter", style: Regular, size: 12, weight: 400, lineHeight: 17, letterSpacing: 0).
+Component descriptions: The following components have usage descriptions or documentation links defined in Figma. These descriptions provide important context about the intended usage, best practices, and any constraints for each component. Follow these guidelines when implementing or using these components.
+
+## Screen/My Hobbies
+**Node ID:** 9:232
+
+Editable reconstruction from DesignArchive.html · My Hobbies. Text, controls, icons and layout are native Figma layers.
+
+## Header/App
+**Node ID:** 4:23
+
+Shared Hobby Tracker header, authenticated state.
+
+## Button/primary
+**Node ID:** 4:5
+
+Hobby Tracker primary action. Editable label; resize width to suit context.
+
+## Nav/My Hobbies
+**Node ID:** 4:81
+
+Bottom navigation with My Hobbies selected.
+The generated code contains image and SVG URL constants, e.g. const image = 'assets/figma/550e8400-e29b-41d4-a716-446655440000.png'. These URLs are temporary download sources and expire after 7 days. Download each asset into the project with curl -L, then replace its URL in the generated code with a reference to the downloaded asset. Never use the temporary URLs as runtime image sources.

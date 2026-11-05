@@ -1,0 +1,170 @@
+00:00 +0: loading D:/Ki-8/PRM393/project/Lab3/Lab3_HobbyTracker/test/auth_view_model_test.dart
+00:00 +0: D:/Ki-8/PRM393/project/Lab3/Lab3_HobbyTracker/test/auth_view_model_test.dart: double submit calls service once while action is pending
+00:00 +1: D:/Ki-8/PRM393/project/Lab3/Lab3_HobbyTracker/test/auth_view_model_test.dart: cancel is nonfatal; network/conflict errors can be retried
+00:00 +2: D:/Ki-8/PRM393/project/Lab3/Lab3_HobbyTracker/test/auth_view_model_test.dart: completed action after provider disposal does not write state
+00:00 +3: D:/Ki-8/PRM393/project/Lab3/Lab3_HobbyTracker/test/auth_view_model_test.dart: sign-out is not blocked by pending profile; stale result ignored
+00:00 +4: D:/Ki-8/PRM393/project/Lab3/Lab3_HobbyTracker/test/auth_view_model_test.dart: switching accounts discards old profile error
+00:00 +5: D:/Ki-8/PRM393/project/Lab3/Lab3_HobbyTracker/test/auth_view_model_test.dart: profile failure blocks session; invalidation retries same identity
+00:00 +6: D:/Ki-8/PRM393/project/Lab3/Lab3_HobbyTracker/test/figma_ui_review_test.dart: (setUpAll)
+00:00 +6: D:/Ki-8/PRM393/project/Lab3/Lab3_HobbyTracker/test/figma_ui_review_test.dart: Figma screens, sheets and seven themes at 360.0dp
+00:01 +7: D:/Ki-8/PRM393/project/Lab3/Lab3_HobbyTracker/test/figma_ui_review_test.dart: Figma screens, sheets and seven themes at 360.0dp
+00:01 +8: D:/Ki-8/PRM393/project/Lab3/Lab3_HobbyTracker/test/figma_ui_review_test.dart: Figma screens, sheets and seven themes at 360.0dp
+00:01 +9: D:/Ki-8/PRM393/project/Lab3/Lab3_HobbyTracker/test/figma_ui_review_test.dart: Figma screens, sheets and seven themes at 360.0dp
+00:01 +10: D:/Ki-8/PRM393/project/Lab3/Lab3_HobbyTracker/test/figma_ui_review_test.dart: Figma screens, sheets and seven themes at 360.0dp
+00:01 +11: D:/Ki-8/PRM393/project/Lab3/Lab3_HobbyTracker/test/figma_ui_review_test.dart: Figma screens, sheets and seven themes at 360.0dp
+00:01 +12: D:/Ki-8/PRM393/project/Lab3/Lab3_HobbyTracker/test/figma_ui_review_test.dart: Figma screens, sheets and seven themes at 360.0dp
+00:01 +13: D:/Ki-8/PRM393/project/Lab3/Lab3_HobbyTracker/test/figma_ui_review_test.dart: Figma screens, sheets and seven themes at 360.0dp
+00:01 +14: D:/Ki-8/PRM393/project/Lab3/Lab3_HobbyTracker/test/figma_ui_review_test.dart: Figma screens, sheets and seven themes at 360.0dp
+00:01 +15: D:/Ki-8/PRM393/project/Lab3/Lab3_HobbyTracker/test/figma_ui_review_test.dart: Figma screens, sheets and seven themes at 360.0dp
+00:01 +16: D:/Ki-8/PRM393/project/Lab3/Lab3_HobbyTracker/test/figma_ui_review_test.dart: Figma screens, sheets and seven themes at 360.0dp
+00:01 +17: D:/Ki-8/PRM393/project/Lab3/Lab3_HobbyTracker/test/figma_ui_review_test.dart: Figma screens, sheets and seven themes at 360.0dp
+00:01 +18: D:/Ki-8/PRM393/project/Lab3/Lab3_HobbyTracker/test/figma_ui_review_test.dart: Figma screens, sheets and seven themes at 360.0dp
+00:01 +19: D:/Ki-8/PRM393/project/Lab3/Lab3_HobbyTracker/test/figma_ui_review_test.dart: Figma screens, sheets and seven themes at 360.0dp
+00:02 +20: D:/Ki-8/PRM393/project/Lab3/Lab3_HobbyTracker/test/figma_ui_review_test.dart: Figma screens, sheets and seven themes at 360.0dp
+00:02 +21: D:/Ki-8/PRM393/project/Lab3/Lab3_HobbyTracker/test/figma_ui_review_test.dart: Figma screens, sheets and seven themes at 360.0dp
+00:02 +22: D:/Ki-8/PRM393/project/Lab3/Lab3_HobbyTracker/test/figma_ui_review_test.dart: Figma screens, sheets and seven themes at 360.0dp
+00:02 +23: D:/Ki-8/PRM393/project/Lab3/Lab3_HobbyTracker/test/figma_ui_review_test.dart: Figma screens, sheets and seven themes at 360.0dp
+00:02 +24: D:/Ki-8/PRM393/project/Lab3/Lab3_HobbyTracker/test/figma_ui_review_test.dart: Figma screens, sheets and seven themes at 360.0dp
+00:02 +25: D:/Ki-8/PRM393/project/Lab3/Lab3_HobbyTracker/test/figma_ui_review_test.dart: Figma screens, sheets and seven themes at 360.0dp
+00:02 +26: D:/Ki-8/PRM393/project/Lab3/Lab3_HobbyTracker/test/figma_ui_review_test.dart: Figma screens, sheets and seven themes at 360.0dp
+00:02 +27: D:/Ki-8/PRM393/project/Lab3/Lab3_HobbyTracker/test/figma_ui_review_test.dart: Figma screens, sheets and seven themes at 360.0dp
+00:02 +28: D:/Ki-8/PRM393/project/Lab3/Lab3_HobbyTracker/test/figma_ui_review_test.dart: Figma screens, sheets and seven themes at 360.0dp
+00:02 +29: D:/Ki-8/PRM393/project/Lab3/Lab3_HobbyTracker/test/figma_ui_review_test.dart: Figma screens, sheets and seven themes at 360.0dp
+00:02 +30: D:/Ki-8/PRM393/project/Lab3/Lab3_HobbyTracker/test/figma_ui_review_test.dart: Figma screens, sheets and seven themes at 360.0dp
+00:02 +31: D:/Ki-8/PRM393/project/Lab3/Lab3_HobbyTracker/test/figma_ui_review_test.dart: Figma screens, sheets and seven themes at 360.0dp
+00:02 +32: D:/Ki-8/PRM393/project/Lab3/Lab3_HobbyTracker/test/figma_ui_review_test.dart: Figma screens, sheets and seven themes at 360.0dp
+00:02 +33: D:/Ki-8/PRM393/project/Lab3/Lab3_HobbyTracker/test/figma_ui_review_test.dart: Figma screens, sheets and seven themes at 360.0dp
+00:02 +34: D:/Ki-8/PRM393/project/Lab3/Lab3_HobbyTracker/test/figma_ui_review_test.dart: Figma screens, sheets and seven themes at 360.0dp
+00:02 +35: D:/Ki-8/PRM393/project/Lab3/Lab3_HobbyTracker/test/figma_ui_review_test.dart: Figma screens, sheets and seven themes at 360.0dp
+00:02 +36: D:/Ki-8/PRM393/project/Lab3/Lab3_HobbyTracker/test/figma_ui_review_test.dart: Figma screens, sheets and seven themes at 360.0dp
+00:03 +37: D:/Ki-8/PRM393/project/Lab3/Lab3_HobbyTracker/test/figma_ui_review_test.dart: Figma screens, sheets and seven themes at 360.0dp
+00:03 +38: D:/Ki-8/PRM393/project/Lab3/Lab3_HobbyTracker/test/figma_ui_review_test.dart: Figma screens, sheets and seven themes at 360.0dp
+00:08 +39: D:/Ki-8/PRM393/project/Lab3/Lab3_HobbyTracker/test/figma_ui_review_test.dart: Figma screens, sheets and seven themes at 360.0dp
+00:10 +40: D:/Ki-8/PRM393/project/Lab3/Lab3_HobbyTracker/test/figma_ui_review_test.dart: Figma screens, sheets and seven themes at 360.0dp
+00:11 +41: D:/Ki-8/PRM393/project/Lab3/Lab3_HobbyTracker/test/figma_ui_review_test.dart: Figma screens, sheets and seven themes at 360.0dp
+00:12 +42: D:/Ki-8/PRM393/project/Lab3/Lab3_HobbyTracker/test/figma_ui_review_test.dart: Figma screens, sheets and seven themes at 360.0dp
+00:14 +43: D:/Ki-8/PRM393/project/Lab3/Lab3_HobbyTracker/test/figma_ui_review_test.dart: Figma screens, sheets and seven themes at 360.0dp
+00:14 +44: D:/Ki-8/PRM393/project/Lab3/Lab3_HobbyTracker/test/figma_ui_review_test.dart: Figma screens, sheets and seven themes at 360.0dp
+00:16 +45: D:/Ki-8/PRM393/project/Lab3/Lab3_HobbyTracker/test/figma_ui_review_test.dart: Figma screens, sheets and seven themes at 360.0dp
+00:16 +46: D:/Ki-8/PRM393/project/Lab3/Lab3_HobbyTracker/test/figma_ui_review_test.dart: Figma screens, sheets and seven themes at 360.0dp
+00:16 +47: D:/Ki-8/PRM393/project/Lab3/Lab3_HobbyTracker/test/figma_ui_review_test.dart: Figma screens, sheets and seven themes at 360.0dp
+00:17 +48: D:/Ki-8/PRM393/project/Lab3/Lab3_HobbyTracker/test/moments_ui_test.dart: post/retry/view/expire at 412.0 dp in vi
+00:17 +49: D:/Ki-8/PRM393/project/Lab3/Lab3_HobbyTracker/test/moments_ui_test.dart: post/retry/view/expire at 412.0 dp in vi
+00:18 +50: D:/Ki-8/PRM393/project/Lab3/Lab3_HobbyTracker/test/localization_test.dart: all screens and user content render in en at 412.0 dp
+00:18 +51: D:/Ki-8/PRM393/project/Lab3/Lab3_HobbyTracker/test/localization_test.dart: all screens and user content render in en at 412.0 dp
+00:19 +52: D:/Ki-8/PRM393/project/Lab3/Lab3_HobbyTracker/test/localization_test.dart: all screens and user content render in en at 412.0 dp
+00:19 +53: D:/Ki-8/PRM393/project/Lab3/Lab3_HobbyTracker/test/localization_test.dart: all screens and user content render in en at 412.0 dp
+00:19 +54: D:/Ki-8/PRM393/project/Lab3/Lab3_HobbyTracker/test/localization_test.dart: all screens and user content render in en at 412.0 dp
+00:20 +55: D:/Ki-8/PRM393/project/Lab3/Lab3_HobbyTracker/test/figma_ui_review_test.dart: Figma screens, sheets and seven themes at 410.0dp
+00:20 +56: D:/Ki-8/PRM393/project/Lab3/Lab3_HobbyTracker/test/figma_ui_review_test.dart: Figma screens, sheets and seven themes at 410.0dp
+00:21 +57: D:/Ki-8/PRM393/project/Lab3/Lab3_HobbyTracker/test/figma_ui_review_test.dart: Figma screens, sheets and seven themes at 410.0dp
+00:21 +58: D:/Ki-8/PRM393/project/Lab3/Lab3_HobbyTracker/test/figma_ui_review_test.dart: Figma screens, sheets and seven themes at 410.0dp
+00:21 +59: D:/Ki-8/PRM393/project/Lab3/Lab3_HobbyTracker/test/figma_ui_review_test.dart: Figma screens, sheets and seven themes at 410.0dp
+00:21 +60: D:/Ki-8/PRM393/project/Lab3/Lab3_HobbyTracker/test/figma_ui_review_test.dart: Figma screens, sheets and seven themes at 410.0dp
+00:21 +61: D:/Ki-8/PRM393/project/Lab3/Lab3_HobbyTracker/test/figma_ui_review_test.dart: Figma screens, sheets and seven themes at 410.0dp
+00:21 +62: D:/Ki-8/PRM393/project/Lab3/Lab3_HobbyTracker/test/figma_ui_review_test.dart: Figma screens, sheets and seven themes at 410.0dp
+00:21 +63: D:/Ki-8/PRM393/project/Lab3/Lab3_HobbyTracker/test/figma_ui_review_test.dart: Figma screens, sheets and seven themes at 410.0dp
+00:21 +64: D:/Ki-8/PRM393/project/Lab3/Lab3_HobbyTracker/test/figma_ui_review_test.dart: Figma screens, sheets and seven themes at 410.0dp
+00:21 +65: D:/Ki-8/PRM393/project/Lab3/Lab3_HobbyTracker/test/figma_ui_review_test.dart: Figma screens, sheets and seven themes at 410.0dp
+00:21 +66: D:/Ki-8/PRM393/project/Lab3/Lab3_HobbyTracker/test/figma_ui_review_test.dart: Figma screens, sheets and seven themes at 410.0dp
+00:21 +67: D:/Ki-8/PRM393/project/Lab3/Lab3_HobbyTracker/test/figma_ui_review_test.dart: Figma screens, sheets and seven themes at 410.0dp
+00:21 +68: D:/Ki-8/PRM393/project/Lab3/Lab3_HobbyTracker/test/figma_ui_review_test.dart: Figma screens, sheets and seven themes at 410.0dp
+00:22 +69: D:/Ki-8/PRM393/project/Lab3/Lab3_HobbyTracker/test/figma_ui_review_test.dart: Figma screens, sheets and seven themes at 410.0dp
+00:22 +70: D:/Ki-8/PRM393/project/Lab3/Lab3_HobbyTracker/test/figma_ui_review_test.dart: Figma screens, sheets and seven themes at 410.0dp
+00:22 +71: D:/Ki-8/PRM393/project/Lab3/Lab3_HobbyTracker/test/figma_ui_review_test.dart: Figma screens, sheets and seven themes at 410.0dp
+00:22 +72: D:/Ki-8/PRM393/project/Lab3/Lab3_HobbyTracker/test/figma_ui_review_test.dart: Figma screens, sheets and seven themes at 410.0dp
+00:22 +73: D:/Ki-8/PRM393/project/Lab3/Lab3_HobbyTracker/test/figma_ui_review_test.dart: Figma screens, sheets and seven themes at 410.0dp
+00:22 +74: D:/Ki-8/PRM393/project/Lab3/Lab3_HobbyTracker/test/figma_ui_review_test.dart: Figma screens, sheets and seven themes at 410.0dp
+00:22 +75: D:/Ki-8/PRM393/project/Lab3/Lab3_HobbyTracker/test/figma_ui_review_test.dart: Figma screens, sheets and seven themes at 410.0dp
+00:22 +76: D:/Ki-8/PRM393/project/Lab3/Lab3_HobbyTracker/test/moment_alerts_ui_test.dart: verified popup and settings/inbox at 360.0 dp in en
+00:23 +77: D:/Ki-8/PRM393/project/Lab3/Lab3_HobbyTracker/test/moment_alerts_ui_test.dart: verified popup and settings/inbox at 360.0 dp in en
+00:23 +78: D:/Ki-8/PRM393/project/Lab3/Lab3_HobbyTracker/test/moment_alerts_ui_test.dart: verified popup and settings/inbox at 360.0 dp in en
+00:23 +79: D:/Ki-8/PRM393/project/Lab3/Lab3_HobbyTracker/test/moment_alerts_ui_test.dart: verified popup and settings/inbox at 360.0 dp in en
+00:23 +80: D:/Ki-8/PRM393/project/Lab3/Lab3_HobbyTracker/test/moment_alerts_ui_test.dart: verified popup and settings/inbox at 360.0 dp in en
+00:23 +81: D:/Ki-8/PRM393/project/Lab3/Lab3_HobbyTracker/test/moment_alerts_ui_test.dart: verified popup and settings/inbox at 360.0 dp in en
+00:23 +82: D:/Ki-8/PRM393/project/Lab3/Lab3_HobbyTracker/test/moment_alerts_ui_test.dart: verified popup and settings/inbox at 360.0 dp in en
+00:24 +83: D:/Ki-8/PRM393/project/Lab3/Lab3_HobbyTracker/test/moment_alerts_ui_test.dart: verified popup and settings/inbox at 360.0 dp in en
+00:24 +84: D:/Ki-8/PRM393/project/Lab3/Lab3_HobbyTracker/test/moment_alerts_ui_test.dart: verified popup and settings/inbox at 360.0 dp in en
+00:24 +85: D:/Ki-8/PRM393/project/Lab3/Lab3_HobbyTracker/test/localization_test.dart: all screens and user content render in vi at 412.0 dp
+00:25 +86: D:/Ki-8/PRM393/project/Lab3/Lab3_HobbyTracker/test/localization_test.dart: all screens and user content render in vi at 412.0 dp
+00:25 +87: D:/Ki-8/PRM393/project/Lab3/Lab3_HobbyTracker/test/localization_test.dart: all screens and user content render in vi at 412.0 dp
+00:25 +88: D:/Ki-8/PRM393/project/Lab3/Lab3_HobbyTracker/test/localization_test.dart: all screens and user content render in vi at 412.0 dp
+00:25 +89: D:/Ki-8/PRM393/project/Lab3/Lab3_HobbyTracker/test/localization_test.dart: all screens and user content render in vi at 412.0 dp
+00:25 +90: D:/Ki-8/PRM393/project/Lab3/Lab3_HobbyTracker/test/localization_test.dart: all screens and user content render in vi at 412.0 dp
+00:25 +91: D:/Ki-8/PRM393/project/Lab3/Lab3_HobbyTracker/test/localization_test.dart: all screens and user content render in vi at 412.0 dp
+00:25 +92: D:/Ki-8/PRM393/project/Lab3/Lab3_HobbyTracker/test/localization_test.dart: all screens and user content render in vi at 412.0 dp
+00:25 +93: D:/Ki-8/PRM393/project/Lab3/Lab3_HobbyTracker/test/localization_test.dart: all screens and user content render in vi at 412.0 dp
+00:25 +94: D:/Ki-8/PRM393/project/Lab3/Lab3_HobbyTracker/test/localization_test.dart: all screens and user content render in vi at 412.0 dp
+00:25 +95: D:/Ki-8/PRM393/project/Lab3/Lab3_HobbyTracker/test/localization_test.dart: all screens and user content render in vi at 412.0 dp
+00:25 +96: D:/Ki-8/PRM393/project/Lab3/Lab3_HobbyTracker/test/localization_test.dart: all screens and user content render in vi at 412.0 dp
+00:25 +97: D:/Ki-8/PRM393/project/Lab3/Lab3_HobbyTracker/test/localization_test.dart: all screens and user content render in vi at 412.0 dp
+00:25 +98: D:/Ki-8/PRM393/project/Lab3/Lab3_HobbyTracker/test/localization_test.dart: all screens and user content render in vi at 412.0 dp
+00:25 +99: D:/Ki-8/PRM393/project/Lab3/Lab3_HobbyTracker/test/figma_ui_review_test.dart: Figma screens, sheets and seven themes at 412.0dp
+00:25 +100: D:/Ki-8/PRM393/project/Lab3/Lab3_HobbyTracker/test/figma_ui_review_test.dart: Figma screens, sheets and seven themes at 412.0dp
+00:25 +101: D:/Ki-8/PRM393/project/Lab3/Lab3_HobbyTracker/test/figma_ui_review_test.dart: Figma screens, sheets and seven themes at 412.0dp
+00:25 +102: D:/Ki-8/PRM393/project/Lab3/Lab3_HobbyTracker/test/figma_ui_review_test.dart: Figma screens, sheets and seven themes at 412.0dp
+00:25 +103: D:/Ki-8/PRM393/project/Lab3/Lab3_HobbyTracker/test/figma_ui_review_test.dart: Figma screens, sheets and seven themes at 412.0dp
+00:25 +104: D:/Ki-8/PRM393/project/Lab3/Lab3_HobbyTracker/test/figma_ui_review_test.dart: Figma screens, sheets and seven themes at 412.0dp
+00:26 +105: D:/Ki-8/PRM393/project/Lab3/Lab3_HobbyTracker/test/figma_ui_review_test.dart: Figma screens, sheets and seven themes at 412.0dp
+00:26 +106: D:/Ki-8/PRM393/project/Lab3/Lab3_HobbyTracker/test/figma_ui_review_test.dart: Figma screens, sheets and seven themes at 412.0dp
+00:27 +107: D:/Ki-8/PRM393/project/Lab3/Lab3_HobbyTracker/test/figma_ui_review_test.dart: Figma screens, sheets and seven themes at 412.0dp
+00:27 +108: D:/Ki-8/PRM393/project/Lab3/Lab3_HobbyTracker/test/figma_ui_review_test.dart: Figma screens, sheets and seven themes at 412.0dp
+00:27 +109: D:/Ki-8/PRM393/project/Lab3/Lab3_HobbyTracker/test/navigation_feedback_test.dart: all six Settings saves keep route and only bootstrap account once
+00:27 +110: D:/Ki-8/PRM393/project/Lab3/Lab3_HobbyTracker/test/navigation_feedback_test.dart: all six Settings saves keep route and only bootstrap account once
+00:28 +111: D:/Ki-8/PRM393/project/Lab3/Lab3_HobbyTracker/test/navigation_feedback_test.dart: all six Settings saves keep route and only bootstrap account once
+00:28 +112: D:/Ki-8/PRM393/project/Lab3/Lab3_HobbyTracker/test/navigation_feedback_test.dart: all six Settings saves keep route and only bootstrap account once
+00:28 +113: D:/Ki-8/PRM393/project/Lab3/Lab3_HobbyTracker/test/navigation_feedback_test.dart: all six Settings saves keep route and only bootstrap account once
+00:29 +114: D:/Ki-8/PRM393/project/Lab3/Lab3_HobbyTracker/test/navigation_feedback_test.dart: all six Settings saves keep route and only bootstrap account once
+00:29 +115: D:/Ki-8/PRM393/project/Lab3/Lab3_HobbyTracker/test/navigation_feedback_test.dart: all six Settings saves keep route and only bootstrap account once
+00:29 +116: D:/Ki-8/PRM393/project/Lab3/Lab3_HobbyTracker/test/navigation_feedback_test.dart: all six Settings saves keep route and only bootstrap account once
+00:29 +117: D:/Ki-8/PRM393/project/Lab3/Lab3_HobbyTracker/test/navigation_feedback_test.dart: all six Settings saves keep route and only bootstrap account once
+00:30 +118: D:/Ki-8/PRM393/project/Lab3/Lab3_HobbyTracker/test/navigation_feedback_test.dart: all six Settings saves keep route and only bootstrap account once
+00:30 +119: D:/Ki-8/PRM393/project/Lab3/Lab3_HobbyTracker/test/navigation_feedback_test.dart: all six Settings saves keep route and only bootstrap account once
+00:30 +120: D:/Ki-8/PRM393/project/Lab3/Lab3_HobbyTracker/test/navigation_feedback_test.dart: all six Settings saves keep route and only bootstrap account once
+00:30 +121: D:/Ki-8/PRM393/project/Lab3/Lab3_HobbyTracker/test/navigation_feedback_test.dart: all six Settings saves keep route and only bootstrap account once
+00:30 +122: D:/Ki-8/PRM393/project/Lab3/Lab3_HobbyTracker/test/navigation_feedback_test.dart: all six Settings saves keep route and only bootstrap account once
+00:30 +123: D:/Ki-8/PRM393/project/Lab3/Lab3_HobbyTracker/test/navigation_feedback_test.dart: all six Settings saves keep route and only bootstrap account once
+00:31 +124: D:/Ki-8/PRM393/project/Lab3/Lab3_HobbyTracker/test/navigation_feedback_test.dart: all six Settings saves keep route and only bootstrap account once
+00:31 +125: D:/Ki-8/PRM393/project/Lab3/Lab3_HobbyTracker/test/navigation_feedback_test.dart: all six Settings saves keep route and only bootstrap account once
+00:31 +126: D:/Ki-8/PRM393/project/Lab3/Lab3_HobbyTracker/test/navigation_feedback_test.dart: all six Settings saves keep route and only bootstrap account once
+00:31 +127: D:/Ki-8/PRM393/project/Lab3/Lab3_HobbyTracker/test/navigation_feedback_test.dart: all six Settings saves keep route and only bootstrap account once
+00:31 +128: D:/Ki-8/PRM393/project/Lab3/Lab3_HobbyTracker/test/navigation_feedback_test.dart: all six Settings saves keep route and only bootstrap account once
+00:31 +129: D:/Ki-8/PRM393/project/Lab3/Lab3_HobbyTracker/test/navigation_feedback_test.dart: all six Settings saves keep route and only bootstrap account once
+00:31 +130: D:/Ki-8/PRM393/project/Lab3/Lab3_HobbyTracker/test/navigation_feedback_test.dart: all six Settings saves keep route and only bootstrap account once
+00:32 +131: D:/Ki-8/PRM393/project/Lab3/Lab3_HobbyTracker/test/regression_fixes_test.dart: switch tab honors pauseOnExit=true without losing draft
+00:32 +132: D:/Ki-8/PRM393/project/Lab3/Lab3_HobbyTracker/test/router_test.dart: Unauthenticated deep link always redirects to Login
+00:33 +133: D:/Ki-8/PRM393/project/Lab3/Lab3_HobbyTracker/test/navigation_feedback_test.dart: same-account metadata keeps every feature page; changed UID still rechecks gate
+00:33 +134: D:/Ki-8/PRM393/project/Lab3/Lab3_HobbyTracker/test/navigation_feedback_test.dart: same-account metadata keeps every feature page; changed UID still rechecks gate
+00:34 +135: D:/Ki-8/PRM393/project/Lab3/Lab3_HobbyTracker/test/navigation_feedback_test.dart: same-account metadata keeps every feature page; changed UID still rechecks gate
+00:34 +136: D:/Ki-8/PRM393/project/Lab3/Lab3_HobbyTracker/test/navigation_feedback_test.dart: same-account metadata keeps every feature page; changed UID still rechecks gate
+00:34 +137: D:/Ki-8/PRM393/project/Lab3/Lab3_HobbyTracker/test/schedule_ui_test.dart: quick schedule layout/date/autofill and 2h save at 360.0 vi
+00:35 +138: D:/Ki-8/PRM393/project/Lab3/Lab3_HobbyTracker/test/schedule_ui_test.dart: quick schedule layout/date/autofill and 2h save at 360.0 vi
+00:35 +139: D:/Ki-8/PRM393/project/Lab3/Lab3_HobbyTracker/test/schedule_ui_test.dart: quick schedule layout/date/autofill and 2h save at 360.0 vi
+00:35 +140: D:/Ki-8/PRM393/project/Lab3/Lab3_HobbyTracker/test/schedule_ui_test.dart: quick schedule layout/date/autofill and 2h save at 360.0 vi
+00:36 +141: D:/Ki-8/PRM393/project/Lab3/Lab3_HobbyTracker/test/schedule_ui_test.dart: quick schedule layout/date/autofill and 2h save at 360.0 vi
+00:36 +142: D:/Ki-8/PRM393/project/Lab3/Lab3_HobbyTracker/test/schedule_ui_test.dart: quick schedule layout/date/autofill and 2h save at 360.0 vi
+00:36 +143: D:/Ki-8/PRM393/project/Lab3/Lab3_HobbyTracker/test/schedule_ui_test.dart: quick schedule layout/date/autofill and 2h save at 360.0 vi
+00:36 +144: D:/Ki-8/PRM393/project/Lab3/Lab3_HobbyTracker/test/schedule_ui_test.dart: quick schedule layout/date/autofill and 2h save at 360.0 vi
+00:36 +145: D:/Ki-8/PRM393/project/Lab3/Lab3_HobbyTracker/test/regression_fixes_test.dart: Home at 360.0dp supports 200 percent text and 48dp calendar targets
+00:36 +146: D:/Ki-8/PRM393/project/Lab3/Lab3_HobbyTracker/test/router_test.dart: Forgot password calls service and confirms request
+00:37 +147: D:/Ki-8/PRM393/project/Lab3/Lab3_HobbyTracker/test/schedule_ui_test.dart: quick schedule layout/date/autofill and 2h save at 360.0 en
+00:37 +148: D:/Ki-8/PRM393/project/Lab3/Lab3_HobbyTracker/test/schedule_ui_test.dart: quick schedule layout/date/autofill and 2h save at 360.0 en
+00:37 +149: D:/Ki-8/PRM393/project/Lab3/Lab3_HobbyTracker/test/schedule_ui_test.dart: quick schedule layout/date/autofill and 2h save at 360.0 en
+00:37 +150: D:/Ki-8/PRM393/project/Lab3/Lab3_HobbyTracker/test/schedule_ui_test.dart: quick schedule layout/date/autofill and 2h save at 360.0 en
+00:37 +151: D:/Ki-8/PRM393/project/Lab3/Lab3_HobbyTracker/test/schedule_ui_test.dart: quick schedule layout/date/autofill and 2h save at 360.0 en
+00:38 +152: D:/Ki-8/PRM393/project/Lab3/Lab3_HobbyTracker/test/regression_fixes_test.dart: all signed-in screens support large text at 360dp
+00:38 +153: D:/Ki-8/PRM393/project/Lab3/Lab3_HobbyTracker/test/regression_fixes_test.dart: all signed-in screens support large text at 360dp
+00:39 +154: D:/Ki-8/PRM393/project/Lab3/Lab3_HobbyTracker/test/regression_fixes_test.dart: all signed-in screens support large text at 360dp
+00:39 +155: D:/Ki-8/PRM393/project/Lab3/Lab3_HobbyTracker/test/regression_fixes_test.dart: all signed-in screens support large text at 360dp
+00:39 +156: D:/Ki-8/PRM393/project/Lab3/Lab3_HobbyTracker/test/widget_components_test.dart: HobbyButton accepts taps and has a 48dp minimum target
+00:39 +157: D:/Ki-8/PRM393/project/Lab3/Lab3_HobbyTracker/test/widget_components_test.dart: HobbyButton accepts taps and has a 48dp minimum target
+00:39 +158: D:/Ki-8/PRM393/project/Lab3/Lab3_HobbyTracker/test/schedule_ui_test.dart: custom 75 minutes validates integer bounds and preserves draft after write failure
+00:39 +159: D:/Ki-8/PRM393/project/Lab3/Lab3_HobbyTracker/test/schedule_ui_test.dart: custom 75 minutes validates integer bounds and preserves draft after write failure
+00:39 +160: D:/Ki-8/PRM393/project/Lab3/Lab3_HobbyTracker/test/schedule_ui_test.dart: custom 75 minutes validates integer bounds and preserves draft after write failure
+00:40 +161: D:/Ki-8/PRM393/project/Lab3/Lab3_HobbyTracker/test/schedule_ui_test.dart: custom 75 minutes validates integer bounds and preserves draft after write failure
+00:40 +162: D:/Ki-8/PRM393/project/Lab3/Lab3_HobbyTracker/test/schedule_ui_test.dart: custom 75 minutes validates integer bounds and preserves draft after write failure
+00:40 +163: D:/Ki-8/PRM393/project/Lab3/Lab3_HobbyTracker/test/schedule_ui_test.dart: hobby changes update automatic title but retain manually edited name
+00:41 +164: D:/Ki-8/PRM393/project/Lab3/Lab3_HobbyTracker/test/schedule_ui_test.dart: weekly repeat has real end-date picker and creates five sessions atomically
+00:42 +165: D:/Ki-8/PRM393/project/Lab3/Lab3_HobbyTracker/test/schedule_ui_test.dart: daily option and 200 percent text remain usable at 360dp
+00:42 +166: D:/Ki-8/PRM393/project/Lab3/Lab3_HobbyTracker/test/schedule_ui_test.dart: (tearDownAll)
+00:42 +166: All tests passed!

@@ -1,0 +1,19 @@
+Formatted lib/features/community/screens/community_screens.dart
+Formatted lib/features/hobbies/screens/hobbies_screens.dart
+Formatted lib/features/practice/screens/practice_screens.dart
+Formatted lib/features/settings/screens/settings_screens.dart
+Formatted lib/firebase/firebase_auth_service.dart
+Formatted lib/firebase/firebase_device_services.dart
+Formatted lib/firebase/firestore_hobby_repository.dart
+Formatted lib/firebase/notification_background.dart
+Formatted lib/services/auth_service_provider.dart
+Formatted lib/services/device_services.dart
+Formatted lib/services/local_reminders.dart
+Formatted lib/services/pdf_report_exporter.dart
+Formatted lib/viewmodels/hyper_view_model.dart
+Formatted lib/viewmodels/runtime_controller.dart
+Formatted test/full_ui_test.dart
+Formatted test/full_viewmodels_test.dart
+Formatted test/router_test.dart
+Formatted test/support/fakes.dart
+Formatted 57 files (18 changed) in 0.30 seconds.

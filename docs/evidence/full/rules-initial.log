@@ -1,0 +1,320 @@
+✖ owner can create and read own profile (982.067121ms)
+✖ anonymous cannot read or write profile (1.735812ms)
+✖ other account cannot read or overwrite profile (0.463287ms)
+✖ owner cannot give self admin role or delete/create other records (0.614675ms)
+✖ owner may update display name only (0.189876ms)
+✖ list, delete and nested collections denied (0.067922ms)
+✖ other account cannot update or delete owner profile (0.081723ms)
+✖ create validates schema, role, name and server time (0.08643ms)
+✖ update rejects invalid display names (0.17955ms)
+✖ custom hobby and canonical name claim must be atomic (882.671825ms)
+✖ same normalized hobby name cannot be claimed by another document (0.900585ms)
+✖ rename releases old claim and preserves unrelated plans/history (0.131107ms)
+✖ logical removal requires releasing name; new schedules denied and history retained (0.043225ms)
+✖ cross-user hobbies is private (0.058067ms)
+✖ cross-user hobbyNames is private (0.036726ms)
+✖ cross-user plans is private (0.038287ms)
+✖ cross-user history is private (0.034722ms)
+✖ cross-user settings is private (0.165859ms)
+✖ cross-user rsvps is private (0.071287ms)
+✖ cross-user groupLinks is private (0.075254ms)
+✖ cross-user devices is private (0.069595ms)
+✖ both Interested and Active may schedule; invalid duration and fake done denied (0.025689ms)
+✖ Finish transaction creates one immutable record and completes matching plan (0.048593ms)
+✖ history rejects forged snapshots, invalid duration, client time and unlinked plan (0.024808ms)
+✖ preferences and public projection validate shapes and privacy query (0.023936ms)
+✖ posts use real author and schema; anonymous/impersonation denied (0.023866ms)
+✖ likes and comments permit self; impersonation and oversized input denied (0.151378ms)
+✖ group creator/member/link atomic, non-members denied chat; join enables chat (0.229545ms)
+✖ DM participants immutable, opt-in enforced, outside account denied (0.040552ms)
+✖ RSVP alone adds no calendar entry; explicit Add to Home requires RSVP (0.068483ms)
+✖ events and device tokens validate owner and types; unknown paths denied (0.031358ms)
+ℹ tests 31
+ℹ suites 0
+ℹ pass 0
+ℹ fail 31
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1273.456896
+
+✖ failing tests:
+
+test at firebase/tests/firestore.rules.test.mjs:27:1
+✖ owner can create and read own profile (982.067121ms)
+  Error: {"error":{"code":400,"message":"Error compiling rules:\nL18:47 Unexpected 'S'.\nL18:50 token recognition error at: '\\'\nL18:53 mismatched input '') && !d.name.matches('' expecting {'&&', '.', '==', '>', '>=', '[', '<', '<=', '-', '%', '!=', '||', '+', '}', ';', '\/', '*', '?', 'in', 'is'}\nL18:79 Forward slash '\/' found where identifier or binding expected.\nL18:79 Missing 'match' keyword before path.\nL18:80 mismatched input ']' expecting {'&&', '.', '==', '>', '>=', '[', '<', '<=', '-', '%', '!=', '||', '+', '}', ';', '\/', '*', '?', 'in', 'is'}\nL23:32 Missing 'match' keyword before path.\nL23:42 Forward slash '\/' found where identifier or binding expected.\nL23:43 mismatched input '$' expecting {'{', '\/', PATH_SEGMENT}\nL23:54 Missing 'match' keyword before path.\nL23:70 Forward slash '\/' found where identifier or binding expected.\nL23:71 mismatched input '$' expecting {'{', '\/', PATH_SEGMENT}\nL23:77 Missing 'match' keyword before path.\nL23:88 Forward slash '\/' found where identifier or binding expected.\nL23:89 mismatched input '$' expecting {'{', '\/', PATH_SEGMENT}\nL167:1 Unexpected '}'.","status":"INVALID_ARGUMENT"}}
+      at loadFirestoreRules (file:///workspace/scratch/01f41143f560/full/HobbyTracker/firebase/node_modules/@firebase/rules-unit-testing/dist/esm/index.esm.js:400:15)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async initializeTestEnvironment (file:///workspace/scratch/01f41143f560/full/HobbyTracker/firebase/node_modules/@firebase/rules-unit-testing/dist/esm/index.esm.js:485:9)
+      at async TestContext.<anonymous> (file:///workspace/scratch/01f41143f560/full/HobbyTracker/firebase/tests/firestore.rules.test.mjs:9:9)
+      at async TestHook.run (node:internal/test_runner/test:1409:7)
+
+test at firebase/tests/firestore.rules.test.mjs:36:1
+✖ anonymous cannot read or write profile (1.735812ms)
+  Error: {"error":{"code":400,"message":"Error compiling rules:\nL18:47 Unexpected 'S'.\nL18:50 token recognition error at: '\\'\nL18:53 mismatched input '') && !d.name.matches('' expecting {'&&', '.', '==', '>', '>=', '[', '<', '<=', '-', '%', '!=', '||', '+', '}', ';', '\/', '*', '?', 'in', 'is'}\nL18:79 Forward slash '\/' found where identifier or binding expected.\nL18:79 Missing 'match' keyword before path.\nL18:80 mismatched input ']' expecting {'&&', '.', '==', '>', '>=', '[', '<', '<=', '-', '%', '!=', '||', '+', '}', ';', '\/', '*', '?', 'in', 'is'}\nL23:32 Missing 'match' keyword before path.\nL23:42 Forward slash '\/' found where identifier or binding expected.\nL23:43 mismatched input '$' expecting {'{', '\/', PATH_SEGMENT}\nL23:54 Missing 'match' keyword before path.\nL23:70 Forward slash '\/' found where identifier or binding expected.\nL23:71 mismatched input '$' expecting {'{', '\/', PATH_SEGMENT}\nL23:77 Missing 'match' keyword before path.\nL23:88 Forward slash '\/' found where identifier or binding expected.\nL23:89 mismatched input '$' expecting {'{', '\/', PATH_SEGMENT}\nL167:1 Unexpected '}'.","status":"INVALID_ARGUMENT"}}
+      at loadFirestoreRules (file:///workspace/scratch/01f41143f560/full/HobbyTracker/firebase/node_modules/@firebase/rules-unit-testing/dist/esm/index.esm.js:400:15)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async initializeTestEnvironment (file:///workspace/scratch/01f41143f560/full/HobbyTracker/firebase/node_modules/@firebase/rules-unit-testing/dist/esm/index.esm.js:485:9)
+      at async TestContext.<anonymous> (file:///workspace/scratch/01f41143f560/full/HobbyTracker/firebase/tests/firestore.rules.test.mjs:9:9)
+      at async TestHook.run (node:internal/test_runner/test:1409:7)
+
+test at firebase/tests/firestore.rules.test.mjs:44:1
+✖ other account cannot read or overwrite profile (0.463287ms)
+  Error: {"error":{"code":400,"message":"Error compiling rules:\nL18:47 Unexpected 'S'.\nL18:50 token recognition error at: '\\'\nL18:53 mismatched input '') && !d.name.matches('' expecting {'&&', '.', '==', '>', '>=', '[', '<', '<=', '-', '%', '!=', '||', '+', '}', ';', '\/', '*', '?', 'in', 'is'}\nL18:79 Forward slash '\/' found where identifier or binding expected.\nL18:79 Missing 'match' keyword before path.\nL18:80 mismatched input ']' expecting {'&&', '.', '==', '>', '>=', '[', '<', '<=', '-', '%', '!=', '||', '+', '}', ';', '\/', '*', '?', 'in', 'is'}\nL23:32 Missing 'match' keyword before path.\nL23:42 Forward slash '\/' found where identifier or binding expected.\nL23:43 mismatched input '$' expecting {'{', '\/', PATH_SEGMENT}\nL23:54 Missing 'match' keyword before path.\nL23:70 Forward slash '\/' found where identifier or binding expected.\nL23:71 mismatched input '$' expecting {'{', '\/', PATH_SEGMENT}\nL23:77 Missing 'match' keyword before path.\nL23:88 Forward slash '\/' found where identifier or binding expected.\nL23:89 mismatched input '$' expecting {'{', '\/', PATH_SEGMENT}\nL167:1 Unexpected '}'.","status":"INVALID_ARGUMENT"}}
+      at loadFirestoreRules (file:///workspace/scratch/01f41143f560/full/HobbyTracker/firebase/node_modules/@firebase/rules-unit-testing/dist/esm/index.esm.js:400:15)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async initializeTestEnvironment (file:///workspace/scratch/01f41143f560/full/HobbyTracker/firebase/node_modules/@firebase/rules-unit-testing/dist/esm/index.esm.js:485:9)
+      at async TestContext.<anonymous> (file:///workspace/scratch/01f41143f560/full/HobbyTracker/firebase/tests/firestore.rules.test.mjs:9:9)
+      at async TestHook.run (node:internal/test_runner/test:1409:7)
+
+test at firebase/tests/firestore.rules.test.mjs:52:1
+✖ owner cannot give self admin role or delete/create other records (0.614675ms)
+  Error: {"error":{"code":400,"message":"Error compiling rules:\nL18:47 Unexpected 'S'.\nL18:50 token recognition error at: '\\'\nL18:53 mismatched input '') && !d.name.matches('' expecting {'&&', '.', '==', '>', '>=', '[', '<', '<=', '-', '%', '!=', '||', '+', '}', ';', '\/', '*', '?', 'in', 'is'}\nL18:79 Forward slash '\/' found where identifier or binding expected.\nL18:79 Missing 'match' keyword before path.\nL18:80 mismatched input ']' expecting {'&&', '.', '==', '>', '>=', '[', '<', '<=', '-', '%', '!=', '||', '+', '}', ';', '\/', '*', '?', 'in', 'is'}\nL23:32 Missing 'match' keyword before path.\nL23:42 Forward slash '\/' found where identifier or binding expected.\nL23:43 mismatched input '$' expecting {'{', '\/', PATH_SEGMENT}\nL23:54 Missing 'match' keyword before path.\nL23:70 Forward slash '\/' found where identifier or binding expected.\nL23:71 mismatched input '$' expecting {'{', '\/', PATH_SEGMENT}\nL23:77 Missing 'match' keyword before path.\nL23:88 Forward slash '\/' found where identifier or binding expected.\nL23:89 mismatched input '$' expecting {'{', '\/', PATH_SEGMENT}\nL167:1 Unexpected '}'.","status":"INVALID_ARGUMENT"}}
+      at loadFirestoreRules (file:///workspace/scratch/01f41143f560/full/HobbyTracker/firebase/node_modules/@firebase/rules-unit-testing/dist/esm/index.esm.js:400:15)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async initializeTestEnvironment (file:///workspace/scratch/01f41143f560/full/HobbyTracker/firebase/node_modules/@firebase/rules-unit-testing/dist/esm/index.esm.js:485:9)
+      at async TestContext.<anonymous> (file:///workspace/scratch/01f41143f560/full/HobbyTracker/firebase/tests/firestore.rules.test.mjs:9:9)
+      at async TestHook.run (node:internal/test_runner/test:1409:7)
+
+test at firebase/tests/firestore.rules.test.mjs:61:1
+✖ owner may update display name only (0.189876ms)
+  Error: {"error":{"code":400,"message":"Error compiling rules:\nL18:47 Unexpected 'S'.\nL18:50 token recognition error at: '\\'\nL18:53 mismatched input '') && !d.name.matches('' expecting {'&&', '.', '==', '>', '>=', '[', '<', '<=', '-', '%', '!=', '||', '+', '}', ';', '\/', '*', '?', 'in', 'is'}\nL18:79 Forward slash '\/' found where identifier or binding expected.\nL18:79 Missing 'match' keyword before path.\nL18:80 mismatched input ']' expecting {'&&', '.', '==', '>', '>=', '[', '<', '<=', '-', '%', '!=', '||', '+', '}', ';', '\/', '*', '?', 'in', 'is'}\nL23:32 Missing 'match' keyword before path.\nL23:42 Forward slash '\/' found where identifier or binding expected.\nL23:43 mismatched input '$' expecting {'{', '\/', PATH_SEGMENT}\nL23:54 Missing 'match' keyword before path.\nL23:70 Forward slash '\/' found where identifier or binding expected.\nL23:71 mismatched input '$' expecting {'{', '\/', PATH_SEGMENT}\nL23:77 Missing 'match' keyword before path.\nL23:88 Forward slash '\/' found where identifier or binding expected.\nL23:89 mismatched input '$' expecting {'{', '\/', PATH_SEGMENT}\nL167:1 Unexpected '}'.","status":"INVALID_ARGUMENT"}}
+      at loadFirestoreRules (file:///workspace/scratch/01f41143f560/full/HobbyTracker/firebase/node_modules/@firebase/rules-unit-testing/dist/esm/index.esm.js:400:15)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async initializeTestEnvironment (file:///workspace/scratch/01f41143f560/full/HobbyTracker/firebase/node_modules/@firebase/rules-unit-testing/dist/esm/index.esm.js:485:9)
+      at async TestContext.<anonymous> (file:///workspace/scratch/01f41143f560/full/HobbyTracker/firebase/tests/firestore.rules.test.mjs:9:9)
+      at async TestHook.run (node:internal/test_runner/test:1409:7)
+
+test at firebase/tests/firestore.rules.test.mjs:67:1
+✖ list, delete and nested collections denied (0.067922ms)
+  Error: {"error":{"code":400,"message":"Error compiling rules:\nL18:47 Unexpected 'S'.\nL18:50 token recognition error at: '\\'\nL18:53 mismatched input '') && !d.name.matches('' expecting {'&&', '.', '==', '>', '>=', '[', '<', '<=', '-', '%', '!=', '||', '+', '}', ';', '\/', '*', '?', 'in', 'is'}\nL18:79 Forward slash '\/' found where identifier or binding expected.\nL18:79 Missing 'match' keyword before path.\nL18:80 mismatched input ']' expecting {'&&', '.', '==', '>', '>=', '[', '<', '<=', '-', '%', '!=', '||', '+', '}', ';', '\/', '*', '?', 'in', 'is'}\nL23:32 Missing 'match' keyword before path.\nL23:42 Forward slash '\/' found where identifier or binding expected.\nL23:43 mismatched input '$' expecting {'{', '\/', PATH_SEGMENT}\nL23:54 Missing 'match' keyword before path.\nL23:70 Forward slash '\/' found where identifier or binding expected.\nL23:71 mismatched input '$' expecting {'{', '\/', PATH_SEGMENT}\nL23:77 Missing 'match' keyword before path.\nL23:88 Forward slash '\/' found where identifier or binding expected.\nL23:89 mismatched input '$' expecting {'{', '\/', PATH_SEGMENT}\nL167:1 Unexpected '}'.","status":"INVALID_ARGUMENT"}}
+      at loadFirestoreRules (file:///workspace/scratch/01f41143f560/full/HobbyTracker/firebase/node_modules/@firebase/rules-unit-testing/dist/esm/index.esm.js:400:15)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async initializeTestEnvironment (file:///workspace/scratch/01f41143f560/full/HobbyTracker/firebase/node_modules/@firebase/rules-unit-testing/dist/esm/index.esm.js:485:9)
+      at async TestContext.<anonymous> (file:///workspace/scratch/01f41143f560/full/HobbyTracker/firebase/tests/firestore.rules.test.mjs:9:9)
+      at async TestHook.run (node:internal/test_runner/test:1409:7)
+
+test at firebase/tests/firestore.rules.test.mjs:74:1
+✖ other account cannot update or delete owner profile (0.081723ms)
+  Error: {"error":{"code":400,"message":"Error compiling rules:\nL18:47 Unexpected 'S'.\nL18:50 token recognition error at: '\\'\nL18:53 mismatched input '') && !d.name.matches('' expecting {'&&', '.', '==', '>', '>=', '[', '<', '<=', '-', '%', '!=', '||', '+', '}', ';', '\/', '*', '?', 'in', 'is'}\nL18:79 Forward slash '\/' found where identifier or binding expected.\nL18:79 Missing 'match' keyword before path.\nL18:80 mismatched input ']' expecting {'&&', '.', '==', '>', '>=', '[', '<', '<=', '-', '%', '!=', '||', '+', '}', ';', '\/', '*', '?', 'in', 'is'}\nL23:32 Missing 'match' keyword before path.\nL23:42 Forward slash '\/' found where identifier or binding expected.\nL23:43 mismatched input '$' expecting {'{', '\/', PATH_SEGMENT}\nL23:54 Missing 'match' keyword before path.\nL23:70 Forward slash '\/' found where identifier or binding expected.\nL23:71 mismatched input '$' expecting {'{', '\/', PATH_SEGMENT}\nL23:77 Missing 'match' keyword before path.\nL23:88 Forward slash '\/' found where identifier or binding expected.\nL23:89 mismatched input '$' expecting {'{', '\/', PATH_SEGMENT}\nL167:1 Unexpected '}'.","status":"INVALID_ARGUMENT"}}
+      at loadFirestoreRules (file:///workspace/scratch/01f41143f560/full/HobbyTracker/firebase/node_modules/@firebase/rules-unit-testing/dist/esm/index.esm.js:400:15)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async initializeTestEnvironment (file:///workspace/scratch/01f41143f560/full/HobbyTracker/firebase/node_modules/@firebase/rules-unit-testing/dist/esm/index.esm.js:485:9)
+      at async TestContext.<anonymous> (file:///workspace/scratch/01f41143f560/full/HobbyTracker/firebase/tests/firestore.rules.test.mjs:9:9)
+      at async TestHook.run (node:internal/test_runner/test:1409:7)
+
+test at firebase/tests/firestore.rules.test.mjs:79:1
+✖ create validates schema, role, name and server time (0.08643ms)
+  Error: {"error":{"code":400,"message":"Error compiling rules:\nL18:47 Unexpected 'S'.\nL18:50 token recognition error at: '\\'\nL18:53 mismatched input '') && !d.name.matches('' expecting {'&&', '.', '==', '>', '>=', '[', '<', '<=', '-', '%', '!=', '||', '+', '}', ';', '\/', '*', '?', 'in', 'is'}\nL18:79 Forward slash '\/' found where identifier or binding expected.\nL18:79 Missing 'match' keyword before path.\nL18:80 mismatched input ']' expecting {'&&', '.', '==', '>', '>=', '[', '<', '<=', '-', '%', '!=', '||', '+', '}', ';', '\/', '*', '?', 'in', 'is'}\nL23:32 Missing 'match' keyword before path.\nL23:42 Forward slash '\/' found where identifier or binding expected.\nL23:43 mismatched input '$' expecting {'{', '\/', PATH_SEGMENT}\nL23:54 Missing 'match' keyword before path.\nL23:70 Forward slash '\/' found where identifier or binding expected.\nL23:71 mismatched input '$' expecting {'{', '\/', PATH_SEGMENT}\nL23:77 Missing 'match' keyword before path.\nL23:88 Forward slash '\/' found where identifier or binding expected.\nL23:89 mismatched input '$' expecting {'{', '\/', PATH_SEGMENT}\nL167:1 Unexpected '}'.","status":"INVALID_ARGUMENT"}}
+      at loadFirestoreRules (file:///workspace/scratch/01f41143f560/full/HobbyTracker/firebase/node_modules/@firebase/rules-unit-testing/dist/esm/index.esm.js:400:15)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async initializeTestEnvironment (file:///workspace/scratch/01f41143f560/full/HobbyTracker/firebase/node_modules/@firebase/rules-unit-testing/dist/esm/index.esm.js:485:9)
+      at async TestContext.<anonymous> (file:///workspace/scratch/01f41143f560/full/HobbyTracker/firebase/tests/firestore.rules.test.mjs:9:9)
+      at async TestHook.run (node:internal/test_runner/test:1409:7)
+
+test at firebase/tests/firestore.rules.test.mjs:89:1
+✖ update rejects invalid display names (0.17955ms)
+  Error: {"error":{"code":400,"message":"Error compiling rules:\nL18:47 Unexpected 'S'.\nL18:50 token recognition error at: '\\'\nL18:53 mismatched input '') && !d.name.matches('' expecting {'&&', '.', '==', '>', '>=', '[', '<', '<=', '-', '%', '!=', '||', '+', '}', ';', '\/', '*', '?', 'in', 'is'}\nL18:79 Forward slash '\/' found where identifier or binding expected.\nL18:79 Missing 'match' keyword before path.\nL18:80 mismatched input ']' expecting {'&&', '.', '==', '>', '>=', '[', '<', '<=', '-', '%', '!=', '||', '+', '}', ';', '\/', '*', '?', 'in', 'is'}\nL23:32 Missing 'match' keyword before path.\nL23:42 Forward slash '\/' found where identifier or binding expected.\nL23:43 mismatched input '$' expecting {'{', '\/', PATH_SEGMENT}\nL23:54 Missing 'match' keyword before path.\nL23:70 Forward slash '\/' found where identifier or binding expected.\nL23:71 mismatched input '$' expecting {'{', '\/', PATH_SEGMENT}\nL23:77 Missing 'match' keyword before path.\nL23:88 Forward slash '\/' found where identifier or binding expected.\nL23:89 mismatched input '$' expecting {'{', '\/', PATH_SEGMENT}\nL167:1 Unexpected '}'.","status":"INVALID_ARGUMENT"}}
+      at loadFirestoreRules (file:///workspace/scratch/01f41143f560/full/HobbyTracker/firebase/node_modules/@firebase/rules-unit-testing/dist/esm/index.esm.js:400:15)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async initializeTestEnvironment (file:///workspace/scratch/01f41143f560/full/HobbyTracker/firebase/node_modules/@firebase/rules-unit-testing/dist/esm/index.esm.js:485:9)
+      at async TestContext.<anonymous> (file:///workspace/scratch/01f41143f560/full/HobbyTracker/firebase/tests/firestore.rules.test.mjs:9:9)
+      at async TestHook.run (node:internal/test_runner/test:1409:7)
+
+test at firebase/tests/full.rules.test.mjs:28:1
+✖ custom hobby and canonical name claim must be atomic (882.671825ms)
+  Error: {"error":{"code":400,"message":"Error compiling rules:\nL18:47 Unexpected 'S'.\nL18:50 token recognition error at: '\\'\nL18:53 mismatched input '') && !d.name.matches('' expecting {'&&', '.', '==', '>', '>=', '[', '<', '<=', '-', '%', '!=', '||', '+', '}', ';', '\/', '*', '?', 'in', 'is'}\nL18:79 Forward slash '\/' found where identifier or binding expected.\nL18:79 Missing 'match' keyword before path.\nL18:80 mismatched input ']' expecting {'&&', '.', '==', '>', '>=', '[', '<', '<=', '-', '%', '!=', '||', '+', '}', ';', '\/', '*', '?', 'in', 'is'}\nL23:32 Missing 'match' keyword before path.\nL23:42 Forward slash '\/' found where identifier or binding expected.\nL23:43 mismatched input '$' expecting {'{', '\/', PATH_SEGMENT}\nL23:54 Missing 'match' keyword before path.\nL23:70 Forward slash '\/' found where identifier or binding expected.\nL23:71 mismatched input '$' expecting {'{', '\/', PATH_SEGMENT}\nL23:77 Missing 'match' keyword before path.\nL23:88 Forward slash '\/' found where identifier or binding expected.\nL23:89 mismatched input '$' expecting {'{', '\/', PATH_SEGMENT}\nL167:1 Unexpected '}'.","status":"INVALID_ARGUMENT"}}
+      at loadFirestoreRules (file:///workspace/scratch/01f41143f560/full/HobbyTracker/firebase/node_modules/@firebase/rules-unit-testing/dist/esm/index.esm.js:400:15)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async initializeTestEnvironment (file:///workspace/scratch/01f41143f560/full/HobbyTracker/firebase/node_modules/@firebase/rules-unit-testing/dist/esm/index.esm.js:485:9)
+      at async TestContext.<anonymous> (file:///workspace/scratch/01f41143f560/full/HobbyTracker/firebase/tests/full.rules.test.mjs:16:22)
+      at async TestHook.run (node:internal/test_runner/test:1409:7)
+
+test at firebase/tests/full.rules.test.mjs:33:1
+✖ same normalized hobby name cannot be claimed by another document (0.900585ms)
+  Error: {"error":{"code":400,"message":"Error compiling rules:\nL18:47 Unexpected 'S'.\nL18:50 token recognition error at: '\\'\nL18:53 mismatched input '') && !d.name.matches('' expecting {'&&', '.', '==', '>', '>=', '[', '<', '<=', '-', '%', '!=', '||', '+', '}', ';', '\/', '*', '?', 'in', 'is'}\nL18:79 Forward slash '\/' found where identifier or binding expected.\nL18:79 Missing 'match' keyword before path.\nL18:80 mismatched input ']' expecting {'&&', '.', '==', '>', '>=', '[', '<', '<=', '-', '%', '!=', '||', '+', '}', ';', '\/', '*', '?', 'in', 'is'}\nL23:32 Missing 'match' keyword before path.\nL23:42 Forward slash '\/' found where identifier or binding expected.\nL23:43 mismatched input '$' expecting {'{', '\/', PATH_SEGMENT}\nL23:54 Missing 'match' keyword before path.\nL23:70 Forward slash '\/' found where identifier or binding expected.\nL23:71 mismatched input '$' expecting {'{', '\/', PATH_SEGMENT}\nL23:77 Missing 'match' keyword before path.\nL23:88 Forward slash '\/' found where identifier or binding expected.\nL23:89 mismatched input '$' expecting {'{', '\/', PATH_SEGMENT}\nL167:1 Unexpected '}'.","status":"INVALID_ARGUMENT"}}
+      at loadFirestoreRules (file:///workspace/scratch/01f41143f560/full/HobbyTracker/firebase/node_modules/@firebase/rules-unit-testing/dist/esm/index.esm.js:400:15)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async initializeTestEnvironment (file:///workspace/scratch/01f41143f560/full/HobbyTracker/firebase/node_modules/@firebase/rules-unit-testing/dist/esm/index.esm.js:485:9)
+      at async TestContext.<anonymous> (file:///workspace/scratch/01f41143f560/full/HobbyTracker/firebase/tests/full.rules.test.mjs:16:22)
+      at async TestHook.run (node:internal/test_runner/test:1409:7)
+
+test at firebase/tests/full.rules.test.mjs:37:1
+✖ rename releases old claim and preserves unrelated plans/history (0.131107ms)
+  Error: {"error":{"code":400,"message":"Error compiling rules:\nL18:47 Unexpected 'S'.\nL18:50 token recognition error at: '\\'\nL18:53 mismatched input '') && !d.name.matches('' expecting {'&&', '.', '==', '>', '>=', '[', '<', '<=', '-', '%', '!=', '||', '+', '}', ';', '\/', '*', '?', 'in', 'is'}\nL18:79 Forward slash '\/' found where identifier or binding expected.\nL18:79 Missing 'match' keyword before path.\nL18:80 mismatched input ']' expecting {'&&', '.', '==', '>', '>=', '[', '<', '<=', '-', '%', '!=', '||', '+', '}', ';', '\/', '*', '?', 'in', 'is'}\nL23:32 Missing 'match' keyword before path.\nL23:42 Forward slash '\/' found where identifier or binding expected.\nL23:43 mismatched input '$' expecting {'{', '\/', PATH_SEGMENT}\nL23:54 Missing 'match' keyword before path.\nL23:70 Forward slash '\/' found where identifier or binding expected.\nL23:71 mismatched input '$' expecting {'{', '\/', PATH_SEGMENT}\nL23:77 Missing 'match' keyword before path.\nL23:88 Forward slash '\/' found where identifier or binding expected.\nL23:89 mismatched input '$' expecting {'{', '\/', PATH_SEGMENT}\nL167:1 Unexpected '}'.","status":"INVALID_ARGUMENT"}}
+      at loadFirestoreRules (file:///workspace/scratch/01f41143f560/full/HobbyTracker/firebase/node_modules/@firebase/rules-unit-testing/dist/esm/index.esm.js:400:15)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async initializeTestEnvironment (file:///workspace/scratch/01f41143f560/full/HobbyTracker/firebase/node_modules/@firebase/rules-unit-testing/dist/esm/index.esm.js:485:9)
+      at async TestContext.<anonymous> (file:///workspace/scratch/01f41143f560/full/HobbyTracker/firebase/tests/full.rules.test.mjs:16:22)
+      at async TestHook.run (node:internal/test_runner/test:1409:7)
+
+test at firebase/tests/full.rules.test.mjs:42:1
+✖ logical removal requires releasing name; new schedules denied and history retained (0.043225ms)
+  Error: {"error":{"code":400,"message":"Error compiling rules:\nL18:47 Unexpected 'S'.\nL18:50 token recognition error at: '\\'\nL18:53 mismatched input '') && !d.name.matches('' expecting {'&&', '.', '==', '>', '>=', '[', '<', '<=', '-', '%', '!=', '||', '+', '}', ';', '\/', '*', '?', 'in', 'is'}\nL18:79 Forward slash '\/' found where identifier or binding expected.\nL18:79 Missing 'match' keyword before path.\nL18:80 mismatched input ']' expecting {'&&', '.', '==', '>', '>=', '[', '<', '<=', '-', '%', '!=', '||', '+', '}', ';', '\/', '*', '?', 'in', 'is'}\nL23:32 Missing 'match' keyword before path.\nL23:42 Forward slash '\/' found where identifier or binding expected.\nL23:43 mismatched input '$' expecting {'{', '\/', PATH_SEGMENT}\nL23:54 Missing 'match' keyword before path.\nL23:70 Forward slash '\/' found where identifier or binding expected.\nL23:71 mismatched input '$' expecting {'{', '\/', PATH_SEGMENT}\nL23:77 Missing 'match' keyword before path.\nL23:88 Forward slash '\/' found where identifier or binding expected.\nL23:89 mismatched input '$' expecting {'{', '\/', PATH_SEGMENT}\nL167:1 Unexpected '}'.","status":"INVALID_ARGUMENT"}}
+      at loadFirestoreRules (file:///workspace/scratch/01f41143f560/full/HobbyTracker/firebase/node_modules/@firebase/rules-unit-testing/dist/esm/index.esm.js:400:15)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async initializeTestEnvironment (file:///workspace/scratch/01f41143f560/full/HobbyTracker/firebase/node_modules/@firebase/rules-unit-testing/dist/esm/index.esm.js:485:9)
+      at async TestContext.<anonymous> (file:///workspace/scratch/01f41143f560/full/HobbyTracker/firebase/tests/full.rules.test.mjs:16:22)
+      at async TestHook.run (node:internal/test_runner/test:1409:7)
+
+test at firebase/tests/full.rules.test.mjs:46:104
+✖ cross-user hobbies is private (0.058067ms)
+  Error: {"error":{"code":400,"message":"Error compiling rules:\nL18:47 Unexpected 'S'.\nL18:50 token recognition error at: '\\'\nL18:53 mismatched input '') && !d.name.matches('' expecting {'&&', '.', '==', '>', '>=', '[', '<', '<=', '-', '%', '!=', '||', '+', '}', ';', '\/', '*', '?', 'in', 'is'}\nL18:79 Forward slash '\/' found where identifier or binding expected.\nL18:79 Missing 'match' keyword before path.\nL18:80 mismatched input ']' expecting {'&&', '.', '==', '>', '>=', '[', '<', '<=', '-', '%', '!=', '||', '+', '}', ';', '\/', '*', '?', 'in', 'is'}\nL23:32 Missing 'match' keyword before path.\nL23:42 Forward slash '\/' found where identifier or binding expected.\nL23:43 mismatched input '$' expecting {'{', '\/', PATH_SEGMENT}\nL23:54 Missing 'match' keyword before path.\nL23:70 Forward slash '\/' found where identifier or binding expected.\nL23:71 mismatched input '$' expecting {'{', '\/', PATH_SEGMENT}\nL23:77 Missing 'match' keyword before path.\nL23:88 Forward slash '\/' found where identifier or binding expected.\nL23:89 mismatched input '$' expecting {'{', '\/', PATH_SEGMENT}\nL167:1 Unexpected '}'.","status":"INVALID_ARGUMENT"}}
+      at loadFirestoreRules (file:///workspace/scratch/01f41143f560/full/HobbyTracker/firebase/node_modules/@firebase/rules-unit-testing/dist/esm/index.esm.js:400:15)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async initializeTestEnvironment (file:///workspace/scratch/01f41143f560/full/HobbyTracker/firebase/node_modules/@firebase/rules-unit-testing/dist/esm/index.esm.js:485:9)
+      at async TestContext.<anonymous> (file:///workspace/scratch/01f41143f560/full/HobbyTracker/firebase/tests/full.rules.test.mjs:16:22)
+      at async TestHook.run (node:internal/test_runner/test:1409:7)
+
+test at firebase/tests/full.rules.test.mjs:46:104
+✖ cross-user hobbyNames is private (0.036726ms)
+  Error: {"error":{"code":400,"message":"Error compiling rules:\nL18:47 Unexpected 'S'.\nL18:50 token recognition error at: '\\'\nL18:53 mismatched input '') && !d.name.matches('' expecting {'&&', '.', '==', '>', '>=', '[', '<', '<=', '-', '%', '!=', '||', '+', '}', ';', '\/', '*', '?', 'in', 'is'}\nL18:79 Forward slash '\/' found where identifier or binding expected.\nL18:79 Missing 'match' keyword before path.\nL18:80 mismatched input ']' expecting {'&&', '.', '==', '>', '>=', '[', '<', '<=', '-', '%', '!=', '||', '+', '}', ';', '\/', '*', '?', 'in', 'is'}\nL23:32 Missing 'match' keyword before path.\nL23:42 Forward slash '\/' found where identifier or binding expected.\nL23:43 mismatched input '$' expecting {'{', '\/', PATH_SEGMENT}\nL23:54 Missing 'match' keyword before path.\nL23:70 Forward slash '\/' found where identifier or binding expected.\nL23:71 mismatched input '$' expecting {'{', '\/', PATH_SEGMENT}\nL23:77 Missing 'match' keyword before path.\nL23:88 Forward slash '\/' found where identifier or binding expected.\nL23:89 mismatched input '$' expecting {'{', '\/', PATH_SEGMENT}\nL167:1 Unexpected '}'.","status":"INVALID_ARGUMENT"}}
+      at loadFirestoreRules (file:///workspace/scratch/01f41143f560/full/HobbyTracker/firebase/node_modules/@firebase/rules-unit-testing/dist/esm/index.esm.js:400:15)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async initializeTestEnvironment (file:///workspace/scratch/01f41143f560/full/HobbyTracker/firebase/node_modules/@firebase/rules-unit-testing/dist/esm/index.esm.js:485:9)
+      at async TestContext.<anonymous> (file:///workspace/scratch/01f41143f560/full/HobbyTracker/firebase/tests/full.rules.test.mjs:16:22)
+      at async TestHook.run (node:internal/test_runner/test:1409:7)
+
+test at firebase/tests/full.rules.test.mjs:46:104
+✖ cross-user plans is private (0.038287ms)
+  Error: {"error":{"code":400,"message":"Error compiling rules:\nL18:47 Unexpected 'S'.\nL18:50 token recognition error at: '\\'\nL18:53 mismatched input '') && !d.name.matches('' expecting {'&&', '.', '==', '>', '>=', '[', '<', '<=', '-', '%', '!=', '||', '+', '}', ';', '\/', '*', '?', 'in', 'is'}\nL18:79 Forward slash '\/' found where identifier or binding expected.\nL18:79 Missing 'match' keyword before path.\nL18:80 mismatched input ']' expecting {'&&', '.', '==', '>', '>=', '[', '<', '<=', '-', '%', '!=', '||', '+', '}', ';', '\/', '*', '?', 'in', 'is'}\nL23:32 Missing 'match' keyword before path.\nL23:42 Forward slash '\/' found where identifier or binding expected.\nL23:43 mismatched input '$' expecting {'{', '\/', PATH_SEGMENT}\nL23:54 Missing 'match' keyword before path.\nL23:70 Forward slash '\/' found where identifier or binding expected.\nL23:71 mismatched input '$' expecting {'{', '\/', PATH_SEGMENT}\nL23:77 Missing 'match' keyword before path.\nL23:88 Forward slash '\/' found where identifier or binding expected.\nL23:89 mismatched input '$' expecting {'{', '\/', PATH_SEGMENT}\nL167:1 Unexpected '}'.","status":"INVALID_ARGUMENT"}}
+      at loadFirestoreRules (file:///workspace/scratch/01f41143f560/full/HobbyTracker/firebase/node_modules/@firebase/rules-unit-testing/dist/esm/index.esm.js:400:15)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async initializeTestEnvironment (file:///workspace/scratch/01f41143f560/full/HobbyTracker/firebase/node_modules/@firebase/rules-unit-testing/dist/esm/index.esm.js:485:9)
+      at async TestContext.<anonymous> (file:///workspace/scratch/01f41143f560/full/HobbyTracker/firebase/tests/full.rules.test.mjs:16:22)
+      at async TestHook.run (node:internal/test_runner/test:1409:7)
+
+test at firebase/tests/full.rules.test.mjs:46:104
+✖ cross-user history is private (0.034722ms)
+  Error: {"error":{"code":400,"message":"Error compiling rules:\nL18:47 Unexpected 'S'.\nL18:50 token recognition error at: '\\'\nL18:53 mismatched input '') && !d.name.matches('' expecting {'&&', '.', '==', '>', '>=', '[', '<', '<=', '-', '%', '!=', '||', '+', '}', ';', '\/', '*', '?', 'in', 'is'}\nL18:79 Forward slash '\/' found where identifier or binding expected.\nL18:79 Missing 'match' keyword before path.\nL18:80 mismatched input ']' expecting {'&&', '.', '==', '>', '>=', '[', '<', '<=', '-', '%', '!=', '||', '+', '}', ';', '\/', '*', '?', 'in', 'is'}\nL23:32 Missing 'match' keyword before path.\nL23:42 Forward slash '\/' found where identifier or binding expected.\nL23:43 mismatched input '$' expecting {'{', '\/', PATH_SEGMENT}\nL23:54 Missing 'match' keyword before path.\nL23:70 Forward slash '\/' found where identifier or binding expected.\nL23:71 mismatched input '$' expecting {'{', '\/', PATH_SEGMENT}\nL23:77 Missing 'match' keyword before path.\nL23:88 Forward slash '\/' found where identifier or binding expected.\nL23:89 mismatched input '$' expecting {'{', '\/', PATH_SEGMENT}\nL167:1 Unexpected '}'.","status":"INVALID_ARGUMENT"}}
+      at loadFirestoreRules (file:///workspace/scratch/01f41143f560/full/HobbyTracker/firebase/node_modules/@firebase/rules-unit-testing/dist/esm/index.esm.js:400:15)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async initializeTestEnvironment (file:///workspace/scratch/01f41143f560/full/HobbyTracker/firebase/node_modules/@firebase/rules-unit-testing/dist/esm/index.esm.js:485:9)
+      at async TestContext.<anonymous> (file:///workspace/scratch/01f41143f560/full/HobbyTracker/firebase/tests/full.rules.test.mjs:16:22)
+      at async TestHook.run (node:internal/test_runner/test:1409:7)
+
+test at firebase/tests/full.rules.test.mjs:46:104
+✖ cross-user settings is private (0.165859ms)
+  Error: {"error":{"code":400,"message":"Error compiling rules:\nL18:47 Unexpected 'S'.\nL18:50 token recognition error at: '\\'\nL18:53 mismatched input '') && !d.name.matches('' expecting {'&&', '.', '==', '>', '>=', '[', '<', '<=', '-', '%', '!=', '||', '+', '}', ';', '\/', '*', '?', 'in', 'is'}\nL18:79 Forward slash '\/' found where identifier or binding expected.\nL18:79 Missing 'match' keyword before path.\nL18:80 mismatched input ']' expecting {'&&', '.', '==', '>', '>=', '[', '<', '<=', '-', '%', '!=', '||', '+', '}', ';', '\/', '*', '?', 'in', 'is'}\nL23:32 Missing 'match' keyword before path.\nL23:42 Forward slash '\/' found where identifier or binding expected.\nL23:43 mismatched input '$' expecting {'{', '\/', PATH_SEGMENT}\nL23:54 Missing 'match' keyword before path.\nL23:70 Forward slash '\/' found where identifier or binding expected.\nL23:71 mismatched input '$' expecting {'{', '\/', PATH_SEGMENT}\nL23:77 Missing 'match' keyword before path.\nL23:88 Forward slash '\/' found where identifier or binding expected.\nL23:89 mismatched input '$' expecting {'{', '\/', PATH_SEGMENT}\nL167:1 Unexpected '}'.","status":"INVALID_ARGUMENT"}}
+      at loadFirestoreRules (file:///workspace/scratch/01f41143f560/full/HobbyTracker/firebase/node_modules/@firebase/rules-unit-testing/dist/esm/index.esm.js:400:15)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async initializeTestEnvironment (file:///workspace/scratch/01f41143f560/full/HobbyTracker/firebase/node_modules/@firebase/rules-unit-testing/dist/esm/index.esm.js:485:9)
+      at async TestContext.<anonymous> (file:///workspace/scratch/01f41143f560/full/HobbyTracker/firebase/tests/full.rules.test.mjs:16:22)
+      at async TestHook.run (node:internal/test_runner/test:1409:7)
+
+test at firebase/tests/full.rules.test.mjs:46:104
+✖ cross-user rsvps is private (0.071287ms)
+  Error: {"error":{"code":400,"message":"Error compiling rules:\nL18:47 Unexpected 'S'.\nL18:50 token recognition error at: '\\'\nL18:53 mismatched input '') && !d.name.matches('' expecting {'&&', '.', '==', '>', '>=', '[', '<', '<=', '-', '%', '!=', '||', '+', '}', ';', '\/', '*', '?', 'in', 'is'}\nL18:79 Forward slash '\/' found where identifier or binding expected.\nL18:79 Missing 'match' keyword before path.\nL18:80 mismatched input ']' expecting {'&&', '.', '==', '>', '>=', '[', '<', '<=', '-', '%', '!=', '||', '+', '}', ';', '\/', '*', '?', 'in', 'is'}\nL23:32 Missing 'match' keyword before path.\nL23:42 Forward slash '\/' found where identifier or binding expected.\nL23:43 mismatched input '$' expecting {'{', '\/', PATH_SEGMENT}\nL23:54 Missing 'match' keyword before path.\nL23:70 Forward slash '\/' found where identifier or binding expected.\nL23:71 mismatched input '$' expecting {'{', '\/', PATH_SEGMENT}\nL23:77 Missing 'match' keyword before path.\nL23:88 Forward slash '\/' found where identifier or binding expected.\nL23:89 mismatched input '$' expecting {'{', '\/', PATH_SEGMENT}\nL167:1 Unexpected '}'.","status":"INVALID_ARGUMENT"}}
+      at loadFirestoreRules (file:///workspace/scratch/01f41143f560/full/HobbyTracker/firebase/node_modules/@firebase/rules-unit-testing/dist/esm/index.esm.js:400:15)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async initializeTestEnvironment (file:///workspace/scratch/01f41143f560/full/HobbyTracker/firebase/node_modules/@firebase/rules-unit-testing/dist/esm/index.esm.js:485:9)
+      at async TestContext.<anonymous> (file:///workspace/scratch/01f41143f560/full/HobbyTracker/firebase/tests/full.rules.test.mjs:16:22)
+      at async TestHook.run (node:internal/test_runner/test:1409:7)
+
+test at firebase/tests/full.rules.test.mjs:46:104
+✖ cross-user groupLinks is private (0.075254ms)
+  Error: {"error":{"code":400,"message":"Error compiling rules:\nL18:47 Unexpected 'S'.\nL18:50 token recognition error at: '\\'\nL18:53 mismatched input '') && !d.name.matches('' expecting {'&&', '.', '==', '>', '>=', '[', '<', '<=', '-', '%', '!=', '||', '+', '}', ';', '\/', '*', '?', 'in', 'is'}\nL18:79 Forward slash '\/' found where identifier or binding expected.\nL18:79 Missing 'match' keyword before path.\nL18:80 mismatched input ']' expecting {'&&', '.', '==', '>', '>=', '[', '<', '<=', '-', '%', '!=', '||', '+', '}', ';', '\/', '*', '?', 'in', 'is'}\nL23:32 Missing 'match' keyword before path.\nL23:42 Forward slash '\/' found where identifier or binding expected.\nL23:43 mismatched input '$' expecting {'{', '\/', PATH_SEGMENT}\nL23:54 Missing 'match' keyword before path.\nL23:70 Forward slash '\/' found where identifier or binding expected.\nL23:71 mismatched input '$' expecting {'{', '\/', PATH_SEGMENT}\nL23:77 Missing 'match' keyword before path.\nL23:88 Forward slash '\/' found where identifier or binding expected.\nL23:89 mismatched input '$' expecting {'{', '\/', PATH_SEGMENT}\nL167:1 Unexpected '}'.","status":"INVALID_ARGUMENT"}}
+      at loadFirestoreRules (file:///workspace/scratch/01f41143f560/full/HobbyTracker/firebase/node_modules/@firebase/rules-unit-testing/dist/esm/index.esm.js:400:15)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async initializeTestEnvironment (file:///workspace/scratch/01f41143f560/full/HobbyTracker/firebase/node_modules/@firebase/rules-unit-testing/dist/esm/index.esm.js:485:9)
+      at async TestContext.<anonymous> (file:///workspace/scratch/01f41143f560/full/HobbyTracker/firebase/tests/full.rules.test.mjs:16:22)
+      at async TestHook.run (node:internal/test_runner/test:1409:7)
+
+test at firebase/tests/full.rules.test.mjs:46:104
+✖ cross-user devices is private (0.069595ms)
+  Error: {"error":{"code":400,"message":"Error compiling rules:\nL18:47 Unexpected 'S'.\nL18:50 token recognition error at: '\\'\nL18:53 mismatched input '') && !d.name.matches('' expecting {'&&', '.', '==', '>', '>=', '[', '<', '<=', '-', '%', '!=', '||', '+', '}', ';', '\/', '*', '?', 'in', 'is'}\nL18:79 Forward slash '\/' found where identifier or binding expected.\nL18:79 Missing 'match' keyword before path.\nL18:80 mismatched input ']' expecting {'&&', '.', '==', '>', '>=', '[', '<', '<=', '-', '%', '!=', '||', '+', '}', ';', '\/', '*', '?', 'in', 'is'}\nL23:32 Missing 'match' keyword before path.\nL23:42 Forward slash '\/' found where identifier or binding expected.\nL23:43 mismatched input '$' expecting {'{', '\/', PATH_SEGMENT}\nL23:54 Missing 'match' keyword before path.\nL23:70 Forward slash '\/' found where identifier or binding expected.\nL23:71 mismatched input '$' expecting {'{', '\/', PATH_SEGMENT}\nL23:77 Missing 'match' keyword before path.\nL23:88 Forward slash '\/' found where identifier or binding expected.\nL23:89 mismatched input '$' expecting {'{', '\/', PATH_SEGMENT}\nL167:1 Unexpected '}'.","status":"INVALID_ARGUMENT"}}
+      at loadFirestoreRules (file:///workspace/scratch/01f41143f560/full/HobbyTracker/firebase/node_modules/@firebase/rules-unit-testing/dist/esm/index.esm.js:400:15)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async initializeTestEnvironment (file:///workspace/scratch/01f41143f560/full/HobbyTracker/firebase/node_modules/@firebase/rules-unit-testing/dist/esm/index.esm.js:485:9)
+      at async TestContext.<anonymous> (file:///workspace/scratch/01f41143f560/full/HobbyTracker/firebase/tests/full.rules.test.mjs:16:22)
+      at async TestHook.run (node:internal/test_runner/test:1409:7)
+
+test at firebase/tests/full.rules.test.mjs:49:1
+✖ both Interested and Active may schedule; invalid duration and fake done denied (0.025689ms)
+  Error: {"error":{"code":400,"message":"Error compiling rules:\nL18:47 Unexpected 'S'.\nL18:50 token recognition error at: '\\'\nL18:53 mismatched input '') && !d.name.matches('' expecting {'&&', '.', '==', '>', '>=', '[', '<', '<=', '-', '%', '!=', '||', '+', '}', ';', '\/', '*', '?', 'in', 'is'}\nL18:79 Forward slash '\/' found where identifier or binding expected.\nL18:79 Missing 'match' keyword before path.\nL18:80 mismatched input ']' expecting {'&&', '.', '==', '>', '>=', '[', '<', '<=', '-', '%', '!=', '||', '+', '}', ';', '\/', '*', '?', 'in', 'is'}\nL23:32 Missing 'match' keyword before path.\nL23:42 Forward slash '\/' found where identifier or binding expected.\nL23:43 mismatched input '$' expecting {'{', '\/', PATH_SEGMENT}\nL23:54 Missing 'match' keyword before path.\nL23:70 Forward slash '\/' found where identifier or binding expected.\nL23:71 mismatched input '$' expecting {'{', '\/', PATH_SEGMENT}\nL23:77 Missing 'match' keyword before path.\nL23:88 Forward slash '\/' found where identifier or binding expected.\nL23:89 mismatched input '$' expecting {'{', '\/', PATH_SEGMENT}\nL167:1 Unexpected '}'.","status":"INVALID_ARGUMENT"}}
+      at loadFirestoreRules (file:///workspace/scratch/01f41143f560/full/HobbyTracker/firebase/node_modules/@firebase/rules-unit-testing/dist/esm/index.esm.js:400:15)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async initializeTestEnvironment (file:///workspace/scratch/01f41143f560/full/HobbyTracker/firebase/node_modules/@firebase/rules-unit-testing/dist/esm/index.esm.js:485:9)
+      at async TestContext.<anonymous> (file:///workspace/scratch/01f41143f560/full/HobbyTracker/firebase/tests/full.rules.test.mjs:16:22)
+      at async TestHook.run (node:internal/test_runner/test:1409:7)
+
+test at firebase/tests/full.rules.test.mjs:52:1
+✖ Finish transaction creates one immutable record and completes matching plan (0.048593ms)
+  Error: {"error":{"code":400,"message":"Error compiling rules:\nL18:47 Unexpected 'S'.\nL18:50 token recognition error at: '\\'\nL18:53 mismatched input '') && !d.name.matches('' expecting {'&&', '.', '==', '>', '>=', '[', '<', '<=', '-', '%', '!=', '||', '+', '}', ';', '\/', '*', '?', 'in', 'is'}\nL18:79 Forward slash '\/' found where identifier or binding expected.\nL18:79 Missing 'match' keyword before path.\nL18:80 mismatched input ']' expecting {'&&', '.', '==', '>', '>=', '[', '<', '<=', '-', '%', '!=', '||', '+', '}', ';', '\/', '*', '?', 'in', 'is'}\nL23:32 Missing 'match' keyword before path.\nL23:42 Forward slash '\/' found where identifier or binding expected.\nL23:43 mismatched input '$' expecting {'{', '\/', PATH_SEGMENT}\nL23:54 Missing 'match' keyword before path.\nL23:70 Forward slash '\/' found where identifier or binding expected.\nL23:71 mismatched input '$' expecting {'{', '\/', PATH_SEGMENT}\nL23:77 Missing 'match' keyword before path.\nL23:88 Forward slash '\/' found where identifier or binding expected.\nL23:89 mismatched input '$' expecting {'{', '\/', PATH_SEGMENT}\nL167:1 Unexpected '}'.","status":"INVALID_ARGUMENT"}}
+      at loadFirestoreRules (file:///workspace/scratch/01f41143f560/full/HobbyTracker/firebase/node_modules/@firebase/rules-unit-testing/dist/esm/index.esm.js:400:15)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async initializeTestEnvironment (file:///workspace/scratch/01f41143f560/full/HobbyTracker/firebase/node_modules/@firebase/rules-unit-testing/dist/esm/index.esm.js:485:9)
+      at async TestContext.<anonymous> (file:///workspace/scratch/01f41143f560/full/HobbyTracker/firebase/tests/full.rules.test.mjs:16:22)
+      at async TestHook.run (node:internal/test_runner/test:1409:7)
+
+test at firebase/tests/full.rules.test.mjs:58:1
+✖ history rejects forged snapshots, invalid duration, client time and unlinked plan (0.024808ms)
+  Error: {"error":{"code":400,"message":"Error compiling rules:\nL18:47 Unexpected 'S'.\nL18:50 token recognition error at: '\\'\nL18:53 mismatched input '') && !d.name.matches('' expecting {'&&', '.', '==', '>', '>=', '[', '<', '<=', '-', '%', '!=', '||', '+', '}', ';', '\/', '*', '?', 'in', 'is'}\nL18:79 Forward slash '\/' found where identifier or binding expected.\nL18:79 Missing 'match' keyword before path.\nL18:80 mismatched input ']' expecting {'&&', '.', '==', '>', '>=', '[', '<', '<=', '-', '%', '!=', '||', '+', '}', ';', '\/', '*', '?', 'in', 'is'}\nL23:32 Missing 'match' keyword before path.\nL23:42 Forward slash '\/' found where identifier or binding expected.\nL23:43 mismatched input '$' expecting {'{', '\/', PATH_SEGMENT}\nL23:54 Missing 'match' keyword before path.\nL23:70 Forward slash '\/' found where identifier or binding expected.\nL23:71 mismatched input '$' expecting {'{', '\/', PATH_SEGMENT}\nL23:77 Missing 'match' keyword before path.\nL23:88 Forward slash '\/' found where identifier or binding expected.\nL23:89 mismatched input '$' expecting {'{', '\/', PATH_SEGMENT}\nL167:1 Unexpected '}'.","status":"INVALID_ARGUMENT"}}
+      at loadFirestoreRules (file:///workspace/scratch/01f41143f560/full/HobbyTracker/firebase/node_modules/@firebase/rules-unit-testing/dist/esm/index.esm.js:400:15)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async initializeTestEnvironment (file:///workspace/scratch/01f41143f560/full/HobbyTracker/firebase/node_modules/@firebase/rules-unit-testing/dist/esm/index.esm.js:485:9)
+      at async TestContext.<anonymous> (file:///workspace/scratch/01f41143f560/full/HobbyTracker/firebase/tests/full.rules.test.mjs:16:22)
+      at async TestHook.run (node:internal/test_runner/test:1409:7)
+
+test at firebase/tests/full.rules.test.mjs:61:1
+✖ preferences and public projection validate shapes and privacy query (0.023936ms)
+  Error: {"error":{"code":400,"message":"Error compiling rules:\nL18:47 Unexpected 'S'.\nL18:50 token recognition error at: '\\'\nL18:53 mismatched input '') && !d.name.matches('' expecting {'&&', '.', '==', '>', '>=', '[', '<', '<=', '-', '%', '!=', '||', '+', '}', ';', '\/', '*', '?', 'in', 'is'}\nL18:79 Forward slash '\/' found where identifier or binding expected.\nL18:79 Missing 'match' keyword before path.\nL18:80 mismatched input ']' expecting {'&&', '.', '==', '>', '>=', '[', '<', '<=', '-', '%', '!=', '||', '+', '}', ';', '\/', '*', '?', 'in', 'is'}\nL23:32 Missing 'match' keyword before path.\nL23:42 Forward slash '\/' found where identifier or binding expected.\nL23:43 mismatched input '$' expecting {'{', '\/', PATH_SEGMENT}\nL23:54 Missing 'match' keyword before path.\nL23:70 Forward slash '\/' found where identifier or binding expected.\nL23:71 mismatched input '$' expecting {'{', '\/', PATH_SEGMENT}\nL23:77 Missing 'match' keyword before path.\nL23:88 Forward slash '\/' found where identifier or binding expected.\nL23:89 mismatched input '$' expecting {'{', '\/', PATH_SEGMENT}\nL167:1 Unexpected '}'.","status":"INVALID_ARGUMENT"}}
+      at loadFirestoreRules (file:///workspace/scratch/01f41143f560/full/HobbyTracker/firebase/node_modules/@firebase/rules-unit-testing/dist/esm/index.esm.js:400:15)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async initializeTestEnvironment (file:///workspace/scratch/01f41143f560/full/HobbyTracker/firebase/node_modules/@firebase/rules-unit-testing/dist/esm/index.esm.js:485:9)
+      at async TestContext.<anonymous> (file:///workspace/scratch/01f41143f560/full/HobbyTracker/firebase/tests/full.rules.test.mjs:16:22)
+      at async TestHook.run (node:internal/test_runner/test:1409:7)
+
+test at firebase/tests/full.rules.test.mjs:65:1
+✖ posts use real author and schema; anonymous/impersonation denied (0.023866ms)
+  Error: {"error":{"code":400,"message":"Error compiling rules:\nL18:47 Unexpected 'S'.\nL18:50 token recognition error at: '\\'\nL18:53 mismatched input '') && !d.name.matches('' expecting {'&&', '.', '==', '>', '>=', '[', '<', '<=', '-', '%', '!=', '||', '+', '}', ';', '\/', '*', '?', 'in', 'is'}\nL18:79 Forward slash '\/' found where identifier or binding expected.\nL18:79 Missing 'match' keyword before path.\nL18:80 mismatched input ']' expecting {'&&', '.', '==', '>', '>=', '[', '<', '<=', '-', '%', '!=', '||', '+', '}', ';', '\/', '*', '?', 'in', 'is'}\nL23:32 Missing 'match' keyword before path.\nL23:42 Forward slash '\/' found where identifier or binding expected.\nL23:43 mismatched input '$' expecting {'{', '\/', PATH_SEGMENT}\nL23:54 Missing 'match' keyword before path.\nL23:70 Forward slash '\/' found where identifier or binding expected.\nL23:71 mismatched input '$' expecting {'{', '\/', PATH_SEGMENT}\nL23:77 Missing 'match' keyword before path.\nL23:88 Forward slash '\/' found where identifier or binding expected.\nL23:89 mismatched input '$' expecting {'{', '\/', PATH_SEGMENT}\nL167:1 Unexpected '}'.","status":"INVALID_ARGUMENT"}}
+      at loadFirestoreRules (file:///workspace/scratch/01f41143f560/full/HobbyTracker/firebase/node_modules/@firebase/rules-unit-testing/dist/esm/index.esm.js:400:15)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async initializeTestEnvironment (file:///workspace/scratch/01f41143f560/full/HobbyTracker/firebase/node_modules/@firebase/rules-unit-testing/dist/esm/index.esm.js:485:9)
+      at async TestContext.<anonymous> (file:///workspace/scratch/01f41143f560/full/HobbyTracker/firebase/tests/full.rules.test.mjs:16:22)
+      at async TestHook.run (node:internal/test_runner/test:1409:7)
+
+test at firebase/tests/full.rules.test.mjs:68:1
+✖ likes and comments permit self; impersonation and oversized input denied (0.151378ms)
+  Error: {"error":{"code":400,"message":"Error compiling rules:\nL18:47 Unexpected 'S'.\nL18:50 token recognition error at: '\\'\nL18:53 mismatched input '') && !d.name.matches('' expecting {'&&', '.', '==', '>', '>=', '[', '<', '<=', '-', '%', '!=', '||', '+', '}', ';', '\/', '*', '?', 'in', 'is'}\nL18:79 Forward slash '\/' found where identifier or binding expected.\nL18:79 Missing 'match' keyword before path.\nL18:80 mismatched input ']' expecting {'&&', '.', '==', '>', '>=', '[', '<', '<=', '-', '%', '!=', '||', '+', '}', ';', '\/', '*', '?', 'in', 'is'}\nL23:32 Missing 'match' keyword before path.\nL23:42 Forward slash '\/' found where identifier or binding expected.\nL23:43 mismatched input '$' expecting {'{', '\/', PATH_SEGMENT}\nL23:54 Missing 'match' keyword before path.\nL23:70 Forward slash '\/' found where identifier or binding expected.\nL23:71 mismatched input '$' expecting {'{', '\/', PATH_SEGMENT}\nL23:77 Missing 'match' keyword before path.\nL23:88 Forward slash '\/' found where identifier or binding expected.\nL23:89 mismatched input '$' expecting {'{', '\/', PATH_SEGMENT}\nL167:1 Unexpected '}'.","status":"INVALID_ARGUMENT"}}
+      at loadFirestoreRules (file:///workspace/scratch/01f41143f560/full/HobbyTracker/firebase/node_modules/@firebase/rules-unit-testing/dist/esm/index.esm.js:400:15)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async initializeTestEnvironment (file:///workspace/scratch/01f41143f560/full/HobbyTracker/firebase/node_modules/@firebase/rules-unit-testing/dist/esm/index.esm.js:485:9)
+      at async TestContext.<anonymous> (file:///workspace/scratch/01f41143f560/full/HobbyTracker/firebase/tests/full.rules.test.mjs:16:22)
+      at async TestHook.run (node:internal/test_runner/test:1409:7)
+
+test at firebase/tests/full.rules.test.mjs:72:1
+✖ group creator/member/link atomic, non-members denied chat; join enables chat (0.229545ms)
+  Error: {"error":{"code":400,"message":"Error compiling rules:\nL18:47 Unexpected 'S'.\nL18:50 token recognition error at: '\\'\nL18:53 mismatched input '') && !d.name.matches('' expecting {'&&', '.', '==', '>', '>=', '[', '<', '<=', '-', '%', '!=', '||', '+', '}', ';', '\/', '*', '?', 'in', 'is'}\nL18:79 Forward slash '\/' found where identifier or binding expected.\nL18:79 Missing 'match' keyword before path.\nL18:80 mismatched input ']' expecting {'&&', '.', '==', '>', '>=', '[', '<', '<=', '-', '%', '!=', '||', '+', '}', ';', '\/', '*', '?', 'in', 'is'}\nL23:32 Missing 'match' keyword before path.\nL23:42 Forward slash '\/' found where identifier or binding expected.\nL23:43 mismatched input '$' expecting {'{', '\/', PATH_SEGMENT}\nL23:54 Missing 'match' keyword before path.\nL23:70 Forward slash '\/' found where identifier or binding expected.\nL23:71 mismatched input '$' expecting {'{', '\/', PATH_SEGMENT}\nL23:77 Missing 'match' keyword before path.\nL23:88 Forward slash '\/' found where identifier or binding expected.\nL23:89 mismatched input '$' expecting {'{', '\/', PATH_SEGMENT}\nL167:1 Unexpected '}'.","status":"INVALID_ARGUMENT"}}
+      at loadFirestoreRules (file:///workspace/scratch/01f41143f560/full/HobbyTracker/firebase/node_modules/@firebase/rules-unit-testing/dist/esm/index.esm.js:400:15)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async initializeTestEnvironment (file:///workspace/scratch/01f41143f560/full/HobbyTracker/firebase/node_modules/@firebase/rules-unit-testing/dist/esm/index.esm.js:485:9)
+      at async TestContext.<anonymous> (file:///workspace/scratch/01f41143f560/full/HobbyTracker/firebase/tests/full.rules.test.mjs:16:22)
+      at async TestHook.run (node:internal/test_runner/test:1409:7)
+
+test at firebase/tests/full.rules.test.mjs:77:1
+✖ DM participants immutable, opt-in enforced, outside account denied (0.040552ms)
+  Error: {"error":{"code":400,"message":"Error compiling rules:\nL18:47 Unexpected 'S'.\nL18:50 token recognition error at: '\\'\nL18:53 mismatched input '') && !d.name.matches('' expecting {'&&', '.', '==', '>', '>=', '[', '<', '<=', '-', '%', '!=', '||', '+', '}', ';', '\/', '*', '?', 'in', 'is'}\nL18:79 Forward slash '\/' found where identifier or binding expected.\nL18:79 Missing 'match' keyword before path.\nL18:80 mismatched input ']' expecting {'&&', '.', '==', '>', '>=', '[', '<', '<=', '-', '%', '!=', '||', '+', '}', ';', '\/', '*', '?', 'in', 'is'}\nL23:32 Missing 'match' keyword before path.\nL23:42 Forward slash '\/' found where identifier or binding expected.\nL23:43 mismatched input '$' expecting {'{', '\/', PATH_SEGMENT}\nL23:54 Missing 'match' keyword before path.\nL23:70 Forward slash '\/' found where identifier or binding expected.\nL23:71 mismatched input '$' expecting {'{', '\/', PATH_SEGMENT}\nL23:77 Missing 'match' keyword before path.\nL23:88 Forward slash '\/' found where identifier or binding expected.\nL23:89 mismatched input '$' expecting {'{', '\/', PATH_SEGMENT}\nL167:1 Unexpected '}'.","status":"INVALID_ARGUMENT"}}
+      at loadFirestoreRules (file:///workspace/scratch/01f41143f560/full/HobbyTracker/firebase/node_modules/@firebase/rules-unit-testing/dist/esm/index.esm.js:400:15)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async initializeTestEnvironment (file:///workspace/scratch/01f41143f560/full/HobbyTracker/firebase/node_modules/@firebase/rules-unit-testing/dist/esm/index.esm.js:485:9)
+      at async TestContext.<anonymous> (file:///workspace/scratch/01f41143f560/full/HobbyTracker/firebase/tests/full.rules.test.mjs:16:22)
+      at async TestHook.run (node:internal/test_runner/test:1409:7)
+
+test at firebase/tests/full.rules.test.mjs:82:1
+✖ RSVP alone adds no calendar entry; explicit Add to Home requires RSVP (0.068483ms)
+  Error: {"error":{"code":400,"message":"Error compiling rules:\nL18:47 Unexpected 'S'.\nL18:50 token recognition error at: '\\'\nL18:53 mismatched input '') && !d.name.matches('' expecting {'&&', '.', '==', '>', '>=', '[', '<', '<=', '-', '%', '!=', '||', '+', '}', ';', '\/', '*', '?', 'in', 'is'}\nL18:79 Forward slash '\/' found where identifier or binding expected.\nL18:79 Missing 'match' keyword before path.\nL18:80 mismatched input ']' expecting {'&&', '.', '==', '>', '>=', '[', '<', '<=', '-', '%', '!=', '||', '+', '}', ';', '\/', '*', '?', 'in', 'is'}\nL23:32 Missing 'match' keyword before path.\nL23:42 Forward slash '\/' found where identifier or binding expected.\nL23:43 mismatched input '$' expecting {'{', '\/', PATH_SEGMENT}\nL23:54 Missing 'match' keyword before path.\nL23:70 Forward slash '\/' found where identifier or binding expected.\nL23:71 mismatched input '$' expecting {'{', '\/', PATH_SEGMENT}\nL23:77 Missing 'match' keyword before path.\nL23:88 Forward slash '\/' found where identifier or binding expected.\nL23:89 mismatched input '$' expecting {'{', '\/', PATH_SEGMENT}\nL167:1 Unexpected '}'.","status":"INVALID_ARGUMENT"}}
+      at loadFirestoreRules (file:///workspace/scratch/01f41143f560/full/HobbyTracker/firebase/node_modules/@firebase/rules-unit-testing/dist/esm/index.esm.js:400:15)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async initializeTestEnvironment (file:///workspace/scratch/01f41143f560/full/HobbyTracker/firebase/node_modules/@firebase/rules-unit-testing/dist/esm/index.esm.js:485:9)
+      at async TestContext.<anonymous> (file:///workspace/scratch/01f41143f560/full/HobbyTracker/firebase/tests/full.rules.test.mjs:16:22)
+      at async TestHook.run (node:internal/test_runner/test:1409:7)
+
+test at firebase/tests/full.rules.test.mjs:86:1
+✖ events and device tokens validate owner and types; unknown paths denied (0.031358ms)
+  Error: {"error":{"code":400,"message":"Error compiling rules:\nL18:47 Unexpected 'S'.\nL18:50 token recognition error at: '\\'\nL18:53 mismatched input '') && !d.name.matches('' expecting {'&&', '.', '==', '>', '>=', '[', '<', '<=', '-', '%', '!=', '||', '+', '}', ';', '\/', '*', '?', 'in', 'is'}\nL18:79 Forward slash '\/' found where identifier or binding expected.\nL18:79 Missing 'match' keyword before path.\nL18:80 mismatched input ']' expecting {'&&', '.', '==', '>', '>=', '[', '<', '<=', '-', '%', '!=', '||', '+', '}', ';', '\/', '*', '?', 'in', 'is'}\nL23:32 Missing 'match' keyword before path.\nL23:42 Forward slash '\/' found where identifier or binding expected.\nL23:43 mismatched input '$' expecting {'{', '\/', PATH_SEGMENT}\nL23:54 Missing 'match' keyword before path.\nL23:70 Forward slash '\/' found where identifier or binding expected.\nL23:71 mismatched input '$' expecting {'{', '\/', PATH_SEGMENT}\nL23:77 Missing 'match' keyword before path.\nL23:88 Forward slash '\/' found where identifier or binding expected.\nL23:89 mismatched input '$' expecting {'{', '\/', PATH_SEGMENT}\nL167:1 Unexpected '}'.","status":"INVALID_ARGUMENT"}}
+      at loadFirestoreRules (file:///workspace/scratch/01f41143f560/full/HobbyTracker/firebase/node_modules/@firebase/rules-unit-testing/dist/esm/index.esm.js:400:15)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async initializeTestEnvironment (file:///workspace/scratch/01f41143f560/full/HobbyTracker/firebase/node_modules/@firebase/rules-unit-testing/dist/esm/index.esm.js:485:9)
+      at async TestContext.<anonymous> (file:///workspace/scratch/01f41143f560/full/HobbyTracker/firebase/tests/full.rules.test.mjs:16:22)
+      at async TestHook.run (node:internal/test_runner/test:1409:7)

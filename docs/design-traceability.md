@@ -1,8 +1,10 @@
+> **Cập nhật Work 03/11/2026 (ưu tiên hơn ghi chú lịch sử bên dưới):** Phase02 PARTIAL; `flutter analyze` đạt, 41 unit/widget tests và 9 local Firestore Rules tests đạt. Android/Firebase thật/Figma parity chưa có evidence; Phase03 NOT STARTED. Chi tiết tại [Phase02 report](phase-02-report.md) và [manual acceptance](phase-02-manual-acceptance.md). Những dòng “NOT RUN/missing SDK/source only” cũ bên dưới mô tả thời điểm viết, không thay kết quả lần này.
+
 # Truy vết thiết kế — phase 00
 
 Ngày đối chiếu: 02/11/2026. Trạng thái: DRAFT FOR REVIEW; mọi route/widget/ViewModel là đề xuất, chưa có code. Không dùng bảng này làm bằng chứng app đã chạy.
 
-Nguồn: [Specification](../reference/Specification.html#screens) mục 03–08, [Prototype](../reference/Prototype.html), [DesignArchive](../reference/DesignArchive.html), Figma và PDF Lab 3 mục 3–7. Bằng chứng đọc Figma: [cấu trúc](../evidence/00/figma-structure.json), [node inventory](../evidence/00/figma-node-inventory.json).
+Nguồn: [Specification](requirements/reference/Specification.html#screens) mục 03–08, [Prototype](requirements/reference/Prototype.html), [DesignArchive](requirements/reference/DesignArchive.html), Figma và PDF Lab 3 mục 3–7. Bằng chứng đọc Figma: [cấu trúc](evidence/00/figma-structure.json), [node inventory](evidence/00/figma-node-inventory.json).
 
 ## Màn hình → triển khai → kiểm thử
 
@@ -10,9 +12,9 @@ Nguồn: [Specification](../reference/Specification.html#screens) mục 03–08,
 
 | ID | Màn / Figma | Route đề xuất | Widget / ViewModel | Nguồn dữ liệu | Phase | Test | Trạng thái |
 |---|---|---|---|---|---|---|---|
-| S01 | [Login](https://www.figma.com/design/5JiJtLyXN6DEpC1LycQPBb/Untitled?node-id=7-8) | `/auth/login` | `LoginScreen` / `AuthViewModel` | AuthService | 02 | TC01 | PLANNED |
-| S02 | [Register](https://www.figma.com/design/5JiJtLyXN6DEpC1LycQPBb/Untitled?node-id=7-52) | `/auth/register` | `RegisterScreen` / `AuthViewModel` | AuthService | 02 | TC02 | PLANNED |
-| S03 | [Forgot Password](https://www.figma.com/design/5JiJtLyXN6DEpC1LycQPBb/Untitled?node-id=7-101) | `/auth/forgot-password` | `ForgotPasswordScreen` / `AuthViewModel` | AuthService | 02 | TC02 | PLANNED |
+| S01 | [Login](https://www.figma.com/design/5JiJtLyXN6DEpC1LycQPBb/Untitled?node-id=7-8) | `/auth/login` | `LoginScreen` / `AuthViewModel` | AuthService | 02 | TC01 | SOURCE IMPLEMENTED; Firebase/device NOT RUN |
+| S02 | [Register](https://www.figma.com/design/5JiJtLyXN6DEpC1LycQPBb/Untitled?node-id=7-52) | `/auth/register` | `RegisterScreen` / `AuthViewModel` | AuthService | 02 | TC02 | SOURCE IMPLEMENTED; Firebase/device NOT RUN |
+| S03 | [Forgot Password](https://www.figma.com/design/5JiJtLyXN6DEpC1LycQPBb/Untitled?node-id=7-101) | `/auth/forgot-password` | `ForgotPasswordScreen` / `AuthViewModel` | AuthService | 02 | TC02 | SOURCE IMPLEMENTED; Firebase/device NOT RUN |
 | S04 | [Home](https://www.figma.com/design/5JiJtLyXN6DEpC1LycQPBb/Untitled?node-id=9-44) | `/home` | `HomeScreen` / `HomeViewModel` | ScheduleRepository + ActivityRepository | 04 | TC04 | PLANNED |
 | S05 | [Hyper Mode](https://www.figma.com/design/5JiJtLyXN6DEpC1LycQPBb/Untitled?node-id=9-147) | `/home/hyper` | `HyperScreen` / `HyperViewModel` | TimerService + ActivityRepository + ScheduleRepository + ExternalLinkService | 04 | TC05 | PLANNED |
 | S06 | [My Hobbies](https://www.figma.com/design/5JiJtLyXN6DEpC1LycQPBb/Untitled?node-id=9-232) | `/hobbies` | `HobbiesScreen` / `HobbiesViewModel` | HobbyRepository | 03 | TC03 | PLANNED |
@@ -86,3 +88,84 @@ Nguồn: [Specification](../reference/Specification.html#screens) mục 03–08,
 | DX08 | Specification mục 11 ghi Figma chỉ 3 trang (ghi chú cũ) | Kiểm tra trực tiếp nay có 6 trang theo chức năng; không khẳng định đúng nội dung 6 trang rubric | D01 còn OPEN; giữ nguồn gốc nguyên bản |
 
 Nguồn mẫu journal/search/chart trong PDF chỉ là ví dụ. Không thêm chức năng tìm journal/chart vào Hobby Tracker. AI code review là bắt buộc; Gemini trong app, Staff/Admin và web thuộc Final, ngoài phase 00–08.
+
+## Phase 01 source implementation — 03/11/2026
+
+- `lib/app/router/app_router.dart` now declares all **S01–S15** paths and six S15 Settings sections, with 4 StatefulShellRoute branches. Route presence is source-level, **not proof of successful Android runtime**.
+- S01–S03 now use real Firebase Auth service via `lib/features/auth/screens/auth_screens.dart` and route guards, but require owner configuration and runtime evidence. S04–S15 features remain transparent placeholders for phases 03–06.
+- C01–C10 implementation skeleton lives in `lib/widgets/`; no full Figma pixel parity claim. Tests created under `test/` but cannot be marked PASS without Flutter SDK.
+- **DX09 (Phase01 temporary scaffold):** initial route `/home` is visible without signing in, solely for shell testing; not a production auth bypass. Phase02 must implement real auth-state redirects; no demo credentials or dummy logged-in UID.
+- **DX10 (Phase01 temporary UI):** route screens intentionally display a feature-unavailable placeholder instead of the final Figma screens. This deviation is temporary and must be removed by the corresponding implementation phase; it does not count as Lab2 screens complete.
+- Design approval D01 and HTML source provenance D05 remain **OPEN/BLOCKED**, and UI screenshots/route-back behavior on device are **NOT RUN**. See `docs/phase-01-report.md`.
+
+## Phase 02 traceability note (source authored, no runtime PASS)
+
+S01→AuthScreens.LoginScreen / AuthViewModel / FirebaseAuthService; S02→RegisterScreen; S03→ForgotPasswordScreen. Settings sign-out/explicit linking via AuthSettingsPanel. Profile owner creation is transaction-based and Firestore Rules deny other UIDs. Google cancel, invalid password, account conflict and offline profile errors have explicit handling. The Figma match and Firebase Console evidence are NOT VERIFIED.
+
+## DX11–DX13 — Work Phase02 correctness
+
+- **DX11:** Auth profile-error recovery có “Đổi tài khoản” + confirmation để thoát phiên lỗi mà không mở Settings bị guard chặn. Đây là recovery ngoài shell, không thêm Sign Out vào Home; cần cập nhật/review state này trên Figma.
+- **DX12:** S02 bổ sung Tên hiển thị theo Specification và handoff; giữ component/theme, validation 2–80 ký tự. Widget tests 360/412 đạt; Figma/device parity vẫn chưa được xác minh.
+- **DX13:** Account actions nằm cuối Settings theo invariant Sign Out. Luồng bootstrap thêm timeout/error/retry; không đổi 4 tab hoặc thêm fake content.
+
+
+## Full integration update 03/11/2026 — supersedes historical NOT STARTED notes
+
+S04–S15 now route to implemented practice/hobbies/community/settings views. Shared FeaturePage/AsyncPanel provide actual async loading/error/retry and domain empty states. Old placeholder classes/catalog were removed. DX14: hobby deletion uses logical archive/name release and plan filtering to preserve immutable history. DX15: local reminder preferences require native permission/device acceptance; weekly summary schedules the next instance during app sync. DX16: For You ranks topic matches by Active/Interested but never locks scheduling/Hyper. DX17: native package chosen vn.prm393.hobbytracker. DX18: theme morphology foundation differs by radius/elevation/monospace, full Figma visual approval still blocked.
+
+Ten test-harness renders cover main tabs/Hyper at 360/412 using test fixtures and explicit fonts. They demonstrate code rendering, not Android/Figma pixel parity. Figma update/review remains required. No design file was modified.
+
+
+## Live Figma update — 03/11/2026
+
+DX19: User explicitly requests all Figma screens/colors/UI/UX applied to app. Live source file 5JiJtLyXN6DEpC1LycQPBb accessed; all 30 contexts retrieved with screenshots. Applied Inter, source SVGs, seven exact palette sets, shared brand/navigation, features and settings. See docs/figma-ui-report.md for intentional native/Firebase adaptations and unresolved Groups & follows / Preferred reminder time gaps. Human visual acceptance pending; no 100% or pixel parity claim.
+
+## DX20–DX21 — audit bug fixes, 03/11/2026
+
+- DX20 (Home/Calendar + four-tab shell): >=48dp day widths, horizontal scroll when needed, dynamic calendar height and text-scaled nav height/font 12sp. Reason: reproduced 200% text overflow and small day targets. Widget tests pass; human visual approval pending.
+- DX21 (Conversation + Settings): bounded lazy reversed message list and keyboard-visible composer, preference rollback/retry, sender opt-in guidance, and grouped Lab3 diagnostics. Reason: usable long chats and truthful async state. No Firestore permissions were weakened or simulated data introduced. See docs/bugfix-report.md.
+- Timer same-hobby/plan selection and bottom-tab pause, notification storage parsing: correctness repairs preserving Flow 2 and owner isolation, not new product flows.
+
+## DX22 — shared feedback and navigation stability, 03/11/2026
+
+Settings and all signed-in routes retain their current page/draft during same-UID Auth metadata refresh. Success feedback is a 3-second dismissible SnackBar instead of a persistent top card; errors stay inline and dismissible, feedback clears on navigation without erasing PDF or drafts. Reason: reproduced user reports of save->Home and stuck success banners. Figma routes/flows unchanged; visual adaptation human approval pending. Evidence: docs/navigation-feedback-report.md, 81 Flutter tests and native Connected Apps smoke. No new cloud deployment.
+
+## DX23 — English/Vietnamese language setting, 03/11/2026
+
+User explicitly requests a Language category and consistent English or Vietnamese copy. Added seventh Settings detail section (not a bottom tab), local language persistence and localization of app-owned UI/errors/pickers/generated reports/reminders. Existing user content, Firebase fields and three flows remain intact. User authorization covers this functional extension; exact visual review remains pending. See docs/localization-report.md and docs/evidence/06/localization/.
+
+## Repository organization — 03/11/2026
+
+User requests separating app code from supplied requirements/documents for GitHub. Materials moved under docs/ according to docs/repository-layout-report.md; original reference inputs and raw evidence hashes unchanged. No screen, flow, theme, authentication, language behavior or Firebase schema change.
+
+## Moments backend step 1 — 04/11/2026
+
+User authorizes the first backend step of the lecturer-requested three-hour activity photos. This adds group-scoped media and APIs, not a fifth tab or a change to original three flows. No new Flutter screen is implemented yet. Backend serves authenticated bytes rather than direct Storage download URLs after an emulator regression reproduced token generation; details and limitations in [backend contract](../functions/README.md). Existing requirements/reference files remain unchanged.
+
+## Moments Flutter step 2 — 04/11/2026
+
+User explicitly authorizes step 2 in chat. Community Feed and joined group cards link to Moments; new list, photo composer and private viewer reuse FeaturePage, existing button/card/theme tokens and English/Vietnamese display strings. Bottom navigation remains Home / Community / My Hobbies / Settings. Camera/gallery, progress/retry, server expiry countdown and author retract implement the new group-photo flow.
+
+These screens are a proposed extension of the existing design: no new matching Figma frames or lecturer visual acceptance are claimed. Widget checks cover 360/412dp in both languages and the composer at 200% text. Device picker/visual review and two-account acceptance are still pending. Popup/notification presentation is outside this step. See [step 2 report](moments-ui-step2-report.md).
+
+## Moments alerts step 3 — 04/11/2026
+
+User requests step 3. Added nonmodal group-photo banner (six seconds maximum), a noninteractive pending label during Hyper, a link from Moments to notification settings/reference inbox, opt-in/mute and lockscreen preference. Four bottom tabs and the three original flows remain. New app-owned text has English/Vietnamese entries; user names/content are not translated. New UI has no dedicated approved Figma frames; visual acceptance and native notification behavior remain pending. Widget tests exercise 360/412dp × en/vi and 200% settings text. See [step 3 report](moments-alerts-step3-report.md).
+
+## Moments step 4 — 04/11/2026
+
+User authorizes cleanup and demo/regression preparation. No new screen or layout changes. Expired reference inbox entries are now removed by cleanup, notification timing/UID checks hardened, and local seen/index records have bounded housekeeping retention. Original references and four-tab/three-flow design remain unchanged. Functional tests are not new Figma or lecturer visual approval; native/cloud acceptance remains pending. See [step 4 report](moments-cleanup-step4-report.md).
+
+## Moments cloud step 5 — 04/11/2026
+
+User authorizes the existing Firebase project rollout without a plan change. No app UI/behavior source changed. Added read-only preflight and package exclusions for test/emulator scripts. Actual billing/bucket prerequisites block cloud deployment; this is not teacher/device/cloud acceptance. See [step 5 report](moments-cloud-step5-report.md).
+
+## Khoảnh khắc Cloudinary + API riêng — 04/11/2026
+
+User-approved migration replaces the production transport/storage and worker hosting only. Existing four-tab navigation, photo picker/composer/list/viewer and three-hour server expiry remain. New missing-config message has Vietnamese/English copy; no separate approved Figma frame is claimed. Foreground and background thumbnails share the same API URL; legacy debug emulator adapter remains for regression. No UI redesign, friendship, Admin/web/AI expansion or lecturer visual acceptance. See [run guide](moments-cloudinary-run.md) and [implementation report](moments-cloudinary-report.md).
+
+## Lên lịch tập trung theo ảnh trước/sau — 04/11/2026
+
+Người dùng yêu cầu thay form lập lịch theo ảnh đề xuất mới của team sau góp ý giảng viên. Ảnh nguồn được giữ nguyên tại docs/design/quick-schedule-proposal.png; không sửa reference HTML/PDF hoặc tự nhận live Figma đã đổi. Áp dụng Home + Hobby Detail scheduling sheet: hobby tiles từ dữ liệu thật và Khác, tên tự điền/sửa được, ngày/giờ cạnh nhau, presets 15/30/60/120 phút và custom, repeat tùy chọn, CTA Tạo lịch. Người dùng xác nhận daily/weekly with end date bằng câu trả lời trong chat. Home có shortcuts mở form điền sẵn.
+
+Quyết định triển khai để review: custom 1–1440 phút, tối đa 100 buổi/lần, end inclusive/default 28 ngày; các buổi là plan độc lập, không whole-series editing. Đây không phải giới hạn trong PDF/ảnh gốc. Bốn tab, ba flow, RSVP chủ động, timer actual active time và quyền owner giữ nguyên. Render 360/412dp en/vi và 200% text đã kiểm tra; user/native visual acceptance còn pending. Xem quick-schedule-update.md và evidence/04/quick-schedule/.

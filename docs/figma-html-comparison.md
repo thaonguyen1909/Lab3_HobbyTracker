@@ -1,10 +1,10 @@
 # Đối chiếu Figma và HTML
 
-Ngày: 02/11/2026. File key: 5JiJtLyXN6DEpC1LycQPBb. Đọc bằng MCP, không chỉnh canvas. Session: 67b70401-4f9c-4d3d-b082-f19d216181f7.
+Ngày audit nguồn: 02/11/2026; **chưa xác minh lại trực tiếp ngày 03/11/2026** vì Figma báo thiếu quyền Editor. File key: 5JiJtLyXN6DEpC1LycQPBb. Đọc bằng MCP, không chỉnh canvas. Session: 67b70401-4f9c-4d3d-b082-f19d216181f7.
 
 ## Phương pháp và giới hạn
 
-Đọc metadata 6 trang, quét reactions và flowStartingPoints trên từng trang; kết quả lưu trong evidence/00/*.json. Xem ảnh render trực tiếp 7:8 (Login), 9:44 (Home), 9:356 (Creator), 9:1697 (Appearance). Các ảnh đã xem qua tool, không có ảnh PNG lưu trong repo; không ghi là evidence screenshot đã nộp. Các màn còn lại đối chiếu cấu trúc/tên node, chưa kiểm tra thị giác từng pixel. HTML được đọc Specification, DesignArchive và các handler trong Prototype; không có báo cáo chạy lại toàn bộ flow trong lần audit này. Đây không phải test report E2E.
+Đọc metadata 6 trang, quét reactions và flowStartingPoints trên từng trang; kết quả lưu trong docs/evidence/00/*.json. Xem ảnh render trực tiếp 7:8 (Login), 9:44 (Home), 9:356 (Creator), 9:1697 (Appearance). Các ảnh đã xem qua tool, không có ảnh PNG lưu trong repo; không ghi là evidence screenshot đã nộp. Các màn còn lại đối chiếu cấu trúc/tên node, chưa kiểm tra thị giác từng pixel. HTML được đọc Specification, DesignArchive và các handler trong Prototype; không có báo cáo chạy lại toàn bộ flow trong lần audit này. Đây không phải test report E2E.
 
 ## Kết quả
 

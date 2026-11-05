@@ -1,0 +1,271 @@
+const imgIconLeaf = "assets/figma/eabc883f-43c9-4c88-9363-e1587c6afedd.svg";
+const imgThemeMotifDark = "assets/figma/a9cac432-d73c-4f2c-b9ac-552f5283049f.svg";
+const imgIconBack = "assets/figma/890a0c8d-2105-4318-aad0-aa10badb8557.svg";
+const imgIconChevron = "assets/figma/dc9f197f-6d82-4e9b-ab8e-4a6ad0f413a0.svg";
+const imgActivityDot = "assets/figma/565b1aa8-c197-49de-af71-66ebedca6998.svg";
+const imgIconCamera = "assets/figma/253cd703-8519-4c80-891a-b90f444eece1.svg";
+const imgIconArchive = "assets/figma/f884acd7-1056-489f-bb53-d6df0b412fbb.svg";
+const imgIconHome = "assets/figma/96085e08-0ff5-4393-a5a0-aee4385082d6.svg";
+const imgIconLeaf1 = "assets/figma/79adf6f9-5084-4afc-bec1-086d0fd42729.svg";
+const imgIconHeart = "assets/figma/ad87af49-f252-466e-98b6-a018455f0dee.svg";
+const imgIconSettings = "assets/figma/07286f29-4ffe-4441-a782-d29f2849c1b9.svg";
+
+function ScreenThemeDark({ className }: { className?: string }) {
+  return (
+    <div className={className || "bg-[var(--hobby-bg,#101b2c)] border-4 border-[var(--hobby-line,#33445d)] border-solid h-[930px] overflow-clip relative rounded-[var(--radius-28,28px)] w-[410px]"} data-node-id="9:1889" data-name="Screen/Theme · Dark">
+      <div className="absolute bg-[var(--hobby-bg,#101b2c)] content-stretch flex gap-[var(--space-8,8px)] h-[70px] items-center left-[-4px] px-[var(--space-20,20px)] top-[-4px] w-[410px]" data-node-id="9:1890" data-name="Header/App">
+        <div className="bg-[var(--hobby-primary,#88b8ff)] content-stretch flex gap-[var(--space-0,0px)] items-center justify-center p-[var(--space-0,0px)] relative rounded-[var(--radius-8,8px)] shrink-0 size-[32px]" data-node-id="I9:1890;4:24" data-name="Brand mark">
+          <div className="relative shrink-0 size-[22px]" data-node-id="I9:1890;4:25" data-name="Icon/leaf">
+            <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgIconLeaf} />
+          </div>
+        </div>
+        <p className="[word-break:break-word] font-['Inter:Bold'] font-bold leading-[25px] not-italic relative shrink-0 text-[24px] text-[color:var(--hobby-ink,#e6edf8)] whitespace-nowrap" data-node-id="I9:1890;4:28">
+          hobby
+        </p>
+        <p className="[word-break:break-word] font-['Inter:Bold'] font-bold leading-[25px] not-italic relative shrink-0 text-[20px] text-[color:var(--hobby-primary,#88b8ff)] w-[10px]" data-node-id="I9:1890;4:29">
+          ·
+        </p>
+        <div className="flex-[1_0_0] h-px min-w-px relative" data-node-id="I9:1890;8:3" data-name="Header flexible space" />
+        <p className="[word-break:break-word] font-['Inter:Bold'] font-bold leading-[14px] not-italic relative shrink-0 text-[10px] text-[color:var(--hobby-muted,#a8bdd3)] whitespace-nowrap" data-node-id="I9:1890;4:30">
+          Hobby Explorer
+        </p>
+        <div className="bg-[var(--hobby-soft,#203650)] content-stretch flex gap-[var(--space-0,0px)] items-center justify-center p-[var(--space-0,0px)] relative rounded-[var(--radius-99,99px)] shrink-0 size-[34px]" data-node-id="I9:1890;4:31" data-name="Avatar/H">
+          <p className="[word-break:break-word] font-['Inter:Semi_Bold'] font-semibold leading-[17px] not-italic relative shrink-0 text-[12px] text-[color:var(--hobby-primary,#88b8ff)] whitespace-nowrap" data-node-id="I9:1890;4:32">
+            H
+          </p>
+        </div>
+      </div>
+      <div className="absolute h-[744px] left-[16px] overflow-x-clip overflow-y-auto top-[96px] w-[370px]" data-node-id="11:999" data-name="Scroll viewport">
+        <div className="absolute content-stretch flex flex-col gap-[var(--space-16,16px)] items-start left-0 p-[var(--space-0,0px)] top-0 w-[370px]" data-node-id="9:1901" data-name="Screen content">
+          <p className="[word-break:break-word] font-['Inter:Bold'] font-bold leading-[34px] not-italic relative shrink-0 text-[28px] text-[color:var(--hobby-ink,#e6edf8)] whitespace-nowrap" data-node-id="9:1926">
+            Home
+          </p>
+          <div className="bg-[var(--hobby-hero,#243b5d)] border border-[var(--hobby-line,#33445d)] border-solid content-stretch flex flex-col gap-[var(--space-12,12px)] h-[205px] items-start min-h-[166px] p-[var(--space-16,16px)] relative rounded-[var(--radius-21,21px)] shrink-0 w-[370px]" data-node-id="9:1927" data-name="Hero">
+            <p className="[word-break:break-word] font-['Inter:Bold'] font-bold leading-[14px] not-italic relative shrink-0 text-[10px] text-[color:var(--hobby-primary,#88b8ff)] tracking-[1.2px] whitespace-nowrap" data-node-id="9:1928">
+              MAKE TIME FOR YOU
+            </p>
+            <div className="[word-break:break-word] font-['Inter:Bold'] font-bold leading-[0] not-italic relative shrink-0 text-[27px] text-[color:var(--hobby-ink,#e6edf8)] w-[300px]" data-node-id="9:1929">
+              <p className="leading-[29px] mb-0">Make time for</p>
+              <p className="leading-[29px] text-[#88b8ff]">what you love.</p>
+            </div>
+            <p className="[word-break:break-word] font-['Inter:Regular'] font-normal leading-[17px] not-italic relative shrink-0 text-[12px] text-[color:var(--hobby-muted,#a8bdd3)] w-[300px]" data-node-id="9:1930">
+              Plan your day or start practicing now.
+            </p>
+            <div className="bg-[var(--hobby-primary,#88b8ff)] content-stretch flex h-[48px] items-center justify-center px-[var(--space-16,16px)] relative rounded-[var(--radius-12,12px)] shrink-0 w-[194px]" data-node-id="9:1931" data-name="Action: ▷ Resume Hyper Mode">
+              <p className="[word-break:break-word] font-['Inter:Bold'] font-bold leading-[16px] not-italic relative shrink-0 text-[12px] text-[color:var(--hobby-on,#102238)] whitespace-nowrap" data-node-id="I9:1931;4:6">
+                ▷ Resume Hyper Mode
+              </p>
+            </div>
+            <div className="absolute left-[262px] size-[100px] top-[21px]" data-node-id="9:1933" data-name="Theme motif/Dark">
+              <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgThemeMotifDark} />
+            </div>
+          </div>
+          <div className="content-stretch flex gap-[var(--space-8,8px)] h-[48px] items-center p-[var(--space-0,0px)] relative shrink-0 w-[370px]" data-node-id="9:1935" data-name="Section: Your week">
+            <p className="[word-break:break-word] flex-[1_0_0] font-['Inter:Bold'] font-bold leading-[25px] min-w-px not-italic relative text-[17px] text-[color:var(--hobby-ink,#e6edf8)]" data-node-id="9:1936">
+              Your week
+            </p>
+            <div className="content-stretch flex gap-[var(--space-8,8px)] h-[48px] items-start p-[var(--space-0,0px)] relative shrink-0 w-[102px]" data-node-id="9:1937" data-name="Calendar controls">
+              <div className="bg-[var(--hobby-soft,#203650)] content-stretch flex gap-[var(--space-0,0px)] h-[48px] items-center justify-center p-[var(--space-0,0px)] relative rounded-[var(--radius-12,12px)] shrink-0 w-[47px]" data-node-id="9:1938" data-name="Action: Previous week">
+                <div className="relative shrink-0 size-[16px]" data-node-id="9:1939" data-name="Icon/back">
+                  <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgIconBack} />
+                </div>
+              </div>
+              <div className="bg-[var(--hobby-soft,#203650)] content-stretch flex gap-[var(--space-0,0px)] h-[48px] items-center justify-center p-[var(--space-0,0px)] relative rounded-[var(--radius-12,12px)] shrink-0 w-[47px]" data-node-id="9:1941" data-name="Action: Next week">
+                <div className="relative shrink-0 size-[16px]" data-node-id="9:1942" data-name="Icon/chevron">
+                  <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgIconChevron} />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="content-stretch flex gap-[var(--space-8,8px)] h-[74px] items-start p-[var(--space-0,0px)] relative shrink-0 w-[370px]" data-node-id="9:1944" data-name="Weekly calendar">
+            <div className="[word-break:break-word] bg-[var(--hobby-paper,#1b2a40)] border border-[var(--hobby-line,#33445d)] border-solid content-stretch flex flex-col gap-[var(--space-8,8px)] h-[74px] items-center not-italic p-[var(--space-8,8px)] relative rounded-[var(--radius-12,12px)] shrink-0 w-[46px] whitespace-nowrap" data-node-id="9:1945" data-name="Day: MON">
+              <p className="font-['Inter:Bold'] font-bold leading-[14px] relative shrink-0 text-[8px] text-[color:var(--hobby-muted,#a8bdd3)]" data-node-id="9:1946">
+                MON
+              </p>
+              <p className="font-['Inter:Semi_Bold'] font-semibold leading-[17px] relative shrink-0 text-[12px] text-[color:var(--hobby-ink,#e6edf8)]" data-node-id="9:1947">
+                12
+              </p>
+            </div>
+            <div className="bg-[var(--hobby-primary,#88b8ff)] border border-[var(--hobby-line,#33445d)] border-solid content-stretch flex flex-col gap-[var(--space-8,8px)] h-[74px] items-center p-[var(--space-8,8px)] relative rounded-[var(--radius-12,12px)] shrink-0 w-[46px]" data-node-id="9:1948" data-name="Day: TUE">
+              <p className="[word-break:break-word] font-['Inter:Bold'] font-bold leading-[14px] not-italic relative shrink-0 text-[8px] text-[color:var(--hobby-on,#102238)] whitespace-nowrap" data-node-id="9:1949">
+                TUE
+              </p>
+              <p className="[word-break:break-word] font-['Inter:Semi_Bold'] font-semibold leading-[17px] not-italic relative shrink-0 text-[12px] text-[color:var(--hobby-on,#102238)] whitespace-nowrap" data-node-id="9:1950">
+                13
+              </p>
+              <div className="relative shrink-0 size-[4px]" data-node-id="9:1951" data-name="Activity dot">
+                <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgActivityDot} />
+              </div>
+            </div>
+            <div className="[word-break:break-word] bg-[var(--hobby-paper,#1b2a40)] border border-[var(--hobby-line,#33445d)] border-solid content-stretch flex flex-col gap-[var(--space-8,8px)] h-[74px] items-center not-italic p-[var(--space-8,8px)] relative rounded-[var(--radius-12,12px)] shrink-0 w-[46px] whitespace-nowrap" data-node-id="9:1952" data-name="Day: WED">
+              <p className="font-['Inter:Bold'] font-bold leading-[14px] relative shrink-0 text-[8px] text-[color:var(--hobby-muted,#a8bdd3)]" data-node-id="9:1953">
+                WED
+              </p>
+              <p className="font-['Inter:Semi_Bold'] font-semibold leading-[17px] relative shrink-0 text-[12px] text-[color:var(--hobby-ink,#e6edf8)]" data-node-id="9:1954">
+                14
+              </p>
+            </div>
+            <div className="[word-break:break-word] bg-[var(--hobby-paper,#1b2a40)] border border-[var(--hobby-line,#33445d)] border-solid content-stretch flex flex-col gap-[var(--space-8,8px)] h-[74px] items-center not-italic p-[var(--space-8,8px)] relative rounded-[var(--radius-12,12px)] shrink-0 w-[46px] whitespace-nowrap" data-node-id="9:1955" data-name="Day: THU">
+              <p className="font-['Inter:Bold'] font-bold leading-[14px] relative shrink-0 text-[8px] text-[color:var(--hobby-muted,#a8bdd3)]" data-node-id="9:1956">
+                THU
+              </p>
+              <p className="font-['Inter:Semi_Bold'] font-semibold leading-[17px] relative shrink-0 text-[12px] text-[color:var(--hobby-ink,#e6edf8)]" data-node-id="9:1957">
+                15
+              </p>
+            </div>
+            <div className="[word-break:break-word] bg-[var(--hobby-paper,#1b2a40)] border border-[var(--hobby-line,#33445d)] border-solid content-stretch flex flex-col gap-[var(--space-8,8px)] h-[74px] items-center not-italic p-[var(--space-8,8px)] relative rounded-[var(--radius-12,12px)] shrink-0 w-[46px] whitespace-nowrap" data-node-id="9:1958" data-name="Day: FRI">
+              <p className="font-['Inter:Bold'] font-bold leading-[14px] relative shrink-0 text-[8px] text-[color:var(--hobby-muted,#a8bdd3)]" data-node-id="9:1959">
+                FRI
+              </p>
+              <p className="font-['Inter:Semi_Bold'] font-semibold leading-[17px] relative shrink-0 text-[12px] text-[color:var(--hobby-ink,#e6edf8)]" data-node-id="9:1960">
+                16
+              </p>
+            </div>
+            <div className="[word-break:break-word] bg-[var(--hobby-paper,#1b2a40)] border border-[var(--hobby-line,#33445d)] border-solid content-stretch flex flex-col gap-[var(--space-8,8px)] h-[74px] items-center not-italic p-[var(--space-8,8px)] relative rounded-[var(--radius-12,12px)] shrink-0 w-[46px] whitespace-nowrap" data-node-id="9:1961" data-name="Day: SAT">
+              <p className="font-['Inter:Bold'] font-bold leading-[14px] relative shrink-0 text-[8px] text-[color:var(--hobby-muted,#a8bdd3)]" data-node-id="9:1962">
+                SAT
+              </p>
+              <p className="font-['Inter:Semi_Bold'] font-semibold leading-[17px] relative shrink-0 text-[12px] text-[color:var(--hobby-ink,#e6edf8)]" data-node-id="9:1963">
+                17
+              </p>
+            </div>
+            <div className="[word-break:break-word] bg-[var(--hobby-paper,#1b2a40)] border border-[var(--hobby-line,#33445d)] border-solid content-stretch flex flex-col gap-[var(--space-8,8px)] h-[74px] items-center not-italic p-[var(--space-8,8px)] relative rounded-[var(--radius-12,12px)] shrink-0 w-[46px] whitespace-nowrap" data-node-id="9:1964" data-name="Day: SUN">
+              <p className="font-['Inter:Bold'] font-bold leading-[14px] relative shrink-0 text-[8px] text-[color:var(--hobby-muted,#a8bdd3)]" data-node-id="9:1965">
+                SUN
+              </p>
+              <p className="font-['Inter:Semi_Bold'] font-semibold leading-[17px] relative shrink-0 text-[12px] text-[color:var(--hobby-ink,#e6edf8)]" data-node-id="9:1966">
+                18
+              </p>
+            </div>
+          </div>
+          <div className="content-stretch flex gap-[var(--space-8,8px)] h-[48px] items-center p-[var(--space-0,0px)] relative shrink-0 w-[370px]" data-node-id="9:1967" data-name="Section: Tue, Oct 13 activities">
+            <p className="[word-break:break-word] flex-[1_0_0] font-['Inter:Bold'] font-bold leading-[25px] min-w-px not-italic relative text-[17px] text-[color:var(--hobby-ink,#e6edf8)]" data-node-id="9:1968">
+              Tue, Oct 13 activities
+            </p>
+            <div className="bg-[var(--hobby-primary,#88b8ff)] content-stretch flex h-[48px] items-center justify-center px-[var(--space-16,16px)] relative rounded-[var(--radius-12,12px)] shrink-0 w-[96px]" data-node-id="9:1969" data-name="Action: ＋ Schedule">
+              <p className="[word-break:break-word] font-['Inter:Bold'] font-bold leading-[16px] not-italic relative shrink-0 text-[12px] text-[color:var(--hobby-on,#102238)] whitespace-nowrap" data-node-id="I9:1969;4:6">
+                ＋ Schedule
+              </p>
+            </div>
+          </div>
+          <div className="bg-[var(--hobby-paper,#1b2a40)] border border-[var(--hobby-line,#33445d)] border-solid content-stretch flex gap-[var(--space-12,12px)] h-[78px] items-center p-[var(--space-12,12px)] relative rounded-[var(--radius-16,16px)] shrink-0 w-[370px]" data-node-id="9:1971" data-name="Scheduled activity">
+            <div className="bg-[var(--hobby-soft,#203650)] content-stretch flex gap-[var(--space-0,0px)] items-center justify-center p-[var(--space-0,0px)] relative rounded-[var(--radius-12,12px)] shrink-0 size-[44px]" data-node-id="9:1972" data-name="Hobby icon">
+              <div className="relative shrink-0 size-[23px]" data-node-id="9:1973" data-name="Icon/camera">
+                <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgIconCamera} />
+              </div>
+            </div>
+            <div className="[word-break:break-word] content-stretch flex flex-col gap-[var(--space-4,4px)] items-start leading-[17px] not-italic p-[var(--space-0,0px)] relative shrink-0 w-[190px] whitespace-nowrap" data-node-id="9:1976" data-name="Activity details">
+              <p className="font-['Inter:Semi_Bold'] font-semibold relative shrink-0 text-[12px] text-[color:var(--hobby-ink,#e6edf8)]" data-node-id="9:1977">
+                Photography practice
+              </p>
+              <p className="font-['Inter:Regular'] font-normal relative shrink-0 text-[10px] text-[color:var(--hobby-muted,#a8bdd3)]" data-node-id="9:1978">
+                5:00 PM · 30 min · Active
+              </p>
+            </div>
+            <div className="bg-[var(--hobby-primary,#88b8ff)] content-stretch flex h-[48px] items-center justify-center px-[var(--space-16,16px)] relative rounded-[var(--radius-12,12px)] shrink-0 w-[74px]" data-node-id="9:1979" data-name="Action: Start">
+              <p className="[word-break:break-word] font-['Inter:Bold'] font-bold leading-[16px] not-italic relative shrink-0 text-[12px] text-[color:var(--hobby-on,#102238)] whitespace-nowrap" data-node-id="I9:1979;4:6">
+                ▷ Start
+              </p>
+            </div>
+          </div>
+          <div className="[word-break:break-word] content-stretch flex gap-[var(--space-8,8px)] h-[48px] items-center not-italic p-[var(--space-0,0px)] relative shrink-0 w-[370px]" data-node-id="9:1981" data-name="Section: Activity history">
+            <p className="flex-[1_0_0] font-['Inter:Bold'] font-bold leading-[25px] min-w-px relative text-[17px] text-[color:var(--hobby-ink,#e6edf8)]" data-node-id="9:1982">
+              Activity history
+            </p>
+            <p className="font-['Inter:Regular'] font-normal leading-[17px] relative shrink-0 text-[12px] text-[color:var(--hobby-muted,#a8bdd3)] whitespace-nowrap" data-node-id="9:1983">
+              0 saved
+            </p>
+          </div>
+          <div className="bg-[var(--hobby-paper,#1b2a40)] border border-[var(--hobby-line,#33445d)] border-solid content-stretch flex flex-col gap-[var(--space-12,12px)] h-[131px] items-center p-[var(--space-16,16px)] relative rounded-[var(--radius-16,16px)] shrink-0 w-[370px]" data-node-id="9:1984" data-name="Empty: Start your journey">
+            <div className="relative shrink-0 size-[24px]" data-node-id="9:1985" data-name="Icon/archive">
+              <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgIconArchive} />
+            </div>
+            <p className="[word-break:break-word] font-['Inter:Semi_Bold'] font-semibold leading-[17px] not-italic relative shrink-0 text-[12px] text-[color:var(--hobby-ink,#e6edf8)] text-center w-[338px]" data-node-id="9:1988">
+              Start your journey
+            </p>
+            <p className="[word-break:break-word] font-['Inter:Regular'] font-normal leading-[17px] not-italic relative shrink-0 text-[12px] text-[color:var(--hobby-muted,#a8bdd3)] text-center w-[338px]" data-node-id="9:1989">
+              Time spent and notes from finished Hyper Mode sessions appear here.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div className="absolute bg-[var(--hobby-paper,#1b2a40)] content-stretch flex h-[76px] items-center justify-between left-[-4px] py-[var(--space-8,8px)] top-[850px] w-[410px]" data-node-id="9:1902" data-name="Nav/Home">
+        <div className="content-stretch flex flex-col gap-[var(--space-8,8px)] h-[60px] items-center p-[var(--space-0,0px)] relative shrink-0 w-[102px]" data-node-id="I9:1902;4:34" data-name="Nav: Home">
+          <div className="bg-[var(--hobby-soft,#203650)] content-stretch flex gap-[var(--space-0,0px)] h-[32px] items-center justify-center p-[var(--space-0,0px)] relative rounded-[var(--radius-12,12px)] shrink-0 w-[46px]" data-node-id="I9:1902;4:35" data-name="Icon surface">
+            <div className="relative shrink-0 size-[19px]" data-node-id="I9:1902;4:36" data-name="Icon/home">
+              <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgIconHome} />
+            </div>
+          </div>
+          <p className="[word-break:break-word] font-['Inter:Bold'] font-bold leading-[14px] not-italic relative shrink-0 text-[9px] text-[color:var(--hobby-primary,#88b8ff)] whitespace-nowrap" data-node-id="I9:1902;4:39">
+            Home
+          </p>
+        </div>
+        <div className="content-stretch flex flex-col gap-[var(--space-8,8px)] h-[60px] items-center p-[var(--space-0,0px)] relative shrink-0 w-[102px]" data-node-id="I9:1902;4:40" data-name="Nav: Community">
+          <div className="content-stretch flex gap-[var(--space-0,0px)] h-[32px] items-center justify-center p-[var(--space-0,0px)] relative rounded-[var(--radius-12,12px)] shrink-0 w-[46px]" data-node-id="I9:1902;4:41" data-name="Icon surface">
+            <div className="relative shrink-0 size-[19px]" data-node-id="I9:1902;4:42" data-name="Icon/leaf">
+              <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgIconLeaf1} />
+            </div>
+          </div>
+          <p className="[word-break:break-word] font-['Inter:Bold'] font-bold leading-[14px] not-italic relative shrink-0 text-[9px] text-[color:var(--hobby-muted,#a8bdd3)] whitespace-nowrap" data-node-id="I9:1902;4:45">
+            Community
+          </p>
+        </div>
+        <div className="content-stretch flex flex-col gap-[var(--space-8,8px)] h-[60px] items-center p-[var(--space-0,0px)] relative shrink-0 w-[102px]" data-node-id="I9:1902;4:46" data-name="Nav: My Hobbies">
+          <div className="content-stretch flex gap-[var(--space-0,0px)] h-[32px] items-center justify-center p-[var(--space-0,0px)] relative rounded-[var(--radius-12,12px)] shrink-0 w-[46px]" data-node-id="I9:1902;4:47" data-name="Icon surface">
+            <div className="relative shrink-0 size-[19px]" data-node-id="I9:1902;4:48" data-name="Icon/heart">
+              <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgIconHeart} />
+            </div>
+          </div>
+          <p className="[word-break:break-word] font-['Inter:Bold'] font-bold leading-[14px] not-italic relative shrink-0 text-[9px] text-[color:var(--hobby-muted,#a8bdd3)] whitespace-nowrap" data-node-id="I9:1902;4:50">
+            My Hobbies
+          </p>
+        </div>
+        <div className="content-stretch flex flex-col gap-[var(--space-8,8px)] h-[60px] items-center p-[var(--space-0,0px)] relative shrink-0 w-[102px]" data-node-id="I9:1902;4:51" data-name="Nav: Settings">
+          <div className="content-stretch flex gap-[var(--space-0,0px)] h-[32px] items-center justify-center p-[var(--space-0,0px)] relative rounded-[var(--radius-12,12px)] shrink-0 w-[46px]" data-node-id="I9:1902;4:52" data-name="Icon surface">
+            <div className="relative shrink-0 size-[19px]" data-node-id="I9:1902;4:53" data-name="Icon/settings">
+              <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgIconSettings} />
+            </div>
+          </div>
+          <p className="[word-break:break-word] font-['Inter:Bold'] font-bold leading-[14px] not-italic relative shrink-0 text-[9px] text-[color:var(--hobby-muted,#a8bdd3)] whitespace-nowrap" data-node-id="I9:1902;4:56">
+            Settings
+          </p>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+export default function ScreenThemeDark1() {
+  return <ScreenThemeDark className="bg-[var(--hobby-bg,#101b2c)] border-4 border-[var(--hobby-line,#33445d)] border-solid overflow-clip relative rounded-[var(--radius-28,28px)] size-full" />;
+}
+SUPER CRITICAL: The generated React+Tailwind code MUST be converted to match the target project's technology stack and styling system.
+1. Analyze the target codebase to identify: technology stack, styling approach, component patterns, and design tokens
+2. Convert React syntax to the target framework/library
+3. Transform all Tailwind classes to the target styling system while preserving exact visual design
+4. Follow the project's existing patterns and conventions
+DO NOT install any Tailwind as a dependency unless the user instructs you to do so.
+
+Node ids have been added to the code as data attributes, e.g. `data-node-id="1:2"`.
+These styles are contained in the design: Hobby/Title: Font(family: "Inter", style: Bold, size: 28, weight: 700, lineHeight: 34, letterSpacing: 0), Hobby/Small: Font(family: "Inter", style: Regular, size: 12, weight: 400, lineHeight: 17, letterSpacing: 0), Hobby/Label: Font(family: "Inter", style: Semi Bold, size: 12, weight: 600, lineHeight: 17, letterSpacing: 0).
+Component descriptions: The following components have usage descriptions or documentation links defined in Figma. These descriptions provide important context about the intended usage, best practices, and any constraints for each component. Follow these guidelines when implementing or using these components.
+
+## Screen/Theme · Dark
+**Node ID:** 9:1889
+
+Editable reconstruction from DesignArchive.html · Theme · Dark. Text, controls, icons and layout are native Figma layers.
+
+## Header/App
+**Node ID:** 4:23
+
+Shared Hobby Tracker header, authenticated state.
+
+## Button/primary
+**Node ID:** 4:5
+
+Hobby Tracker primary action. Editable label; resize width to suit context.
+
+## Nav/Home
+**Node ID:** 4:33
+
+Bottom navigation with Home selected.
+The generated code contains image and SVG URL constants, e.g. const image = 'assets/figma/550e8400-e29b-41d4-a716-446655440000.png'. These URLs are temporary download sources and expire after 7 days. Download each asset into the project with curl -L, then replace its URL in the generated code with a reference to the downloaded asset. Never use the temporary URLs as runtime image sources.

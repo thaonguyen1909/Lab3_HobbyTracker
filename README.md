@@ -1,120 +1,83 @@
 # Hobby Tracker
 
-**Dự án PRM393 — Lab 3 | Ứng dụng quản lý và duy trì sở thích cá nhân**
+**Lập lịch tập trung mới:** chọn nhanh sở thích, tự điền tên, thời lượng 15p/30p/1 giờ/2 giờ hoặc tùy chỉnh; lặp hằng ngày/tuần có ngày kết thúc. [Thiết kế và kết quả kiểm tra](docs/quick-schedule-update.md).
 
-Hobby Tracker giúp người dùng biến sở thích thành hoạt động thường xuyên: chọn việc muốn làm, sắp xếp thời gian, tập trung luyện tập và theo dõi kết quả. Dự án phát triển từ thiết kế UI/UX của Lab 2 thành ứng dụng Android bằng Flutter, sử dụng Firebase để đăng nhập và lưu trữ dữ liệu.
+**Khoảnh khắc — kiến trúc mới 04/11/2026:** Firebase Auth/Firestore/FCM + backend Node.js riêng + Cloudinary. Thử qua USB theo [hướng dẫn hiện hành](docs/moments-cloudinary-run.md); trạng thái triển khai tại [báo cáo retest](docs/moments-retest-report.md). Các báo cáo Storage/Functions cũ là lịch sử.
 
-> **Trạng thái:** Đang chuẩn bị triển khai. Repository hiện có bộ nguồn tham chiếu, tài liệu audit phase 00, hướng dẫn AGENTS.md, roadmap và các prompt; các tính năng và công nghệ bên dưới là kế hoạch, chưa được tích hợp hoặc kiểm thử.
+Ứng dụng Android Flutter + Firebase cho PRM393 Lab 3. Kiến trúc MVVM/Riverpod, hỗ trợ English/Tiếng Việt và 7 giao diện màu.
 
-## Ứng dụng sẽ làm được gì?
-
-| Nhóm tính năng | Người dùng có thể làm gì? |
-| --- | --- |
-| Tài khoản | Đăng nhập bằng Google, quản lý thông tin cá nhân và đăng xuất. |
-| Sở thích cá nhân | Tạo và chỉnh sửa sở thích, chọn biểu tượng, màu sắc và trạng thái Active hoặc Interested. |
-| Lịch luyện tập | Lên lịch cho từng sở thích và xem các hoạt động theo ngày. |
-| Hyper Mode | Chạy bộ đếm thời gian, tạm dừng, tiếp tục, ghi chú và lưu kết quả buổi tập. |
-| Lịch sử | Xem lại thời gian luyện tập và ghi chú đã lưu. |
-| Cộng đồng | Chia sẻ bài viết, tham gia nhóm, trò chuyện và đăng ký hoạt động. |
-| Cài đặt | Thay đổi giao diện, tùy chọn luyện tập và thông báo. |
-| Báo cáo | Tạo và chia sẻ file PDF tổng hợp hoạt động. |
-
-Bốn tab chính: **Home · Community · My Hobbies · Settings**.
-
-Các nguyên tắc giữ từ thiết kế Lab 2:
-
-- Người dùng tự tạo sở thích; cả Active và Interested đều có thể lập lịch và luyện tập.
-- Đổi trạng thái sở thích không làm mất lịch hoặc lịch sử.
-- Đăng ký tham gia sự kiện (RSVP) chỉ thêm vào lịch cá nhân khi người dùng bấm **Add to Home**.
-- Một lần kết thúc buổi tập chỉ tạo một bản ghi kết quả.
-
-## Công nghệ dự kiến sử dụng
-
-### Ứng dụng và kiến trúc
-
-| Công nghệ | Vai trò trong dự án |
-| --- | --- |
-| **Flutter + Dart** | Xây dựng giao diện và xử lý hoạt động của ứng dụng Android. |
-| **Material Design + ThemeData** | Tạo các thành phần giao diện thống nhất và hỗ trợ 7 theme theo thiết kế Lab 2. |
-| **Riverpod** | Quản lý trạng thái màn hình và cung cấp các dịch vụ cần dùng. |
-| **go_router** | Điều hướng giữa các màn hình và kiểm soát đường dẫn cần đăng nhập. |
-| **MVVM** | Tách giao diện (View), logic màn hình (ViewModel) và dữ liệu (Model) để dễ bảo trì. |
-| **Repository/Service + dependency injection** | Tách phần truy cập Firebase khỏi giao diện và giúp thay thế dịch vụ khi kiểm thử. |
-
-### Dữ liệu và các dịch vụ Firebase
-
-| Công nghệ | Vai trò trong dự án |
-| --- | --- |
-| **Firebase Authentication + Google Sign-In** | Xác thực tài khoản bằng Google. |
-| **Cloud Firestore** | Lưu sở thích, lịch, lịch sử luyện tập và dữ liệu cộng đồng; cập nhật dữ liệu theo thời gian thực. |
-| **Firestore Security Rules** | Kiểm soát quyền đọc/ghi, bảo vệ dữ liệu riêng và giới hạn truy cập trò chuyện theo thành viên. |
-| **Firebase Cloud Messaging (FCM)** | Nhận thông báo trên thiết bị; cần cấu hình nguồn gửi và kiểm thử thực tế. |
-| **Firebase Analytics** | Ghi nhận các sự kiện sử dụng để đánh giá những luồng chức năng chính. |
-| **Firebase Crashlytics** | Theo dõi lỗi và sự cố khi ứng dụng chạy. |
-| **Firebase Remote Config** | Điều chỉnh một số tùy chọn hoạt động mà không cần phát hành lại ứng dụng. |
-| **Cloud Storage for Firebase — bắt buộc Lab 3** | Tải báo cáo theo UID, hiển thị tiến độ/URL, giới hạn quyền bằng Rules và cung cấp bằng chứng. Điều kiện hạ tầng/chi phí còn phải chốt; chưa có upload thì yêu cầu này chưa hoàn thành. |
-
-Phần xuất PDF sẽ tách khỏi phần tải lên cloud để vẫn có thể tạo và chia sẻ báo cáo trên thiết bị. Xác minh điều kiện dịch vụ trước khi cấu hình; local PDF không thay thế upload Lab 3.
-
-### Công cụ phát triển và kiểm thử
-
-| Công cụ | Mục đích |
-| --- | --- |
-| **Git** | Quản lý phiên bản và theo dõi từng đợt triển khai. |
-| **Android SDK + Android Emulator/thiết bị thật** | Build, chạy và kiểm tra ứng dụng Android. |
-| **Flutter DevTools + flutter analyze** | Kiểm tra lỗi mã nguồn và hỗ trợ phân tích ứng dụng. |
-| **flutter test** | Kiểm thử logic và các thành phần giao diện quan trọng. |
-| **Firebase Emulator Suite** | Kiểm thử dữ liệu và Security Rules trong môi trường phát triển. |
-| **Google ARTEMIS — bắt buộc Lab 3** | Kiểm thử các luồng người dùng từ đầu đến cuối và thu thập bằng chứng. |
-
-Phiên bản Flutter, Dart và các thư viện sẽ được ghi cụ thể khi khởi tạo mã nguồn và kiểm tra tính tương thích.
-
-## Cách tổ chức ứng dụng
-
-Luồng xử lý dự kiến:
+## Source và tài liệu
 
 ```text
-Người dùng thao tác
-        ↓
-View — hiển thị giao diện
-        ↓
-ViewModel — xử lý logic và trạng thái
-        ↓
-Repository / Service — đọc, ghi dữ liệu
-        ↓
-Firebase
+HobbyTracker/
+├── lib/                  # Mã Flutter: màn hình, ViewModel, model, service
+├── android/              # Cấu hình và mã Android
+├── assets/               # Font và SVG dùng trong app
+├── firebase/             # Rules, indexes và kiểm thử quyền
+├── test/                 # Unit/widget tests và ảnh golden
+├── e2e_test/             # Bộ kiểm thử ARTEMIS
+├── scripts/              # Công cụ setup/audit
+├── docs/                 # Toàn bộ tài liệu, yêu cầu, thiết kế, evidence
+├── pubspec.yaml
+├── pubspec.lock
+├── firebase.json
+├── analysis_options.yaml
+├── AGENTS.md             # Quy tắc làm việc cho agent
+└── README.md
 ```
 
-Màn hình gọi ViewModel; phần truy cập Firebase nằm trong Repository/Service. Các màn hình tải dữ liệu cần có trạng thái đang tải, có dữ liệu, chưa có dữ liệu và lỗi kèm thao tác thử lại.
+Xem [mục lục tài liệu](docs/README.md). Các file yêu cầu gốc ở [docs/requirements/reference](docs/requirements/reference/); chúng được di chuyển nguyên nội dung, không chỉnh sửa.
 
-## Lộ trình triển khai
+## Chạy Android
 
-1. Đối chiếu thiết kế Lab 2 và yêu cầu Lab 3, chốt các điểm còn thiếu.
-2. Khởi tạo Flutter, giao diện chung, điều hướng và kiến trúc.
-3. Tích hợp đăng nhập Google và bảo vệ dữ liệu người dùng.
-4. Hoàn thiện sở thích, lịch luyện tập, Hyper Mode và lịch sử.
-5. Triển khai cộng đồng, cài đặt và các theme.
-6. Bổ sung báo cáo PDF, thông báo và các dịch vụ theo dõi ứng dụng.
-7. Kiểm thử, sửa lỗi và chuẩn bị bằng chứng nộp Lab 3.
+```powershell
+flutter pub get
+flutter devices
+flutter run -d <device-id>
+```
 
-## Phạm vi triển khai hiện tại
+Android application ID: `vn.prm393.hobbytracker`.
 
-Chỉ thực hiện Lab 3 theo phase 00–08 trong `prompts/`. Web quản trị, Staff/Admin, duyệt RSVP liên vai trò và Gemini trong app thuộc kế hoạch tham khảo tại `planning/final/roadmap.md`, chưa triển khai trong Lab 3. AI code review và ARTEMIS vẫn là yêu cầu Lab 3.
+Máy mới cần tự cấu hình Firebase: đăng ký đúng package Android/SHA, bật Google và Email/Password Authentication, tạo Firestore và áp dụng Rules đã review. Đặt file `google-services.json` riêng của project tại `android/app/google-services.json`. File này đã được bỏ qua bởi Git. Không thay Rules bằng quyền mở cho tất cả người dùng.
 
-## Chạy dự án
+## Kiểm tra
 
-Chưa có mã nguồn Flutter nên hiện chưa có bước cài đặt hoặc chạy ứng dụng. Hướng dẫn thiết lập, phiên bản công cụ và lệnh kiểm thử sẽ được bổ sung khi khởi tạo app.
+```powershell
+dart format --output=none --set-exit-if-changed .
+flutter analyze
+flutter test
+flutter build apk --debug
+```
 
-## Bộ tài liệu phase 00
+Kiểm thử quyền trên emulator cục bộ:
 
-Trạng thái: đã soạn draft và đối chiếu nguồn; người dùng đã duyệt baseline Figma/HTML và Google + email/password thật (D03/D06). Các mục review còn lại xem open-decisions; chưa triển khai Flutter.
+```powershell
+npm --prefix firebase ci
+npx firebase-tools@14.22.0 emulators:exec --only firestore,storage --project demo-hobbytracker-full "npm --prefix firebase run test:all"
+```
 
-- [Tổng hợp để review phase00](docs/phase-00-review.md)
-- [Nguồn và link Figma](reference/README.md)
-- [Đối chiếu Figma ↔ HTML](docs/figma-html-comparison.md)
-- [Truy vết màn hình/flow/component](docs/design-traceability.md)
-- [Gap review](docs/gap-review.md) · [Quyết định còn mở](docs/open-decisions.md)
-- [Checklist rubric](docs/rubric-checklist.md) · [Kế hoạch test](docs/test-plan.md)
-- [Design system](design/DESIGN.md) · [Flutter handoff](handoff/flutter-handoff.md)
+Dùng Java 21 cho bộ emulator đã pin. Lệnh trên chạy project `demo-`, không deploy Rules lên cloud.
 
-AI disclosure: Codex hỗ trợ audit nguồn và soạn tài liệu phase00; nguồn Lab2 ghi rõ các cuộc phỏng vấn mô phỏng bằng AI. Chưa có kết quả kiểm thử ứng dụng để công bố.
+## Tính năng và trạng thái
+
+- Hobby tùy chỉnh; lịch luyện tập; Hyper Mode, ghi chú và lịch sử.
+- Feed, nhóm, hoạt động/đăng ký tham gia, hồ sơ công khai và chat có phân quyền Firebase.
+- Settings, ngôn ngữ Anh/Việt lưu trên thiết bị, 7 theme, xuất PDF và các adapter dịch vụ Firebase.
+- Sau khi sắp xếp: 96 Flutter tests đạt, analyze sạch và APK debug build thành công. Logs: `docs/evidence/08/reorganization/`. Bản ngôn ngữ đã được cài trên Pixel 9 trước đó.
+- Chưa nghiệm thu đầy đủ hai tài khoản cloud, delivered notifications, Storage upload/billing, Console evidence, ARTEMIS và Figma parity. Không coi code/test fixtures là bằng chứng cloud thành công.
+
+[Báo cáo tích hợp](docs/full-implementation-report.md) · [Anh/Việt](docs/localization-report.md) · [Checklist còn thiếu](docs/full-manual-checklist.md).
+
+## Mở rộng Khoảnh khắc 3 giờ
+
+Đã có source đăng/xem ảnh theo nhóm, popup/inbox, Android notification worker và cleanup có retry. Bước 4 chạy đạt 145 test Flutter và 87 test backend/Rules/CLI trên local, analyze sạch, APK debug build được. Chưa deploy backend hoặc nghiệm thu push/ba giờ trên hai điện thoại thật.
+
+[Báo cáo bước 4](docs/moments-cleanup-step4-report.md) · [Chạy local](docs/moments-local-run.md) · [Demo và nghiệm thu](docs/moments-demo-acceptance.md).
+
+## Đưa lên GitHub
+
+Có thể quản lý toàn bộ thư mục này trong một repository: source ở các thư mục chuẩn, tài liệu gói gọn trong `docs/`. Giữ `pubspec.lock`, Gradle wrapper và các file cấu hình source trong Git.
+
+`.gitignore` loại build/cache, `node_modules`, Firebase config cục bộ, `.env`, khóa và keystore. Nếu upload bằng giao diện web, tự bỏ những file/thư mục này vì upload thủ công không áp dụng `.gitignore` như `git add`. Không cần upload APK/build để chạy source.
+
+Chưa tạo commit/remote hoặc push GitHub trong phiên sắp xếp này.

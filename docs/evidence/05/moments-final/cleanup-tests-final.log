@@ -1,0 +1,97 @@
+i  emulators: Starting emulators: firestore, storage
+i  emulators: Detected demo project ID "demo-hobbytracker-moments", emulated services will use a demo configuration and attempts to access non-emulated services for this project will fail.
+i  firestore: Firestore Emulator logging to firestore-debug.log
++  firestore: Firestore Emulator was started in standard edition.
++  firestore: Firestore Emulator UI websocket is running on 9150.
+!  Unexpected rules runtime error: Picked up JAVA_TOOL_OPTIONS: -Xmx512m
+
+i  Running script: node --test functions/test/cleanup.test.mjs
+TAP version 13
+# Subtest: expired photo is denied before cleanup, deleted after cleanup, private snapshots redacted and retry cannot republish
+ok 1 - expired photo is denied before cleanup, deleted after cleanup, private snapshots redacted and retry cannot republish
+  ---
+  duration_ms: 4082.5354
+  type: 'test'
+  ...
+# Subtest: abandoned upload cleans source and every failed output generation after a grace window
+ok 2 - abandoned upload cleans source and every failed output generation after a grace window
+  ---
+  duration_ms: 476.8701
+  type: 'test'
+  ...
+# Subtest: live moment, active upload and processing lease remain intact
+ok 3 - live moment, active upload and processing lease remain intact
+  ---
+  duration_ms: 621.8268
+  type: 'test'
+  ...
+# Subtest: storage deletion failure leaves deny state plus pending retry; recovery later deletes objects
+ok 4 - storage deletion failure leaves deny state plus pending retry; recovery later deletes objects
+  ---
+  duration_ms: 1048.3227
+  type: 'test'
+  ...
+# Subtest: retracted photo is collected early, and repeating retract on a compact tombstone is harmless
+ok 5 - retracted photo is collected early, and repeating retract on a compact tombstone is harmless
+  ---
+  duration_ms: 645.7044
+  type: 'test'
+  ...
+# Subtest: orphan sweeper deletes only old generated moment leaves and preserves PDF, history and live replacements
+ok 6 - orphan sweeper deletes only old generated moment leaves and preserves PDF, history and live replacements
+  ---
+  duration_ms: 413.5338
+  type: 'test'
+  ...
+# Subtest: forged mediaPath cannot cause cross-namespace deletion
+ok 7 - forged mediaPath cannot cause cross-namespace deletion
+  ---
+  duration_ms: 355.8741
+  type: 'test'
+  ...
+# Subtest: expired inbox across accounts is deleted; live inbox and private unrelated settings remain
+ok 8 - expired inbox across accounts is deleted; live inbox and private unrelated settings remain
+  ---
+  duration_ms: 333.6345
+  type: 'test'
+  ...
+# Subtest: outbox retention removes nested delivery receipts in bounded batches and leaves a live outbox alone
+ok 9 - outbox retention removes nested delivery receipts in bounded batches and leaves a live outbox alone
+  ---
+  duration_ms: 982.0882
+  type: 'test'
+  ...
+# Subtest: concurrent cleanup respects the maintenance lease
+ok 10 - concurrent cleanup respects the maintenance lease
+  ---
+  duration_ms: 64.1301
+  type: 'test'
+  ...
+# Subtest: legacy metadata is backfilled, bounded pages advance and new cleanup flags are not reset
+ok 11 - legacy metadata is backfilled, bounded pages advance and new cleanup flags are not reset
+  ---
+  duration_ms: 3103.7189
+  type: 'test'
+  ...
+# Subtest: storage generation targeting never deletes a replacement created after listing
+ok 12 - storage generation targeting never deletes a replacement created after listing
+  ---
+  duration_ms: 64.7862
+  type: 'test'
+  ...
+1..12
+# tests 12
+# suites 0
+# pass 12
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 13739.3696
++  Script exited successfully (code 0)
+i  emulators: Shutting down emulators.
+i  firestore: Stopping Firestore Emulator
+!  Firestore Emulator has exited upon receiving signal: SIGINT
+i  storage: Stopping Storage Emulator
+i  hub: Stopping emulator hub
+i  logging: Stopping Logging Emulator

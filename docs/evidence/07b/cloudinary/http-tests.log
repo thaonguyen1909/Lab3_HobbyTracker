@@ -1,0 +1,74 @@
+
+> test:http
+> node --test test/http.test.mjs test/cloudinary-media.test.mjs
+
+TAP version 13
+# Subtest: uploads use authenticated assets, no overwrite; same bytes recover; replacement denied
+ok 1 - uploads use authenticated assets, no overwrite; same bytes recover; replacement denied
+  ---
+  duration_ms: 6.0428
+  type: 'test'
+  ...
+# Subtest: cleanup rejects changed generation and deletes immutable asset ID; tombstone remains
+ok 2 - cleanup rejects changed generation and deletes immutable asset ID; tombstone remains
+  ---
+  duration_ms: 1.6275
+  type: 'test'
+  ...
+# Subtest: media reads fail closed on missing/deleted paths and unsafe namespaces
+ok 3 - media reads fail closed on missing/deleted paths and unsafe namespaces
+  ---
+  duration_ms: 0.6419
+  type: 'test'
+  ...
+# Subtest: authenticated download URL stays internal, expires quickly, and returns bytes only
+ok 4 - authenticated download URL stays internal, expires quickly, and returns bytes only
+  ---
+  duration_ms: 21.4789
+  type: 'test'
+  ...
+# Subtest: health, no-store and missing token do not call service
+ok 5 - health, no-store and missing token do not call service
+  ---
+  duration_ms: 67.3098
+  type: 'test'
+  ...
+# Subtest: verified UID is independent of caller authorId; service retains input validation
+ok 6 - verified UID is independent of caller authorId; service retains input validation
+  ---
+  duration_ms: 16.1527
+  type: 'test'
+  ...
+# Subtest: binary staging has verified owner and exact bytes
+ok 7 - binary staging has verified owner and exact bytes
+  ---
+  duration_ms: 13.6151
+  type: 'test'
+  ...
+# Subtest: oversized binary and malformed JSON are rejected before service
+ok 8 - oversized binary and malformed JSON are rejected before service
+  ---
+  duration_ms: 23.7584
+  type: 'test'
+  ...
+# Subtest: permission and expiry responses retain stable codes without internal errors
+ok 9 - permission and expiry responses retain stable codes without internal errors
+  ---
+  duration_ms: 8.4941
+  type: 'test'
+  ...
+# Subtest: unknown/prototype routes cannot invoke arbitrary service methods
+ok 10 - unknown/prototype routes cannot invoke arbitrary service methods
+  ---
+  duration_ms: 17.3587
+  type: 'test'
+  ...
+1..10
+# tests 10
+# suites 0
+# pass 10
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 622.1874
