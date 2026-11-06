@@ -1,7 +1,7 @@
 node_modules/
-functions/node_modules/
-functions/.env*
-functions/service-account*.json
+src/server/node_modules/
+src/server/.env*
+src/server/service-account*.json
 .env*
 !.env.example
 !.env.production.example
@@ -26,5 +26,9 @@ work/
 __pycache__/
 *.pyc
 
-/functions/secrets/
+/src/server/secrets/
 /public/firebase-connection.local.json
+
+/src/server/node_modules/
+/src/server/secrets/
+/src/server/.env*

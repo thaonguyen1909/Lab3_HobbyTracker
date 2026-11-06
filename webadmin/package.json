@@ -6,11 +6,18 @@
     "node": ">=22.13.0"
   },
   "scripts": {
-    "install:ci": "bash scripts/install-pnpm.sh",
-    "dev": "node scripts/run-framework.mjs dev",
-    "build": "node scripts/run-framework.mjs build",
-    "start": "node --import ./scripts/sites-env.mjs ./node_modules/wrangler/bin/wrangler.js dev --config dist/server/wrangler.json --local --persist-to .wrangler/state --ip 127.0.0.1 --inspector-port 0",
-    "lint": "eslint . --ignore-pattern dist --ignore-pattern .next"
+    "install:ci": "bash tools/scripts/install-pnpm.sh",
+    "dev": "node tools/scripts/dev.mjs",
+    "build": "node tools/scripts/run-framework.mjs build",
+    "start": "node --import ./tools/scripts/sites-env.mjs ./node_modules/wrangler/bin/wrangler.js dev --config dist/server/wrangler.json --local --persist-to .wrangler/state --ip 127.0.0.1 --inspector-port 0",
+    "lint": "eslint . --ignore-pattern dist --ignore-pattern .next",
+    "api": "npm --prefix src/server run start:live",
+    "configure:local": "npm --prefix src/server run configure:local",
+    "test": "node --test tests/*.test.mjs src/server/test/presentation-api.test.mjs",
+    "typecheck": "tsc --noEmit",
+    "preview:fixtures": "node tools/scripts/preview-formatting.mjs",
+    "dev:web": "node tools/scripts/run-framework.mjs dev",
+    "clean:cache": "pnpm store prune"
   },
   "dependencies": {
     "firebase": "11.6.0",

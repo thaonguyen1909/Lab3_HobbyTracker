@@ -1,6 +1,40 @@
 {
-  "functions": [{"source": "functions", "codebase": "hobby-admin", "runtime": "nodejs22"}],
-  "firestore": {"rules": "integration/firebase/firestore.rules", "indexes": "integration/firebase/firestore.indexes.json"},
-  "storage": {"rules": "integration/firebase/storage.rules"},
-  "emulators": {"auth": {"port": 9099}, "firestore": {"port": 8080}, "functions": {"port": 5001}, "ui": {"enabled": false}, "singleProjectMode": true}
+  "functions": [
+    {
+      "source": "src/server",
+      "codebase": "hobby-admin",
+      "runtime": "nodejs22",
+      "ignore": [
+        "node_modules",
+        ".git",
+        ".env*",
+        "secrets/**",
+        "test/**",
+        "scripts/**",
+        "*.log"
+      ]
+    }
+  ],
+  "firestore": {
+    "rules": "tools/integration/firebase/firestore.rules",
+    "indexes": "tools/integration/firebase/firestore.indexes.json"
+  },
+  "storage": {
+    "rules": "tools/integration/firebase/storage.rules"
+  },
+  "emulators": {
+    "auth": {
+      "port": 9099
+    },
+    "firestore": {
+      "port": 8080
+    },
+    "functions": {
+      "port": 5001
+    },
+    "ui": {
+      "enabled": false
+    },
+    "singleProjectMode": true
+  }
 }
